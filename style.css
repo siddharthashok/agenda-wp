@@ -1,0 +1,921 @@
+h1 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #000000;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+h2 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+  color: #55186B;
+  margin-bottom: 10px;
+}
+
+.about {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+}
+
+.connect-card-text {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+body, p {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+a {
+  color: #000000;
+}
+a:hover, a:active, a:focus {
+  color: #000000;
+}
+a.active {
+  color: #55186B;
+}
+
+.clear {
+  clear: both;
+}
+
+.site-header {
+  background-color: #fafafa;
+  box-shadow: 0px 1px 3px #E6DAD8;
+}
+.site-header .logo {
+  float: left;
+  padding: 17px 0px 15px 0px;
+  display: block;
+}
+.site-header .menu {
+  float: right;
+}
+.site-header .menu .nav-link {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 20px 20px 15px 20px;
+}
+.site-header .search {
+  position: relative;
+}
+.site-header .search:after {
+  content: "";
+  background: url("img/search.svg") no-repeat;
+  width: 25px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  left: 55px;
+  top: 18px;
+}
+.site-header .search-mobile {
+  display: none;
+}
+
+.day {
+  font-size: 60px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  display: block;
+  line-height: 60px;
+  color: #8012B7;
+}
+
+.month {
+  display: block;
+  font-size: 14px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #8012B7;
+  line-height: 8px;
+  text-transform: uppercase;
+}
+
+.card-with-image {
+  position: relative;
+  /*margin-bottom:15px; margin: 0px 7px 14px 7px; */
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px #E5E5E5;
+  display: block;
+}
+.card-with-image .card-title-wrap {
+  background-color: #F1F1F1;
+  padding: 12px 15px 10px 15px;
+}
+.card-with-image .card-title-wrap .category {
+  margin: 0px 20px 0px 0px;
+}
+.card-with-image .category, .card-with-image .entrance-info {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin: 0px 15px 25px 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.card-with-image .entrance-info {
+  text-transform: none;
+}
+.card-with-image .content {
+  padding: 15px;
+}
+.card-with-image .content .organizer, .card-with-image .content .location, .card-with-image .content .date, .card-with-image .content .cause {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  color: #242424;
+  margin: 0px 0px 0px 18px;
+  position: relative;
+}
+.card-with-image .content .organizer:after, .card-with-image .content .location:after, .card-with-image .content .date:after, .card-with-image .content .cause:after {
+  content: "";
+  background-image: url("img/black-detail.svg");
+  width: 10px;
+  height: 15px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: -18px;
+  top: 2px;
+}
+.card-with-image .content .date:after {
+  content: "";
+  background-image: url("img/date.svg");
+}
+.card-with-image .content .cause {
+  margin: 0px;
+}
+.card-with-image .content .cause:after {
+  content: none;
+}
+.card-with-image .content .date {
+  color: #8012B7;
+}
+.card-with-image .event-date {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.card-with-image .image-wrapper {
+  position: relative;
+}
+.card-with-image .image-wrapper img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+.card-with-image .image-wrapper .date {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+.card-with-image h3 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: #242424;
+  margin-bottom: 3px;
+}
+.card-with-image:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.connect-card {
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px #E5E5E5;
+  height: 100%;
+}
+.connect-card .content {
+  padding: 30px 60px 30px 40px;
+  height: 100%;
+  position: relative;
+}
+.connect-card h3 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  margin-bottom: 10px;
+}
+.connect-card .connect-link {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  color: #FF0066;
+  bottom: 30px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 30px;
+}
+.connect-card .connect-link::after {
+  content: "";
+  background-image: url("img/arrow-forward.svg");
+  width: 34px;
+  height: 19px;
+  display: inline-block;
+  position: absolute;
+  right: -50px;
+  top: 0px;
+}
+.connect-card.blue {
+  background-image: url("img/blue-patch.svg");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}
+.connect-card.purple {
+  background-image: url("img/purple-patch.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+}
+
+.title-wrap a {
+  color: #8012B7;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.hero-section {
+  position: relative;
+  padding-top: 70px;
+  overflow: hidden;
+  padding-bottom: 80px;
+  background-image: url("img/hero-back.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.hero-section h1 {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.hero-section .hero-sub-title {
+  font-size: 30px;
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 80px;
+}
+
+.current-events {
+  padding-bottom: 60px;
+}
+.current-events .title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.current-events .title-wrap a {
+  margin-bottom: 10px;
+}
+.current-events .title-wrap .wrap {
+  margin-bottom: 20px;
+}
+.current-events .about {
+  max-width: 600px;
+}
+
+.current-events .about, .current-organizers .about {
+  margin-bottom: 0px;
+}
+
+.topics-wrapper .title-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.organizers-mobile-wrap {
+  display: none;
+}
+
+.event-mobile-wrap {
+  display: none;
+}
+
+.current-organizers {
+  padding-bottom: 60px;
+}
+.current-organizers .title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+.current-organizers-wrap {
+  margin-bottom: 30px;
+}
+
+.site-footer {
+  background-color: #55186B;
+  height: 300px;
+  margin-top: 90px;
+}
+
+.hamburger {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  background: #000000;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger span:nth-child(1) {
+  top: 2px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.hamburger span:nth-child(2) {
+  top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.hamburger span:nth-child(3) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.close-wrap {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  display: none;
+}
+.close-wrap .close-text {
+  color: white;
+  z-index: 300;
+  font-size: 14px;
+  display: inline-block;
+}
+.close-wrap .close-icon {
+  width: 32px;
+  height: 32px;
+  z-index: 300;
+  display: inline-block;
+}
+.close-wrap .close-icon:before, .close-wrap .close-icon:after {
+  position: absolute;
+  left: 60px;
+  content: "";
+  height: 33px;
+  width: 5px;
+  background-color: #ffffff;
+}
+.close-wrap .close-icon:before {
+  transform: rotate(45deg);
+  height: 40px;
+}
+.close-wrap .close-icon:after {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+.mobile-search-btn {
+  display: none;
+}
+
+.slick-list {
+  padding: 0 20% 0 0;
+}
+
+.slick-dots {
+  text-align: center;
+  font-size: 30px;
+}
+.slick-dots li {
+  display: inline-block;
+  margin-right: 7px;
+}
+.slick-dots li button {
+  font-size: 0;
+  cursor: pointer;
+  border: 1px solid #8012B7;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  padding: 0px;
+  outline: none;
+}
+.slick-dots li.slick-active button {
+  background-color: #8012B7;
+  outline: none;
+}
+
+.section-title {
+  display: block;
+  margin-bottom: 10px;
+  color: #55186B;
+}
+
+.breadcrumbs {
+  padding: 20px 0px 15px 0px;
+  margin-bottom: 0px;
+}
+.breadcrumbs a {
+  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+}
+.breadcrumbs a.active {
+  color: #55186B;
+}
+.breadcrumbs a:hover {
+  text-decoration: none;
+}
+.breadcrumbs li {
+  text-transform: none;
+}
+.breadcrumbs li:not(:last-child)::after {
+  content: "";
+}
+
+.connect-event-orgnisation .connect-card .connect-link:after {
+  background-image: url("img/green-arrow.svg");
+}
+.connect-event-orgnisation .connect-card .connect-link {
+  color: #288E8B;
+}
+.connect-event-orgnisation .title-wrap {
+  width: 100%;
+  text-align: right;
+  padding: 20px 0px 15px 0px;
+}
+
+.more-about-orgnaizer, .event-details, .events-from-organiser, .organisation-details {
+  margin-bottom: 30px;
+}
+
+.event-details .date, .organisation-details .date, .contact .date, .agenda-contact .date {
+  display: inline-block;
+  margin: 15px 0px 30px 0px;
+}
+.event-details h6, .organisation-details h6, .contact h6, .agenda-contact h6 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.event-details .card-with-image p, .organisation-details .card-with-image p, .contact .card-with-image p, .agenda-contact .card-with-image p {
+  margin-bottom: 8px;
+}
+.event-details .card-with-image .content, .organisation-details .card-with-image .content, .contact .card-with-image .content, .agenda-contact .card-with-image .content {
+  padding: 25px 15px 10px 15px;
+}
+.event-details .card-with-image .purple-text, .organisation-details .card-with-image .purple-text, .contact .card-with-image .purple-text, .agenda-contact .card-with-image .purple-text {
+  margin: 0px 0px 10px 8px;
+  color: #8012B7;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 0px;
+}
+.event-details .card-with-image .purple-text:after, .organisation-details .card-with-image .purple-text:after, .contact .card-with-image .purple-text:after, .agenda-contact .card-with-image .purple-text:after {
+  content: none;
+}
+.event-details .card-with-image .share-events-label, .organisation-details .card-with-image .share-events-label, .contact .card-with-image .share-events-label, .agenda-contact .card-with-image .share-events-label {
+  margin-top: 16px;
+}
+.event-details .card-with-image .share-events, .event-details .card-with-image .read-more, .organisation-details .card-with-image .share-events, .organisation-details .card-with-image .read-more, .contact .card-with-image .share-events, .contact .card-with-image .read-more, .agenda-contact .card-with-image .share-events, .agenda-contact .card-with-image .read-more {
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  display: block;
+}
+.event-details .card-with-image .share-events:before, .event-details .card-with-image .read-more:before, .organisation-details .card-with-image .share-events:before, .organisation-details .card-with-image .read-more:before, .contact .card-with-image .share-events:before, .contact .card-with-image .read-more:before, .agenda-contact .card-with-image .share-events:before, .agenda-contact .card-with-image .read-more:before {
+  content: "";
+  background-image: url("img/download.svg");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 5px;
+}
+.event-details .card-with-image .read-more:before, .organisation-details .card-with-image .read-more:before, .contact .card-with-image .read-more:before, .agenda-contact .card-with-image .read-more:before {
+  width: 22px;
+  height: 21px;
+  background-image: url("img/download-black.svg");
+}
+.event-details .card-with-image .card-title-wrap .entrance-info, .organisation-details .card-with-image .card-title-wrap .entrance-info, .contact .card-with-image .card-title-wrap .entrance-info, .agenda-contact .card-with-image .card-title-wrap .entrance-info {
+  margin-bottom: 0px;
+}
+.event-details .card-with-image .hashtags, .organisation-details .card-with-image .hashtags, .contact .card-with-image .hashtags, .agenda-contact .card-with-image .hashtags {
+  text-transform: uppercase;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.event-details .card-with-image .event-description, .organisation-details .card-with-image .event-description, .contact .card-with-image .event-description, .agenda-contact .card-with-image .event-description {
+  margin: 20px 0px 0px 0px;
+}
+.event-details .card-with-image .event-description .next-para, .organisation-details .card-with-image .event-description .next-para, .contact .card-with-image .event-description .next-para, .agenda-contact .card-with-image .event-description .next-para {
+  margin: 12px 0px;
+}
+
+.event-details .card-with-image a {
+  display: block;
+}
+.event-details .card-with-image .availability-wrap {
+  list-style: none;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+.event-details .card-with-image .availability {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 0px;
+}
+.event-details .card-with-image .availability:before {
+  content: "";
+  background-image: url("img/tick-mark.svg");
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 0px;
+  top: 2px;
+  background-size: 14px 14px;
+}
+.event-details .card-with-image .availability.last {
+  margin-bottom: 16px;
+}
+.event-details .card-with-image .name, .event-details .card-with-image .email, .event-details .card-with-image .phone-number {
+  font-size: 12px;
+  line-height: 19px;
+  margin-bottom: 0px;
+}
+.event-details .card-with-image .phone-number {
+  margin-bottom: 16px;
+}
+.event-details .card-with-image h3 {
+  margin-bottom: 25px;
+}
+
+.organisation-details h3 {
+  margin-bottom: 10px;
+}
+.organisation-details .card-with-image .content {
+  padding: 15px;
+}
+.organisation-details .card-with-image .event-description {
+  margin-bottom: 20px;
+}
+.organisation-details .card-with-image .social-links {
+  position: relative;
+  margin: 0px 0px 5px 15px;
+}
+.organisation-details .card-with-image .social-links:before {
+  content: "";
+  background-image: url("img/black-detail.svg");
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: -15px;
+  top: 4px;
+}
+.organisation-details .card-with-image .social-links.last {
+  margin-bottom: 16px;
+}
+.organisation-details p {
+  margin-bottom: 0px;
+}
+.organisation-details .next-para {
+  margin-top: 20px;
+}
+.organisation-details .read-more-wrap {
+  margin: 20px 0px;
+  display: block;
+}
+
+.events-from-organiser .card-title-wrap .entrance-info {
+  margin-bottom: 0px;
+}
+
+.agenda-contact .cell {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.agenda-contact p {
+  margin-bottom: 0px;
+}
+.agenda-contact .photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #C4C4C4;
+  display: inline-block;
+}
+.agenda-contact .contact-details {
+  width: 230px;
+  display: inline-block;
+  margin-left: 5px;
+}
+.agenda-contact .email-details-wrap {
+  margin-top: 20px;
+}
+
+.mobile-header {
+  background-color: #55186B;
+}
+
+/* start of media queries- Small only */
+@media screen and (max-width: 39.9375em) {
+  .grid-container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .event-mobile-wrap {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .breadcrumbs {
+    padding: 15px 0px 20px 0px;
+  }
+  .breadcrumbs a {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 19px;
+  }
+
+  .about {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 14px;
+  }
+
+  .card-with-image .content {
+    padding: 15px 18px;
+  }
+
+  .title-wrap .see-few-all {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .site-header {
+    padding: 0px;
+  }
+  .site-header .search-mobile {
+    display: inline-block;
+    width: 25px;
+    height: 30px;
+    padding-top: 8px;
+  }
+  .site-header .search-item {
+    display: none;
+  }
+  .site-header .menu {
+    position: absolute;
+    background: #55186B;
+    top: 0px;
+    width: 320px;
+    height: 100%;
+    z-index: 100;
+    padding-top: 70px;
+    left: -1000px;
+    flex-direction: column;
+  }
+  .site-header .menu .nav-link {
+    color: #ffffff;
+    text-transform: initial;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+    padding: 10px 0px 5px 20px;
+  }
+  .site-header .menu .nav-link:hover {
+    color: #ffffff;
+  }
+  .site-header .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .site-header .hamburger {
+    display: block;
+    margin: 8px 0px;
+    width: 25px;
+    height: 25px;
+  }
+  .site-header .logo {
+    padding: 5px 0px;
+  }
+  .site-header .search:after {
+    left: 3px;
+    top: 10px;
+  }
+  .site-header .toggle-display {
+    display: block;
+  }
+
+  .site-footer {
+    margin-top: 45px;
+  }
+
+  .hero-section {
+    padding-bottom: 25px;
+    background-position: top 40px left 100px;
+    background-size: contain;
+  }
+  .hero-section h1 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 5px;
+    max-width: 300px;
+  }
+  .hero-section .hero-sub-title {
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 250px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  .hero-section .card-with-image .image-wrapper {
+    height: 50px;
+    margin-bottom: 0px;
+  }
+  .hero-section .card-with-image .image-wrapper img {
+    height: 50px;
+  }
+  .hero-section .card-with-image .content {
+    padding: 5px 10px;
+  }
+  .hero-section .card-with-image h3 {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .hero-section h2 {
+    font-size: 15px;
+    line-height: 23px;
+    margin-bottom: 10px;
+  }
+
+  .current-organizers, .current-events {
+    padding-bottom: 20px;
+  }
+  .current-organizers .title-wrap, .current-events .title-wrap {
+    align-items: initial;
+    margin-bottom: 0px;
+  }
+  .current-organizers .title-wrap .wrap, .current-events .title-wrap .wrap {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .current-organizers .title-wrap .title, .current-events .title-wrap .title {
+    margin-bottom: 5px;
+  }
+  .current-organizers .title-wrap .about, .current-events .title-wrap .about {
+    position: initial;
+    max-width: 100%;
+  }
+  .current-organizers .title-wrap .see-few-all, .current-events .title-wrap .see-few-all {
+    width: 95px;
+    text-align: right;
+  }
+
+  .event-mobile-wrap, .organizers-mobile-wrap {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .event-mobile-wrap .card-with-image, .organizers-mobile-wrap .card-with-image {
+    margin: 0px 7px 14px 7px;
+  }
+  .event-mobile-wrap .card-with-image .image-wrapper, .organizers-mobile-wrap .card-with-image .image-wrapper {
+    margin-bottom: 0px;
+  }
+  .event-mobile-wrap .card-with-image .content h3, .organizers-mobile-wrap .card-with-image .content h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .organizers-mobile-wrap .card-with-image .image-wrapper {
+    height: 150px;
+  }
+  .organizers-mobile-wrap .card-with-image .image-wrapper img {
+    height: 150px;
+  }
+
+  .connect-card {
+    margin: 0px;
+  }
+  .connect-card.blue {
+    margin-right: 0px;
+  }
+  .connect-card .connect-link {
+    width: 250px;
+  }
+  .connect-card .connect-link:after {
+    top: 20px;
+    right: -30px;
+  }
+  .connect-card .content {
+    padding: 30px 25px;
+  }
+  .connect-card .content .connect-card-text {
+    margin-bottom: 60px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
