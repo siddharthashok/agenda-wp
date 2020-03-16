@@ -35,7 +35,7 @@ while(have_posts())
                     <div class="cell large-4">
                         <a class="card-with-image" href="<?= get_term_link($value->term_id, $value->taxonomy )?>">
                             <div class="image-wrapper">
-                                <img src="<?= get_field("featured_image",$value->taxonomy."_".$value->term_id); ?>" alt="">
+                                <img src="<?= get_field("featured_image",$value->taxonomy."_".$value->term_id); ?>" alt="image of the organisation">
                                 <!-- <div class="date">
                                     <span class="day">25</span>
                                     <span class="month">December</span>

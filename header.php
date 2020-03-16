@@ -33,7 +33,7 @@
                         <span></span>
                     </div>
                     <a class="logo" href="<?= get_site_url();?>">
-                        <img src="<?= get_template_directory_uri();?>/img/main-logo.svg" alt="">
+                        <img src="<?= get_template_directory_uri();?>/img/main-logo.svg" alt="logo of agenda website">
                     </a>
                     <ul class="menu hidden">
                         <li class="close-wrap">
@@ -45,9 +45,9 @@
                         <li><a href="#" class="nav-link">Publicera </a></li>
                         <li><a href="#" class="nav-link">Om Agenda: Jämlikhet</a></li>
                         <li><a href="#" class="nav-link">Kontakta </a></li>
-                        <li class="search-item"><a href="#" class="search nav-link">SÖK</a> </li>
+                        <li class="search-item"><a href="#" class="search nav-link" title="search button">SÖK</a> </li>
                     </ul>
-                    <a href="#" class="search-mobile"> <img src="<?= get_template_directory_uri();?>/img/search.svg"></a>
+                    <a href="#" class="search-mobile"> <img src="<?= get_template_directory_uri();?>/img/search.svg" alt="image of search icon"></a>
                 </div>
                 <div class="clear"></div>
             </div>    

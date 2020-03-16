@@ -25,7 +25,7 @@ get_header();
             <div class="cell large-12">
                 <div class="card-with-image">
                     <div class="image-wrapper">
-                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
                     </div>
                     <div class="card-title-wrap">
                         <span class="category">event </span>
@@ -152,7 +152,7 @@ get_header();
                     <div class="cell large-4">
                         <a class="card-with-image" href="<?= get_term_link( $value->term_id , $value->taxonomy ); ?>">
                             <div class="image-wrapper">
-                                <img src="<?= get_field("featured_image",$value->taxonomy."_".$value->term_id); ?>" alt="">
+                                <img src="<?= get_field("featured_image",$value->taxonomy."_".$value->term_id); ?>" alt="image of the organisation">
                                 <!-- <div class="date">
                                     <span class="day">25</span>
                                     <span class="month">December</span>

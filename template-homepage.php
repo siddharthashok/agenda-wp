@@ -18,7 +18,7 @@ get_header();
                     <div class="cell large-3 small-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
-                                <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
+                                <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="image of a topic">
                             </div>
                             <div class="content">
                                 <h3>Sexualitet & könsidentitet</h3>
