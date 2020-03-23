@@ -1,352 +1,1037 @@
 // mixins
-@mixin font() {font-family: "Overpass", sans-serif; font-style: normal;}
+@mixin font() {
+	font-family: "Overpass", sans-serif;
+	font-style: normal;
+}
 
-@mixin light {@include font();font-weight: 300;}
+@mixin light {
+	@include font();
+	font-weight: 300;
+}
 
-@mixin regular {@include font();font-weight: 400;}
+@mixin regular {
+	@include font();
+	font-weight: 400;
+}
 
-@mixin semi-bold {@include font();font-weight: 600;}
+@mixin semi-bold {
+	@include font();
+	font-weight: 600;
+}
 
-@mixin bold {@include font();font-weight: 700;}
+@mixin bold {
+	@include font();
+	font-weight: 700;
+}
 
 // Colors variables
 $white: #ffffff;
-$light-white:#fafafa;
+$light-white: #fafafa;
 $black: #000000;
-$purple: #55186B;
-$light-purple:#8012B7;
-$pink: #FF0066;
-$light-gray:#F1F1F1;
-$green:#288E8B;
-$gray:#C4C4C4;
-$off-white:#E5E5E5;
-$creame:#E6DAD8;
-$nero:#242424;
+$purple: #55186b;
+$light-purple: #8012b7;
+$pink: #ff0066;
+$light-gray: #f1f1f1;
+$green: #288e8b;
+$gray: #c4c4c4;
+$off-white: #e5e5e5;
+$creame: #e6dad8;
+$nero: #242424;
+$dark-pink: #be2763;
+$dark-grey: #626262;
 // Headers
-h1 { @include bold(); color: $black; font-size: 60px; line-height: 70px;}
-h2 { @include bold();  font-size: 36px;  line-height: 47px;color: $purple; margin-bottom:10px;}
-
-.about{ font-size: 24px;line-height: 32px;font-weight: normal;}
-
-.connect-card-text{@include light(); font-size: 20px;line-height: 28px;font-weight: normal;margin-bottom: 50px;}
-
-
-body,p {@include regular(); font-size: 16px;line-height: 24px;color:$black;}
-
-a {color: $black;
-    &:hover,&:active,&:focus{color:$black;}
-    &.active{color:$purple;}
+h1 {
+	@include bold();
+	color: $black;
+	font-size: 60px;
+	line-height: 70px;
 }
-.clear{clear:both;}
+h2 {
+	@include bold();
+	font-size: 36px;
+	line-height: 47px;
+	color: $purple;
+	margin-bottom: 10px;
+}
+
+.about {
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: normal;
+}
+
+.connect-card-text {
+	@include light();
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: normal;
+	margin-bottom: 50px;
+}
+
+body,
+p {
+	@include regular();
+	font-size: 16px;
+	line-height: 24px;
+	color: $black;
+}
+
+a {
+	color: $black;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $black;
+	}
+	&.active {
+		color: $purple;
+	}
+}
+.clear {
+	clear: both;
+}
+.button {
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 1.5em;
+	margin-top: 25px;
+	transition: all 0.3s ease-in-out;
+	font-weight: 600;
+	&.hollow {
+		background-color: $white;
+		&:hover {
+			background-color: $white;
+		}
+	}
+	&.button-pink {
+		border: 1px solid $dark-pink;
+		color: $dark-pink;
+	}
+	&.button-green {
+		border: 1px solid $green;
+		color: $green;
+	}
+	@media screen and (max-width: 39.99875em) {
+		width: 100%;
+	}
+}
+.links {
+	text-decoration: underline;
+}
 //start of header css
-.site-header{background-color:$light-white; box-shadow: 0px 1px 3px $creame;
-    .logo {float: left;padding:/*20px 0px*/17px 0px 15px 0px;display: block;}
-    .menu { float:right;
-    .nav-link{@include semi-bold();font-size: 13px;line-height: 24px;text-transform: uppercase;padding: /*20px;*/20px 20px 15px 20px}
-    }
-    .search {position: relative;
-        &:after{content:""; background:url("img/search.svg") no-repeat; width:25px; height:20px; display:inline-block; position:absolute;left: 55px;top: 18px;}
-    }
-    .search-mobile{display: none;}
+.site-header {
+	background-color: $light-white;
+	box-shadow: 0px 1px 3px $creame;
+	.logo {
+		float: left;
+		padding:/*20px 0px*/ 17px 0px 15px 0px;
+		display: block;
+	}
+	.menu {
+		float: right;
+		.nav-link {
+			@include semi-bold();
+			font-size: 13px;
+			line-height: 24px;
+			text-transform: uppercase;
+			padding: /*20px;*/ 20px 20px 15px 20px;
+		}
+	}
+	.search {
+		position: relative;
+		&:after {
+			content: "";
+			background: url("img/search.svg") no-repeat;
+			width: 25px;
+			height: 20px;
+			display: inline-block;
+			position: absolute;
+			left: 55px;
+			top: 18px;
+		}
+	}
+	.search-mobile {
+		display: none;
+	}
 }
 //general css for date and month
-.day {font-size: 60px; @include bold(); display: block; line-height: 60px; color: $light-purple;}
-.month {display: block; font-size: 14px; @include semi-bold(); color: $light-purple; line-height: 8px;text-transform: uppercase;}
+.day {
+	font-size: 60px;
+	@include bold();
+	display: block;
+	line-height: 60px;
+	color: $light-purple;
+}
+.month {
+	display: block;
+	font-size: 14px;
+	@include semi-bold();
+	color: $light-purple;
+	line-height: 8px;
+	text-transform: uppercase;
+}
 // .hyphen{font-size: 60px;color:$purple;display: inline-block;}
-.card-with-image {position: relative;/*margin-bottom:15px; margin: 0px 7px 14px 7px; */background-color: $white;box-shadow: 0px 8px 16px $off-white;display:block;
-    .card-title-wrap{background-color: $light-gray;padding: 12px 15px 10px 15px; 
-        .category{margin:0px 20px 0px 0px;}
-    }
-    .category,.entrance-info{@include semi-bold(); font-size: 14px; line-height: 18px; color:$black;display:inline-block;margin-right:20px;margin-bottom: 20px;margin:0px 15px 25px 0px;font-weight: normal;text-transform: uppercase;}
-    .entrance-info{text-transform: none;}
-    .content {padding:15px;
-        .organizer,.location,.date,.cause {@include regular(); font-size: 12px; line-height: 19px; color:$nero;margin:0px 0px 0px 18px;position: relative;
-            &:after{content:"";background-image: url("img/black-detail.svg");width: 10px;height: 15px;position: absolute;background-repeat: no-repeat;left: -18px;top: 2px;}
-        }
-        .date{&:after{content:"";background-image: url("img/date.svg");}}
-        .cause{margin: 0px;
-            &:after{content:none;}
-        }
-        .date{color:$light-purple;}
-    }
-    .event-date{display: inline-block;margin-bottom: 30px;}
-    .image-wrapper { position: relative;
-        img {object-fit: cover; height: 200px; width: 100%;}
-        .date { position: absolute; top:0px; right: 25px;background-color:$white; padding: 15px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);}
-    }
-    h3 {@include bold(); font-size: 22px; line-height: 28px; color:$nero;margin-bottom: 3px;}
-    &:after {content:""; display:block; clear:both;}
+.card-with-image {
+	position: relative; /*margin-bottom:15px; margin: 0px 7px 14px 7px; */
+	background-color: $white;
+	box-shadow: 0px 8px 16px $off-white;
+	display: block;
+	.card-title-wrap {
+		background-color: $light-gray;
+		padding: 12px 15px 10px 15px;
+		.category {
+			margin: 0px 20px 0px 0px;
+		}
+	}
+	.category,
+	.entrance-info {
+		@include semi-bold();
+		font-size: 14px;
+		line-height: 18px;
+		color: $black;
+		display: inline-block;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		margin: 0px 15px 25px 0px;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+	.entrance-info {
+		text-transform: none;
+	}
+	.content {
+		padding: 15px;
+		.organizer,
+		.location,
+		.date,
+		.cause {
+			@include regular();
+			font-size: 12px;
+			line-height: 19px;
+			color: $nero;
+			margin: 0px 0px 0px 18px;
+			position: relative;
+			&:after {
+				content: "";
+				background-image: url("img/black-detail.svg");
+				width: 10px;
+				height: 15px;
+				position: absolute;
+				background-repeat: no-repeat;
+				left: -18px;
+				top: 2px;
+			}
+		}
+		.date {
+			&:after {
+				content: "";
+				background-image: url("img/date.svg");
+			}
+		}
+		.cause {
+			margin: 0px;
+			&:after {
+				content: none;
+			}
+		}
+		.date {
+			color: $light-purple;
+		}
+	}
+	.event-date {
+		display: inline-block;
+		margin-bottom: 30px;
+	}
+	.image-wrapper {
+		position: relative;
+		img {
+			object-fit: cover;
+			height: 200px;
+			width: 100%;
+		}
+		.date {
+			position: absolute;
+			top: 0px;
+			right: 25px;
+			background-color: $white;
+			padding: 15px;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+		}
+	}
+	h3 {
+		@include bold();
+		font-size: 22px;
+		line-height: 28px;
+		color: $nero;
+		margin-bottom: 3px;
+	}
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 }
 
-.connect-card { background-color: $white;box-shadow: 0px 8px 16px $off-white;height: 100%;
-    .content {padding: 30px 60px 30px 40px;height: 100%; position: relative;}
-    h3 {@include bold(); font-size: 30px; line-height: 37px;margin-bottom: 10px;}
-    .connect-link {font-size: 14px; line-height: 20px; text-transform: uppercase; position: relative;display: inline-block;color:$pink;bottom: 30px;font-weight: 600;position: absolute;bottom: 30px;
-        &::after {content:""; background-image: url("img/arrow-forward.svg"); width: 34px; height: 19px; display: inline-block; position: absolute; right: -50px;top:0px;}
-    }
-    &.blue {background-image: url("img/blue-patch.svg"); background-repeat: no-repeat;background-position: 0% 0%;}
-    &.purple {background-image: url("img/purple-patch.svg"); background-repeat: no-repeat;background-position: 100% 0%;}
+.connect-card {
+	background-color: $white;
+	box-shadow: 0px 8px 16px $off-white;
+	height: 100%;
+	.content {
+		padding: 30px 60px 30px 40px;
+		height: 100%;
+		position: relative;
+	}
+	h3 {
+		@include bold();
+		font-size: 30px;
+		line-height: 37px;
+		margin-bottom: 10px;
+	}
+	.connect-link {
+		font-size: 14px;
+		line-height: 20px;
+		text-transform: uppercase;
+		position: relative;
+		display: inline-block;
+		color: $pink;
+		bottom: 30px;
+		font-weight: 600;
+		position: absolute;
+		bottom: 30px;
+		&::after {
+			content: "";
+			background-image: url("img/arrow-forward.svg");
+			width: 34px;
+			height: 19px;
+			display: inline-block;
+			position: absolute;
+			right: -50px;
+			top: 0px;
+		}
+	}
+	&.blue {
+		background-image: url("img/blue-patch.svg");
+		background-repeat: no-repeat;
+		background-position: 0% 0%;
+	}
+	&.purple {
+		background-image: url("img/purple-patch.svg");
+		background-repeat: no-repeat;
+		background-position: 100% 0%;
+	}
 }
 
 .title-wrap {
-    a{color: $light-purple; @include semi-bold(); font-size: 18px;text-transform:uppercase;}
+	a {
+		color: $light-purple;
+		@include semi-bold();
+		font-size: 18px;
+		text-transform: uppercase;
+	}
 }
 
 .hero-section {
-    position: relative;padding-top: 70px;overflow: hidden;padding-bottom:80px;background-image:url("img/hero-back.svg");background-repeat:no-repeat;background-position: right top;
-    h1 {text-align: center;max-width: 600px;
-        width: 100%;margin:0 auto; margin-bottom:15px;}
-    .hero-sub-title {font-size: 30px; text-align: center; @include light(); margin-bottom: 80px;} 
+	position: relative;
+	padding-top: 70px;
+	overflow: hidden;
+	padding-bottom: 80px;
+	background-image: url("img/hero-back.svg");
+	background-repeat: no-repeat;
+	background-position: right top;
+	h1 {
+		text-align: center;
+		max-width: 600px;
+		width: 100%;
+		margin: 0 auto;
+		margin-bottom: 15px;
+	}
+	.hero-sub-title {
+		font-size: 30px;
+		text-align: center;
+		@include light();
+		margin-bottom: 80px;
+	}
 }
 
-.current-events {padding-bottom:60px;
-    .title-wrap{display: flex; justify-content: space-between; align-items: flex-end; 
-        a{margin-bottom: 10px;}
-        .wrap{margin-bottom: 20px;}
-    }
-    .about{max-width: 600px;}
+.current-events {
+	padding-bottom: 60px;
+	.title-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		a {
+			margin-bottom: 10px;
+		}
+		.wrap {
+			margin-bottom: 20px;
+		}
+	}
+	.about {
+		max-width: 600px;
+	}
 }
-.current-events,.current-organizers{
-    .about{margin-bottom: 0px;}
+.current-events,
+.current-organizers {
+	.about {
+		margin-bottom: 0px;
+	}
 }
 
 .topics-wrapper {
-    .title-wrap {display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
+	.title-wrap {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
-.organizers-mobile-wrap{display: none;}
-.event-mobile-wrap{display: none;}
-.current-organizers { padding-bottom:60px;
-    .title-wrap {display: flex; justify-content: space-between; align-items: flex-end; margin-bottom:5px;}
+.organizers-mobile-wrap {
+	display: none;
 }
-.current-organizers-wrap{margin-bottom:30px;}
+.event-mobile-wrap {
+	display: none;
+}
+.current-organizers {
+	padding-bottom: 60px;
+	.title-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 5px;
+	}
+}
+.current-organizers-wrap {
+	margin-bottom: 30px;
+}
 
-.site-footer {background-color: $purple; height: 300px;margin-top: 90px;}
+.site-footer {
+	background-color: $purple;
+	height: 300px;
+	margin-top: 90px;
+}
 // start of mobile menu css for hamburger and close button
-.hamburger {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;cursor: pointer;}
-  
-.hamburger span {display: block;position: absolute;height:2px;width:25px;background:$black;opacity: 1;left: 0;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out;}
-.hamburger {display: none;}
-.hamburger span:nth-child(1) {top: 2px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;transform-origin: left center;}
-.hamburger span:nth-child(2) {top: 10px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;transform-origin: left center;}
-.hamburger span:nth-child(3) {top: 18px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;transform-origin: left center;}
-
-.close-wrap{position: absolute;right: 20px;
-    top: 0px;display: none;
-    .close-text{color:white;z-index: 300;font-size: 14px;display: inline-block;}
-    .close-icon {width: 32px;height: 32px;z-index: 300;display: inline-block;}
-    .close-icon:before, .close-icon:after {position: absolute;left: 60px;content: "";height: 33px;width: 5px;background-color: $white;}
-    .close-icon:before {transform: rotate(45deg);height: 40px;}
-    .close-icon:after {transform: rotate(-45deg);top: 10px;}
+.hamburger {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
 }
-.mobile-search-btn{display:none;}
+
+.hamburger span {
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 25px;
+	background: $black;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.25s ease-in-out;
+	-moz-transition: 0.25s ease-in-out;
+	-o-transition: 0.25s ease-in-out;
+	transition: 0.25s ease-in-out;
+}
+.hamburger {
+	display: none;
+}
+.hamburger span:nth-child(1) {
+	top: 2px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+.hamburger span:nth-child(2) {
+	top: 10px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+.hamburger span:nth-child(3) {
+	top: 18px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.close-wrap {
+	position: absolute;
+	right: 20px;
+	top: 0px;
+	display: none;
+	.close-text {
+		color: white;
+		z-index: 300;
+		font-size: 14px;
+		display: inline-block;
+	}
+	.close-icon {
+		width: 32px;
+		height: 32px;
+		z-index: 300;
+		display: inline-block;
+	}
+	.close-icon:before,
+	.close-icon:after {
+		position: absolute;
+		left: 60px;
+		content: "";
+		height: 33px;
+		width: 5px;
+		background-color: $white;
+	}
+	.close-icon:before {
+		transform: rotate(45deg);
+		height: 40px;
+	}
+	.close-icon:after {
+		transform: rotate(-45deg);
+		top: 10px;
+	}
+}
+.mobile-search-btn {
+	display: none;
+}
 //end of mobile menu css
 // start of slick css
-.slick-list{padding:0 20% 0 0;}
+.slick-list {
+	padding: 0 20% 0 0;
+}
 
-.slick-dots{text-align: center;font-size: 30px;
-    li{display: inline-block;margin-right: 7px;
-        button { font-size: 0; cursor: pointer;border: 1px solid $light-purple;border-radius: 50%;height: 10px;width: 10px;padding: 0px;outline:none;}
-    }   
-    li.slick-active button {background-color: $light-purple;outline: none;}  
+.slick-dots {
+	text-align: center;
+	font-size: 30px;
+	li {
+		display: inline-block;
+		margin-right: 7px;
+		button {
+			font-size: 0;
+			cursor: pointer;
+			border: 1px solid $light-purple;
+			border-radius: 50%;
+			height: 10px;
+			width: 10px;
+			padding: 0px;
+			outline: none;
+		}
+	}
+	li.slick-active button {
+		background-color: $light-purple;
+		outline: none;
+	}
 }
 //end of slick css
 //start of css for event page
-.section-title{display:block;margin-bottom: 10px;color:$purple;}
+.section-title {
+	display: block;
+	margin-bottom: 10px;
+	color: $purple;
+}
 
 //start of css for breadcrumbs
-.breadcrumbs{padding:20px 0px 15px 0px;margin-bottom:0px;
-    a{color:$black;font-size: 16px;line-height: 24px;
-        &.active{color:$purple;}
-        &:hover{text-decoration: none;}
-    }
-    li{text-transform: none;
-        &:not(:last-child)::after{content:"";}
-    }
-} 
+.breadcrumbs {
+	padding: 20px 0px 15px 0px;
+	margin-bottom: 0px;
+	a {
+		color: $dark-grey;
+		font-size: 16px;
+		line-height: 24px;
+		&.active {
+			color: $purple;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	li {
+		text-transform: none;
+		&:not(:last-child)::after {
+			content: "";
+		}
+	}
+}
 
 //css for title wrap in connect cards in all the individual pages except home page-to change arrow color
-.connect-event-orgnisation{
-    .connect-card{
-        .connect-link{&:after{background-image: url("img/green-arrow.svg");}}
-        .connect-link{color:$green;}
-    }
-    .title-wrap{width: 100%;text-align: right;padding:/*5px 0px 15px 0px;15px 0px;*/20px 0px 15px 0px}
+.connect-event-orgnisation {
+	.connect-card {
+		.connect-link {
+			&:after {
+				background-image: url("img/green-arrow.svg");
+			}
+		}
+		.connect-link {
+			color: $green;
+		}
+	}
+	.title-wrap {
+		width: 100%;
+		text-align: right;
+		padding:/*5px 0px 15px 0px;15px 0px;*/ 20px 0px 15px 0px;
+	}
 }
 
 //margin in between sections in individual pages
-.more-about-orgnaizer,.event-details,.events-from-organiser,.organisation-details{
-    margin-bottom: 30px;
+.more-about-orgnaizer,
+.event-details,
+.events-from-organiser,
+.organisation-details {
+	margin-bottom: 30px;
 }
 
 //css for details cards in individual pages
-.event-details,.organisation-details,.contact,.agenda-contact{
-    .date{display: inline-block;margin: 15px 0px 30px 0px;}
-    h6{@include regular();font-size: 14px;line-height: 20px;font-weight: 600;margin-bottom:0px;}
-    .card-with-image{
-        p{margin-bottom: 8px;}
-        .content{padding: 25px 15px 10px 15px;}
-        //css classes for event details card header texts
-        .purple-text{margin: 0px 0px 10px 8px;color:$light-purple;font-size: 14px;line-height: 20px;font-weight: 600;text-transform: uppercase;margin-left: 0px;
-            &:after{content:none;}
-        }
-        .share-events-label{margin-top:16px;}
-        .share-events,.read-more{position: relative;font-size: 14px;line-height: 20px;font-weight: 600;display: block;
-            &:before{content:"";background-image: url("img/download.svg");width: 20px;height: 20px;background-repeat: no-repeat;display: inline-block;margin-right: 5px;}
-        }
-        //for organization page
-        .read-more{
-            &:before{width: 22px;height: 21px;background-image: url("img/download-black.svg");}
-        }
-        .card-title-wrap{
-            .entrance-info{margin-bottom: 0px;}
-        }
-        .hashtags{text-transform: uppercase;@include light();margin-top: 5px;font-size: 14px;line-height:18px;}
-        .event-description{margin: 20px 0px 0px 0px;
-        .next-para{margin:12px 0px;}
-        }
-    }
+.event-details,
+.organisation-details,
+.contact,
+.agenda-contact {
+	.date {
+		display: inline-block;
+		margin: 15px 0px 30px 0px;
+	}
+	h6 {
+		@include regular();
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 600;
+		margin-bottom: 0px;
+	}
+	.card-with-image {
+		p {
+			margin-bottom: 8px;
+		}
+		.content {
+			padding: 25px 15px 10px 15px;
+		}
+		//css classes for event details card header texts
+		.purple-text {
+			margin: 0px 0px 10px 8px;
+			color: $light-purple;
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-left: 0px;
+			&:after {
+				content: none;
+			}
+		}
+		.share-events-label {
+			margin-top: 16px;
+		}
+		.share-events,
+		.read-more {
+			position: relative;
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 600;
+			display: block;
+			&:before {
+				content: "";
+				background-image: url("img/download.svg");
+				width: 20px;
+				height: 20px;
+				background-repeat: no-repeat;
+				display: inline-block;
+				margin-right: 5px;
+			}
+		}
+		//for organization page
+		.read-more {
+			&:before {
+				width: 22px;
+				height: 21px;
+				background-image: url("img/download-black.svg");
+			}
+		}
+		.card-title-wrap {
+			.entrance-info {
+				margin-bottom: 0px;
+			}
+		}
+		.hashtags {
+			text-transform: uppercase;
+			@include light();
+			margin-top: 5px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+		.event-description {
+			margin: 20px 0px 0px 0px;
+			.next-para {
+				margin: 12px 0px;
+			}
+		}
+	}
 }
 
- //foll classes are present in only event detail card
-.event-details{
-    .card-with-image{
-        a{display: block;}
-        .availability-wrap {list-style: none;margin-left: 0px;margin-bottom: 10px;}
-        .availability{padding-left: 20px;position: relative;margin-bottom:0px;
-            &:before{content:"";background-image: url("img/tick-mark.svg");width: 15px;height: 20px;position: absolute;background-repeat: no-repeat;left: 0px;top: 2px;background-size: 14px 14px ;}
-        }
-        .availability{
-            &.last{margin-bottom: 16px;}
-        }
-        .name,.email,.phone-number{font-size: 12px;line-height:19px;margin-bottom: 0px;}
-        .phone-number{margin-bottom: 16px;}
-        h3{margin-bottom:25px;}
-    }
+//foll classes are present in only event detail card
+.event-details {
+	.card-with-image {
+		a {
+			display: block;
+		}
+		.availability-wrap {
+			list-style: none;
+			margin-left: 0px;
+			margin-bottom: 10px;
+		}
+		.availability {
+			padding-left: 20px;
+			position: relative;
+			margin-bottom: 0px;
+			&:before {
+				content: "";
+				background-image: url("img/tick-mark.svg");
+				width: 15px;
+				height: 20px;
+				position: absolute;
+				background-repeat: no-repeat;
+				left: 0px;
+				top: 2px;
+				background-size: 14px 14px;
+			}
+		}
+		.availability {
+			&.last {
+				margin-bottom: 16px;
+			}
+		}
+		.name,
+		.email,
+		.phone-number {
+			font-size: 12px;
+			line-height: 19px;
+			margin-bottom: 0px;
+		}
+		.phone-number {
+			margin-bottom: 16px;
+		}
+		h3 {
+			margin-bottom: 25px;
+		}
+	}
 }
 
 //start of css for organisation details page
-.organisation-details{
-    // foll classes are present in only organisation details page
-    h3{margin-bottom: 10px;}
-    .card-with-image{
-        .content{padding:15px;}
-        .event-description{margin-bottom: 20px;}
-        .social-links{position: relative;margin:0px 0px 5px 15px;
-            &:before{content:"";background-image: url("img/black-detail.svg");width: 15px;height: 20px;position: absolute;background-repeat: no-repeat;left: -15px;top: 4px;}
-            &.last{margin-bottom: 16px;}
-        }
-    }
-    p{margin-bottom: 0px;}
-    .next-para{margin-top:20px;}
-    .read-more-wrap{margin: 20px 0px;display: block;}
+.organisation-details {
+	// foll classes are present in only organisation details page
+	h3 {
+		margin-bottom: 10px;
+	}
+	.card-with-image {
+		.content {
+			padding: 15px;
+		}
+		.event-description {
+			margin-bottom: 20px;
+		}
+		.social-links {
+			position: relative;
+			margin: 0px 0px 5px 15px;
+			&:before {
+				content: "";
+				background-image: url("img/black-detail.svg");
+				width: 15px;
+				height: 20px;
+				position: absolute;
+				background-repeat: no-repeat;
+				left: -15px;
+				top: 4px;
+			}
+			&.last {
+				margin-bottom: 16px;
+			}
+		}
+	}
+	p {
+		margin-bottom: 0px;
+	}
+	.next-para {
+		margin-top: 20px;
+	}
+	.read-more-wrap {
+		margin: 20px 0px;
+		display: block;
+	}
 }
 
 //section from organisation detail page
-.events-from-organiser{
-    .card-title-wrap{
-        .entrance-info{margin-bottom: 0px;}
-    }
+.events-from-organiser {
+	.card-title-wrap {
+		.entrance-info {
+			margin-bottom: 0px;
+		}
+	}
 }
 
 //start of css for contact page
-.agenda-contact{
-    .cell{padding-bottom: 5px;padding-top: 5px;}
-    p{margin-bottom: 0px;}
-    .photo{width:90px;height:90px;border-radius:50%;background-color: $gray;display: inline-block;}
-    .contact-details{width:230px;display: inline-block;margin-left: 5px;}
-    .email-details-wrap{margin-top: 20px;}
+.agenda-contact {
+	.cell {
+		padding-bottom: 5px;
+		padding-top: 5px;
+	}
+	p {
+		margin-bottom: 0px;
+	}
+	.photo {
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		background-color: $gray;
+		display: inline-block;
+	}
+	.contact-details {
+		width: 230px;
+		display: inline-block;
+		margin-left: 5px;
+	}
+	.email-details-wrap {
+		margin-top: 20px;
+	}
 }
-.mobile-header{background-color: $purple;}
+.mobile-header {
+	background-color: $purple;
+}
+
+/*Publish org page styles*/
+.publish-org-page {
+	background-image: url(img/blue-patch-full.svg);
+	background-repeat: no-repeat;
+	background-position: 0% 16%;
+	.title {
+		@include bold();
+		font-size: 22px;
+		line-height: 28px;
+	}
+}
 
 /* start of media queries- Small only */
 @media screen and (max-width: 39.9375em) {
-    //general css 
-    .grid-container{padding-right: 15px;padding-left: 15px;}
-    .event-mobile-wrap{margin-left: -15px;margin-right: -15px;}
-    .breadcrumbs{
-        padding: 15px 0px 20px 0px;
-        a{font-size: 12px;font-weight: 100;line-height:19px;}
-    }
-    .about{font-size: 16px;line-height:24px;font-weight: normal;margin-bottom: 30px;}
-    .slick-track{display:flex;}
-    .title{font-size:22px; line-height:28px; margin-bottom:14px;}
-    //general css for card contents in mobile layout
-    .card-with-image {
-        .content{padding: 15px 18px;}
-    }
-    //general css for section title 
-    .title-wrap{
-        .see-few-all{font-size:14px;line-height: 20px;}
-    }
-    //css for header 
-    .site-header{padding: 0px;
-        .search-mobile{display: inline-block;width: 25px;height: 30px;padding-top: 8px;}
-        .search-item{display: none;}
-        .menu{position: absolute;background:$purple;top: 0px;width: 320px;height: 100%;z-index: 100;padding-top:70px; left:-1000px;flex-direction: column;
-            .nav-link{color: $white;text-transform: initial;font-size: 22px;line-height: 28px;font-weight: 700;padding: 10px 0px 5px 20px;
-                &:hover{color:$white;}
-            }
-        }
-        .header-wrapper{display:flex;justify-content: space-between;}
-        .hamburger{display:block;margin: 8px 0px;width: 25px;height: 25px;}
-        .logo{padding: 5px 0px;}
-        .search{
-            &:after{left: 3px;top: 10px;}
-        }
-        .toggle-display{display:block;}
-    }
-    //css for footer
-   .site-footer{margin-top: 45px;}
-    //css for hero section
-    .hero-section{padding-bottom:25px;background-position:top 40px left 100px;background-size: contain;
-        h1{font-size:30px; line-height:36px; margin-bottom:5px;max-width: 300px;}
-        .hero-sub-title{font-size:20px; line-height:28px;max-width: 250px;margin: 0 auto;margin-bottom: 80px;}
-        // card css for hero section
-        .card-with-image {
-            .image-wrapper{height:50px; margin-bottom:0px;
-                img{height:50px;}
-            }
-            .content{padding: 5px 10px;} 
-            h3{font-size:13px; line-height:20px;}
-        }
-        h2{font-size:15px; line-height:23px; margin-bottom:10px;}  
-    }
-    //common css for current events and organizers title section in mobile on index page
-    .current-organizers,.current-events{padding-bottom: 20px;
-        .title-wrap{align-items: initial;margin-bottom: 0px;
-            .wrap{margin-bottom: 15px;width:100%}
-            .title{margin-bottom: 5px;}
-            .about{position:initial;max-width: 100%;}
-            .see-few-all{width: 95px;text-align: right;}
-        }
-    }
-    //common css for the sections with cards displayed in sliders
-    .event-mobile-wrap,.organizers-mobile-wrap{   
-        margin-left: -15px;margin-right: -15px;
-        .card-with-image{
-            margin: 0px 7px 14px 7px; 
-            .image-wrapper{margin-bottom: 0px;}
-            .content{
-                h3{font-size: 22px;line-height: 28px;}
-            }
-        }
-    }
-    //css to style card as rectangle under organization section in mobile slider
-    .organizers-mobile-wrap{
-        .card-with-image{
-            .image-wrapper{height: 150px;
-                img{height: 150px;}
-            }
-        }
-    }
-    //general css for connect cards on all pages
-    .connect-card {margin: 0px;
-        &.blue{margin-right: 0px;}
-        .connect-link{width: 250px;
-            &:after{top: 20px;right: -30px;}
-        }    
-        .content{padding: 30px 25px;
-            .connect-card-text{margin-bottom: 60px;}
-        }   
-    }
+	//general css
+	.grid-container {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.event-mobile-wrap {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.breadcrumbs {
+		padding: 15px 0px 20px 0px;
+		a {
+			font-size: 12px;
+			line-height: 19px;
+		}
+	}
+	.about {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: normal;
+		margin-bottom: 30px;
+	}
+	.slick-track {
+		display: flex;
+	}
+	.title {
+		font-size: 22px;
+		line-height: 28px;
+		margin-bottom: 14px;
+	}
+	//general css for card contents in mobile layout
+	.card-with-image {
+		.content {
+			padding: 15px 18px;
+		}
+	}
+	//general css for section title
+	.title-wrap {
+		.see-few-all {
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+	//css for header
+	.site-header {
+		padding: 0px;
+		.search-mobile {
+			display: inline-block;
+			width: 25px;
+			height: 30px;
+			padding-top: 8px;
+		}
+		.search-item {
+			display: none;
+		}
+		.menu {
+			position: absolute;
+			background: $purple;
+			top: 0px;
+			width: 320px;
+			height: 100%;
+			z-index: 100;
+			padding-top: 70px;
+			left: -1000px;
+			flex-direction: column;
+			.nav-link {
+				color: $white;
+				text-transform: initial;
+				font-size: 22px;
+				line-height: 28px;
+				font-weight: 700;
+				padding: 10px 0px 5px 20px;
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+		.header-wrapper {
+			display: flex;
+			justify-content: space-between;
+		}
+		.hamburger {
+			display: block;
+			margin: 8px 0px;
+			width: 25px;
+			height: 25px;
+		}
+		.logo {
+			padding: 5px 0px;
+		}
+		.search {
+			&:after {
+				left: 3px;
+				top: 10px;
+			}
+		}
+		.toggle-display {
+			display: block;
+		}
+	}
+	//css for footer
+	.site-footer {
+		margin-top: 45px;
+	}
+	//css for hero section
+	.hero-section {
+		padding-bottom: 25px;
+		background-position: top 40px left 100px;
+		background-size: contain;
+		h1 {
+			font-size: 30px;
+			line-height: 36px;
+			margin-bottom: 5px;
+			max-width: 300px;
+		}
+		.hero-sub-title {
+			font-size: 20px;
+			line-height: 28px;
+			max-width: 250px;
+			margin: 0 auto;
+			margin-bottom: 80px;
+		}
+		// card css for hero section
+		.card-with-image {
+			.image-wrapper {
+				height: 50px;
+				margin-bottom: 0px;
+				img {
+					height: 50px;
+				}
+			}
+			.content {
+				padding: 5px 10px;
+			}
+			h3 {
+				font-size: 13px;
+				line-height: 20px;
+			}
+		}
+		h2 {
+			font-size: 15px;
+			line-height: 23px;
+			margin-bottom: 10px;
+		}
+	}
+	//common css for current events and organizers title section in mobile on index page
+	.current-organizers,
+	.current-events {
+		padding-bottom: 20px;
+		.title-wrap {
+			align-items: initial;
+			margin-bottom: 0px;
+			.wrap {
+				margin-bottom: 15px;
+				width: 100%;
+			}
+			.title {
+				margin-bottom: 5px;
+			}
+			.about {
+				position: initial;
+				max-width: 100%;
+			}
+			.see-few-all {
+				width: 95px;
+				text-align: right;
+			}
+		}
+	}
+	//common css for the sections with cards displayed in sliders
+	.event-mobile-wrap,
+	.organizers-mobile-wrap {
+		margin-left: -15px;
+		margin-right: -15px;
+		.card-with-image {
+			margin: 0px 7px 14px 7px;
+			.image-wrapper {
+				margin-bottom: 0px;
+			}
+			.content {
+				h3 {
+					font-size: 22px;
+					line-height: 28px;
+				}
+			}
+		}
+	}
+	//css to style card as rectangle under organization section in mobile slider
+	.organizers-mobile-wrap {
+		.card-with-image {
+			.image-wrapper {
+				height: 150px;
+				img {
+					height: 150px;
+				}
+			}
+		}
+	}
+	//general css for connect cards on all pages
+	.connect-card {
+		margin: 0px;
+		&.blue {
+			margin-right: 0px;
+		}
+		.connect-link {
+			width: 250px;
+			&:after {
+				top: 20px;
+				right: -30px;
+			}
+		}
+		.content {
+			padding: 30px 25px;
+			.connect-card-text {
+				margin-bottom: 60px;
+			}
+		}
+	}
 }

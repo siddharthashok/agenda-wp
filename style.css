@@ -13,7 +13,7 @@ h2 {
   font-weight: 700;
   font-size: 36px;
   line-height: 47px;
-  color: #55186B;
+  color: #55186b;
   margin-bottom: 10px;
 }
 
@@ -33,7 +33,8 @@ h2 {
   margin-bottom: 50px;
 }
 
-body, p {
+body,
+p {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -49,16 +50,48 @@ a:hover, a:active, a:focus {
   color: #000000;
 }
 a.active {
-  color: #55186B;
+  color: #55186b;
 }
 
 .clear {
   clear: both;
 }
 
+.button {
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 1.5em;
+  margin-top: 25px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+.button.hollow {
+  background-color: #ffffff;
+}
+.button.hollow:hover {
+  background-color: #ffffff;
+}
+.button.button-pink {
+  border: 1px solid #be2763;
+  color: #be2763;
+}
+.button.button-green {
+  border: 1px solid #288e8b;
+  color: #288e8b;
+}
+@media screen and (max-width: 39.99875em) {
+  .button {
+    width: 100%;
+  }
+}
+
+.links {
+  text-decoration: underline;
+}
+
 .site-header {
   background-color: #fafafa;
-  box-shadow: 0px 1px 3px #E6DAD8;
+  box-shadow: 0px 1px 3px #e6dad8;
 }
 .site-header .logo {
   float: left;
@@ -101,7 +134,7 @@ a.active {
   font-weight: 700;
   display: block;
   line-height: 60px;
-  color: #8012B7;
+  color: #8012b7;
 }
 
 .month {
@@ -110,7 +143,7 @@ a.active {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 600;
-  color: #8012B7;
+  color: #8012b7;
   line-height: 8px;
   text-transform: uppercase;
 }
@@ -119,17 +152,18 @@ a.active {
   position: relative;
   /*margin-bottom:15px; margin: 0px 7px 14px 7px; */
   background-color: #ffffff;
-  box-shadow: 0px 8px 16px #E5E5E5;
+  box-shadow: 0px 8px 16px #e5e5e5;
   display: block;
 }
 .card-with-image .card-title-wrap {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   padding: 12px 15px 10px 15px;
 }
 .card-with-image .card-title-wrap .category {
   margin: 0px 20px 0px 0px;
 }
-.card-with-image .category, .card-with-image .entrance-info {
+.card-with-image .category,
+.card-with-image .entrance-info {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -149,7 +183,10 @@ a.active {
 .card-with-image .content {
   padding: 15px;
 }
-.card-with-image .content .organizer, .card-with-image .content .location, .card-with-image .content .date, .card-with-image .content .cause {
+.card-with-image .content .organizer,
+.card-with-image .content .location,
+.card-with-image .content .date,
+.card-with-image .content .cause {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -159,7 +196,10 @@ a.active {
   margin: 0px 0px 0px 18px;
   position: relative;
 }
-.card-with-image .content .organizer:after, .card-with-image .content .location:after, .card-with-image .content .date:after, .card-with-image .content .cause:after {
+.card-with-image .content .organizer:after,
+.card-with-image .content .location:after,
+.card-with-image .content .date:after,
+.card-with-image .content .cause:after {
   content: "";
   background-image: url("img/black-detail.svg");
   width: 10px;
@@ -180,7 +220,7 @@ a.active {
   content: none;
 }
 .card-with-image .content .date {
-  color: #8012B7;
+  color: #8012b7;
 }
 .card-with-image .event-date {
   display: inline-block;
@@ -219,7 +259,7 @@ a.active {
 
 .connect-card {
   background-color: #ffffff;
-  box-shadow: 0px 8px 16px #E5E5E5;
+  box-shadow: 0px 8px 16px #e5e5e5;
   height: 100%;
 }
 .connect-card .content {
@@ -241,7 +281,7 @@ a.active {
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-  color: #FF0066;
+  color: #ff0066;
   bottom: 30px;
   font-weight: 600;
   position: absolute;
@@ -269,7 +309,7 @@ a.active {
 }
 
 .title-wrap a {
-  color: #8012B7;
+  color: #8012b7;
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -320,7 +360,8 @@ a.active {
   max-width: 600px;
 }
 
-.current-events .about, .current-organizers .about {
+.current-events .about,
+.current-organizers .about {
   margin-bottom: 0px;
 }
 
@@ -354,7 +395,7 @@ a.active {
 }
 
 .site-footer {
-  background-color: #55186B;
+  background-color: #55186b;
   height: 300px;
   margin-top: 90px;
 }
@@ -435,7 +476,8 @@ a.active {
   z-index: 300;
   display: inline-block;
 }
-.close-wrap .close-icon:before, .close-wrap .close-icon:after {
+.close-wrap .close-icon:before,
+.close-wrap .close-icon:after {
   position: absolute;
   left: 60px;
   content: "";
@@ -471,7 +513,7 @@ a.active {
 .slick-dots li button {
   font-size: 0;
   cursor: pointer;
-  border: 1px solid #8012B7;
+  border: 1px solid #8012b7;
   border-radius: 50%;
   height: 10px;
   width: 10px;
@@ -479,14 +521,14 @@ a.active {
   outline: none;
 }
 .slick-dots li.slick-active button {
-  background-color: #8012B7;
+  background-color: #8012b7;
   outline: none;
 }
 
 .section-title {
   display: block;
   margin-bottom: 10px;
-  color: #55186B;
+  color: #55186b;
 }
 
 .breadcrumbs {
@@ -494,12 +536,12 @@ a.active {
   margin-bottom: 0px;
 }
 .breadcrumbs a {
-  color: #000000;
+  color: #626262;
   font-size: 16px;
   line-height: 24px;
 }
 .breadcrumbs a.active {
-  color: #55186B;
+  color: #55186b;
 }
 .breadcrumbs a:hover {
   text-decoration: none;
@@ -515,7 +557,7 @@ a.active {
   background-image: url("img/green-arrow.svg");
 }
 .connect-event-orgnisation .connect-card .connect-link {
-  color: #288E8B;
+  color: #288e8b;
 }
 .connect-event-orgnisation .title-wrap {
   width: 100%;
@@ -523,15 +565,24 @@ a.active {
   padding: 20px 0px 15px 0px;
 }
 
-.more-about-orgnaizer, .event-details, .events-from-organiser, .organisation-details {
+.more-about-orgnaizer,
+.event-details,
+.events-from-organiser,
+.organisation-details {
   margin-bottom: 30px;
 }
 
-.event-details .date, .organisation-details .date, .contact .date, .agenda-contact .date {
+.event-details .date,
+.organisation-details .date,
+.contact .date,
+.agenda-contact .date {
   display: inline-block;
   margin: 15px 0px 30px 0px;
 }
-.event-details h6, .organisation-details h6, .contact h6, .agenda-contact h6 {
+.event-details h6,
+.organisation-details h6,
+.contact h6,
+.agenda-contact h6 {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -540,35 +591,64 @@ a.active {
   font-weight: 600;
   margin-bottom: 0px;
 }
-.event-details .card-with-image p, .organisation-details .card-with-image p, .contact .card-with-image p, .agenda-contact .card-with-image p {
+.event-details .card-with-image p,
+.organisation-details .card-with-image p,
+.contact .card-with-image p,
+.agenda-contact .card-with-image p {
   margin-bottom: 8px;
 }
-.event-details .card-with-image .content, .organisation-details .card-with-image .content, .contact .card-with-image .content, .agenda-contact .card-with-image .content {
+.event-details .card-with-image .content,
+.organisation-details .card-with-image .content,
+.contact .card-with-image .content,
+.agenda-contact .card-with-image .content {
   padding: 25px 15px 10px 15px;
 }
-.event-details .card-with-image .purple-text, .organisation-details .card-with-image .purple-text, .contact .card-with-image .purple-text, .agenda-contact .card-with-image .purple-text {
+.event-details .card-with-image .purple-text,
+.organisation-details .card-with-image .purple-text,
+.contact .card-with-image .purple-text,
+.agenda-contact .card-with-image .purple-text {
   margin: 0px 0px 10px 8px;
-  color: #8012B7;
+  color: #8012b7;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   text-transform: uppercase;
   margin-left: 0px;
 }
-.event-details .card-with-image .purple-text:after, .organisation-details .card-with-image .purple-text:after, .contact .card-with-image .purple-text:after, .agenda-contact .card-with-image .purple-text:after {
+.event-details .card-with-image .purple-text:after,
+.organisation-details .card-with-image .purple-text:after,
+.contact .card-with-image .purple-text:after,
+.agenda-contact .card-with-image .purple-text:after {
   content: none;
 }
-.event-details .card-with-image .share-events-label, .organisation-details .card-with-image .share-events-label, .contact .card-with-image .share-events-label, .agenda-contact .card-with-image .share-events-label {
+.event-details .card-with-image .share-events-label,
+.organisation-details .card-with-image .share-events-label,
+.contact .card-with-image .share-events-label,
+.agenda-contact .card-with-image .share-events-label {
   margin-top: 16px;
 }
-.event-details .card-with-image .share-events, .event-details .card-with-image .read-more, .organisation-details .card-with-image .share-events, .organisation-details .card-with-image .read-more, .contact .card-with-image .share-events, .contact .card-with-image .read-more, .agenda-contact .card-with-image .share-events, .agenda-contact .card-with-image .read-more {
+.event-details .card-with-image .share-events,
+.event-details .card-with-image .read-more,
+.organisation-details .card-with-image .share-events,
+.organisation-details .card-with-image .read-more,
+.contact .card-with-image .share-events,
+.contact .card-with-image .read-more,
+.agenda-contact .card-with-image .share-events,
+.agenda-contact .card-with-image .read-more {
   position: relative;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   display: block;
 }
-.event-details .card-with-image .share-events:before, .event-details .card-with-image .read-more:before, .organisation-details .card-with-image .share-events:before, .organisation-details .card-with-image .read-more:before, .contact .card-with-image .share-events:before, .contact .card-with-image .read-more:before, .agenda-contact .card-with-image .share-events:before, .agenda-contact .card-with-image .read-more:before {
+.event-details .card-with-image .share-events:before,
+.event-details .card-with-image .read-more:before,
+.organisation-details .card-with-image .share-events:before,
+.organisation-details .card-with-image .read-more:before,
+.contact .card-with-image .share-events:before,
+.contact .card-with-image .read-more:before,
+.agenda-contact .card-with-image .share-events:before,
+.agenda-contact .card-with-image .read-more:before {
   content: "";
   background-image: url("img/download.svg");
   width: 20px;
@@ -577,15 +657,24 @@ a.active {
   display: inline-block;
   margin-right: 5px;
 }
-.event-details .card-with-image .read-more:before, .organisation-details .card-with-image .read-more:before, .contact .card-with-image .read-more:before, .agenda-contact .card-with-image .read-more:before {
+.event-details .card-with-image .read-more:before,
+.organisation-details .card-with-image .read-more:before,
+.contact .card-with-image .read-more:before,
+.agenda-contact .card-with-image .read-more:before {
   width: 22px;
   height: 21px;
   background-image: url("img/download-black.svg");
 }
-.event-details .card-with-image .card-title-wrap .entrance-info, .organisation-details .card-with-image .card-title-wrap .entrance-info, .contact .card-with-image .card-title-wrap .entrance-info, .agenda-contact .card-with-image .card-title-wrap .entrance-info {
+.event-details .card-with-image .card-title-wrap .entrance-info,
+.organisation-details .card-with-image .card-title-wrap .entrance-info,
+.contact .card-with-image .card-title-wrap .entrance-info,
+.agenda-contact .card-with-image .card-title-wrap .entrance-info {
   margin-bottom: 0px;
 }
-.event-details .card-with-image .hashtags, .organisation-details .card-with-image .hashtags, .contact .card-with-image .hashtags, .agenda-contact .card-with-image .hashtags {
+.event-details .card-with-image .hashtags,
+.organisation-details .card-with-image .hashtags,
+.contact .card-with-image .hashtags,
+.agenda-contact .card-with-image .hashtags {
   text-transform: uppercase;
   font-family: "Overpass", sans-serif;
   font-style: normal;
@@ -594,10 +683,16 @@ a.active {
   font-size: 14px;
   line-height: 18px;
 }
-.event-details .card-with-image .event-description, .organisation-details .card-with-image .event-description, .contact .card-with-image .event-description, .agenda-contact .card-with-image .event-description {
+.event-details .card-with-image .event-description,
+.organisation-details .card-with-image .event-description,
+.contact .card-with-image .event-description,
+.agenda-contact .card-with-image .event-description {
   margin: 20px 0px 0px 0px;
 }
-.event-details .card-with-image .event-description .next-para, .organisation-details .card-with-image .event-description .next-para, .contact .card-with-image .event-description .next-para, .agenda-contact .card-with-image .event-description .next-para {
+.event-details .card-with-image .event-description .next-para,
+.organisation-details .card-with-image .event-description .next-para,
+.contact .card-with-image .event-description .next-para,
+.agenda-contact .card-with-image .event-description .next-para {
   margin: 12px 0px;
 }
 
@@ -628,7 +723,9 @@ a.active {
 .event-details .card-with-image .availability.last {
   margin-bottom: 16px;
 }
-.event-details .card-with-image .name, .event-details .card-with-image .email, .event-details .card-with-image .phone-number {
+.event-details .card-with-image .name,
+.event-details .card-with-image .email,
+.event-details .card-with-image .phone-number {
   font-size: 12px;
   line-height: 19px;
   margin-bottom: 0px;
@@ -692,7 +789,7 @@ a.active {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   display: inline-block;
 }
 .agenda-contact .contact-details {
@@ -705,7 +802,21 @@ a.active {
 }
 
 .mobile-header {
-  background-color: #55186B;
+  background-color: #55186b;
+}
+
+/*Publish org page styles*/
+.publish-org-page {
+  background-image: url(img/blue-patch-full.svg);
+  background-repeat: no-repeat;
+  background-position: 0% 16%;
+}
+.publish-org-page .title {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
 }
 
 /* start of media queries- Small only */
@@ -725,7 +836,6 @@ a.active {
   }
   .breadcrumbs a {
     font-size: 12px;
-    font-weight: 100;
     line-height: 19px;
   }
 
@@ -769,7 +879,7 @@ a.active {
   }
   .site-header .menu {
     position: absolute;
-    background: #55186B;
+    background: #55186b;
     top: 0px;
     width: 320px;
     height: 100%;
@@ -852,40 +962,50 @@ a.active {
     margin-bottom: 10px;
   }
 
-  .current-organizers, .current-events {
+  .current-organizers,
+.current-events {
     padding-bottom: 20px;
   }
-  .current-organizers .title-wrap, .current-events .title-wrap {
+  .current-organizers .title-wrap,
+.current-events .title-wrap {
     align-items: initial;
     margin-bottom: 0px;
   }
-  .current-organizers .title-wrap .wrap, .current-events .title-wrap .wrap {
+  .current-organizers .title-wrap .wrap,
+.current-events .title-wrap .wrap {
     margin-bottom: 15px;
     width: 100%;
   }
-  .current-organizers .title-wrap .title, .current-events .title-wrap .title {
+  .current-organizers .title-wrap .title,
+.current-events .title-wrap .title {
     margin-bottom: 5px;
   }
-  .current-organizers .title-wrap .about, .current-events .title-wrap .about {
+  .current-organizers .title-wrap .about,
+.current-events .title-wrap .about {
     position: initial;
     max-width: 100%;
   }
-  .current-organizers .title-wrap .see-few-all, .current-events .title-wrap .see-few-all {
+  .current-organizers .title-wrap .see-few-all,
+.current-events .title-wrap .see-few-all {
     width: 95px;
     text-align: right;
   }
 
-  .event-mobile-wrap, .organizers-mobile-wrap {
+  .event-mobile-wrap,
+.organizers-mobile-wrap {
     margin-left: -15px;
     margin-right: -15px;
   }
-  .event-mobile-wrap .card-with-image, .organizers-mobile-wrap .card-with-image {
+  .event-mobile-wrap .card-with-image,
+.organizers-mobile-wrap .card-with-image {
     margin: 0px 7px 14px 7px;
   }
-  .event-mobile-wrap .card-with-image .image-wrapper, .organizers-mobile-wrap .card-with-image .image-wrapper {
+  .event-mobile-wrap .card-with-image .image-wrapper,
+.organizers-mobile-wrap .card-with-image .image-wrapper {
     margin-bottom: 0px;
   }
-  .event-mobile-wrap .card-with-image .content h3, .organizers-mobile-wrap .card-with-image .content h3 {
+  .event-mobile-wrap .card-with-image .content h3,
+.organizers-mobile-wrap .card-with-image .content h3 {
     font-size: 22px;
     line-height: 28px;
   }
