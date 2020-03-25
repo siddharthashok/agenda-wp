@@ -15,7 +15,7 @@ get_header();
     <div class="grid-container">
         <nav>
             <ul class="breadcrumbs">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="<?= get_site_url(); ?>">Home</a></li>
                 <li><a href="#" class="active">Organisations</a></li>
             </ul>
         </nav>
