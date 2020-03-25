@@ -39,6 +39,7 @@ $creame: #e6dad8;
 $nero: #242424;
 $dark-pink: #be2763;
 $dark-grey: #626262;
+$form-grey: #f1f1f1;
 // Headers
 h1 {
 	@include bold();
@@ -53,7 +54,6 @@ h2 {
 	color: $purple;
 	margin-bottom: 10px;
 }
-
 .about {
 	font-size: 24px;
 	line-height: 32px;
@@ -811,6 +811,298 @@ a {
 		@include bold();
 		font-size: 22px;
 		line-height: 28px;
+	}
+}
+/*Publish form styles*/
+.forms {
+	.tab {
+		display: none;
+	}
+	.form-close {
+		padding: 20px 0;
+		display: flex;
+		justify-content: space-between;
+		h4 {
+			@include semi-bold();
+			margin: 0;
+		}
+		.form-close-button {
+			outline: none;
+			cursor: pointer;
+			h4 {
+				display: inline;
+				font-weight: normal;
+			}
+			img {
+				margin-left: 6px;
+			}
+		}
+	}
+	.form-header {
+		&.form-publish {
+			background: $dark-pink;
+		}
+		&.form-org {
+			background: $green;
+		}
+		padding: 18px 0;
+		color: $white;
+		margin-bottom: 15px;
+		h3 {
+			@include bold();
+			font-size: 22px;
+			line-height: 28px;
+		}
+		h4 {
+			@include semi-bold();
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+	.form-body {
+		.full-width-label {
+			font-size: 12px;
+			line-height: 19px;
+		}
+		.full-width {
+			background: $form-grey;
+			border: none;
+			padding: 11px;
+			width: 100%;
+		}
+		fieldset {
+			margin-top: 22px;
+			margin-bottom: 35px;
+			label {
+				display: block;
+				margin: 0;
+			}
+		}
+		textarea {
+			height: 155px;
+		}
+		.styled-checkbox {
+			position: absolute; // take it out of document flow
+			opacity: 0; // hide it
+
+			& + label {
+				position: relative;
+				cursor: pointer;
+				padding: 0;
+			}
+
+			&.form-publish + label:before {
+				border: solid 2px $dark-pink;
+			}
+
+			&.form-org + label:before {
+				border: solid 2px $green;
+			}
+
+			// Box.
+			& + label:before {
+				content: "";
+				margin-right: 10px;
+				display: inline-block;
+				vertical-align: middle;
+				width: 20px;
+				height: 20px;
+				background: $white;
+				border-radius: 3px;
+			}
+
+			// Box hover
+			&.form-publish:hover + label:before {
+				background: $dark-pink;
+			}
+			&.form-org:hover + label:before {
+				background: $green;
+			}
+
+			// Box checked
+			&.form-publish:checked + label:before {
+				background: $dark-pink;
+			}
+			&.form-org:checked + label:before {
+				background: $green;
+			}
+
+			// Checkmark. Could be replaced with an image
+			&:checked + label:after {
+				content: "";
+				position: absolute;
+				left: 5px;
+				top: 11px;
+				background: white;
+				width: 2px;
+				height: 2px;
+				box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white,
+					4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+				transform: rotate(45deg);
+			}
+		}
+		.styled-radio {
+			&:checked,
+			&:not(:checked) {
+				position: absolute;
+				left: -9999px;
+			}
+			&:checked + label,
+			&:not(:checked) + label {
+				position: relative;
+				padding-left: 35px;
+				cursor: pointer;
+				line-height: 20px;
+				display: inline-block;
+				margin-bottom: 15px;
+			}
+			&.form-publish:checked + label:before,
+			&.form-publish:not(:checked) + label:before {
+				border: 2px solid $dark-pink;
+			}
+
+			&.form-org:checked + label:before,
+			&.form-org:not(:checked) + label:before {
+				border: 2px solid $green;
+			}
+
+			&:checked + label:before,
+			&:not(:checked) + label:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 27px;
+				height: 27px;
+
+				border-radius: 100%;
+				background: $white;
+			}
+
+			&.form-publish:checked + label:after,
+			&.form-publish:not(:checked) + label:after {
+				background: $dark-pink;
+			}
+			&.form-org:checked + label:after,
+			&.form-org:not(:checked) + label:after {
+				background: $green;
+			}
+
+			&:checked + label:after,
+			&:not(:checked) + label:after {
+				content: "";
+				width: 19px;
+				height: 19px;
+
+				position: absolute;
+				top: 4px;
+				left: 4px;
+				border-radius: 100%;
+				-webkit-transition: all 0.2s ease;
+				transition: all 0.2s ease;
+			}
+			&:not(:checked) + label:after {
+				opacity: 0;
+				-webkit-transform: scale(0);
+				transform: scale(0);
+			}
+			&:checked + label:after {
+				opacity: 1;
+				-webkit-transform: scale(1);
+				transform: scale(1);
+			}
+		}
+		.spacer {
+			margin-top: 30px;
+		}
+		.form-links {
+			position: relative;
+			display: block;
+			&:before {
+				content: "";
+				background-image: url("img/form-icon.svg");
+				width: 16px;
+				height: 22px;
+				display: inline-block;
+				vertical-align: text-bottom;
+				margin-right: 5px;
+			}
+		}
+		.form-submit {
+			.button {
+				border-radius: 35px;
+				@include semi-bold();
+			}
+			@media screen and (max-width: 39.99875em) {
+				text-align: center;
+				.button {
+					padding: 1.5rem 35px;
+					width: auto;
+				}
+			}
+		}
+	}
+	.form-buttons {
+		padding: 40px 0;
+
+		.btns {
+			@include semi-bold();
+			&.form-publish {
+				color: $dark-pink;
+			}
+			&.form-org {
+				color: $green;
+			}
+
+			text-transform: uppercase;
+			outline: none;
+			cursor: pointer;
+		}
+		#prevBtn {
+			&.form-publish {
+				&::before {
+					background-image: url("img/arrow-forward-dark.svg");
+				}
+			}
+			&.form-org {
+				&::before {
+					background-image: url("img/green-arrow.svg");
+				}
+			}
+
+			&::before {
+				content: "";
+				transform: rotate(180deg);
+				width: 34px;
+				height: 19px;
+				display: inline-block;
+				position: relative;
+				top: 5px;
+				right: 5px;
+			}
+		}
+		#nextBtn {
+			float: right;
+			&.form-publish {
+				&::after {
+					background-image: url("img/arrow-forward-dark.svg");
+				}
+			}
+			&.form-org {
+				&::after {
+					background-image: url("img/green-arrow.svg");
+				}
+			}
+			&::after {
+				content: "";
+				width: 34px;
+				height: 19px;
+				display: inline-block;
+				position: relative;
+				top: 5px;
+				left: 5px;
+			}
+		}
 	}
 }
 

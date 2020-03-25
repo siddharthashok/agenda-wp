@@ -819,6 +819,264 @@ a.active {
   line-height: 28px;
 }
 
+/*Publish form styles*/
+.forms .tab {
+  display: none;
+}
+.forms .form-close {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.forms .form-close h4 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+}
+.forms .form-close .form-close-button {
+  outline: none;
+  cursor: pointer;
+}
+.forms .form-close .form-close-button h4 {
+  display: inline;
+  font-weight: normal;
+}
+.forms .form-close .form-close-button img {
+  margin-left: 6px;
+}
+.forms .form-header {
+  padding: 18px 0;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+.forms .form-header.form-publish {
+  background: #be2763;
+}
+.forms .form-header.form-org {
+  background: #288e8b;
+}
+.forms .form-header h3 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+}
+.forms .form-header h4 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+.forms .form-body .full-width-label {
+  font-size: 12px;
+  line-height: 19px;
+}
+.forms .form-body .full-width {
+  background: #f1f1f1;
+  border: none;
+  padding: 11px;
+  width: 100%;
+}
+.forms .form-body fieldset {
+  margin-top: 22px;
+  margin-bottom: 35px;
+}
+.forms .form-body fieldset label {
+  display: block;
+  margin: 0;
+}
+.forms .form-body textarea {
+  height: 155px;
+}
+.forms .form-body .styled-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+.forms .form-body .styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+.forms .form-body .styled-checkbox.form-publish + label:before {
+  border: solid 2px #be2763;
+}
+.forms .form-body .styled-checkbox.form-org + label:before {
+  border: solid 2px #288e8b;
+}
+.forms .form-body .styled-checkbox + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 3px;
+}
+.forms .form-body .styled-checkbox.form-publish:hover + label:before {
+  background: #be2763;
+}
+.forms .form-body .styled-checkbox.form-org:hover + label:before {
+  background: #288e8b;
+}
+.forms .form-body .styled-checkbox.form-publish:checked + label:before {
+  background: #be2763;
+}
+.forms .form-body .styled-checkbox.form-org:checked + label:before {
+  background: #288e8b;
+}
+.forms .form-body .styled-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 11px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+.forms .form-body .styled-radio:checked, .forms .form-body .styled-radio:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.forms .form-body .styled-radio:checked + label, .forms .form-body .styled-radio:not(:checked) + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.forms .form-body .styled-radio.form-publish:checked + label:before, .forms .form-body .styled-radio.form-publish:not(:checked) + label:before {
+  border: 2px solid #be2763;
+}
+.forms .form-body .styled-radio.form-org:checked + label:before, .forms .form-body .styled-radio.form-org:not(:checked) + label:before {
+  border: 2px solid #288e8b;
+}
+.forms .form-body .styled-radio:checked + label:before, .forms .form-body .styled-radio:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  border-radius: 100%;
+  background: #ffffff;
+}
+.forms .form-body .styled-radio.form-publish:checked + label:after, .forms .form-body .styled-radio.form-publish:not(:checked) + label:after {
+  background: #be2763;
+}
+.forms .form-body .styled-radio.form-org:checked + label:after, .forms .form-body .styled-radio.form-org:not(:checked) + label:after {
+  background: #288e8b;
+}
+.forms .form-body .styled-radio:checked + label:after, .forms .form-body .styled-radio:not(:checked) + label:after {
+  content: "";
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.forms .form-body .styled-radio:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.forms .form-body .styled-radio:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.forms .form-body .spacer {
+  margin-top: 30px;
+}
+.forms .form-body .form-links {
+  position: relative;
+  display: block;
+}
+.forms .form-body .form-links:before {
+  content: "";
+  background-image: url("img/form-icon.svg");
+  width: 16px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+.forms .form-body .form-submit .button {
+  border-radius: 35px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+@media screen and (max-width: 39.99875em) {
+  .forms .form-body .form-submit {
+    text-align: center;
+  }
+  .forms .form-body .form-submit .button {
+    padding: 1.5rem 35px;
+    width: auto;
+  }
+}
+.forms .form-buttons {
+  padding: 40px 0;
+}
+.forms .form-buttons .btns {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+.forms .form-buttons .btns.form-publish {
+  color: #be2763;
+}
+.forms .form-buttons .btns.form-org {
+  color: #288e8b;
+}
+.forms .form-buttons #prevBtn.form-publish::before {
+  background-image: url("img/arrow-forward-dark.svg");
+}
+.forms .form-buttons #prevBtn.form-org::before {
+  background-image: url("img/green-arrow.svg");
+}
+.forms .form-buttons #prevBtn::before {
+  content: "";
+  transform: rotate(180deg);
+  width: 34px;
+  height: 19px;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+.forms .form-buttons #nextBtn {
+  float: right;
+}
+.forms .form-buttons #nextBtn.form-publish::after {
+  background-image: url("img/arrow-forward-dark.svg");
+}
+.forms .form-buttons #nextBtn.form-org::after {
+  background-image: url("img/green-arrow.svg");
+}
+.forms .form-buttons #nextBtn::after {
+  content: "";
+  width: 34px;
+  height: 19px;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
 /* start of media queries- Small only */
 @media screen and (max-width: 39.9375em) {
   .grid-container {
