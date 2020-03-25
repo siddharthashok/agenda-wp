@@ -148,4 +148,5 @@ get_header();
     </form>
 </section>
 
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
