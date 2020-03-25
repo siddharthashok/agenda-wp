@@ -75,3 +75,12 @@ function fixStepIndicator(n) {
 	//... and adds the "active" class to the current step:
 	x[n].className += " active";
 }
+
+//close the form
+$(".form-close-button").on("click", function() {
+	$(this)
+		.parent()
+		.parent()
+		.parent()
+		.fadeOut();
+});
