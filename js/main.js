@@ -27,7 +27,6 @@ function nextPrev(n) {
 	// Exit the function if any field in the current tab is invalid:
 	if (n == 1 && !validateForm()) return false;
 	// Hide the current tab:
-	console.log(currentTab);
 	x[currentTab].style.display = "none";
 	// Increase or decrease the current tab by 1:
 	currentTab = currentTab + n;

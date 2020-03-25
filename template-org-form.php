@@ -70,17 +70,17 @@ get_header();
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
                     <p><label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label><textarea class="full-width" placeholder="input"></textarea></p>
-                   <fieldset>
+                    <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-1"><label for="check2-1"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-2"><label for="check2-2"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-3"><label for="check2-3"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-4"><label for="check2-4"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-5"><label for="check2-5">Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-6"><label for="check2-6"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-7"><label for="check2-7"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-8"><label for="check2-8"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-9"><label for="check2-9"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-1"><label for="check3-1"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-2"><label for="check3-2"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-3"><label for="check3-3"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-4"><label for="check3-4"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-5"><label for="check3-5">Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-6"><label for="check3-6"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-7"><label for="check3-7"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-8"><label for="check3-8"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-9"><label for="check3-9"> Jämställdhet</label>
                     </fieldset>
                     <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
                     <p class="form-links"><a>Ladda upp logga</a></p>
@@ -102,14 +102,14 @@ get_header();
                     <p><label class="full-width-label">Namn på kontaktperson*</label><input class="full-width" placeholder="Förnamn och Efternamn"></p>
                     <p><label class="full-width-label">Mailadress kontaktperson*</label><input class="full-width" placeholder="ex. fornamn@agendajamlikhet.se"></p>
                     <p><label class="full-width-label">Telefonnummer till kontaktperson*</label><input class="full-width" placeholder="ex. 0046 708790464"></p>
+                    <p><label class="full-width-label">Organisationsnummer</label><input class="full-width" placeholder="ex. 192301018890"></p>
                     <p><label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label><textarea class="full-width" placeholder="Om du har frågor..."></textarea></p>
                     <fieldset>
-                        <p>Markera de svarsalternativ som stämmer med lokalen*</p>
-                        <input class="styled-radio" type="radio" id="radio-1" name="radio-group"> <label for="radio-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links">värderingar och riktlinjer</a> för anslutna organisationer. </label>
-                        <input class="styled-radio" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
+                        <input class="styled-radio form-org" type="radio" id="radio-1" name="radio-group"> <label for="radio-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets<a class="links">värderingar och riktlinjer</a>för anslutna organisationer.</label>
+                        <input class="styled-radio form-org" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
                     </fieldset>
                     <div class="form-submit">
-                        <a class=" button button-pink hollow small small-only-expanded" href="#">SKICKA FORMULÄR</a>
+                        <a class=" button button-green hollow small small-only-expanded" href="#">SKICKA FORMULÄR</a>
                     </div>
 
                 </div>

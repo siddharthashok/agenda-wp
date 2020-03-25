@@ -891,7 +891,7 @@ a {
 				padding: 0;
 			}
 
-			&.form-org + label:before {
+			&.form-publish + label:before {
 				border: solid 2px $dark-pink;
 			}
 
@@ -912,13 +912,19 @@ a {
 			}
 
 			// Box hover
-			&:hover + label:before {
-				background: #be2763;
+			&.form-publish:hover + label:before {
+				background: $dark-pink;
+			}
+			&.form-org:hover + label:before {
+				background: $green;
 			}
 
 			// Box checked
-			&:checked + label:before {
-				background: #be2763;
+			&.form-publish:checked + label:before {
+				background: $dark-pink;
+			}
+			&.form-org:checked + label:before {
+				background: $green;
 			}
 
 			// Checkmark. Could be replaced with an image
@@ -950,6 +956,16 @@ a {
 				display: inline-block;
 				margin-bottom: 15px;
 			}
+			&.form-publish:checked + label:before,
+			&.form-publish:not(:checked) + label:before {
+				border: 2px solid $dark-pink;
+			}
+
+			&.form-org:checked + label:before,
+			&.form-org:not(:checked) + label:before {
+				border: 2px solid $green;
+			}
+
 			&:checked + label:before,
 			&:not(:checked) + label:before {
 				content: "";
@@ -958,16 +974,26 @@ a {
 				top: 0;
 				width: 27px;
 				height: 27px;
-				border: 2px solid $dark-pink;
+
 				border-radius: 100%;
 				background: $white;
 			}
+
+			&.form-publish:checked + label:after,
+			&.form-publish:not(:checked) + label:after {
+				background: $dark-pink;
+			}
+			&.form-org:checked + label:after,
+			&.form-org:not(:checked) + label:after {
+				background: $green;
+			}
+
 			&:checked + label:after,
 			&:not(:checked) + label:after {
 				content: "";
 				width: 19px;
 				height: 19px;
-				background: $dark-pink;
+
 				position: absolute;
 				top: 4px;
 				left: 4px;

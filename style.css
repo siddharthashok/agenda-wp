@@ -900,7 +900,7 @@ a.active {
   cursor: pointer;
   padding: 0;
 }
-.forms .form-body .styled-checkbox.form-org + label:before {
+.forms .form-body .styled-checkbox.form-publish + label:before {
   border: solid 2px #be2763;
 }
 .forms .form-body .styled-checkbox.form-org + label:before {
@@ -916,11 +916,17 @@ a.active {
   background: #ffffff;
   border-radius: 3px;
 }
-.forms .form-body .styled-checkbox:hover + label:before {
+.forms .form-body .styled-checkbox.form-publish:hover + label:before {
   background: #be2763;
 }
-.forms .form-body .styled-checkbox:checked + label:before {
+.forms .form-body .styled-checkbox.form-org:hover + label:before {
+  background: #288e8b;
+}
+.forms .form-body .styled-checkbox.form-publish:checked + label:before {
   background: #be2763;
+}
+.forms .form-body .styled-checkbox.form-org:checked + label:before {
+  background: #288e8b;
 }
 .forms .form-body .styled-checkbox:checked + label:after {
   content: "";
@@ -945,6 +951,12 @@ a.active {
   display: inline-block;
   margin-bottom: 15px;
 }
+.forms .form-body .styled-radio.form-publish:checked + label:before, .forms .form-body .styled-radio.form-publish:not(:checked) + label:before {
+  border: 2px solid #be2763;
+}
+.forms .form-body .styled-radio.form-org:checked + label:before, .forms .form-body .styled-radio.form-org:not(:checked) + label:before {
+  border: 2px solid #288e8b;
+}
 .forms .form-body .styled-radio:checked + label:before, .forms .form-body .styled-radio:not(:checked) + label:before {
   content: "";
   position: absolute;
@@ -952,15 +964,19 @@ a.active {
   top: 0;
   width: 27px;
   height: 27px;
-  border: 2px solid #be2763;
   border-radius: 100%;
   background: #ffffff;
+}
+.forms .form-body .styled-radio.form-publish:checked + label:after, .forms .form-body .styled-radio.form-publish:not(:checked) + label:after {
+  background: #be2763;
+}
+.forms .form-body .styled-radio.form-org:checked + label:after, .forms .form-body .styled-radio.form-org:not(:checked) + label:after {
+  background: #288e8b;
 }
 .forms .form-body .styled-radio:checked + label:after, .forms .form-body .styled-radio:not(:checked) + label:after {
   content: "";
   width: 19px;
   height: 19px;
-  background: #be2763;
   position: absolute;
   top: 4px;
   left: 4px;
