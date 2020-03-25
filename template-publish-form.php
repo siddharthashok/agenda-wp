@@ -45,7 +45,10 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
-                    <p><label class="full-width-label">Titel på event*</label><input name="" class="full-width" placeholder="input"></p>
+                    <p>
+                        <label class="full-width-label">Titel på event*</label>
+                        <input name="" class="full-width" placeholder="input">
+                    </p>
                     <p><label class="full-width-label">Arrangör*</label><input name="" class="full-width" placeholder="t.ex. Agenda Jamliket"></p>
                     <p><label class="full-width-label">Datum för event*</label><input name="" class="full-width" placeholder="Datumformat"></p>
                     <p><label class="full-width-label">Tidpunkt för event*</label><input name="" class="full-width" placeholder="Ange start och sluttidpunkt"></p>

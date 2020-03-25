@@ -1076,6 +1076,9 @@ a.active {
   top: 5px;
   left: 5px;
 }
+.forms .error {
+  color: red;
+}
 
 /* start of media queries- Small only */
 @media screen and (max-width: 39.9375em) {

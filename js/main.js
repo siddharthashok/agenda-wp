@@ -77,10 +77,10 @@ function fixStepIndicator(n) {
 }
 
 //close the form
-$(".form-close-button").on("click", function() {
-	$(this)
-		.parent()
-		.parent()
-		.parent()
-		.fadeOut();
-});
+// $(".form-close-button").on("click", function() {
+// 	$(this)
+// 		.parent()
+// 		.parent()
+// 		.parent()
+// 		.fadeOut();
+// });
