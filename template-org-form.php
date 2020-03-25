@@ -20,7 +20,7 @@ get_header();
         </div>
 
         <div class="tab">
-            <div class="form-header form-org form-org">
+            <div class="form-header form-org ">
                 <div class="grid-container ">
                     <h4>Steg 1 av 4</h4>
                     <h3>Introduktion</h3>
@@ -62,30 +62,25 @@ get_header();
             <div class="form-header form-org">
                 <div class="grid-container ">
                     <h4>Steg 3 av 4</h4>
-                    <h3>Beskrivning av event</h3>
+                    <h3>Beskrivning av verksamhet</h3>
                 </div>
             </div>
             <div class="form-body">
                 <div class="grid-container ">
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
-                    <p><label class="full-width-label">Beskrivning av event (max 1250 tecken)*</label><textarea class="full-width" placeholder="input"></textarea></p>
-                    <p><label class="full-width-label">Kostnad för event*</label><input class="full-width" placeholder="t.ex. 0kr"></p>
-                    <p><label class="full-width-label">Hemsida för evenemang</label><input class="full-width" placeholder="t.ex. 0kr"></p>
-                    <p><label class="full-width-label">Länk till facebook-event</label><input class="full-width" placeholder="t.ex. 0kr"></p>
-                    <p><label class="full-width-label">Länk till arrangörens hemsida</label><input class="full-width" placeholder="t.ex. 0kr "></p>
-
-                    <fieldset>
+                    <p><label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label><textarea class="full-width" placeholder="input"></textarea></p>
+                   <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-1"><label for="check2-1"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-2"><label for="check2-2"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-3"><label for="check2-3"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-4"><label for="check2-4"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-5"><label for="check2-5">Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-6"><label for="check2-6"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-7"><label for="check2-7"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-8"><label for="check2-8"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-9"><label for="check2-9"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-1"><label for="check2-1"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-2"><label for="check2-2"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-3"><label for="check2-3"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-4"><label for="check2-4"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-5"><label for="check2-5">Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-6"><label for="check2-6"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-7"><label for="check2-7"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-8"><label for="check2-8"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check2" type="checkbox" id="check2-9"><label for="check2-9"> Jämställdhet</label>
                     </fieldset>
                     <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
                     <p class="form-links"><a>Ladda upp logga</a></p>

@@ -53,13 +53,13 @@ get_header();
                     <p><label class="full-width-label">Adress*</label><input class="full-width" placeholder="tex Annedalsseminariet, gbg Universitet "></p>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-1"><label for="check1-1"> Ramp finns</label>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-2"><label for="check1-2"> Eventet är på bottenplan</label>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-3"><label for="check1-3"> Hiss finns</label>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-4"><label for="check1-4"> Hörselslinga</label>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-5"><label for="check1-5"> Syntolkning</label>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-6"><label for="check1-6"> Sittplatser</label>
-                        <input class="styled-checkbox" form="check1" type="checkbox" id="check1-7"><label for="check1-7"> Teckenspråkstolkning</label>
+                        <input class="styled-checkbox form-publish " form="check1" type="checkbox" id="check1-1"><label for="check1-1"> Ramp finns</label>
+                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-2"><label for="check1-2"> Eventet är på bottenplan</label>
+                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-3"><label for="check1-3"> Hiss finns</label>
+                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-4"><label for="check1-4"> Hörselslinga</label>
+                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-5"><label for="check1-5"> Syntolkning</label>
+                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-6"><label for="check1-6"> Sittplatser</label>
+                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-7"><label for="check1-7"> Teckenspråkstolkning</label>
                     </fieldset>
                 </div>
             </div>
@@ -83,15 +83,15 @@ get_header();
 
                     <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-1"><label for="check2-1"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-2"><label for="check2-2"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-3"><label for="check2-3"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-4"><label for="check2-4"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-5"><label for="check2-5">Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-6"><label for="check2-6"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-7"><label for="check2-7"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-8"><label for="check2-8"> Jämställdhet</label>
-                        <input class="styled-checkbox" form="check2" type="checkbox" id="check2-9"><label for="check2-9"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-1"><label for="check2-1"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-2"><label for="check2-2"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-3"><label for="check2-3"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-4"><label for="check2-4"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-5"><label for="check2-5">Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-6"><label for="check2-6"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish " form="check2" type="checkbox" id="check2-7"><label for="check2-7"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-8"><label for="check2-8"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-9"><label for="check2-9"> Jämställdhet</label>
                     </fieldset>
                     <fieldset>
                         <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
@@ -119,8 +119,8 @@ get_header();
                     <p><label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label><textarea class="full-width" placeholder="Om du har frågor..."></textarea></p>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
-                        <input class="styled-radio" type="radio" id="radio-1" name="radio-group"> <label for="radio-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links">värderingar och riktlinjer</a> för anslutna organisationer. </label>
-                        <input class="styled-radio" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
+                        <input class="styled-radio form-publish" type="radio" id="radio-1" name="radio-group"> <label for="radio-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links">värderingar och riktlinjer</a> för anslutna organisationer. </label>
+                        <input class="styled-radio form-publish" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
                     </fieldset>
                     <div class="form-submit">
                         <a class=" button button-pink hollow small small-only-expanded" href="#">SKICKA FORMULÄR</a>

@@ -900,6 +900,12 @@ a.active {
   cursor: pointer;
   padding: 0;
 }
+.forms .form-body .styled-checkbox.form-org + label:before {
+  border: solid 2px #be2763;
+}
+.forms .form-body .styled-checkbox.form-org + label:before {
+  border: solid 2px #288e8b;
+}
 .forms .form-body .styled-checkbox + label:before {
   content: "";
   margin-right: 10px;
@@ -908,7 +914,6 @@ a.active {
   width: 20px;
   height: 20px;
   background: #ffffff;
-  border: solid 2px #be2763;
   border-radius: 3px;
 }
 .forms .form-body .styled-checkbox:hover + label:before {

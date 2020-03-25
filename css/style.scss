@@ -891,6 +891,14 @@ a {
 				padding: 0;
 			}
 
+			&.form-org + label:before {
+				border: solid 2px $dark-pink;
+			}
+
+			&.form-org + label:before {
+				border: solid 2px $green;
+			}
+
 			// Box.
 			& + label:before {
 				content: "";
@@ -900,7 +908,6 @@ a {
 				width: 20px;
 				height: 20px;
 				background: $white;
-				border: solid 2px #be2763;
 				border-radius: 3px;
 			}
 
