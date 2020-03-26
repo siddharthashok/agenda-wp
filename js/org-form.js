@@ -47,10 +47,10 @@ formStep1.validate({
 
 formStep2.validate({
 	rules: {
-		"org-activity": "required"
+		"org-description": "required"
 	},
 	messages: {
-		"org-activity": "Vänligen ange organisationsaktiviteter"
+		"org-description": "Vänligen ange organisationsaktiviteter"
 	}
 });
 
@@ -108,13 +108,13 @@ $("#step4Prev").click(() => {
 	hideformtab(formStep3);
 });
 
-$("#step4Next").click((e) => {
+$("#step4Next").click(e => {
 	if (formStep3.valid() === false) {
 		return;
 	}
 
 	e.preventDefault();
-	
+
 	$fomeOne = $("form[data-form2-step='one']");
 	$fomeTwo = $("form[data-form2-step='two']");
 	$fomeThree = $("form[data-form2-step='three']");
@@ -128,7 +128,7 @@ $("#step4Next").click((e) => {
 
 	var description = $fomeTwo.find("[name='org-description']").val();
 	// var eventConcerns = $fomeOne.find("[name='eventConcerns']");
-	
+
 	var contactName = $fomeThree.find("[name='contact-name']").val();
 	var contactEmail = $fomeThree.find("[name='contact-email-address']").val();
 	var contactPhone = $fomeThree.find("[name='contact-phone-no']").val();
@@ -136,20 +136,20 @@ $("#step4Next").click((e) => {
 	var message = $fomeThree.find("[name='message']").val();
 
 	var data = {
-		organisationName : organisationName,
-		websiteURL : websiteURL,
-		emailAddress : emailAddress,
-		socialMedia : socialMedia,
-		city : city,
-		socialMedia : socialMedia,
-		description : description,
-		contactName : contactName,
-		contactEmail : contactEmail,
-		contactPhone : contactPhone,
-		corporate : corporate,
-		message : message,
-		action : "createOrganisation"
-	}
+		organisationName: organisationName,
+		websiteURL: websiteURL,
+		emailAddress: emailAddress,
+		socialMedia: socialMedia,
+		city: city,
+		socialMedia: socialMedia,
+		description: description,
+		contactName: contactName,
+		contactEmail: contactEmail,
+		contactPhone: contactPhone,
+		corporate: corporate,
+		message: message,
+		action: "createOrganisation"
+	};
 
 	console.log(data);
 
@@ -157,8 +157,7 @@ $("#step4Next").click((e) => {
 		url: "http://localhost/agenda-wp/wp-admin/admin-ajax.php",
 		type: "POST",
 		data: data
-	})
-	.then(function(reply){
+	}).then(function(reply) {
 		console.log(reply);
 	});
 });

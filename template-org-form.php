@@ -105,7 +105,7 @@ get_header();
                     <p>* Obligatorisk information</p>
                     <p>
                         <label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label>
-                        <textarea name="org-description" class="full-width" placeholder="input"></textarea></p>
+                        <textarea name="org-description" class="full-width" placeholder="ex. Vårt syfte är att..."></textarea></p>
                     <fieldset>
                         <p>Markera de frågor som din organisation arbetar med*</p>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">

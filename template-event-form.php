@@ -113,7 +113,7 @@ get_header();
                     <p>* Obligatorisk information</p>
                     <p>
                         <label class="full-width-label">Beskrivning av event (max 1250 tecken)*</label>
-                        <textarea name="event-description" class="full-width" placeholder="input"></textarea>
+                        <textarea name="event-description" class="full-width" placeholder="ex. Vårt syfte är att..."></textarea>
                     </p>
                     <p>
                         <label class="full-width-label">Kostnad för event*</label>
