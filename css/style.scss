@@ -1109,6 +1109,40 @@ a {
 	}
 }
 
+//contact page
+.contact-page {
+	.title {
+		@include bold();
+		font-size: 22px;
+		line-height: 28px;
+		color: $purple;
+	}
+	.subtitle {
+		@include bold();
+		font-size: 14px;
+		line-height: 18px;
+		display: block;
+	}
+	.contacts {
+		display: -webkit-flex; /* Safari */
+		display: flex; /* Standard syntax */
+		align-content: center;
+		margin-bottom: 32px;
+		.contact-img {
+			margin-right: 15px;
+			img {
+				border-radius: 100%;
+				width: 90px;
+				height: 90px;
+				object-fit: cover;
+			}
+		}
+		.contact-details p {
+			margin: 0;
+		}
+	}
+}
+
 /* start of media queries- Small only */
 @media screen and (max-width: 39.9375em) {
 	//general css

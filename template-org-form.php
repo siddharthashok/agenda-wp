@@ -107,7 +107,6 @@ get_header();
                         <label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label>
                         <textarea name="org-activity" class="full-width" placeholder="input"></textarea></p>
                     <fieldset>
-
                         <p>Markera de svarsalternativ som eventet berör*</p>
                         <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-1"><label for="check3-1"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-2"><label for="check3-2"> Jämställdhet</label>
