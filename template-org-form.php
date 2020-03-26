@@ -105,7 +105,7 @@ get_header();
                     <p>* Obligatorisk information</p>
                     <p>
                         <label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label>
-                        <textarea name="org-activity" class="full-width" placeholder="input"></textarea></p>
+                        <textarea name="org-description" class="full-width" placeholder="input"></textarea></p>
                     <fieldset>
 
                         <p>Markera de svarsalternativ som eventet berör*</p>
@@ -159,7 +159,7 @@ get_header();
                         <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </p>
                     <p>
-                        <label class="full-width-label">Organisationsnummer</label>
+                        <label class="full-width-label">Organisationsnummer*</label>
                         <input name="number" class="full-width" placeholder="ex. 192301018890">
                     </p>
                     <p>
@@ -171,7 +171,7 @@ get_header();
                         <input class="styled-radio form-org" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
                     </fieldset>
                     <div class="form-submit">
-                        <a class=" button button-green hollow small small-only-expanded " onclick="step4next()" href="#">SKICKA FORMULÄR</a>
+                        <a class=" button button-green hollow small small-only-expanded " onclick="step4next(event);" href="#">SKICKA FORMULÄR</a>
                     </div>
 
                 </div>
