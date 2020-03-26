@@ -129,7 +129,7 @@ $("#step4Next").click((e) => {
 	var city = $fomeOne.find("[name='city']").val();
 	var socialMedia = $fomeOne.find("[name='social-link']").val();
 
-	var description = $fomeTwo.find("[name='description']").val();
+	var description = $fomeTwo.find("[name='org-description']").val();
 	// var eventConcerns = $fomeOne.find("[name='eventConcerns']");
 	
 	var contactName = $fomeThree.find("[name='contact-name']").val();
