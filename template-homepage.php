@@ -15,17 +15,28 @@ get_header();
                     <a href="#" class="see-few-all">Se färre</a>
                 </div>
                 <div class="grid-x grid-margin-x grid-margin-y">
-                    <div class="cell large-3 small-4">
-                        <a href="#" class="card-with-image">
-                            <div class="image-wrapper">
-                                <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="image of a topic">
-                            </div>
-                            <div class="content">
-                                <h3>Sexualitet & könsidentitet</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell large-3 small-4">
+                    <?php
+                        $all_events_categories = get_terms("event_categories",array(
+                            'hide_empty' => false
+                        ));
+                        // print_r($all_events_categories);
+                        foreach ($all_events_categories as $key => $value) {
+                    ?>
+                        <div class="cell large-3 small-4">
+                            <a href="<?= get_term_link($value, "event_categories")?>" class="card-with-image">
+                                <div class="image-wrapper">
+                                    <img src="<?= get_field("featured_image",$value);?>" alt="image of a topic">
+                                </div>
+                                <div class="content">
+                                    <h3><?= $value->name; ?></h3>
+                                </div>
+                            </a>
+                        </div>
+                    <?php
+                        }
+                    ?>
+                    
+                    <!-- <div class="cell large-3 small-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -94,7 +105,7 @@ get_header();
                                 <h3>Sexualitet & könsidentitet</h3>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             
@@ -109,6 +120,13 @@ get_header();
                 </div>
                 <a href="#" class="see-few-all">Se färre</a>
             </div>
+            <?php
+                // $all_events = WP_Query(array(
+                //   'post_type' => 'events',
+                //   'posts_per_page' => -1,
+                //   'meta_key' => 'start_date',  
+                // ));
+            ?>
             <!-- current event wrap desktop with grid -->
             <div class="event-desktop-wrap">
                 <div class="grid-x grid-margin-x grid-margin-y">
@@ -456,19 +474,39 @@ get_header();
             <!-- with grid for desktop-->
             <div class="current-organizers-wrap">
                 <div class="grid-x grid-margin-x">
-                    <div class="cell large-4">
-                        <a href="#" class="card-with-image">    
-                            <div class="image-wrapper">
-                                <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <p class="category">organisation</p>
-                                <h3>Amnesty International</h3>
-                                <p class="cause">Mänskliga rättigheter</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell large-4">
+                    <?php
+                        $random_organisations = new WP_Query(array(
+                            "post_type" => "organisations",
+                            "post_status" => "publish",
+                            "posts_per_page" => 3,
+                            "orderby" => "rand",
+                        ));
+
+                        if($random_organisations->have_posts())
+                        {
+                            while($random_organisations->have_posts())
+                            {
+                                $random_organisations->the_post();
+                    ?>
+                                <div class="cell large-4">
+                                    <a href="<?= get_the_permalink(); ?>" class="card-with-image">    
+                                        <div class="image-wrapper">
+                                            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <p class="category">organisation</p>
+                                            <h3><?= get_the_title(); ?></h3>
+                                            <p class="cause">Mänskliga rättigheter</p>
+                                        </div>
+                                    </a>
+                                </div>
+                    <?php
+                            }
+                        }
+                        wp_reset_postdata();
+                    ?>
+                    
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -479,8 +517,8 @@ get_header();
                                 <p class="cause">Mänskliga rättigheter</p>
                             </div>
                         </a>
-                    </div>
-                    <div class="cell large-4">
+                    </div> -->
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -491,12 +529,34 @@ get_header();
                                 <p class="cause">Mänskliga rättigheter</p>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- without grid for mobile-->
             <div class="organizers-mobile-wrap">
-                <a class="card-with-image" href="#">
+                <?php
+                    if($random_organisations->have_posts())
+                    {
+                        while($random_organisations->have_posts())
+                        {
+                            $random_organisations->the_post();
+                ?>
+                            <a class="card-with-image" href="<?= get_the_permalink(); ?>">
+                                <div class="image-wrapper">
+                                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+                                </div>
+                                <div class="content">
+                                    <p class="category">organisation</p>
+                                    <h3><?= get_the_title(); ?></h3>
+                                    <p class="cause">Mänskliga rättigheter</p>
+                                </div>
+                            </a>
+                <?php
+                        }
+                    }
+                    wp_reset_postdata();
+                ?>
+                <!-- <a class="card-with-image" href="#">
                     <div class="image-wrapper">
                         <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
                     </div>
@@ -505,8 +565,8 @@ get_header();
                         <h3>Amnesty International</h3>
                         <p class="cause">Mänskliga rättigheter</p>
                     </div>
-                </a>
-                <a class="card-with-image" href="#">
+                </a> -->
+                <!-- <a class="card-with-image" href="#">
                     <div class="image-wrapper">
                         <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
                     </div>
@@ -515,17 +575,7 @@ get_header();
                         <h3>Amnesty International</h3>
                         <p class="cause">Mänskliga rättigheter</p>
                     </div>
-                </a>
-                <a class="card-with-image" href="#">
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="category">organisation</p>
-                        <h3>Amnesty International</h3>
-                        <p class="cause">Mänskliga rättigheter</p>
-                    </div>
-                </a>
+                </a> -->
             </div>
         </div>   
     </section>

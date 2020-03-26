@@ -105,18 +105,27 @@ get_header();
                     <p>* Obligatorisk information</p>
                     <p>
                         <label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label>
-                        <textarea name="org-activity" class="full-width" placeholder="input"></textarea></p>
+                        <textarea name="org-description" class="full-width" placeholder="input"></textarea></p>
                     <fieldset>
-                        <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-1" checked><label for="check3-1"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-2"><label for="check3-2"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-3"><label for="check3-3"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-4"><label for="check3-4"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-5"><label for="check3-5">Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-6"><label for="check3-6"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-7"><label for="check3-7"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-8"><label for="check3-8"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-9"><label for="check3-9"> Jämställdhet</label>
+                        <p>Markera de frågor som din organisation arbetar med*</p>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">
+                        <label for="check3-1"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-2">
+                        <label for="check3-2"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-3">
+                        <label for="check3-3"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-4">
+                        <label for="check3-4"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-5">
+                        <label for="check3-5">Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-6">
+                        <label for="check3-6"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-7">
+                        <label for="check3-7"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-8">
+                        <label for="check3-8"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
+                        <label for="check3-9"> Jämställdhet</label>
                     </fieldset>
                     <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
                     <p class="form-links"><a>Ladda upp logga</a></p>

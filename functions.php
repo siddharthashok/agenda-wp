@@ -160,6 +160,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+* 
+* AJAX
+*/
+require get_template_directory() . '/inc/ajax.php';
+
+
+/**
  * Custom posts type settings
  */
 require get_template_directory() . '/inc/custom-posts-settings.php';
