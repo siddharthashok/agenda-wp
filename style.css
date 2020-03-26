@@ -1042,13 +1042,13 @@ a.active {
 .forms .form-buttons .btns.form-org {
   color: #288e8b;
 }
-.forms .form-buttons #prevBtn.form-publish::before {
+.forms .form-buttons .prevBtn.form-publish::before {
   background-image: url("img/arrow-forward-dark.svg");
 }
-.forms .form-buttons #prevBtn.form-org::before {
+.forms .form-buttons .prevBtn.form-org::before {
   background-image: url("img/green-arrow.svg");
 }
-.forms .form-buttons #prevBtn::before {
+.forms .form-buttons .prevBtn::before {
   content: "";
   transform: rotate(180deg);
   width: 34px;
@@ -1058,16 +1058,16 @@ a.active {
   top: 5px;
   right: 5px;
 }
-.forms .form-buttons #nextBtn {
+.forms .form-buttons .nextBtn {
   float: right;
 }
-.forms .form-buttons #nextBtn.form-publish::after {
+.forms .form-buttons .nextBtn.form-publish::after {
   background-image: url("img/arrow-forward-dark.svg");
 }
-.forms .form-buttons #nextBtn.form-org::after {
+.forms .form-buttons .nextBtn.form-org::after {
   background-image: url("img/green-arrow.svg");
 }
-.forms .form-buttons #nextBtn::after {
+.forms .form-buttons .nextBtn::after {
   content: "";
   width: 34px;
   height: 19px;

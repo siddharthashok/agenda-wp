@@ -1058,7 +1058,7 @@ a {
 			outline: none;
 			cursor: pointer;
 		}
-		#prevBtn {
+		.prevBtn {
 			&.form-publish {
 				&::before {
 					background-image: url("img/arrow-forward-dark.svg");
@@ -1081,7 +1081,7 @@ a {
 				right: 5px;
 			}
 		}
-		#nextBtn {
+		.nextBtn {
 			float: right;
 			&.form-publish {
 				&::after {
