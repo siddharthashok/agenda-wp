@@ -36,8 +36,8 @@ get_header();
         <div style="overflow:auto;">
             <div class="grid-container ">
                 <div class="form-buttons">
-                    <button type="button" class="btns form-org prevBtn" onclick="step1Prev()">tillabaka</button>
-                    <button type="button" class="btns form-org nextBtn" onclick="step1next()">nästa</button>
+                    <button type="button" id="step1Prev" class="btns form-org prevBtn">tillabaka</button>
+                    <button type="button" id="step1Next" class="btns form-org nextBtn">nästa</button>
                 </div>
             </div>
         </div>
@@ -84,8 +84,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" class="btns form-org prevBtn" onclick="step2Prev()">tillabaka</button>
-                        <button type="button" class="btns form-org nextBtn" onclick="step2next()">nästa</button>
+                        <button type="button" id="step2Prev" class="btns form-org prevBtn">tillabaka</button>
+                        <button type="button" id="step2Next" class="btns form-org nextBtn">nästa</button>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ get_header();
                         <textarea name="org-activity" class="full-width" placeholder="input"></textarea></p>
                     <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-1"><label for="check3-1"> Jämställdhet</label>
+                        <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-1" checked><label for="check3-1"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-2"><label for="check3-2"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-3"><label for="check3-3"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" form="check3" type="checkbox" id="check3-4"><label for="check3-4"> Jämställdhet</label>
@@ -126,8 +126,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" class="btns form-org prevBtn" onclick="step3Prev()">tillabaka</button>
-                        <button type="button" class="btns form-org nextBtn" onclick="step3next()">nästa</button>
+                        <button type="button" id="step3Prev" class="btns form-org prevBtn">tillabaka</button>
+                        <button type="button" id="step3Next" class="btns form-org nextBtn">nästa</button>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@ get_header();
                         <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </p>
                     <p>
-                        <label class="full-width-label">Organisationsnummer</label>
+                        <label class="full-width-label">Organisationsnummer*</label>
                         <input name="number" class="full-width" placeholder="ex. 192301018890">
                     </p>
                     <p>
@@ -166,11 +166,11 @@ get_header();
                         <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
                     </p>
                     <fieldset>
-                        <input class="styled-radio form-org" type="radio" id="radio-1" name="radio-group"> <label for="radio-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets<a class="links">värderingar och riktlinjer</a>för anslutna organisationer.</label>
-                        <input class="styled-radio form-org" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
+                        <input class="styled-radio form-org" type="checkbox" id="check-circle-1"> <label for="check-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets<a class="links">värderingar och riktlinjer</a>för anslutna organisationer.</label>
+                        <input class="styled-radio form-org" type="checkbox" id="check-circle-2"> <label for="check-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
                     </fieldset>
                     <div class="form-submit">
-                        <a class=" button button-green hollow small small-only-expanded " onclick="step4next()" href="#">SKICKA FORMULÄR</a>
+                        <a class=" button button-green hollow small small-only-expanded " id="step4Next" href="#">SKICKA FORMULÄR</a>
                     </div>
 
                 </div>
@@ -178,7 +178,7 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" class="btns form-org prevBtn" onclick="step4Prev()">tillabaka</button>
+                        <button type="button" id="step4Prev" class="btns form-org prevBtn">tillabaka</button>
                         <button type="button" class="btns form-org nextBtn">nästa</button>
                     </div>
                 </div>
