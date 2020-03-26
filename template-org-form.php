@@ -33,6 +33,14 @@ get_header();
                 <p>Vår redaktion granskar allt innehåll och hör av sig till dig när det är publicerat.</p>
             </div>
         </div>
+        <div style="overflow:auto;">
+            <div class="grid-container ">
+                <div class="form-buttons">
+                    <button type="button" class="btns form-org prevBtn" onclick="step1Prev()">tillabaka</button>
+                    <button type="button" class="btns form-org nextBtn" onclick="step1next()">nästa</button>
+                </div>
+            </div>
+        </div>
 
     </div>
     <div class="tab">
@@ -73,6 +81,14 @@ get_header();
 
                 </div>
             </div>
+            <div style="overflow:auto;">
+                <div class="grid-container ">
+                    <div class="form-buttons">
+                        <button type="button" class="btns form-org prevBtn" onclick="step2Prev()">tillabaka</button>
+                        <button type="button" class="btns form-org nextBtn" onclick="step2next()">nästa</button>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <div class="tab">
@@ -106,6 +122,14 @@ get_header();
                     <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
                     <p class="form-links"><a>Ladda upp logga</a></p>
 
+                </div>
+            </div>
+            <div style="overflow:auto;">
+                <div class="grid-container ">
+                    <div class="form-buttons">
+                        <button type="button" class="btns form-org prevBtn" onclick="step3Prev()">tillabaka</button>
+                        <button type="button" class="btns form-org nextBtn" onclick="step3next()">nästa</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -147,33 +171,26 @@ get_header();
                         <input class="styled-radio form-org" type="radio" id="radio-2" name="radio-group"> <label for="radio-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
                     </fieldset>
                     <div class="form-submit">
-                        <a class=" button button-green hollow small small-only-expanded" href="#">SKICKA FORMULÄR</a>
+                        <a class=" button button-green hollow small small-only-expanded " onclick="step4next()" href="#">SKICKA FORMULÄR</a>
                     </div>
 
                 </div>
             </div>
-        </form>
-    </div>
-    <!--Arrows-->
-    <div style="overflow:auto;">
-        <div class="grid-container ">
-            <div class="form-buttons">
-                <button type="button" id="prevBtn" class="btns form-org" onclick="nextPrev(-1)">tillabaka</button>
-                <button type="button" id="nextBtn" class="btns form-org" onclick="nextPrev(1)">nästa</button>
+            <div style="overflow:auto;">
+                <div class="grid-container ">
+                    <div class="form-buttons">
+                        <button type="button" class="btns form-org prevBtn" onclick="step4Prev()">tillabaka</button>
+                        <button type="button" class="btns form-org nextBtn">nästa</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <!-- Circles which indicates the steps of the form: -->
-    <div>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
+        </form>
     </div>
     <!-- </form> -->
 </section>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/validate.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/validate.js"></script> -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/org-form.js"></script>
