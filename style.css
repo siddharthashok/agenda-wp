@@ -1080,6 +1080,43 @@ a.active {
   color: red;
 }
 
+.contact-page .title {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: #55186b;
+}
+.contact-page .subtitle {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+}
+.contact-page .contacts {
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  /* Standard syntax */
+  align-content: center;
+  margin-bottom: 32px;
+}
+.contact-page .contacts .contact-img {
+  margin-right: 15px;
+}
+.contact-page .contacts .contact-img img {
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+.contact-page .contacts .contact-details p {
+  margin: 0;
+}
+
 /* start of media queries- Small only */
 @media screen and (max-width: 39.9375em) {
   .grid-container {

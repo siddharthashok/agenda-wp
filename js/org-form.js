@@ -1,37 +1,49 @@
-var currentTab = 0; // Current tab is set to be the first tab (0)
+let tabArray = document.getElementsByClassName("tab");
+let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+let formStep1 = $("form[data-form2-step='one']");
+let formStep2 = $("form[data-form2-step='two']");
+let formStep3 = $("form[data-form2-step='three']");
+
+//show the tab and the buttons
 function showTab(n) {
 	// This function will display the specified tab of the form ...
-	var x = document.getElementsByClassName("tab");
-	x[n].style.display = "block";
+	tabArray[n].style.display = "block";
 	// ... and fix the Previous/Next buttons:
 	if (n == 0) {
 		$(".prevBtn").hide();
 	} else {
 		$(".prevBtn").show();
 	}
-	if (n == x.length - 1) {
+	if (n == tabArray.length - 1) {
 		$(".nextBtn").hide();
 	} else {
 		$(".nextBtn").show();
 	}
 }
 
-//form2 validation
+function showformtab(showform) {
+	showform.parent().show();
+}
+function hideformtab(hideform) {
+	hideform.parent().hide();
+}
+
+//form validation
 $("form[data-form2-step='one']").validate({
 	rules: {
 		"org-name": "required",
-		"webiste-url": "required",
-		"email-address": "required",
-		"social-link": "required",
+		// "webiste-url": "required",
+		// "email-address": "required",
+		// "social-link": "required",
 		city: "required"
 	},
 	messages: {
 		"org-name": "Ange giltigt organisationsnamn",
-		"webiste-url": "Ange giltig webbplats / url",
-		"email-address": "Ange organisationens giltiga e-postadress",
-		"social-link": "Ange en giltig länk till sociala medier",
+		// "webiste-url": "Ange giltig webbplats / url",
+		// "email-address": "Ange organisationens giltiga e-postadress",
+		// "social-link": "Ange en giltig länk till sociala medier",
 		city: "Ange giltigt Ort/kommun"
 	}
 });
@@ -50,76 +62,62 @@ $("form[data-form2-step='three']").validate({
 		"contact-name": "required",
 		"contact-email-address": "required",
 		"contact-phone-no": "required",
-		number: "required",
-		message: "required"
+		number: "required"
+		// message: "required"
 	},
 	messages: {
 		"contact-name": "Ange giltigt kontaktnamn",
 		"contact-email-address": "Ange giltig e-postadress för kontakt",
 		"contact-phone-no": "Ange giltigt kontakttelefonnummer",
-		number: "Ange giltigt nummer",
-		message: "Ange ett meddelande"
+		number: "Ange giltigt nummer"
+		// message: "Ange ett meddelande"
 	}
 });
 
-function step1next() {
-	var x = document.getElementsByClassName("tab");
-	x[0].style.display = "none";
+//click events
+$("#step1Next").click(() => {
+	tabArray[0].style.display = "none";
 	showTab(1);
-}
-function step2Prev() {
+});
+
+$("#step2Prev").click(() => {
 	showTab(0);
-	$("form[data-form2-step='one']")
-		.parent()
-		.hide();
-}
-function step2next() {
-	if ($("form[data-form2-step='one']").valid() == false) {
+	formStep1.parent().hide();
+});
+$("#step2Next").click(() => {
+	if (formStep1.valid() === false) {
 		return;
 	} else {
-		$("form[data-form2-step='one']")
-			.parent()
-			.hide();
-
-		$("form[data-form2-step='two']")
-			.parent()
-			.show();
+		hideformtab(formStep1);
+		showformtab(formStep2);
 	}
-}
+});
 
-function step3Prev() {
+$("#step3Prev").click(() => {
 	showTab(1);
-	$("form[data-form2-step='two']")
-		.parent()
-		.hide();
-}
-function step3next() {
-	if ($("form[data-form2-step='two']").valid() == false) {
+	formStep2.parent().hide();
+});
+$("#step3Next").click(() => {
+	if (formStep2.valid() === false) {
 		return;
 	} else {
-		$("form[data-form2-step='two']")
-			.parent()
-			.hide();
-
-		$("form[data-form2-step='three']")
-			.parent()
-			.show();
-		$(".nextBtn").hide();
+		hideformtab(formStep2);
+		showformtab(formStep3);
 	}
-}
+});
 
-function step4Prev() {
+$("#step4Prev").click(() => {
 	showTab(2);
-	$("form[data-form2-step='three']")
-		.parent()
-		.hide();
-}
-function step4next(e) {
-	e.preventDefault();
-	if ($("form[data-form2-step='three']").valid() == false) {
+	formStep3.parent().hide();
+});
+
+$("#step4Next").click((e) => {
+	if (formStep3.valid() === false) {
 		return;
 	}
 
+	e.preventDefault();
+	
 	$fomeOne = $("form[data-form2-step='one']");
 	$fomeTwo = $("form[data-form2-step='two']");
 	$fomeThree = $("form[data-form2-step='three']");
@@ -166,4 +164,4 @@ function step4next(e) {
 	.then(function(reply){
 		console.log(reply);
 	});
-}
+});
