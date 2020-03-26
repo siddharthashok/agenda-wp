@@ -2,9 +2,9 @@ let tabArray = document.getElementsByClassName("tab");
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
-let formStep1 = $("form[data-form2-step='one']");
-let formStep2 = $("form[data-form2-step='two']");
-let formStep3 = $("form[data-form2-step='three']");
+let formStep1 = $("form[data-form1-step='one']");
+let formStep2 = $("form[data-form1-step='two']");
+let formStep3 = $("form[data-form1-step='three']");
 
 //show the tab and the buttons
 function showTab(n) {
@@ -30,27 +30,31 @@ function hideformtab(hideform) {
 //form validation
 formStep1.validate({
 	rules: {
-		"org-name": "required",
-		// "webiste-url": "required",
-		// "email-address": "required",
-		// "social-link": "required",
-		city: "required"
+		"event-title": "required",
+		organizer: "required",
+		"event-date": "required",
+		"event-time": "required",
+		"event-location": "required",
+		address: "required"
 	},
 	messages: {
-		"org-name": "Ange giltigt organisationsnamn",
-		// "webiste-url": "Ange giltig webbplats / url",
-		// "email-address": "Ange organisationens giltiga e-postadress",
-		// "social-link": "Ange en giltig länk till sociala medier",
-		city: "Ange giltigt Ort/kommun"
+		"event-title": "Ange händelsens titel",
+		organizer: "Vänligen ange organisatören",
+		"event-date": "Ange händelsedatum",
+		"event-time": "Ange händelsetid",
+		"event-location": "Ange evenemangsplatsen",
+		address: "Ange adress"
 	}
 });
 
 formStep2.validate({
 	rules: {
-		"org-activity": "required"
+		"event-description": "required",
+		"event-cost": "required"
 	},
 	messages: {
-		"org-activity": "Vänligen ange organisationsaktiviteter"
+		"event-description": "Ange händelsebeskrivningen",
+		"event-cost": "Ange händelsens kostnad"
 	}
 });
 
@@ -72,16 +76,16 @@ formStep3.validate({
 });
 
 //click events
-$("#step1Next").click(() => {
+$("#form1step1Next").click(() => {
 	tabArray[0].style.display = "none";
 	showTab(1);
 });
 
-$("#step2Prev").click(() => {
+$("#form1step2Prev").click(() => {
 	showTab(0);
 	hideformtab(formStep1);
 });
-$("#step2Next").click(() => {
+$("#form1step2Next").click(() => {
 	if (formStep1.valid() === false) {
 		return;
 	} else {
@@ -90,11 +94,11 @@ $("#step2Next").click(() => {
 	}
 });
 
-$("#step3Prev").click(() => {
+$("#form1step3Prev").click(() => {
 	showTab(1);
 	hideformtab(formStep2);
 });
-$("#step3Next").click(() => {
+$("#form1step3Next").click(() => {
 	if (formStep2.valid() === false) {
 		return;
 	} else {
@@ -103,11 +107,11 @@ $("#step3Next").click(() => {
 	}
 });
 
-$("#step4Prev").click(() => {
+$("#form1step4Prev").click(() => {
 	showTab(2);
 	hideformtab(formStep3);
 });
-$("#step4Next").click(() => {
+$("#form1step4Next").click(() => {
 	if (formStep3.valid() === false) {
 		return;
 	}
