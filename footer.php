@@ -19,6 +19,7 @@
 <!-- <script src="<?php //echo get_template_directory_uri();
 					?>/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script> -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/app.js?v=2"></script>
 <?php wp_footer(); ?>
 </body>

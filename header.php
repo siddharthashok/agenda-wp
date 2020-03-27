@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,16 +13,18 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?= get_template_directory_uri();?>/css/foundation.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="<?= get_template_directory_uri();?>/style.css?v=2">
-    <link rel="stylesheet" href="<?= get_template_directory_uri();?>/css/slick.css" />
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=2">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/slick.css" />
     <title>Agenda</title>
 </head>
+
 <body>
     <header class="site-header">
         <div class="grid-container">
@@ -32,8 +35,8 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <a class="logo" href="<?= get_site_url();?>">
-                        <img src="<?= get_template_directory_uri();?>/img/main-logo.svg" alt="logo of agenda website">
+                    <a class="logo" href="<?= get_site_url(); ?>">
+                        <img src="<?= get_template_directory_uri(); ?>/img/main-logo.svg" alt="logo of agenda website">
                     </a>
                     <ul class="menu hidden">
                         <li class="close-wrap">
@@ -47,9 +50,19 @@
                         <li><a href="#" class="nav-link">Kontakta </a></li>
                         <li class="search-item"><a href="#" class="search nav-link" title="search button">SÖK</a> </li>
                     </ul>
-                    <a href="#" class="search-mobile"> <img src="<?= get_template_directory_uri();?>/img/search.svg" alt="image of search icon"></a>
+                    <div class="mobile-search-bar">
+                        <div class="search-toggle">
+                            <a href="#" class="search-mobile"> <img src="<?= get_template_directory_uri(); ?>/img/search.svg" alt="image of search icon"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <form>
+                        <input type="text" name="q" id="search-terms" placeholder="SÖK" />
+                        <button type="submit" name="submit" value="Go" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
+                    </form>
                 </div>
                 <div class="clear"></div>
-            </div>    
+            </div>
         </div>
     </header>

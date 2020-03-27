@@ -1166,11 +1166,21 @@ a.active {
   .site-header {
     padding: 0px;
   }
-  .site-header .search-mobile {
+  .site-header .mobile-search-bar .search-toggle .search-mobile {
     display: inline-block;
     width: 25px;
     height: 30px;
     padding-top: 8px;
+  }
+  .site-header .search-container {
+    transition: all 0.3s ease-in-out;
+    transform: translate(0, -100px);
+    height: 0;
+  }
+  .site-header .search-container.opened {
+    transition: all 0.3s ease-in-out;
+    transform: translate(0, 0);
+    height: 50px;
   }
   .site-header .search-item {
     display: none;

@@ -1191,12 +1191,28 @@ a {
 	//css for header
 	.site-header {
 		padding: 0px;
-		.search-mobile {
-			display: inline-block;
-			width: 25px;
-			height: 30px;
-			padding-top: 8px;
+		.mobile-search-bar {
+			.search-toggle {
+				.search-mobile {
+					display: inline-block;
+					width: 25px;
+					height: 30px;
+					padding-top: 8px;
+				}
+			}
 		}
+		.search-container {
+			transition: all 0.3s ease-in-out;
+			transform: translate(0, -100px);
+			height: 0;
+
+			&.opened {
+				transition: all 0.3s ease-in-out;
+				transform: translate(0, 0);
+				height: 50px;
+			}
+		}
+
 		.search-item {
 			display: none;
 		}
