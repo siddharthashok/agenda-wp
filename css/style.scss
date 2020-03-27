@@ -160,8 +160,15 @@ a {
 
 		&.opened {
 			transition: all 0.3s ease-in-out;
-			transform: translate(0, 0);
-			height: 120px;
+			transform: translate(0, -50px);
+		}
+		form {
+			width: 95%;
+			input {
+				box-shadow: none;
+				margin-bottom: 0;
+				border-color: $gray;
+			}
 		}
 	}
 }
@@ -1214,7 +1221,11 @@ a {
 		}
 		.search-container {
 			&.opened {
-				height: 50px;
+				transform: translate(0, -36px);
+				height: 10px;
+			}
+			form {
+				width: 90%;
 			}
 		}
 
