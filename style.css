@@ -91,7 +91,11 @@ a.active {
 
 .site-header {
   background-color: #fafafa;
+  transition: all 0.3s ease;
   box-shadow: 0px 1px 3px #e6dad8;
+}
+.site-header:hover {
+  box-shadow: 0px 4px 16px 0px rgba(119, 119, 119, 0.16);
 }
 .site-header .logo {
   float: left;
