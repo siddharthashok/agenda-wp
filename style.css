@@ -126,6 +126,16 @@ a.active {
 .site-header .search-mobile {
   display: none;
 }
+.site-header .search-container {
+  transition: all 0.3s ease-in-out;
+  transform: translate(0, -100px);
+  height: 0;
+}
+.site-header .search-container.opened {
+  transition: all 0.3s ease-in-out;
+  transform: translate(0, 0);
+  height: 120px;
+}
 
 .day {
   font-size: 60px;
@@ -1172,14 +1182,7 @@ a.active {
     height: 30px;
     padding-top: 8px;
   }
-  .site-header .search-container {
-    transition: all 0.3s ease-in-out;
-    transform: translate(0, -100px);
-    height: 0;
-  }
   .site-header .search-container.opened {
-    transition: all 0.3s ease-in-out;
-    transform: translate(0, 0);
     height: 50px;
   }
   .site-header .search-item {

@@ -153,6 +153,17 @@ a {
 	.search-mobile {
 		display: none;
 	}
+	.search-container {
+		transition: all 0.3s ease-in-out;
+		transform: translate(0, -100px);
+		height: 0;
+
+		&.opened {
+			transition: all 0.3s ease-in-out;
+			transform: translate(0, 0);
+			height: 120px;
+		}
+	}
 }
 //general css for date and month
 .day {
@@ -1202,13 +1213,7 @@ a {
 			}
 		}
 		.search-container {
-			transition: all 0.3s ease-in-out;
-			transform: translate(0, -100px);
-			height: 0;
-
 			&.opened {
-				transition: all 0.3s ease-in-out;
-				transform: translate(0, 0);
 				height: 50px;
 			}
 		}
