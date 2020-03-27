@@ -53,30 +53,30 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
-                    <p>
+                    <div class="form-spacing">
                         <label class="full-width-label">Titel på event*</label>
                         <input name="event-title" class="full-width" placeholder="input">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Arrangör*</label>
                         <input name="organizer" class="full-width" placeholder="t.ex. Agenda Jamliket">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Datum för event*</label>
                         <input name="event-date" class="full-width" placeholder="Datumformat">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Tidpunkt för event*</label>
                         <input name="event-time" class="full-width" placeholder="Ange start och sluttidpunkt">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Plats för event*</label>
                         <input name="event-location" class="full-width" placeholder="tex Annedalsseminariet, gbg Universitet ">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Adress*</label>
                         <input name="address" class="full-width" placeholder="tex Annedalsseminariet, gbg Universitet ">
-                    </p>
+                    </div>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
                         <input class="styled-checkbox form-publish " form="check1" type="checkbox" id="check1-1" checked><label for="check1-1"> Ramp finns</label>
@@ -111,17 +111,26 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
-                    <p>
+                    <div class="form-spacing">
                         <label class="full-width-label">Beskrivning av event (max 1250 tecken)*</label>
                         <textarea name="event-description" class="full-width" placeholder="ex. Vårt syfte är att..."></textarea>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Kostnad för event*</label>
                         <input name="event-cost" class="full-width" placeholder="t.ex. 0kr">
-                    </p>
-                    <p><label class="full-width-label">Hemsida för evenemang</label><input class="full-width" placeholder="t.ex. 0kr"></p>
-                    <p><label class="full-width-label">Länk till facebook-event</label><input class="full-width" placeholder="t.ex. 0kr"></p>
-                    <p><label class="full-width-label">Länk till arrangörens hemsida</label><input class="full-width" placeholder="t.ex. 0kr "></p>
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Hemsida för evenemang</label>
+                        <input class="full-width" placeholder="t.ex. 0kr">
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Länk till facebook-event</label>
+                        <input class="full-width" placeholder="t.ex. 0kr">
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Länk till arrangörens hemsida</label>
+                        <input class="full-width" placeholder="t.ex. 0kr ">
+                    </div>
 
                     <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
@@ -163,19 +172,22 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information kommer inte att synas på vår hemsida. Den är bara till för att vi ska kunna kontakta dig angående er ansökan. </p>
                     <p>* Obligatorisk information</p>
-                    <p>
+                    <div class="form-spacing">
                         <label class="full-width-label">Namn på kontaktperson*</label>
                         <input name="contact-name" class="full-width" placeholder="Förnamn och Efternamn">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Mailadress kontaktperson*</label>
                         <input name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
                         <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
-                    </p>
-                    <p><label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label><textarea class="full-width" placeholder="Om du har frågor..."></textarea></p>
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
+                        <textarea class="full-width" placeholder="Om du har frågor..."></textarea>
+                    </div>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
                         <input class="styled-radio form-publish" type="checkbox" id="check1-circle-1"> <label for="check1-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links">värderingar och riktlinjer</a> för anslutna organisationer. </label>

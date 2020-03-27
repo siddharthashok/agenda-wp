@@ -11,7 +11,7 @@ get_header();
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url(); ?>">Hem</a></li>
-                <li><a href="<?= get_site_url(); ?>/organisations" class="active"><?= $term->name; ?>Kontakt</a></li>
+                <li><a href="<?= get_site_url(); ?>/contact" class="active"><?= $term->name; ?>Kontakt</a></li>
             </ul>
         </nav>
         <h3 class="title">Vill du starta upp Agenda: Jämlikhet i din stad?</h3>
@@ -25,7 +25,7 @@ get_header();
             <span class="subtitle">Har du tips?</span>
             Har du tips på evenemang, organisationer eller annat i Göteborg, Stockholm eller Malmö för oss att publicera? <a href="mailto:info@agendajamlikhet.se">info@agendajamlikhet.se</a>
         </p>
-        <p>
+        <div>
             <span class="subtitle">Kontaktperso ner</span>
             <div class="grid-x">
                 <div class="cell medium-6">
@@ -71,7 +71,7 @@ get_header();
                     </div>
                 </div>
             </div>
-        </p>
+        </div>
         <div>
             <span class="subtitle">Styrelse för Agenda: Jämlikhet</span>
             <div>

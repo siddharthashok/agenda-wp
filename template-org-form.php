@@ -55,26 +55,26 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
-                    <p>
+                    <div class="form-spacing">
                         <label class="full-width-label">Organisationens namn*</label>
                         <input name="org-name" class="full-width" placeholder="ex. Agenda: Jämlikhet">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Hemsida, webbadress</label>
                         <input name="webiste-url" class="full-width" placeholder="ex. agendajamliket.se">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Mailadress till organisationen (ex till en infomail)</label>
                         <input name='email-address' class="full-width" placeholder="ex. info@agendajamliket.se">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Länk till sociala medier</label>
                         <input name="social-link" class="full-width" placeholder="ex. instagram.se/agendajamliket/">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Ort/kommun*</label>
                         <input name="city" class="full-width" placeholder="ex. agendajamliket.se ">
-                    </p>
+                    </div>
                     <fieldset class="spacer">
                         <p class="form-links"><a>Ladda upp logga</a></p>
                     </fieldset>
@@ -103,9 +103,10 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
-                    <p>
+                    <div class="form-spacing">
                         <label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label>
-                        <textarea name="org-description" class="full-width" placeholder="ex. Vårt syfte är att..."></textarea></p>
+                        <textarea name="org-description" class="full-width" placeholder="ex. Vårt syfte är att..."></textarea>
+                    </div>
                     <fieldset>
                         <p>Markera de frågor som din organisation arbetar med*</p>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">
@@ -154,26 +155,26 @@ get_header();
                 <div class="grid-container ">
                     <p>Följande information kommer inte att synas på vår hemsida. Den är bara till för att vi ska kunna kontakta dig angående er ansökan. </p>
                     <p>* Obligatorisk information</p>
-                    <p>
+                    <div class="form-spacing">
                         <label class="full-width-label">Namn på kontaktperson*</label>
                         <input name="contact-name" class="full-width" placeholder="Förnamn och Efternamn">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Mailadress kontaktperson*</label>
                         <input name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
                         <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Organisationsnummer*</label>
                         <input name="number" class="full-width" placeholder="ex. 192301018890">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
                         <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
-                    </p>
+                    </div>
                     <fieldset>
                         <input class="styled-radio form-org" type="checkbox" id="check-circle-1"> <label for="check-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets<a class="links">värderingar och riktlinjer</a>för anslutna organisationer.</label>
                         <input class="styled-radio form-org" type="checkbox" id="check-circle-2"> <label for="check-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
