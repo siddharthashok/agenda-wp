@@ -1023,12 +1023,19 @@ a.active {
 }
 .forms .form-body .form-links:before {
   content: "";
+  background-repeat: no-repeat;
   background-image: url("img/form-icon.svg");
   width: 16px;
   height: 22px;
   display: inline-block;
   vertical-align: text-bottom;
+  background-size: contain;
   margin-right: 5px;
+}
+.forms .form-body .form-links.email-icon:before {
+  vertical-align: middle;
+  width: 23px;
+  background-image: url("img/email-icon.svg");
 }
 .forms .form-body .form-submit .button {
   border-radius: 35px;
@@ -1047,6 +1054,12 @@ a.active {
 }
 .forms .form-body .form-spacing {
   margin-bottom: 1rem;
+}
+.forms .form-body .form-success-title.form-org {
+  color: #288e8b;
+}
+.forms .form-body .form-success-title.form-publish {
+  color: #be2763;
 }
 .forms .form-buttons {
   padding: 40px 0;
@@ -1363,6 +1376,11 @@ a.active {
   }
   .connect-card .content .connect-card-text {
     margin-bottom: 60px;
+  }
+
+  .forms .form-body .form-success-title {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 

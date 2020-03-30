@@ -16,10 +16,15 @@ function showTab(n) {
 	} else {
 		$(".prevBtn").show();
 	}
-	if (n == tabArray.length - 1) {
+	if (n == tabArray.length - 2) {
 		$(".nextBtn").hide();
 	} else {
 		$(".nextBtn").show();
+	}
+	if (n == tabArray.length - 1) {
+		document.getElementById("form-close-title").style.visibility = "hidden";
+		$(".prevBtn").hide();
+		$(".nextBtn").hide();
 	}
 }
 
@@ -112,6 +117,8 @@ $("#step4Next").click(e => {
 	if (formStep3.valid() === false) {
 		return;
 	}
+	hideformtab(formStep3);
+	showTab(4);
 
 	e.preventDefault();
 

@@ -10,7 +10,7 @@ get_header();
     <!-- <form id="publishForm" class="forms" action=""> -->
     <div class="grid-container">
         <div class="form-close">
-            <h4>Publicera evenemang</h4>
+            <h4 id="form-close-title">Publicera evenemang</h4>
             <button class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
@@ -208,6 +208,17 @@ get_header();
                 </div>
             </div>
         </form>
+    </div>
+    <div class="tab">
+        <div class="form-body">
+            <div class="grid-container ">
+                <h1 class="form-success-title form-publish">Tack! </h1>
+                <p>Agenda: Jämlikhets redaktion granskar innehållet innan det publiceras på hemsidan. Vi notifierar dig när innehållet är uppe via angivna kontaktuppgifter. </p>
+                <fieldset class="spacer">
+                    <p class="form-links email-icon"><a>Maila mig en kopia</a></p>
+                </fieldset>
+            </div>
+        </div>
     </div>
     <!-- </form> -->
 </section>
