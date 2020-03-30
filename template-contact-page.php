@@ -102,10 +102,10 @@ get_header();
                         {
                             the_row();
                 ?>
-                        <p>
-                            <?= get_sub_field("name"); ?>, <?= get_sub_field("designation"); ?>, <br>
-                            <a href="mailto:<?= get_sub_field("email"); ?>"> <?= get_sub_field("email"); ?></a>
-                        </p>
+                            <p>
+                                <?= get_sub_field("name"); ?>, <?= get_sub_field("designation"); ?>, <br>
+                                <a href="mailto:<?= get_sub_field("email"); ?>"> <?= get_sub_field("email"); ?></a>
+                            </p>
                 <?php
                         }
                     }

@@ -34,6 +34,16 @@ function createOrganisation()
         "mail" => $email_address
     );
     update_field("contact_details",$value,$post_id);
+    update_field("city",$city,$post_id);
+
+    $other_details = array(
+        "contact_name" => $contact_name,
+        "contact_email_address" => $contact_email_address,
+        "contact_phone_number" => $contact_phone,
+        "number" => $corporate,
+        "message" => $message
+    );
+    update_field("other_details",$other_details,$post_id);
     // update_field("website",$website_url,$post_id);
     // update_field("instag",$instagram,$post_id);
     // update_field("facebook",$link_to_social_media,$post_id);
