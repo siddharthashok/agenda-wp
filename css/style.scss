@@ -824,8 +824,8 @@ a {
 	background-color: $purple;
 }
 
-/*Publish org page styles*/
-.publish-org-page {
+/*event org page styles*/
+.event-org-page {
 	background-image: url(img/blue-patch-full.svg);
 	background-repeat: no-repeat;
 	background-position: 0% 16%;
@@ -1062,6 +1062,9 @@ a {
 					width: auto;
 				}
 			}
+		}
+		.form-spacing {
+			margin-bottom: 1rem;
 		}
 	}
 	.form-buttons {

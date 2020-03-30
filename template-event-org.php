@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Template Name: Publish Org Page
+ * Template Name: Event Org Page
  * @package agenda
  */
 get_header();
 ?>
-<section class="publish-org-page">
+<section class="event-org-page">
     <div class="grid-container ">
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url(); ?>">Hem</a></li>
-                <li><a href="<?= get_site_url(); ?>/organisations" class="active"><?= $term->name; ?>Publicera på Agenda: Jämlikhet</a></li>
+                <li><a href="<?= get_site_url(); ?>/event-org" class="active"><?= $term->name; ?>Publicera på Agenda: Jämlikhet</a></li>
             </ul>
         </nav>
         <h3 class="title">Vill du publicera ditt evenemang i vår eventkalender eller att din organisation ska synas på Agenda: Jämlikhets hemsida?</h3>

@@ -91,7 +91,7 @@ get_header();
                     </div>
                 </div> -->
             </div>
-        </p>
+        </div>
         <div>
             <span class="subtitle">Styrelse för Agenda: Jämlikhet</span>
             <div>

@@ -826,13 +826,13 @@ a.active {
   background-color: #55186b;
 }
 
-/*Publish org page styles*/
-.publish-org-page {
+/*event org page styles*/
+.event-org-page {
   background-image: url(img/blue-patch-full.svg);
   background-repeat: no-repeat;
   background-position: 0% 16%;
 }
-.publish-org-page .title {
+.event-org-page .title {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1045,6 +1045,9 @@ a.active {
     padding: 1.5rem 35px;
     width: auto;
   }
+}
+.forms .form-body .form-spacing {
+  margin-bottom: 1rem;
 }
 .forms .form-buttons {
   padding: 40px 0;
