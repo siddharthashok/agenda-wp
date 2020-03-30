@@ -11,7 +11,7 @@ get_header();
     <!-- <form id="orgForm" class="forms" action=""> -->
     <div class="grid-container">
         <div class="form-close">
-            <h4>Anslut din organisation</h4>
+            <h4 id="form-close-title">Anslut din organisation</h4>
             <button class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
@@ -65,7 +65,7 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Mailadress till organisationen (ex till en infomail)</label>
-                        <input name='email-address' class="full-width" placeholder="ex. info@agendajamliket.se">
+                        <input type="email" name='email-address' class="full-width" placeholder="ex. info@agendajamliket.se">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Länk till sociala medier</label>
@@ -109,7 +109,7 @@ get_header();
                     </div>
                     <fieldset>
                         <p>Markera de frågor som din organisation arbetar med*</p>
-                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1" checked>
                         <label for="check3-1"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-2">
                         <label for="check3-2"> Jämställdhet</label>
@@ -128,8 +128,6 @@ get_header();
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
                         <label for="check3-9"> Jämställdhet</label>
                     </fieldset>
-                    <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
-                    <p class="form-links"><a>Ladda upp logga</a></p>
 
                 </div>
             </div>
@@ -161,15 +159,15 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Mailadress kontaktperson*</label>
-                        <input name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
+                        <input type="email" name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
-                        <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
+                        <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Organisationsnummer*</label>
-                        <input name="number" class="full-width" placeholder="ex. 192301018890">
+                        <input type="number" name="number" class="full-width" placeholder="ex. 192301018890">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
@@ -194,6 +192,17 @@ get_header();
                 </div>
             </div>
         </form>
+    </div>
+    <div class="tab">
+        <div class="form-body">
+            <div class="grid-container ">
+                <h1 class="form-success-title form-org">Tack! </h1>
+                <p>Agenda: Jämlikhets redaktion granskar innehållet innan det publiceras på hemsidan. Vi notifierar dig när innehållet är uppe via angivna kontaktuppgifter. </p>
+                <fieldset class="spacer">
+                    <p class="form-links email-icon"><a>Maila mig en kopia</a></p>
+                </fieldset>
+            </div>
+        </div>
     </div>
     <!-- </form> -->
 </section>

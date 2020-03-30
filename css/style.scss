@@ -894,7 +894,6 @@ a {
 		}
 		fieldset {
 			margin-top: 22px;
-			margin-bottom: 35px;
 			label {
 				display: block;
 				margin: 0;
@@ -1042,12 +1041,21 @@ a {
 			display: block;
 			&:before {
 				content: "";
+				background-repeat: no-repeat;
 				background-image: url("img/form-icon.svg");
 				width: 16px;
 				height: 22px;
 				display: inline-block;
 				vertical-align: text-bottom;
+				background-size: contain;
 				margin-right: 5px;
+			}
+			&.email-icon {
+				&:before {
+					vertical-align: middle;
+					width: 23px;
+					background-image: url("img/email-icon.svg");
+				}
 			}
 		}
 		.form-submit {
@@ -1065,6 +1073,14 @@ a {
 		}
 		.form-spacing {
 			margin-bottom: 1rem;
+		}
+		.form-success-title {
+			&.form-org {
+				color: $green;
+			}
+			&.form-publish {
+				color: $dark-pink;
+			}
 		}
 	}
 	.form-buttons {
@@ -1399,6 +1415,15 @@ a {
 			padding: 30px 25px;
 			.connect-card-text {
 				margin-bottom: 60px;
+			}
+		}
+	}
+	//css for forms
+	.forms {
+		.form-body {
+			.form-success-title {
+				font-size: 30px;
+				line-height: 36px;
 			}
 		}
 	}

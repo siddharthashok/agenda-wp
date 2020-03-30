@@ -10,7 +10,7 @@ get_header();
     <!-- <form id="publishForm" class="forms" action=""> -->
     <div class="grid-container">
         <div class="form-close">
-            <h4>Publicera evenemang</h4>
+            <h4 id="form-close-title">Publicera evenemang</h4>
             <button class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
@@ -63,7 +63,7 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Datum för event*</label>
-                        <input name="event-date" class="full-width" placeholder="Datumformat">
+                        <input id="event-datepicker" name="event-date" class="full-width" placeholder="Datumformat">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Tidpunkt för event*</label>
@@ -178,11 +178,11 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Mailadress kontaktperson*</label>
-                        <input name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
+                        <input type="email" name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
-                        <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
+                        <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
@@ -209,9 +209,22 @@ get_header();
             </div>
         </form>
     </div>
+    <div class="tab">
+        <div class="form-body">
+            <div class="grid-container ">
+                <h1 class="form-success-title form-publish">Tack! </h1>
+                <p>Agenda: Jämlikhets redaktion granskar innehållet innan det publiceras på hemsidan. Vi notifierar dig när innehållet är uppe via angivna kontaktuppgifter. </p>
+                <fieldset class="spacer">
+                    <p class="form-links email-icon"><a>Maila mig en kopia</a></p>
+                </fieldset>
+            </div>
+        </div>
+    </div>
     <!-- </form> -->
 </section>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/event-form.js"></script>

@@ -16,10 +16,15 @@ function showTab(n) {
 	} else {
 		$(".prevBtn").show();
 	}
-	if (n == tabArray.length - 1) {
+	if (n == tabArray.length - 2) {
 		$(".nextBtn").hide();
 	} else {
 		$(".nextBtn").show();
+	}
+	if (n == tabArray.length - 1) {
+		document.getElementById("form-close-title").style.visibility = "hidden";
+		$(".prevBtn").hide();
+		$(".nextBtn").hide();
 	}
 }
 
@@ -114,5 +119,13 @@ $("#form1step4Prev").click(() => {
 $("#form1step4Next").click(() => {
 	if (formStep3.valid() === false) {
 		return;
+	} else {
+		hideformtab(formStep3);
+		showTab(4);
 	}
+});
+
+//date picker
+$(function() {
+	$("#event-datepicker").datepicker();
 });
