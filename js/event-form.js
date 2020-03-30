@@ -116,3 +116,8 @@ $("#form1step4Next").click(() => {
 		return;
 	}
 });
+
+//date picker
+$(function() {
+	$("#event-datepicker").datepicker();
+});

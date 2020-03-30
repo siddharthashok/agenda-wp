@@ -63,7 +63,7 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Datum för event*</label>
-                        <input name="event-date" class="full-width" placeholder="Datumformat">
+                        <input id="event-datepicker" name="event-date" class="full-width" placeholder="Datumformat">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Tidpunkt för event*</label>
@@ -213,5 +213,7 @@ get_header();
 </section>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/event-form.js"></script>
