@@ -178,11 +178,11 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Mailadress kontaktperson*</label>
-                        <input name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
+                        <input type="email" name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
-                        <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
+                        <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>

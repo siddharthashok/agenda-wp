@@ -65,7 +65,7 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Mailadress till organisationen (ex till en infomail)</label>
-                        <input name='email-address' class="full-width" placeholder="ex. info@agendajamliket.se">
+                        <input type="email" name='email-address' class="full-width" placeholder="ex. info@agendajamliket.se">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Länk till sociala medier</label>
@@ -128,8 +128,6 @@ get_header();
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
                         <label for="check3-9"> Jämställdhet</label>
                     </fieldset>
-                    <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
-                    <p class="form-links"><a>Ladda upp logga</a></p>
 
                 </div>
             </div>
@@ -161,15 +159,15 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Mailadress kontaktperson*</label>
-                        <input name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
+                        <input type="email" name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
-                        <input name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
+                        <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Organisationsnummer*</label>
-                        <input name="number" class="full-width" placeholder="ex. 192301018890">
+                        <input type="number" name="number" class="full-width" placeholder="ex. 192301018890">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
