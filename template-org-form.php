@@ -127,7 +127,7 @@ get_header();
                         <label for="check3-8"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
                         <label for="check3-9"> Jämställdhet</label>
-                        <label id="checkbox_error"></label>
+                        <span id="checkbox_error"></span>
                     </fieldset>
 
                 </div>
