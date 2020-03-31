@@ -52,11 +52,24 @@ formStep1.validate({
 
 formStep2.validate({
 	rules: {
-		"org-description": "required"
+		"org-description": "required",
+		"issues[]": {
+			require_from_group: [1, ".styled-checkbox"]
+		}
 	},
 	messages: {
-		"org-description": "Vänligen ange organisationsaktiviteter"
-	}
+		"org-description": "Vänligen ange organisationsaktiviteter",
+		"issues[]": {
+			require_from_group: "Välj minst ett alternativ"
+		}
+	},
+	errorPlacement: function(error, element) {
+		if (element.attr("name") == "issues[]") {
+			error.insertAfter("#checkbox_error");
+		} else {
+			error.insertAfter(element);
+		}
+	} // end error placement
 });
 
 formStep3.validate({
