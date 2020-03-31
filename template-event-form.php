@@ -79,13 +79,14 @@ get_header();
                     </div>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
-                        <input class="styled-checkbox form-publish " form="check1" type="checkbox" id="check1-1" checked><label for="check1-1"> Ramp finns</label>
-                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-2"><label for="check1-2"> Eventet är på bottenplan</label>
-                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-3"><label for="check1-3"> Hiss finns</label>
-                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-4"><label for="check1-4"> Hörselslinga</label>
-                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-5"><label for="check1-5"> Syntolkning</label>
-                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-6"><label for="check1-6"> Sittplatser</label>
-                        <input class="styled-checkbox form-publish" form="check1" type="checkbox" id="check1-7"><label for="check1-7"> Teckenspråkstolkning</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-1" name="check1[]"><label for="check1-1"> Ramp finns</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-2" name="check1[]"><label for="check1-2"> Eventet är på bottenplan</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-3" name="check1[]"><label for="check1-3"> Hiss finns</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-4" name="check1[]"><label for="check1-4"> Hörselslinga</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-5" name="check1[]"><label for="check1-5"> Syntolkning</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-6" name="check1[]"><label for="check1-6"> Sittplatser</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-7" name="check1[]"><label for="check1-7"> Teckenspråkstolkning</label>
+                        <span id="checkbox1_error"></span>
                     </fieldset>
                 </div>
             </div>
@@ -134,15 +135,16 @@ get_header();
 
                     <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-1" checked><label for="check2-1"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-2"><label for="check2-2"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-3"><label for="check2-3"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-4"><label for="check2-4"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-5"><label for="check2-5">Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-6"><label for="check2-6"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish " form="check2" type="checkbox" id="check2-7"><label for="check2-7"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-8"><label for="check2-8"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" form="check2" type="checkbox" id="check2-9"><label for="check2-9"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-1" name="check2[]"><label for="check2-1"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-2" name="check2[]"><label for="check2-2"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-3" name="check2[]"><label for="check2-3"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-4" name="check2[]"><label for="check2-4"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-5" name="check2[]"><label for="check2-5">Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-6" name="check2[]"><label for="check2-6"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-7" name="check2[]"><label for="check2-7"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-8" name="check2[]"><label for="check2-8"> Jämställdhet</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-9" name="check2[]"><label for="check2-9"> Jämställdhet</label>
+                        <span id="checkbox2_error"></span>
                     </fieldset>
                     <fieldset>
                         <p class="form-links"><a>Ladda upp bild till evenemanget</a></p>
@@ -227,4 +229,5 @@ get_header();
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/event-form.js"></script>

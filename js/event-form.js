@@ -40,7 +40,10 @@ formStep1.validate({
 		"event-date": "required",
 		"event-time": "required",
 		"event-location": "required",
-		address: "required"
+		address: "required",
+		"check1[]": {
+			require_from_group: [1, ".styled-checkbox"]
+		}
 	},
 	messages: {
 		"event-title": "Ange händelsens titel",
@@ -48,19 +51,42 @@ formStep1.validate({
 		"event-date": "Ange händelsedatum",
 		"event-time": "Ange händelsetid",
 		"event-location": "Ange evenemangsplatsen",
-		address: "Ange adress"
-	}
+		address: "Ange adress",
+		"check1[]": {
+			require_from_group: "Välj minst ett alternativ"
+		}
+	},
+	errorPlacement: function(error, element) {
+		if (element.attr("name") == "check1[]") {
+			error.insertAfter("#checkbox1_error");
+		} else {
+			error.insertAfter(element);
+		}
+	} // end error placement
 });
 
 formStep2.validate({
 	rules: {
 		"event-description": "required",
-		"event-cost": "required"
+		"event-cost": "required",
+		"check2[]": {
+			require_from_group: [1, ".styled-checkbox"]
+		}
 	},
 	messages: {
 		"event-description": "Ange händelsebeskrivningen",
-		"event-cost": "Ange händelsens kostnad"
-	}
+		"event-cost": "Ange händelsens kostnad",
+		"check2[]": {
+			require_from_group: "Välj minst ett alternativ"
+		}
+	},
+	errorPlacement: function(error, element) {
+		if (element.attr("name") == "check2[]") {
+			error.insertAfter("#checkbox2_error");
+		} else {
+			error.insertAfter(element);
+		}
+	} // end error placement
 });
 
 formStep3.validate({
