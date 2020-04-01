@@ -1,4 +1,4 @@
-let tabArray = document.getElementsByClassName("tab");
+let tabArray = $("#organisation-form .tab");
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -131,7 +131,7 @@ $("#step4Next").click(e => {
 		return;
 	}
 	hideformtab(formStep3);
-	
+
 	e.preventDefault();
 
 	$fomeOne = $("form[data-form2-step='one']");

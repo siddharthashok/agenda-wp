@@ -1,4 +1,5 @@
-let eventTabArray = document.getElementsByClassName("tab");
+let eventTabArray = $("#event-form-modal .tab");
+
 let eventCurrentTab = 0; // Current tab is set to be the first tab (0)
 showTab(eventCurrentTab); // Display the current tab
 
