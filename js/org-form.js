@@ -14,19 +14,19 @@ if ($("#organisation-form")) {
 		tabArray[n].style.display = "block";
 		// ... and fix the Previous/Next buttons:
 		if (n == 0) {
-			$(".prevBtn").hide();
+			$(".form-org.prevBtn").hide();
 		} else {
-			$(".prevBtn").show();
+			$(".form-org.prevBtn").show();
 		}
 		if (n == tabArray.length - 2) {
-			$(".nextBtn").hide();
+			$(".form-org.nextBtn").hide();
 		} else {
-			$(".nextBtn").show();
+			$(".form-org.nextBtn").show();
 		}
 		if (n == tabArray.length - 1) {
 			document.getElementById("form-close-title").style.visibility = "hidden";
-			$(".prevBtn").hide();
-			$(".nextBtn").hide();
+			$(".form-org.prevBtn").hide();
+			$(".form-org.nextBtn").hide();
 		}
 	}
 

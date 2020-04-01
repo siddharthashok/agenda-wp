@@ -1,5 +1,6 @@
 if ($("#event-form-modal")) {
 	let eventTabArray = $("#event-form-modal .tab");
+	console.log(eventTabArray);
 
 	let eventCurrentTab = 0; // Current tab is set to be the first tab (0)
 	showTab(eventCurrentTab); // Display the current tab
@@ -14,19 +15,19 @@ if ($("#event-form-modal")) {
 		eventTabArray[n].style.display = "block";
 		// ... and fix the Previous/Next buttons:
 		if (n == 0) {
-			$(".prevBtn").hide();
+			$(".form-publish.prevBtn").hide();
 		} else {
-			$(".prevBtn").show();
+			$(".form-publish.prevBtn").show();
 		}
 		if (n == eventTabArray.length - 2) {
-			$(".nextBtn").hide();
+			$(".form-publish.nextBtn").hide();
 		} else {
-			$(".nextBtn").show();
+			$(".form-publish.nextBtn").show();
 		}
 		if (n == eventTabArray.length - 1) {
 			document.getElementById("form-close-title").style.visibility = "hidden";
-			$(".prevBtn").hide();
-			$(".nextBtn").hide();
+			$(".form-publish.prevBtn").hide();
+			$(".form-publish.nextBtn").hide();
 		}
 	}
 
@@ -156,5 +157,10 @@ if ($("#event-form-modal")) {
 	//date picker
 	$(function() {
 		$("#event-datepicker").datepicker();
+	});
+
+	//time picker
+	$(function() {
+		$("#event-timepicker").timepicker();
 	});
 }
