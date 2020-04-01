@@ -109,7 +109,7 @@ get_header();
                     </div>
                     <fieldset>
                         <p>Markera de frågor som din organisation arbetar med*</p>
-                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1" checked>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">
                         <label for="check3-1"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-2">
                         <label for="check3-2"> Jämställdhet</label>
@@ -127,6 +127,7 @@ get_header();
                         <label for="check3-8"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
                         <label for="check3-9"> Jämställdhet</label>
+                        <span id="checkbox_error"></span>
                     </fieldset>
 
                 </div>
@@ -210,5 +211,6 @@ get_header();
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/validate.js"></script> -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/org-form.js"></script>
