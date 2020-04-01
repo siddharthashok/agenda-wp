@@ -36,7 +36,7 @@ get_header();
 
 </section>
 
-<div class="reveal full" id="organisation-form" data-reveal>
+<div class="reveal" id="organisation-form" data-reveal>
     <section class="page-forms forms">
         <!-- <form id="orgForm" class="forms" action=""> -->
         <div class="grid-container">
@@ -108,6 +108,7 @@ get_header();
                         <fieldset class="spacer">
                             <p class="form-links"><a>Ladda upp logga</a></p>
                         </fieldset>
+
                     </div>
                 </div>
                 <div style="overflow:auto;">
@@ -138,7 +139,7 @@ get_header();
                         </div>
                         <fieldset>
                             <p>Markera de frågor som din organisation arbetar med*</p>
-                            <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1" checked>
+                            <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">
                             <label for="check3-1"> Jämställdhet</label>
                             <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-2">
                             <label for="check3-2"> Jämställdhet</label>
@@ -156,6 +157,7 @@ get_header();
                             <label for="check3-8"> Jämställdhet</label>
                             <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
                             <label for="check3-9"> Jämställdhet</label>
+                            <span id="checkbox_error"></span>
                         </fieldset>
 
                     </div>
