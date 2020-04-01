@@ -36,7 +36,7 @@ get_header();
 
 </section>
 
-<div class="reveal" id="organisation-form" data-reveal>
+<div class="reveal full" id="organisation-form" data-reveal>
     <section class="page-forms forms">
         <!-- <form id="orgForm" class="forms" action=""> -->
         <div class="grid-container">
@@ -239,7 +239,7 @@ get_header();
     </section>
 </div>
 <!-- Event form -->
-<div class="reveal" id="event-form-modal" data-reveal>
+<div class="reveal full" id="event-form-modal" data-reveal>
     <section class="page-forms forms">
         <!-- <form id="publishForm" class="forms" action=""> -->
         <div class="grid-container">
@@ -356,15 +356,15 @@ get_header();
                         </div>
                         <div class="form-spacing">
                             <label class="full-width-label">Hemsida för evenemang</label>
-                            <input class="full-width" placeholder="t.ex. 0kr">
+                            <input class="full-width" name="website-url" placeholder="t.ex. 0kr">
                         </div>
                         <div class="form-spacing">
                             <label class="full-width-label">Länk till facebook-event</label>
-                            <input class="full-width" placeholder="t.ex. 0kr">
+                            <input class="full-width" name="facebook-link" placeholder="t.ex. 0kr">
                         </div>
                         <div class="form-spacing">
                             <label class="full-width-label">Länk till arrangörens hemsida</label>
-                            <input class="full-width" placeholder="t.ex. 0kr ">
+                            <input class="full-width" name="link-organiser-website"  placeholder="t.ex. 0kr ">
                         </div>
 
                         <fieldset>
@@ -422,7 +422,7 @@ get_header();
                         </div>
                         <div class="form-spacing">
                             <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
-                            <textarea class="full-width" placeholder="Om du har frågor..."></textarea>
+                            <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
                         </div>
                         <fieldset>
                             <p>Markera de svarsalternativ som stämmer med lokalen*</p>

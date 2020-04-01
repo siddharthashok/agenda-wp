@@ -55,3 +55,25 @@ function createOrganisation()
 
 add_action("wp_ajax_createOrganisation", "createOrganisation");
 add_action("wp_ajax_nopriv_createOrganisation", "createOrganisation");
+
+function createEvent()
+{
+    $event_title = $_POST["eventTitle"];
+    $organizer = $_POST["organizer"];
+    $event_date = $_POST["eventDate"];
+    $event_time = $_POST["eventTime"];
+    $location = $_POST["event-location"];
+    $address = $_POST["address"];
+    $availability = $_POST["availability"];
+    $event_cost = $_POST["eventCost"];
+    $website_url = $_POST["websiteURL"];
+    $facebook_link = $_POST["facebookLink"];
+    $link_organiser_website = $_POST["linkOrganiserWebsite"];
+    $event_description = $_POST["eventDescription"];
+    $contact_name = $_POST["contactName"];
+    $contact_email_address = $_POST["contactEmailAddress"];
+    $contact_phone_no = $_POST["contactPhoneNo"];
+    $message = $_POST["message"];
+}
+add_action("wp_ajax_createEvent", "createEvent");
+add_action("wp_ajax_nopriv_createEvent", "createEvent");
