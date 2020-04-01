@@ -121,35 +121,62 @@ get_header();
                 <a href="#" class="see-few-all">Se färre</a>
             </div>
             <?php
-                // $all_events = WP_Query(array(
-                //   'post_type' => 'events',
-                //   'posts_per_page' => -1,
-                //   'meta_key' => 'start_date',  
-                // ));
+                $all_events = new WP_Query(array(
+                  'post_type' => 'event_listing',
+                  'posts_per_page' => -1, 
+                ));
             ?>
             <!-- current event wrap desktop with grid -->
             <div class="event-desktop-wrap">
                 <div class="grid-x grid-margin-x grid-margin-y">
-                    <div class="cell large-4">
-                        <a href="#" class="card-with-image">
-                            <div class="image-wrapper">
-                                <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                                <div class="date">
-                                    <span class="day">25</span>
-                                    <span class="month">December</span>
-                                </div>
+                <?php
+                    if($all_events->have_posts())
+                    {
+                        while($all_events->have_posts())
+                        {
+                            $all_events->the_post();
+                ?>
+                            <div class="cell large-4">
+                                <a href="<?= get_the_permalink(); ?>" class="card-with-image">
+                                    <div class="image-wrapper">
+                                        <img src="<?= get_event_banner(); ?>" alt="">
+                                        <?php
+                                            
+											$date = strtotime(get_event_start_date());
+											$day = date("d",$date);
+											$month = date("F", $date);
+										?>
+                                        <div class="date">
+                                            <span class="day"><?= $day; ?></span>
+                                            <span class="month"><?= $month; ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <span class="category">event </span>
+                                        <span class="entrance-info">Fritt inträde</span>
+                                        <h3><?= get_the_title(); ?></h3>
+                                        <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
+                                        <p class="location">Plats: <?= get_field("place")["address"]; ?></p>
+                                        <?php
+                                        
+                                            $start_date = strtotime(get_event_start_date());
+                                            $end_date = strtotime(get_event_end_date());
+                                            $start_time = get_event_start_time();
+                                            $end_time = get_event_end_time();
+
+                                            $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
+									    ?>
+                                        <p class="date">Tid: <?= $format_date; ?></p>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="content">
-                                <span class="category">event </span>
-                                <span class="entrance-info">Fritt inträde</span>
-                                <h3>Sexualitet & könsidentitet</h3>
-                                <p class="organizer">Arrangör: RFSL GöteborgArrangör: RFSL GöteborgArrangör: RFSL GöteborgArrangör: RFSL Göteborg</p>
-                                <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                                <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell large-4">
+                <?php
+                        }
+                    }
+                    wp_reset_postdata();
+                ?>
+                    
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -167,8 +194,8 @@ get_header();
                                 <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
                             </div>
                         </a>
-                    </div>
-                    <div class="cell large-4">
+                    </div> -->
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -186,8 +213,8 @@ get_header();
                                 <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
                             </div>
                         </a>
-                    </div>
-                    <div class="cell large-4">
+                    </div> -->
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -205,8 +232,8 @@ get_header();
                                 <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
                             </div>
                         </a>    
-                    </div>
-                    <div class="cell large-4">
+                    </div> -->
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -281,8 +308,8 @@ get_header();
                                 <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
                             </div>
                         </a>   
-                    </div>
-                    <div class="cell large-4">
+                    </div> -->
+                    <!-- <div class="cell large-4">
                         <a href="#" class="card-with-image">
                             <div class="image-wrapper">
                                 <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
@@ -300,7 +327,7 @@ get_header();
                                 <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>
@@ -588,7 +615,7 @@ get_header();
                             <h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
                             <p class="connect-card-text">Vill du att din organisation ska synas på  Agenda: Jämlikhet eller publicera ditt event  i vår kalender?
                             </p>
-                            <a href="#" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
+                            <a href="<?= get_site_url()?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
                         </div>
                     </div>
                 </div>
@@ -598,7 +625,7 @@ get_header();
                             <h3>Brinner du för jämlikhet och vill dra igång något nytt?</h3>
                             <p class="connect-card-text">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka.
                             </p>
-                            <a href="#" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
+                            <a href="<?= get_site_url()?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
                         </div>
                     </div>
                 </div>

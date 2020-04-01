@@ -79,6 +79,8 @@ if ( ! function_exists( 'agenda_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		add_theme_support( 'event-manager-templates' );
 	}
 endif;
 add_action( 'after_setup_theme', 'agenda_setup' );
@@ -169,7 +171,7 @@ require get_template_directory() . '/inc/ajax.php';
 /**
  * Custom posts type settings
  */
-require get_template_directory() . '/inc/custom-posts-settings.php';
+// require get_template_directory() . '/inc/custom-posts-settings.php';
 
 /**
  * ACF settings
@@ -231,3 +233,11 @@ add_filter( 'wp_terms_checklist_args', 'organisation_check_list_to_radio_button'
 // 		wp_enqueue_script( 'my-terms-selector', get_template_directory_uri()."/js/inputTypeCustomizer.js", [ 'wp-editor' ] );
 // 	}
 // }
+// $post_id = wp_insert_post( 
+// 	array(
+// 		"post_title" => "test event",
+// 		"post_status" => "draft",
+// 		"post_type" => "event_listing",
+// 		"post_content" => "descriptiom",
+// 	)
+// );

@@ -118,8 +118,7 @@ $("#step4Next").click(e => {
 		return;
 	}
 	hideformtab(formStep3);
-	showTab(4);
-
+	
 	e.preventDefault();
 
 	$fomeOne = $("form[data-form2-step='one']");
@@ -165,6 +164,6 @@ $("#step4Next").click(e => {
 		type: "POST",
 		data: data
 	}).then(function(reply) {
-		console.log(reply);
+		showTab(4);
 	});
 });
