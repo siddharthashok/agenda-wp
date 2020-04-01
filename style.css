@@ -1116,6 +1116,10 @@ a.active {
   color: red;
 }
 
+.datepicker-container {
+  z-index: 1006 !important;
+}
+
 .contact-page .title {
   font-family: "Overpass", sans-serif;
   font-style: normal;

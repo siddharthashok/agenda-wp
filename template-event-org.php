@@ -301,7 +301,7 @@ get_header();
                         </div>
                         <div class="form-spacing">
                             <label class="full-width-label">Tidpunkt för event*</label>
-                            <input name="event-time" class="full-width" placeholder="Ange start och sluttidpunkt">
+                            <input id="event-timepicker" name="event-time" class="full-width" placeholder="Ange start och sluttidpunkt">
                         </div>
                         <div class="form-spacing">
                             <label class="full-width-label">Plats för event*</label>
@@ -468,6 +468,7 @@ get_footer();
 ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script src="<?= get_template_directory_uri() ?>/js/org-form.js"></script>
