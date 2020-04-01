@@ -1,27 +1,27 @@
-let tabArray = document.getElementsByClassName("tab");
-let currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+let eventTabArray = document.getElementsByClassName("tab");
+let eventCurrentTab = 0; // Current tab is set to be the first tab (0)
+showTab(eventCurrentTab); // Display the current tab
 
-let formStep1 = $("form[data-form1-step='one']");
-let formStep2 = $("form[data-form1-step='two']");
-let formStep3 = $("form[data-form1-step='three']");
+let eventFormStep1 = $("form[data-form1-step='one']");
+let eventFormStep2 = $("form[data-form1-step='two']");
+let eventFormStep3 = $("form[data-form1-step='three']");
 
 //show the tab and the buttons
 function showTab(n) {
 	// This function will display the specified tab of the form ...
-	tabArray[n].style.display = "block";
+	eventTabArray[n].style.display = "block";
 	// ... and fix the Previous/Next buttons:
 	if (n == 0) {
 		$(".prevBtn").hide();
 	} else {
 		$(".prevBtn").show();
 	}
-	if (n == tabArray.length - 2) {
+	if (n == eventTabArray.length - 2) {
 		$(".nextBtn").hide();
 	} else {
 		$(".nextBtn").show();
 	}
-	if (n == tabArray.length - 1) {
+	if (n == eventTabArray.length - 1) {
 		document.getElementById("form-close-title").style.visibility = "hidden";
 		$(".prevBtn").hide();
 		$(".nextBtn").hide();
@@ -33,7 +33,7 @@ function hideformtab(hideform) {
 }
 
 //form validation
-formStep1.validate({
+eventFormStep1.validate({
 	rules: {
 		"event-title": "required",
 		organizer: "required",
@@ -65,7 +65,7 @@ formStep1.validate({
 	} // end error placement
 });
 
-formStep2.validate({
+eventFormStep2.validate({
 	rules: {
 		"event-description": "required",
 		"event-cost": "required",
@@ -89,7 +89,7 @@ formStep2.validate({
 	} // end error placement
 });
 
-formStep3.validate({
+eventFormStep3.validate({
 	rules: {
 		"contact-name": "required",
 		"contact-email-address": "required",
@@ -108,45 +108,45 @@ formStep3.validate({
 
 //click events
 $("#form1step1Next").click(() => {
-	tabArray[0].style.display = "none";
+	eventTabArray[0].style.display = "none";
 	showTab(1);
 });
 
 $("#form1step2Prev").click(() => {
 	showTab(0);
-	hideformtab(formStep1);
+	hideformtab(eventFormStep1);
 });
 $("#form1step2Next").click(() => {
-	if (formStep1.valid() === false) {
+	if (eventFormStep1.valid() === false) {
 		return;
 	} else {
-		hideformtab(formStep1);
+		hideformtab(eventFormStep1);
 		showTab(2);
 	}
 });
 
 $("#form1step3Prev").click(() => {
 	showTab(1);
-	hideformtab(formStep2);
+	hideformtab(eventFormStep2);
 });
 $("#form1step3Next").click(() => {
-	if (formStep2.valid() === false) {
+	if (eventFormStep2.valid() === false) {
 		return;
 	} else {
-		hideformtab(formStep2);
+		hideformtab(eventFormStep2);
 		showTab(3);
 	}
 });
 
 $("#form1step4Prev").click(() => {
 	showTab(2);
-	hideformtab(formStep3);
+	hideformtab(eventFormStep3);
 });
 $("#form1step4Next").click(() => {
-	if (formStep3.valid() === false) {
+	if (eventFormStep3.valid() === false) {
 		return;
 	} else {
-		hideformtab(formStep3);
+		hideformtab(eventFormStep3);
 		showTab(4);
 	}
 });
