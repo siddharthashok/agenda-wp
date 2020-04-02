@@ -32,7 +32,7 @@ get_header();
 						<div class="cell large-4">
 							<a href="<?= get_permalink(); ?>" class="card-with-image">
 								<div class="image-wrapper">
-									<img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
+									<img src="<?= get_event_banner(); ?>" alt="image of event">
 									<div class="date">
 										<?php
                                             

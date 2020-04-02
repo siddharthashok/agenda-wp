@@ -233,11 +233,3 @@ add_filter( 'wp_terms_checklist_args', 'organisation_check_list_to_radio_button'
 // 		wp_enqueue_script( 'my-terms-selector', get_template_directory_uri()."/js/inputTypeCustomizer.js", [ 'wp-editor' ] );
 // 	}
 // }
-// $post_id = wp_insert_post( 
-// 	array(
-// 		"post_title" => "test event",
-// 		"post_status" => "draft",
-// 		"post_type" => "event_listing",
-// 		"post_content" => "descriptiom",
-// 	)
-// );

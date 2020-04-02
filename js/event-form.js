@@ -1,13 +1,13 @@
 if ($("#event-form-modal")) {
 	let eventTabArray = $("#event-form-modal .tab");
-	console.log(eventTabArray);
+	// console.log(eventTabArray);
 
 	let eventCurrentTab = 0; // Current tab is set to be the first tab (0)
 	showTab(eventCurrentTab); // Display the current tab
 
-	let eventFormStep1 = $("form[data-form1-step='one']");
-	let eventFormStep2 = $("form[data-form1-step='two']");
-	let eventFormStep3 = $("form[data-form1-step='three']");
+	var eventFormStep1 = $("form[data-form1-step='one']");
+	var eventFormStep2 = $("form[data-form1-step='two']");
+	var eventFormStep3 = $("form[data-form1-step='three']");
 
 	//show the tab and the buttons
 	function showTab(n) {
@@ -150,6 +150,63 @@ if ($("#event-form-modal")) {
 			return;
 		} else {
 			hideformtab(eventFormStep3);
+
+			let eventTitle = eventFormStep1.find("[name='event-title']").val();
+			let organizer = eventFormStep1.find("[name='organizer']").val();
+			let eventDatepicker = eventFormStep1.find("[name='event-datepicker']").val();
+			let eventTimepicker = eventFormStep1.find("[name='event-timepicker']").val();
+			let eventLocation = eventFormStep1.find("[name='event-location']").val();
+			let address = eventFormStep1.find("[name='address']").val();
+			let availability = [];
+
+			eventFormStep1.find("[name='check1[]']:checked").each(function(index){
+				availability.push($(this).val());
+			});
+			let eventDescription = eventFormStep2.find("[name='event-description']").val();
+			let eventCost = eventFormStep2.find("[name='event-cost']").val();
+			let websiteURL = eventFormStep2.find("[name='website-url']").val();
+			let facebookLink = eventFormStep2.find("[name='facebook-link']").val();
+			let linkOrganiserWebsite = eventFormStep2.find("[name='link-organiser-website']").val();
+			let concerns = [];
+			eventFormStep2.find("[name='check2[]']:checked").each(function(index){
+				concerns.push($(this).val());
+			});
+			
+			let contactName = eventFormStep3.find("[name='contact-name']").val();
+			let contactEmailAddress = eventFormStep3.find("[name='contact-email-address']").val();
+			let contactPhoneNo = eventFormStep3.find("[name='contact-phone-no']").val();
+			let message = eventFormStep3.find("[name='message']").val();
+			// debugger;
+			const data = {
+				eventTitle:eventTitle,
+				organizer:organizer,
+				eventDatepicker:eventDatepicker,
+				eventTimepicker:eventTimepicker,
+				eventLocation:eventLocation,
+				address:address,
+				availability:availability,
+				eventDescription:eventDescription,
+				eventCost:eventCost,
+				websiteURL:websiteURL,
+				facebookLink:facebookLink,
+				linkOrganiserWebsite:linkOrganiserWebsite,
+				websiteURL:websiteURL,
+				concerns:concerns,
+				contactName:contactName,
+				contactEmailAddress:contactEmailAddress,
+				contactPhoneNo:contactPhoneNo,
+				message:message,
+				action:"createEvent"
+			}
+
+			$.ajax({
+				url: "http://localhost/agenda-wp/wp-admin/admin-ajax.php",
+				type: "POST",
+				data: data
+			}).then(function(reply){
+				console.log(reply);
+			})
+
 			showTab(4);
 		}
 	});

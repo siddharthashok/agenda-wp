@@ -60,9 +60,9 @@ function createEvent()
 {
     $event_title = $_POST["eventTitle"];
     $organizer = $_POST["organizer"];
-    $event_date = $_POST["eventDate"];
-    $event_time = $_POST["eventTime"];
-    $location = $_POST["event-location"];
+    $event_date = $_POST["eventDatepicker"];
+    $event_time = $_POST["eventTimepicker"];
+    $location = $_POST["eventLocation"];
     $address = $_POST["address"];
     $availability = $_POST["availability"];
     $event_cost = $_POST["eventCost"];
@@ -74,6 +74,50 @@ function createEvent()
     $contact_email_address = $_POST["contactEmailAddress"];
     $contact_phone_no = $_POST["contactPhoneNo"];
     $message = $_POST["message"];
+
+    
+    $post_id = wp_insert_post( 
+        array(
+            "post_title" => $event_title,
+            "post_status" => "draft",
+            "post_type" => "event_listing",
+            "post_content" => $event_description,
+        )
+    );
+
+    update_post_meta($post_id, "_event_venue_name", $location);
+    update_post_meta($post_id, "_event_start_date", $event_date);
+    update_post_meta($post_id, "_event_start_time", $event_time);
+    update_post_meta($post_id, "_evet_cost", $event_cost);
+    update_post_meta($post_id, "_evet_cost", $event_cost);
+    
+    update_field("address",$address,$post_id);
+    update_field("address",$address,$post_id);
+    update_field("place",array("address"=>$location),$post_id);
+
+    $contact_details = array(
+        "name"=> $contact_name,
+        "email"=> $contact_email_address,
+        "phone"=> $contact_phone_no
+    );
+
+    update_field("contact_details_for_event",$contact_details,$post_id);
+    update_field("message",$message,$post_id);
+    update_field("rsvp_link",$website_url,$post_id);
+
+    $availabilityList = array();
+
+    for($i=0; $i<sizeof($availability); $i++)
+    {
+        $temp = array("title" => $availability[$i]);
+        array_push($availabilityList,$temp);
+    }
+
+    update_field("availability", $availabilityList, $post_id);
+
+
+    echo json_encode(array("pageId" => $post_id));
+    wp_die();
 }
 add_action("wp_ajax_createEvent", "createEvent");
 add_action("wp_ajax_nopriv_createEvent", "createEvent");
