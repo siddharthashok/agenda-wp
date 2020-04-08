@@ -93,6 +93,7 @@ a.active {
   background-color: #fafafa;
   transition: all 0.3s ease;
   box-shadow: 0px 1px 3px #e6dad8;
+  position: relative;
 }
 .site-header:hover {
   box-shadow: 0px 4px 16px 0px rgba(119, 119, 119, 0.16);
@@ -114,6 +115,9 @@ a.active {
   text-transform: uppercase;
   padding: 20px 20px 15px 20px;
 }
+.site-header .p-relative {
+  position: relative;
+}
 .site-header .search {
   position: relative;
 }
@@ -124,28 +128,44 @@ a.active {
   height: 20px;
   display: inline-block;
   position: absolute;
-  left: 55px;
+  left: 44px;
   top: 18px;
 }
 .site-header .search-mobile {
   display: none;
 }
 .site-header .search-container {
-  transition: all 0.3s ease-in-out;
-  transform: translate(0, -100px);
   height: 0;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
 }
 .site-header .search-container.opened {
-  transition: all 0.3s ease-in-out;
-  transform: translate(0, -50px);
+  transition: opacity 0.3s ease-in-out;
+  display: block;
+  opacity: 1;
+  position: absolute;
+  background: #ffffff;
+  width: calc(100% - 235px);
+  top: 13px;
+  right: 0;
 }
 .site-header .search-container form {
-  width: 95%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .site-header .search-container form input {
+  border: none;
   box-shadow: none;
   margin-bottom: 0;
-  border-color: #c4c4c4;
+  background-color: #fafafa;
+  padding: 0 45px 0 25px;
+}
+.site-header .search-container form .search-close {
+  position: absolute;
+  right: 15px;
+  top: 7px;
 }
 
 .day {
@@ -1213,11 +1233,13 @@ a.active {
     padding-top: 8px;
   }
   .site-header .search-container.opened {
-    transform: translate(0, -36px);
-    height: 10px;
-  }
-  .site-header .search-container form {
-    width: 90%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 9999;
+    padding: 0px;
   }
   .site-header .search-item {
     display: none;

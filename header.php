@@ -30,7 +30,7 @@
 <body>
     <header class="site-header">
         <div class="grid-container">
-            <div class="cell large-12">
+            <div class="cell large-12 p-relative">
                 <div class="header-wrapper">
                     <div class="hamburger">
                         <span></span>
@@ -66,6 +66,7 @@
                     <form>
                         <input type="text" name="q" id="search-terms" placeholder="SÖK" />
                         <button type="submit" name="submit" value="Go" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
+                        <a href="#" class="search-close"><img src="<?= get_template_directory_uri(); ?>/img/close-icon.svg" alt="close-button"></a>
                     </form>
                 </div>
                 <div class="clear"></div>
