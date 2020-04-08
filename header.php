@@ -30,7 +30,7 @@
 <body>
     <header class="site-header">
         <div class="grid-container">
-            <div class="cell large-12">
+            <div class="cell large-12 p-relative">
                 <div class="header-wrapper">
                     <div class="hamburger">
                         <span></span>

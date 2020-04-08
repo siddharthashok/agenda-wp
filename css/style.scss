@@ -123,6 +123,7 @@ a {
 	background-color: $light-white;
 	transition: all 0.3s ease;
 	box-shadow: 0px 1px 3px $creame;
+	position: relative;
 	&:hover {
 		box-shadow: 0px 4px 16px 0px rgba(119, 119, 119, 0.16);
 	}
@@ -141,6 +142,9 @@ a {
 			padding: /*20px;*/ 20px 20px 15px 20px;
 		}
 	}
+	.p-relative {
+		position: relative;
+	}
 	.search {
 		position: relative;
 		&:after {
@@ -150,7 +154,7 @@ a {
 			height: 20px;
 			display: inline-block;
 			position: absolute;
-			left: 55px;
+			left: 44px;
 			top: 18px;
 		}
 	}
@@ -158,11 +162,19 @@ a {
 		display: none;
 	}
 	.search-container {
-		transition: all 0.3s ease-in-out;
 		height: 0;
 		display: none;
+		transition: opacity 0.3s ease-in-out;
+		opacity: 0;
 		&.opened {
+			transition: opacity 0.3s ease-in-out;
 			display: block;
+			opacity: 1;
+			position: absolute;
+			background: $white;
+			width: calc(100% - 235px);
+			top: 13px;
+			right: 0;
 		}
 		form {
 			position: relative;
@@ -172,7 +184,7 @@ a {
 				border: none;
 				box-shadow: none;
 				margin-bottom: 0;
-				border-color: $gray;
+				background-color: $light-white;
 			}
 			.search-close {
 				position: absolute;

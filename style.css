@@ -93,6 +93,7 @@ a.active {
   background-color: #fafafa;
   transition: all 0.3s ease;
   box-shadow: 0px 1px 3px #e6dad8;
+  position: relative;
 }
 .site-header:hover {
   box-shadow: 0px 4px 16px 0px rgba(119, 119, 119, 0.16);
@@ -114,6 +115,9 @@ a.active {
   text-transform: uppercase;
   padding: 20px 20px 15px 20px;
 }
+.site-header .p-relative {
+  position: relative;
+}
 .site-header .search {
   position: relative;
 }
@@ -124,19 +128,27 @@ a.active {
   height: 20px;
   display: inline-block;
   position: absolute;
-  left: 55px;
+  left: 44px;
   top: 18px;
 }
 .site-header .search-mobile {
   display: none;
 }
 .site-header .search-container {
-  transition: all 0.3s ease-in-out;
   height: 0;
   display: none;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
 }
 .site-header .search-container.opened {
+  transition: opacity 0.3s ease-in-out;
   display: block;
+  opacity: 1;
+  position: absolute;
+  background: #ffffff;
+  width: calc(100% - 235px);
+  top: 13px;
+  right: 0;
 }
 .site-header .search-container form {
   position: relative;
@@ -147,7 +159,7 @@ a.active {
   border: none;
   box-shadow: none;
   margin-bottom: 0;
-  border-color: #c4c4c4;
+  background-color: #fafafa;
 }
 .site-header .search-container form .search-close {
   position: absolute;
