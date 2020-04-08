@@ -118,7 +118,7 @@ get_header();
                     <h2 class="title">Aktuella evenemang</h2>
                     <p class="about">Här hittar du aktuella evenemang i vår eventkalender.  Hitta något som passar dig!</p>
                 </div>
-                <a href="#" class="see-few-all">Se färre</a>
+                <a href="<?= get_site_url();?>/events" class="see-few-all">Se färre</a>
             </div>
             <?php
                 $all_events = new WP_Query(array(
@@ -233,7 +233,7 @@ get_header();
                     <h2 class="title">Aktuella organisationer</h2>
                     <p class="about">Hitta en organisation som jobbar med jämlikhetsfrågor som intresserar dig!</p>
                 </div>
-                <a href="#" class="see-few-all">Se färre</a>
+                <a href="<?= get_site_url();?>/organisations" class="see-few-all">Se färre</a>
             </div>
             <!-- with grid for desktop-->
             <div class="current-organizers-wrap">
