@@ -128,8 +128,11 @@ a.active {
   height: 20px;
   display: inline-block;
   position: absolute;
-  left: 44px;
+  left: 55px;
   top: 18px;
+}
+.site-header .search-toggle.opened .search:after {
+  background: none;
 }
 .site-header .search-mobile {
   display: none;

@@ -154,8 +154,15 @@ a {
 			height: 20px;
 			display: inline-block;
 			position: absolute;
-			left: 44px;
+			left: 55px;
 			top: 18px;
+		}
+	}
+	.search-toggle.opened {
+		.search {
+			&:after {
+				background: none;
+			}
 		}
 	}
 	.search-mobile {
