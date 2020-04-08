@@ -160,6 +160,7 @@ a.active {
   box-shadow: none;
   margin-bottom: 0;
   background-color: #fafafa;
+  padding: 0 45px 0 25px;
 }
 .site-header .search-container form .search-close {
   position: absolute;
