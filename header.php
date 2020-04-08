@@ -64,7 +64,7 @@
                 </div>
                 <div class="search-container">
                     <form>
-                        <input type="text" name="q" id="search-terms" placeholder="SÖK" />
+                        <input type="text" name="q" id="search-terms" placeholder="Ange ord som ska sökas." />
                         <button type="submit" name="submit" value="Go" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
                         <a href="#" class="search-close"><img src="<?= get_template_directory_uri(); ?>/img/close-icon.svg" alt="close-button"></a>
                     </form>
