@@ -200,14 +200,14 @@ if ($("#event-form-modal")) {
 			}
 
 			$.ajax({
-				url: "http://localhost/agenda-wp/wp-admin/admin-ajax.php",
+				url: siteURL+"/wp-admin/admin-ajax.php",
 				type: "POST",
 				data: data
 			}).then(function(reply){
-				console.log(reply);
+				showTab(4);
 			})
 
-			showTab(4);
+			
 		}
 	});
 
