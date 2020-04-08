@@ -471,5 +471,6 @@ get_footer();
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+
 <script src="<?= get_template_directory_uri() ?>/js/org-form.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/event-form.js"></script>

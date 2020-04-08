@@ -92,7 +92,7 @@ get_header();
                 </div> -->
             </div>
         </div>
-        <div>
+        <div class="grid-container">
             <span class="subtitle">Styrelse för Agenda: Jämlikhet</span>
             <div>
                 <?php

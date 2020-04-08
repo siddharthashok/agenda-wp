@@ -47,9 +47,9 @@
                         </li>
                         <li><a href="<?= get_site_url(); ?>/events" class="nav-link">Event kalender</a></li>
                         <li><a href="<?= get_site_url(); ?>/organisations" class="nav-link">Organisationer</a></li>
-                        <li><a href="#" class="nav-link">Publicera </a></li>
+                        <li><a href="<?= get_site_url(); ?>/publish-event-organisation" class="nav-link">Publicera </a></li>
                         <li><a href="#" class="nav-link">Om Agenda: Jämlikhet</a></li>
-                        <li><a href="#" class="nav-link">Kontakta </a></li>
+                        <li><a href="<?= get_site_url(); ?>/contact" class="nav-link">Kontakta </a></li>
                         <li class="search-item">
                             <div class="search-toggle">
                                 <a href="#" class="search nav-link" title="search button">SÖK</a>

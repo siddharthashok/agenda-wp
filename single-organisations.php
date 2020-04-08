@@ -27,7 +27,7 @@ while(have_posts())
                 <div class="card-with-image">
                     <div class="image-wrapper">
 
-                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of the organisation">
+                        <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of the organisation">
                     </div>
                     <div class="card-title-wrap">
                         <span class="category">organisation</span>
