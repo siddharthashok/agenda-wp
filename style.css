@@ -132,7 +132,7 @@ a.active {
   top: 18px;
 }
 .site-header .search-toggle.opened .search:after {
-  background: none;
+  display: none;
 }
 .site-header .search-mobile {
   display: none;
@@ -1185,13 +1185,25 @@ a.active {
   background-repeat: no-repeat, no-repeat;
   background-position: 0% 20%, 100% 2%;
 }
+.about-page .title {
+  margin: 0;
+}
 .about-page .sub-title {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 700;
+  margin: 0;
 }
 .about-page .about-img {
-  margin: 25px 0;
+  padding: 20px 0;
+}
+.about-page .about-img img {
+  object-fit: cover;
+  max-height: 230px;
+  width: 100%;
+}
+.about-page .sponser-list .sub-title {
+  margin-bottom: 15px;
 }
 
 /* start of media queries- Small only */

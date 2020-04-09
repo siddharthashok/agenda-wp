@@ -18,7 +18,7 @@ get_header();
             Agenda: Jämlikhet är en ideell politiskt och religös obunden förening.
         </h2>
         <div class="grid-x ">
-            <div class="cell medium-4">
+            <div class="cell small-12">
                 <div class="about-img">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
                 </div>
@@ -39,7 +39,7 @@ get_header();
         </div>
         <div class="sponser-list">
             <h3 class="sub-title">Sponsorer </h3>
-            <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="grid-x grid-margin-x">
                 <div class="cell medium-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/kultur-ungdom.png" alt="kultur-ungdom">
                 </div>

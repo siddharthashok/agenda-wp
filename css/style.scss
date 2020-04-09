@@ -161,7 +161,7 @@ a {
 	.search-toggle.opened {
 		.search {
 			&:after {
-				background: none;
+				display: none;
 			}
 		}
 	}
@@ -1220,11 +1220,25 @@ a {
 		url(img/blue-patch-about.svg);
 	background-repeat: no-repeat, no-repeat;
 	background-position: 0% 20%, 100% 2%;
+	.title {
+		margin: 0;
+	}
 	.sub-title {
 		@include bold();
+		margin: 0;
 	}
 	.about-img {
-		margin: 25px 0;
+		padding: 20px 0;
+		img {
+			object-fit: cover;
+			max-height: 230px;
+			width: 100%;
+		}
+	}
+	.sponser-list {
+		.sub-title {
+			margin-bottom: 15px;
+		}
 	}
 }
 /* start of media queries- Small only */
