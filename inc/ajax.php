@@ -2,18 +2,18 @@
 
 function createOrganisation()
 {
-    $name_organisation = $_POST["organisationName"];
-    $website_url = $_POST["websiteURL"];
-    $email_address = $_POST["emailAddress"];
-    $link_to_social_media = $_POST["socialMedia"];
-    $city = $_POST["city"];
-    $description = $_POST["description"];
+    $name_organisation = sanitize_text_field($_POST["organisationName"]);
+    $website_url = sanitize_text_field($_POST["websiteURL"]);
+    $email_address = sanitize_text_field($_POST["emailAddress"]);
+    $link_to_social_media = sanitize_text_field($_POST["socialMedia"]);
+    $city = sanitize_text_field($_POST["city"]);
+    $description = sanitize_textarea_field($_POST["description"]);
     // $event_concerns = $_POST["eventConcerns"];
-    $contact_name = $_POST["contactName"];
-    $contact_email_address = $_POST["contactEmail"];
-    $contact_phone = $_POST["contactPhone"];
-    $corporate = $_POST["corporate"];
-    $message = $_POST["message"];
+    $contact_name = sanitize_text_field($_POST["contactName"]);
+    $contact_email_address = sanitize_text_field($_POST["contactEmail"]);
+    $contact_phone = sanitize_text_field($_POST["contactPhone"]);
+    $corporate = sanitize_text_field($_POST["corporate"]);
+    $message = sanitize_textarea_field($_POST["message"]);
 
     $post_id = wp_insert_post( 
         array(
@@ -58,22 +58,22 @@ add_action("wp_ajax_nopriv_createOrganisation", "createOrganisation");
 
 function createEvent()
 {
-    $event_title = $_POST["eventTitle"];
-    $organizer = $_POST["organizer"];
+    $event_title = sanitize_text_field($_POST["eventTitle"]);
+    $organizer = sanitize_textarea_field($_POST["organizer"]);
     $event_date = $_POST["eventDatepicker"];
     $event_time = $_POST["eventTimepicker"];
-    $location = $_POST["eventLocation"];
-    $address = $_POST["address"];
+    $location = sanitize_text_field($_POST["eventLocation"]);
+    $address = sanitize_text_field($_POST["address"]);
     $availability = $_POST["availability"];
-    $event_cost = $_POST["eventCost"];
-    $website_url = $_POST["websiteURL"];
-    $facebook_link = $_POST["facebookLink"];
-    $link_organiser_website = $_POST["linkOrganiserWebsite"];
-    $event_description = $_POST["eventDescription"];
-    $contact_name = $_POST["contactName"];
-    $contact_email_address = $_POST["contactEmailAddress"];
-    $contact_phone_no = $_POST["contactPhoneNo"];
-    $message = $_POST["message"];
+    $event_cost = sanitize_text_field($_POST["eventCost"]);
+    $website_url = sanitize_text_field($_POST["websiteURL"]);
+    $facebook_link = sanitize_text_field($_POST["facebookLink"]);
+    $link_organiser_website = sanitize_text_field($_POST["linkOrganiserWebsite"]);
+    $event_description = sanitize_text_field($_POST["eventDescription"]);
+    $contact_name = sanitize_text_field($_POST["contactName"]);
+    $contact_email_address = sanitize_text_field($_POST["contactEmailAddress"]);
+    $contact_phone_no = sanitize_text_field($_POST["contactPhoneNo"]);
+    $message = sanitize_textarea_field($_POST["message"]);
 
     
     $post_id = wp_insert_post( 
@@ -85,13 +85,14 @@ function createEvent()
         )
     );
 
+    update_post_meta($post_id, "_organizer_name", $organizer);
     update_post_meta($post_id, "_event_venue_name", $location);
     update_post_meta($post_id, "_event_start_date", $event_date);
     update_post_meta($post_id, "_event_start_time", $event_time);
     update_post_meta($post_id, "_evet_cost", $event_cost);
-    update_post_meta($post_id, "_evet_cost", $event_cost);
+    update_post_meta($post_id, "_organizer_website", $link_organiser_website);
     
-    update_field("address",$address,$post_id);
+    // update_field("address",$address,$post_id);
     update_field("address",$address,$post_id);
     update_field("place",array("address"=>$location),$post_id);
 
