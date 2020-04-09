@@ -32,7 +32,7 @@ get_header();
 						<div class="cell large-4">
 							<a href="<?= get_permalink(); ?>" class="card-with-image">
 								<div class="image-wrapper">
-									<img src="<?= get_event_banner() ? get_template_directory_uri().'/img/backup.jpg' : get_event_banner(); ?>" alt="image of event">
+									<img src="<?= get_event_banner() ? get_event_banner() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of event">
 									<div class="date">
 										<?php
                                             
@@ -70,49 +70,6 @@ get_header();
 					}
 				}
 			?>
-            
-            <!-- <div class="cell large-4">
-                <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="card-title-wrap">
-                        <span class="category">event </span>
-                        <span class="entrace-info">Fritt inträde</span>
-                    </div>
-                    <div class="content">
-                        <h3>Mötesplats för alla barn och regnbågsfamiljer</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-            </div> -->
-            <!-- <div class="cell large-4">
-                <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="card-title-wrap">
-                        <span class="category">event </span>
-                        <span class="entrace-info">Fritt inträde</span>
-                    </div> 
-                    <div class="content">
-                        <h3>Mötesplats för alla barn och regnbågsfamiljer</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-            </div> -->
         </div>
     </div>
 </section>

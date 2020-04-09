@@ -118,7 +118,7 @@ get_header();
                     <h2 class="title">Aktuella evenemang</h2>
                     <p class="about">Här hittar du aktuella evenemang i vår eventkalender.  Hitta något som passar dig!</p>
                 </div>
-                <a href="#" class="see-few-all">Se färre</a>
+                <a href="<?= get_site_url();?>/events" class="see-few-all">Se färre</a>
             </div>
             <?php
                 $all_events = new WP_Query(array(
@@ -223,142 +223,6 @@ get_header();
                     }
                     wp_reset_postdata();
                 ?>
-                <!-- <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-                <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-                <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-                <a href="#" class="card-with-image"> 
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-                <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>   
-                <a href="#" class="card-with-image">  
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-                <a href="#" class="card-with-image"> 
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>   
-                <a href="#" class="card-with-image">
-                    <div class="image-wrapper">
-                        <img src="<?= get_template_directory_uri(); ?>/img/ngo.jpg" alt="">
-                        <div class="date">
-                            <span class="day">25</span>
-                            <span class="month">December</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                        <h3>Sexualitet & könsidentitet</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a> -->
             </div>
         </div>
     </section>
@@ -369,7 +233,7 @@ get_header();
                     <h2 class="title">Aktuella organisationer</h2>
                     <p class="about">Hitta en organisation som jobbar med jämlikhetsfrågor som intresserar dig!</p>
                 </div>
-                <a href="#" class="see-few-all">Se färre</a>
+                <a href="<?= get_site_url();?>/organisations" class="see-few-all">Se färre</a>
             </div>
             <!-- with grid for desktop-->
             <div class="current-organizers-wrap">
