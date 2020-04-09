@@ -1214,6 +1214,19 @@ a {
 	}
 }
 
+//about page
+.about-page {
+	background-image: url(img/purple-patch-about.svg),
+		url(img/blue-patch-about.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position: 0% 20%, 100% 2%;
+	.sub-title {
+		@include bold();
+	}
+	.about-img {
+		margin: 25px 0;
+	}
+}
 /* start of media queries- Small only */
 @media screen and (max-width: 39.9375em) {
 	//general css
