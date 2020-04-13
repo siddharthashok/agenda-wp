@@ -1174,6 +1174,17 @@ a {
 	.error {
 		color: red;
 	}
+	//upload buttons
+	.upload-link {
+		text-decoration: none;
+	}
+	.upload {
+		display: none;
+	}
+	.upload-file-name {
+		display: inline-block !important;
+		padding-left: 20px;
+	}
 }
 //datepicker style
 .datepicker-container {

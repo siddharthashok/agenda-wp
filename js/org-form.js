@@ -41,37 +41,37 @@ if ($("#organisation-form")) {
 			// "webiste-url": "required",
 			// "email-address": "required",
 			// "social-link": "required",
-			city: "required"
+			city: "required",
 		},
 		messages: {
 			"org-name": "Ange giltigt organisationsnamn",
 			// "webiste-url": "Ange giltig webbplats / url",
 			// "email-address": "Ange organisationens giltiga e-postadress",
 			// "social-link": "Ange en giltig länk till sociala medier",
-			city: "Ange giltigt Ort/kommun"
-		}
+			city: "Ange giltigt Ort/kommun",
+		},
 	});
 
 	formStep2.validate({
 		rules: {
 			"org-description": "required",
 			"issues[]": {
-				require_from_group: [1, ".styled-checkbox"]
-			}
+				require_from_group: [1, ".styled-checkbox"],
+			},
 		},
 		messages: {
 			"org-description": "Vänligen ange organisationsaktiviteter",
 			"issues[]": {
-				require_from_group: "Välj minst ett alternativ"
-			}
+				require_from_group: "Välj minst ett alternativ",
+			},
 		},
-		errorPlacement: function(error, element) {
+		errorPlacement: function (error, element) {
 			if (element.attr("name") == "issues[]") {
 				error.insertAfter("#checkbox_error");
 			} else {
 				error.insertAfter(element);
 			}
-		} // end error placement
+		}, // end error placement
 	});
 
 	formStep3.validate({
@@ -79,16 +79,16 @@ if ($("#organisation-form")) {
 			"contact-name": "required",
 			"contact-email-address": "required",
 			"contact-phone-no": "required",
-			number: "required"
+			number: "required",
 			// message: "required"
 		},
 		messages: {
 			"contact-name": "Ange giltigt kontaktnamn",
 			"contact-email-address": "Ange giltig e-postadress för kontakt",
 			"contact-phone-no": "Ange giltigt kontakttelefonnummer",
-			number: "Ange giltigt nummer"
+			number: "Ange giltigt nummer",
 			// message: "Ange ett meddelande"
-		}
+		},
 	});
 
 	//click events
@@ -128,7 +128,7 @@ if ($("#organisation-form")) {
 		hideformtab(formStep3);
 	});
 
-	$("#step4Next").click(e => {
+	$("#step4Next").click((e) => {
 		if (formStep3.valid() === false) {
 			return;
 		}
@@ -170,17 +170,27 @@ if ($("#organisation-form")) {
 			contactPhone: contactPhone,
 			corporate: corporate,
 			message: message,
-			action: "createOrganisation"
+			action: "createOrganisation",
 		};
 
 		console.log(data);
 
 		$.ajax({
-			url: siteURL+"/wp-admin/admin-ajax.php",
+			url: siteURL + "/wp-admin/admin-ajax.php",
 			type: "POST",
-			data: data
-		}).then(function(reply) {
+			data: data,
+		}).then(function (reply) {
 			showTab(4);
 		});
 	});
 }
+//upload buttons
+$(function () {
+	$(".upload-link").on("click", function (e) {
+		e.preventDefault();
+		$(".upload:hidden").trigger("click");
+	});
+	$(".upload").change(function () {
+		$(".upload-file-name").text(this.files[0].name);
+	});
+});
