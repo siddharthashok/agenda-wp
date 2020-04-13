@@ -1138,6 +1138,16 @@ a.active {
 .forms .error {
   color: red;
 }
+.forms .upload-link {
+  text-decoration: none;
+}
+.forms .upload {
+  display: none;
+}
+.forms .upload-file-name {
+  display: inline-block !important;
+  padding-left: 20px;
+}
 
 .datepicker-container {
   z-index: 1006 !important;
