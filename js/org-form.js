@@ -186,11 +186,11 @@ if ($("#organisation-form")) {
 }
 //upload buttons
 $(function () {
-	$(".upload-link").on("click", function (e) {
+	$(".org-upload-link").on("click", function (e) {
 		e.preventDefault();
 		$(".upload:hidden").trigger("click");
 	});
-	$(".upload").change(function () {
-		$(".upload-file-name").text(this.files[0].name);
+	$(".org-upload").change(function () {
+		$(".org-upload-file-name").text(this.files[0].name);
 	});
 });

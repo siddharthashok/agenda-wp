@@ -76,11 +76,13 @@ get_header();
                         <input name="city" class="full-width" placeholder="ex. agendajamliket.se ">
                     </div>
                     <fieldset class="spacer">
-                        <p class="form-links">
-                            <a class="upload-link">Ladda upp logga</a>
-                            <input class="upload" type="file" />
-                            <label class="upload-file-name"></label>
-                        </p>
+                        <form action="">
+                            <p class="form-links">
+                                <a class="upload-link org-upload-link">Ladda upp logga</a>
+                                <input class="upload org-upload" type="file" />
+                                <label class="upload-file-name  org-upload-file-name"></label>
+                            </p>
+                        </form>
                     </fieldset>
 
                 </div>
