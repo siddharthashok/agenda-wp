@@ -213,41 +213,39 @@ if ($("#event-form-modal")) {
 
 			var fd = new FormData();
 
-			fd.append("eventTitle",eventTitle);
-			fd.append("organizer",organizer);
-			fd.append("eventDatepicker",eventDatepicker);
-			fd.append("eventTimepicker",eventTimepicker);
-			fd.append("eventLocation",eventLocation);
-			fd.append("address",address);
-			fd.append("eventDescription",eventDescription);
-			fd.append("eventCost",eventCost);
-			fd.append("websiteURL",websiteURL);
-			fd.append("facebookLink",facebookLink);
-			fd.append("linkOrganiserWebsite",linkOrganiserWebsite);
-			fd.append("websiteURL",websiteURL);
-			fd.append("concerns",concerns);
-			fd.append("contactName",contactName);
-			fd.append("contactEmailAddress",contactEmailAddress);
-			fd.append("contactPhoneNo",contactPhoneNo);
-			fd.append("message",contactEmailAddress);
-			fd.append("action" , "createEvent");
+			fd.append("eventTitle", eventTitle);
+			fd.append("organizer", organizer);
+			fd.append("eventDatepicker", eventDatepicker);
+			fd.append("eventTimepicker", eventTimepicker);
+			fd.append("eventLocation", eventLocation);
+			fd.append("address", address);
+			fd.append("eventDescription", eventDescription);
+			fd.append("eventCost", eventCost);
+			fd.append("websiteURL", websiteURL);
+			fd.append("facebookLink", facebookLink);
+			fd.append("linkOrganiserWebsite", linkOrganiserWebsite);
+			fd.append("websiteURL", websiteURL);
+			fd.append("concerns", concerns);
+			fd.append("contactName", contactName);
+			fd.append("contactEmailAddress", contactEmailAddress);
+			fd.append("contactPhoneNo", contactPhoneNo);
+			fd.append("message", contactEmailAddress);
+			fd.append("action", "createEvent");
 
-			if($("#event-banner").val() != "")
-			{
-				fd.append("eventBanner",$("#event-banner")[0].files[0]);
+			if ($("#event-banner").val() != "") {
+				fd.append("eventBanner", $("#event-banner")[0].files[0]);
 			}
 
-			if($("#logo").val() != "")
-			{
-				fd.append("logo", $("#logo")[0].files[0])
+			if ($("#logo").val() != "") {
+				fd.append("logo", $("#logo")[0].files[0]);
 			}
 
 			$.ajax({
 				url: siteURL + "/wp-admin/admin-ajax.php",
 				type: "POST",
 				data: fd,
-				processData:false,
-				contentType:false
+				processData: false,
+				contentType: false,
 			}).then(function (reply) {
 				showTab(4);
 			});
@@ -256,7 +254,7 @@ if ($("#event-form-modal")) {
 
 	//date picker
 	$(function () {
-		$("#event-datepicker").datepicker();
+		$("#event-datepicker").datepicker({ minDate: "0" });
 	});
 
 	//time picker

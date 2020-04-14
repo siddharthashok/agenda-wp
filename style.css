@@ -1149,10 +1149,6 @@ a.active {
   padding-left: 20px;
 }
 
-.datepicker-container {
-  z-index: 1006 !important;
-}
-
 .contact-page .title {
   font-family: "Overpass", sans-serif;
   font-style: normal;

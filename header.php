@@ -20,8 +20,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/foundation.min.css">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=2">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/slick.css" />
     <title>Agenda</title>
