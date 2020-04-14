@@ -150,12 +150,12 @@ get_header();
                         <form action="">
                             <p class="form-links">
                                 <a class=" upload-link event-upload-link-1">Ladda upp bild till evenemanget</a>
-                                <input class="upload event-upload-1" type="file" />
+                                <input id="event-banner" class="upload event-upload-1" type="file" />
                                 <label class=" upload-file-name event-upload-file-name-1"></label>
                             </p>
                             <p class="form-links">
                                 <a class="upload-link event-upload-link-2">Ladda upp logga</a>
-                                <input class=" upload event-upload-2" type="file" />
+                                <input id="logo" class=" upload event-upload-2" type="file" />
                                 <label class="upload-file-name event-upload-file-name-2"></label>
                             </p>
                         </form>

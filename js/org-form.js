@@ -157,28 +157,51 @@ if ($("#organisation-form")) {
 		var corporate = $fomeThree.find("[name='number']").val();
 		var message = $fomeThree.find("[name='message']").val();
 
-		var data = {
-			organisationName: organisationName,
-			websiteURL: websiteURL,
-			emailAddress: emailAddress,
-			socialMedia: socialMedia,
-			city: city,
-			socialMedia: socialMedia,
-			description: description,
-			contactName: contactName,
-			contactEmail: contactEmail,
-			contactPhone: contactPhone,
-			corporate: corporate,
-			message: message,
-			action: "createOrganisation",
-		};
+		// var data = {
+		// 	organisationName: organisationName,
+		// 	websiteURL: websiteURL,
+		// 	emailAddress: emailAddress,
+		// 	socialMedia: socialMedia,
+		// 	city: city,
+		// 	socialMedia: socialMedia,
+		// 	description: description,
+		// 	contactName: contactName,
+		// 	contactEmail: contactEmail,
+		// 	contactPhone: contactPhone,
+		// 	corporate: corporate,
+		// 	message: message,
+		// 	action: "createOrganisation",
+		// };
 
-		console.log(data);
+		var fd = new FormData();
+		fd.append("organisationName",organisationName);
+		fd.append("websiteURL",websiteURL);
+		fd.append("emailAddress",emailAddress);
+		fd.append("socialMedia",socialMedia);
+		fd.append("city",city);
+		fd.append("socialMedia",socialMedia);
+		fd.append("description",description);
+		fd.append("contactName",contactName);
+		fd.append("contactEmail",contactEmail);
+		fd.append("contactPhone",contactPhone);
+		fd.append("corporate",corporate);
+		fd.append("message",message);
+		fd.append("action","createOrganisation");
+
+		debugger;
+		if($("#logo").val() != "")
+		{
+			var file = $("#logo")[0];
+			fd.append("file",file.files[0]);
+		}
+		
 
 		$.ajax({
 			url: siteURL + "/wp-admin/admin-ajax.php",
 			type: "POST",
-			data: data,
+			data: fd,
+			processData:false,
+			contentType:false
 		}).then(function (reply) {
 			showTab(4);
 		});

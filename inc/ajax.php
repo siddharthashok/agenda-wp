@@ -25,7 +25,28 @@ function createOrganisation()
     );
 
     // Update Post
-
+    if(isset($_FILES["file"])){
+        $file = $_FILES["file"];
+        $uploaded_file=wp_upload_bits($file["name"], null, file_get_contents($file["tmp_name"]));
+        if (!$uploaded_file['error']) {
+            $filename = $file["name"];
+            $wp_filetype = wp_check_filetype($filename, null );
+            $attachment = array(
+                'post_mime_type' => $wp_filetype['type'],
+                // 'post_parent' => $parent_post_id,
+                'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+                'post_content' => '',
+                // 'post_status' => 'inherit'
+            );
+            $attachment_id = wp_insert_attachment( $attachment, $uploaded_file['file'], $parent_post_id );
+            if (!is_wp_error($attachment_id)) {
+                require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+                $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
+                wp_update_attachment_metadata( $attachment_id,  $attachment_data );
+                set_post_thumbnail( $post_id, $attachment_id );
+            }
+        }
+    }
     // Update ACF
     $value = array(
         "website" => $website_url,
@@ -84,6 +105,54 @@ function createEvent()
             "post_content" => $event_description,
         )
     );
+    
+    if(isset($_FILES["eventBanner"])){
+        $file = $_FILES["eventBanner"];
+        $uploaded_file=wp_upload_bits($file["name"], null, file_get_contents($file["tmp_name"]));
+        if (!$uploaded_file['error']) {
+            $filename = $file["name"];
+            $wp_filetype = wp_check_filetype($filename, null );
+            $attachment = array(
+                'post_mime_type' => $wp_filetype['type'],
+                // 'post_parent' => $parent_post_id,
+                'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+                'post_content' => '',
+                // 'post_status' => 'inherit'
+            );
+            $attachment_id = wp_insert_attachment( $attachment, $uploaded_file['file'], $parent_post_id );
+            if (!is_wp_error($attachment_id)) {
+                require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+                $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
+                wp_update_attachment_metadata( $attachment_id,  $attachment_data );
+                // set_post_thumbnail( $post_id, $attachment_id );
+                update_post_meta($post_id, "_event_banner", wp_get_attachment_url( $attachment_id ));
+            }
+        }
+    }
+
+    if(isset($_FILES["logo"])){
+        $file = $_FILES["logo"];
+        $uploaded_file=wp_upload_bits($file["name"], null, file_get_contents($file["tmp_name"]));
+        if (!$uploaded_file['error']) {
+            $filename = $file["name"];
+            $wp_filetype = wp_check_filetype($filename, null );
+            $attachment = array(
+                'post_mime_type' => $wp_filetype['type'],
+                // 'post_parent' => $parent_post_id,
+                'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+                'post_content' => '',
+                // 'post_status' => 'inherit'
+            );
+            $attachment_id = wp_insert_attachment( $attachment, $uploaded_file['file'], $parent_post_id );
+            if (!is_wp_error($attachment_id)) {
+                require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+                $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
+                wp_update_attachment_metadata( $attachment_id,  $attachment_data );
+                // set_post_thumbnail( $post_id, $attachment_id );
+                update_post_meta($post_id, "_organizer_logo", wp_get_attachment_url( $attachment_id ));
+            }
+        }
+    }
 
     update_post_meta($post_id, "_organizer_name", $organizer);
     update_post_meta($post_id, "_event_venue_name", $location);
@@ -122,3 +191,28 @@ function createEvent()
 }
 add_action("wp_ajax_createEvent", "createEvent");
 add_action("wp_ajax_nopriv_createEvent", "createEvent");
+
+
+function createAttachment($file)
+{
+    $uploaded_file=wp_upload_bits($file["name"], null, file_get_contents($file["tmp_name"]));
+    if (!$uploaded_file['error']) {
+        $filename = $file["name"];
+        $wp_filetype = wp_check_filetype($filename, null );
+        $attachment = array(
+            'post_mime_type' => $wp_filetype['type'],
+            // 'post_parent' => $parent_post_id,
+            'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+            'post_content' => '',
+            // 'post_status' => 'inherit'
+        );
+        $attachment_id = wp_insert_attachment( $attachment, $uploaded_file['file'], $parent_post_id );
+        if (!is_wp_error($attachment_id)) {
+            require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+            $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
+            wp_update_attachment_metadata( $attachment_id,  $attachment_data );
+        }
+    }
+
+    return $attachment_id;
+}

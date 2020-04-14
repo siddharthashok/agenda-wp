@@ -79,7 +79,7 @@ get_header();
                         <form action="">
                             <p class="form-links">
                                 <a class="upload-link org-upload-link">Ladda upp logga</a>
-                                <input class="upload org-upload" type="file" />
+                                <input id="logo" class="upload org-upload" type="file" />
                                 <label class="upload-file-name  org-upload-file-name"></label>
                             </p>
                         </form>
