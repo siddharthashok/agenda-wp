@@ -12,7 +12,45 @@
 
 ?>
 
-<footer class="site-footer"></footer>
+<footer class="site-footer">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell large-12">
+                <span class="logo" >
+                    <img src="<?= get_template_directory_uri(); ?>/img/white-logo.svg" alt="logo of agenda website">
+                </span>
+            </div>
+            <div class="cell large-4">
+                <div class="links-wrapper">
+                    <a href="#">Om Agenda Jämlikhet</a>
+                    <a href="#">Bli volontär</a>
+                    <div class="contact">
+                        <span>Kontakt:</span>
+                        <a href="mailto:mail@agendajamlikhet.se">mail@agendajamlikhet.se</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cell large-4">
+                <div class="links-wrapper">
+                    <a href="#">Eventkalendern</a>
+                    <a href="#">Publicera event</a>
+                </div>
+            </div>
+            <div class="cell large-4">
+                <div class="links-wrapper">
+                    <a href="#">Alla organisationer</a>
+                    <a href="#">Visa din organisation här</a>
+                </div>
+            </div>
+            <div class="cell large-12">
+                <div class="social-wrapper">
+                    <a href="#" class="instagram"></a>
+                    <a href="#" class="facebook"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script>
     var siteURL = "<?= get_site_url();?>";
 </script>

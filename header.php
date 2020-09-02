@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=2">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/slick.css" />
     <title>Agenda</title>
 </head>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="search-container">
                     <form>
-                        <input type="text" name="q" id="search-terms" placeholder="Ange ord som ska sökas." />
+                        <input type="text" name="s" id="search-terms" placeholder="Ange ord som ska sökas." />
                         <button type="submit" name="submit" value="Go" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
                         <a href="#" class="search-close"><img src="<?= get_template_directory_uri(); ?>/img/close-icon.svg" alt="close-button"></a>
                     </form>

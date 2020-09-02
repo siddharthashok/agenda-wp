@@ -162,6 +162,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Custom Filter
+ */
+require get_template_directory() . '/inc/custom-filter.php';
+
+/**
 * 
 * AJAX
 */
@@ -176,7 +181,8 @@ require get_template_directory() . '/inc/ajax.php';
 /**
  * ACF settings
  */
-require get_template_directory() . '/inc/acf-settings.php';
+// require get_template_directory() . '/inc/acf-settings.php';
+
 
 // add_filter( 'use_block_editor_for_post', '__return_false' );
 
@@ -187,37 +193,37 @@ function my_acf_google_map_api( $api ){
 
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-function organisation_check_list_to_radio_button( $args ) {
-    if ( ! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'organisation' /* <== Change to your required taxonomy */ ) {
-        if ( empty( $args['walker'] ) || is_a( $args['walker'], 'Walker' ) ) { // Don't override 3rd party walkers.
-            if ( ! class_exists( 'Organisation_Check_List_To_Radio_Button' ) ) {
-                /**
-                 * Custom walker for switching checkbox inputs to radio.
-                 *
-                 * @see Walker_Category_Checklist
-                 */
-                class Organisation_Check_List_To_Radio_Button extends Walker_Category_Checklist {
-                    function walk( $elements, $max_depth, ...$args ) {
-						$output = parent::walk( $elements, $max_depth, ...$args );
-                        $output = str_replace(
-                            array( 'type="checkbox"', "type='checkbox'" ),
-                            array( 'type="radio"', "type='radio'" ),
-                            $output
-                        );
+// function organisation_check_list_to_radio_button( $args ) {
+//     if ( ! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'organisation' /* <== Change to your required taxonomy */ ) {
+//         if ( empty( $args['walker'] ) || is_a( $args['walker'], 'Walker' ) ) { // Don't override 3rd party walkers.
+//             if ( ! class_exists( 'Organisation_Check_List_To_Radio_Button' ) ) {
+//                 /**
+//                  * Custom walker for switching checkbox inputs to radio.
+//                  *
+//                  * @see Walker_Category_Checklist
+//                  */
+//                 class Organisation_Check_List_To_Radio_Button extends Walker_Category_Checklist {
+//                     function walk( $elements, $max_depth, ...$args ) {
+// 						$output = parent::walk( $elements, $max_depth, ...$args );
+//                         $output = str_replace(
+//                             array( 'type="checkbox"', "type='checkbox'" ),
+//                             array( 'type="radio"', "type='radio'" ),
+//                             $output
+//                         );
 
-                        return $output;
-                    }
-                }
-            }
+//                         return $output;
+//                     }
+//                 }
+//             }
 
-            $args['walker'] = new Organisation_Check_List_To_Radio_Button;
-        }
-    }
+//             $args['walker'] = new Organisation_Check_List_To_Radio_Button;
+//         }
+//     }
 
-    return $args;
-}
+//     return $args;
+// }
 
-add_filter( 'wp_terms_checklist_args', 'organisation_check_list_to_radio_button' );
+// add_filter( 'wp_terms_checklist_args', 'organisation_check_list_to_radio_button' );
 
 // add_action( 'admin_enqueue_scripts','agenda_enqueue_admin_script');
 
@@ -233,3 +239,5 @@ add_filter( 'wp_terms_checklist_args', 'organisation_check_list_to_radio_button'
 // 		wp_enqueue_script( 'my-terms-selector', get_template_directory_uri()."/js/inputTypeCustomizer.js", [ 'wp-editor' ] );
 // 	}
 // }
+
+// print_r(organisation_filter(array("category-one")));

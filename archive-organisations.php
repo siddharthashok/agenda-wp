@@ -8,78 +8,132 @@
  */
 
 get_header();
-
 ?>
 
-<section class="organisation">
-    <div class="grid-container">
-        <nav>
-            <ul class="breadcrumbs">
-                <li><a href="<?= get_site_url(); ?>">Home</a></li>
-                <li><a href="#" class="active">Organisations</a></li>
-            </ul>
-        </nav>
-        <h2 class="title">Organisations</h2>
-        <p class="about">Agenda: Jämlikhet samarbetar med över 100 organisationer som engagerar sig i jämlikhetsfrågor på olika sätt. Här hittar du en organisation som behöver dig och ditt engagemang!</p>
-      
-        <div class="grid-x grid-margin-x grid-margin-y">
+<section class="organisation" id="flter-container">
+    <div class="sidebar">
+        <h2 class="title">Filter</h2>
+        <h4>Amnen</h4>
+        <ul class="menu vertical">
+            <li>
+                <a href="#" data-slug="" v-on:click="filter">
+                    Alla ämnen
+                </a>
+            </li>
             <?php
-               
-                while(have_posts())
+                $all_terms = get_terms(array(
+                    "taxonomy" => "organisation_category"
+                ));
+                // print_r($all_terms);
+                // die();
+                if(sizeof($all_terms)!=0)
                 {
-                    the_post();
+                    foreach ($all_terms as $key => $value) {
             ?>
-                    <div class="cell large-4">
-                        <a class="card-with-image" href="<?= get_the_permalink(); ?>">
-                            <div class="image-wrapper">
-                                <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of the organisation">
-                                <!-- <div class="date">
-                                    <span class="day">25</span>
-                                    <span class="month">December</span>
-                                </div> -->
-                            </div>
-                            <div class="card-title-wrap">
-                                <span class="category">organisation </span>
-                            </div> 
-                            <div class="content">
-                                <h3><?= get_the_title(); ?></h3>
-                                <p class="cause">Mänskliga rättigheter</p>
-                            </div>
+                    <li>
+                        <a href="#" data-slug="<?= $value->slug; ?>" v-on:click="filter">
+                            <?= $value->name; ?>
                         </a>
-                    </div>
+                    </li>
             <?php
+                    }
                 }
             ?>
-        </div> 
+            <!-- <li><a href="#">Alla ämnen</a></li>
+            <li><a href="#">Utbildning och kunskap</a></li>
+            <li><a href="#">Våld och diskriminering</a></li>
+            <li><a href="#">Jämnställdhet</a></li>
+            <li><a href="#">Ekonomisk och social utsatthet</a></li> -->
+        </ul>
     </div>
-</section>
-<section class="connect-card-wrap connect-event-orgnisation">
-    <div class="grid-container">
-        <div class="title-wrap"><a href="<?= get_site_url();?>/publish-event-organisation" class="see-few-all">Se färre</a></div>
-        <div class="grid-x grid-margin-y grid-margin-x">
-           
-            <div class="cell large-6">
-                <div class="connect-card blue">
-                    <div class="content">
-                        <h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
-                        <p class="connect-card-text">Vill du att din organisation ska synas på  Agenda: Jämlikhet eller publicera ditt event  i vår kalender?
-                        </p>
-                        <a href="<?= get_site_url();?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
-                    </div>
+    <div class="sidebar-content">
+        <div class="grid-container">
+            <!-- <nav>
+                <ul class="breadcrumbs">
+                    <li><a href="<?= get_site_url(); ?>">Home</a></li>
+                    <li><a href="#" class="active">Organisations</a></li>
+                </ul>
+            </nav> -->
+            <h2 class="title">Organisations</h2>
+            <p class="about">Agenda: Jämlikhet samarbetar med över 100 organisationer som engagerar sig i jämlikhetsfrågor på olika sätt. Här hittar du en organisation som behöver dig och ditt engagemang!</p>
+        
+            <div class="grid-x grid-margin-x grid-margin-y">
+                <div class="cell large-6" v-for="organisation in organisations">
+                    <a class="card-with-image" :href="organisation.permalink">
+                        <div class="image-wrapper">
+                            <img :src="organisation.featured_image" alt="image of the organisation">
+                        </div>
+                        <div class="card-title-wrap">
+                            <span class="category">organisation </span>
+                        </div> 
+                        <div class="content">
+                            <h3>{{organisation.title}}</h3>
+                            <!-- <p class="cause">Mänskliga rättigheter</p> -->
+                        </div>
+                    </a>
+                </div> 
+            </div> 
+        </div>
+        <div class="connect-card-wrap connect-event-orgnisation">
+            <div class="grid-container">
+                <div class="title-wrap">
+                    <span class="line"></span>
+                    <a href="<?= get_site_url();?>/publish-event-organisation" class="see-few-all">se FLER ORGANISATIONER</a>
                 </div>
-            </div>
-            <div class="cell large-6">
-                <div class="connect-card purple">
-                    <div class="content">
-                        <h3>Brinner du för jämlikhet och vill dra igång något nytt?</h3>
-                        <p class="connect-card-text">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka.
-                        </p>
-                        <a href="<?= get_site_url();?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
+                <div class="grid-x grid-margin-y grid-margin-x">
+                
+                    <div class="cell large-12">
+                        <div class="connect-card blue">
+                            <div class="content">
+                                <h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
+                                <p class="connect-card-text">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
+                                </p>
+                                <a href="<?= get_site_url();?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>   
-    </div>    
+                </div>   
+            </div>    
+        </div>
+    </div>
 </section>
 <?php
 get_footer();
+?>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let filterContainer = new Vue({
+        el: "#flter-container",
+        data: {
+            organisations:""
+        },
+        created: function(){
+            this.filterOrganisation();
+        },
+        methods: {
+            filterOrganisation: function(slug="")
+            {
+                let self = this;
+                $.ajax({
+                    url: siteURL + "/wp-admin/admin-ajax.php",
+                    type: "POST",
+                    data: {
+                        "category" : slug,
+                        "action": "filter_organisation"
+                    },
+                }).then(function (reply) {
+                    self.organisations = JSON.parse(reply);
+                });
+            },
+
+            filter: function(e)
+            {
+                e.preventDefault();
+                let slug = e.target.dataset.slug;
+                $("[data-slug]").removeClass("is-active");
+                $(e.target).addClass("is-active");
+                this.filterOrganisation(slug);
+            }
+        }
+    });
+</script>

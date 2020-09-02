@@ -123,7 +123,7 @@ get_header();
                 <div class="connect-card blue">
                     <div class="content">
                         <h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
-                        <p class="connect-card-text">Vill du att din organisation ska synas på  Agenda: Jämlikhet eller publicera ditt event  i vår kalender?
+                        <p class="connect-card-text">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
                         </p>
                         <a href="#" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
                     </div>

@@ -216,3 +216,34 @@ function createAttachment($file)
 
     return $attachment_id;
 }
+
+function filter_organisation()
+{
+    $category = $_POST["category"];
+
+    $response = organisation_filter($category);
+
+    http_response_code(200);
+    echo json_encode($response);
+    die();
+}
+
+add_action("wp_ajax_filter_organisation", "filter_organisation");
+add_action("wp_ajax_nopriv_filter_organisation", "filter_organisation");
+
+function filter_events()
+{
+    $category = $_POST["category"];
+    $date_from = $_POST["date_from"];
+    $date_to = $_POST["date_to"];
+    $type = $_POST["type"];
+    $availability = $_POST["availability"];
+
+    $response = event_filter($category,array($date_to,$date_from),$type,$availability);
+    http_response_code(200);
+    echo json_encode($response);
+    die();
+}
+
+add_action("wp_ajax_filter_events", "filter_events");
+add_action("wp_ajax_nopriv_filter_events", "filter_events");

@@ -150,7 +150,7 @@ while(have_posts())
 </section>
 
 <!-- start of organisation cards -->
-<section class="organisation">
+<section class="other-organisation">
     <div class="grid-container">
         <span href="#" class="active section-title">Se liknande organisationer</span>
         <div class="grid-x grid-margin-x grid-margin-y">
@@ -175,7 +175,7 @@ while(have_posts())
                     <div class="cell large-4">
                         <a class="card-with-image" href="<?= get_the_permalink(); ?>">
                             <div class="image-wrapper">
-                                <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of the organisation">
+                                <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of the organisation">
                                 <!-- <div class="date">
                                     <span class="day">25</span>
                                     <span class="month">December</span>

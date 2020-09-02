@@ -110,12 +110,6 @@ get_header();
                         }
                     }
                 ?>
-                
-                <!-- <p>Amanda Liedberg, vice ordförande,<br><a href="mailto: amanda.liedberg@agendajamlikhet.se"> amanda.liedberg@agendajamlikhet.se</a> </p>
-                <p>Irma Nilsson, sekreterare, <br><a href="mailto:irma.nilsson@agendajamlikhet.se">irma.nilsson@agendajamlikhet.se</a></p>
-                <p>Anna Lindeborg, kassör, 0708338238,<br><a href="mailto:anna@agendajamlikhet.se "> anna@agendajamlikhet.se </a></p>
-                <p>Egle Obcarskaite, ledamot,<br><a href="mailto:egle.obcarskaite@agendajamlikhet.se"> egle.obcarskaite@agendajamlikhet.se</a> </p>
-                <p>Ella Strömbom, ledamot,<br> <a href="mailto:ella.strombom@agendajamlikhet.se">ella.strombom@agendajamlikhet.se</a> </p> -->
             </div>
         </div>
     </div>
