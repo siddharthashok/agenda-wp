@@ -1272,10 +1272,6 @@ a.active {
   padding-left: 20px;
 }
 
-.datepicker-container {
-  z-index: 1006 !important;
-}
-
 .contact-page {
   background-color: #FD7E00;
   padding: 20px 15px;
