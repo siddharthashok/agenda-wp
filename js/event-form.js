@@ -166,6 +166,7 @@ if ($("#event-form-modal")) {
 			eventFormStep1.find("[name='check1[]']:checked").each(function (index) {
 				availability.push($(this).val());
 			});
+			
 			let eventDescription = eventFormStep2
 				.find("[name='event-description']")
 				.val();
@@ -219,6 +220,7 @@ if ($("#event-form-modal")) {
 			fd.append("eventTimepicker", eventTimepicker);
 			fd.append("eventLocation", eventLocation);
 			fd.append("address", address);
+			fd.append("availability", availability);
 			fd.append("eventDescription", eventDescription);
 			fd.append("eventCost", eventCost);
 			fd.append("websiteURL", websiteURL);

@@ -176,12 +176,12 @@ require get_template_directory() . '/inc/ajax.php';
 /**
  * Custom posts type settings
  */
-// require get_template_directory() . '/inc/custom-posts-settings.php';
+require get_template_directory() . '/inc/custom-posts-settings.php';
 
 /**
  * ACF settings
  */
-// require get_template_directory() . '/inc/acf-settings.php';
+require get_template_directory() . '/inc/acf-settings.php';
 
 
 // add_filter( 'use_block_editor_for_post', '__return_false' );

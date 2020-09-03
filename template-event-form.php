@@ -16,7 +16,7 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
             </a>
         </div>
-    </div>
+    
     <div class="tab">
         <div class="form-header form-publish ">
             <div class="grid-container ">
@@ -79,13 +79,26 @@ get_header();
                     </div>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-1" name="check1[]" value="Ramp finns"><label for="check1-1"> Ramp finns</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-2" name="check1[]" value="Eventet är på bottenplan"><label for="check1-2"> Eventet är på bottenplan</label>
+                        <?php
+                            $terms = get_terms('availability',array(
+                                'hide_empty' => false,
+                            ));
+                            $count = 1;
+                            // print_r($terms);
+                            foreach ($terms as $key => $value) {
+                        ?>
+                             <input class="styled-checkbox form-publish" type="checkbox" id="check1-<?= $count; ?>" name="check1[]" value="<?= $value->term_id; ?>"><label for="check1-<?= $count; ?>"><?= $value->name; ?></label>
+                        <?php
+                                ++$count;
+                            }
+                        ?>
+                       
+                        <!-- <input class="styled-checkbox form-publish" type="checkbox" id="check1-2" name="check1[]" value="Eventet är på bottenplan"><label for="check1-2"> Eventet är på bottenplan</label>
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-3" name="check1[]" value="Hiss finns"><label for="check1-3"> Hiss finns</label>
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-4" name="check1[]" value="Hörselslinga"><label for="check1-4"> Hörselslinga</label>
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-5" name="check1[]" value="Syntolkning"><label for="check1-5"> Syntolkning</label>
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-6" name="check1[]" value="Sittplatser"><label for="check1-6"> Sittplatser</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-7" name="check1[]" value="Teckenspråkstolkning"><label for="check1-7"> Teckenspråkstolkning</label>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check1-7" name="check1[]" value="Teckenspråkstolkning"><label for="check1-7"> Teckenspråkstolkning</label> -->
                         <span id="checkbox1_error"></span>
                     </fieldset>
                 </div>
@@ -233,6 +246,7 @@ get_header();
         </div>
     </div>
     <!-- </form> -->
+    </div>
 </section>
 
 <?php

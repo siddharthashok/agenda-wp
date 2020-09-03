@@ -175,15 +175,14 @@ function createEvent()
     update_field("message",$message,$post_id);
     update_field("rsvp_link",$website_url,$post_id);
 
-    $availabilityList = array();
-
-    for($i=0; $i<sizeof($availability); $i++)
-    {
-        $temp = array("title" => $availability[$i]);
-        array_push($availabilityList,$temp);
-    }
-
-    update_field("availability", $availabilityList, $post_id);
+    // $availabilityList = array();
+    // for($i=0; $i<sizeof($availability); $i++)
+    // {
+    //     $temp = array("title" => $availability[$i]);
+    //     array_push($availabilityList,$temp);
+    // }
+    wp_set_post_terms($post_id, $availability,"availability");
+    // update_field("availability", $availabilityList, $post_id);
 
 
     echo json_encode(array("pageId" => $post_id));
