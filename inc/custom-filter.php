@@ -81,7 +81,18 @@ function event_filter($category=null, $date=null, $type=null, $availability=null
         array_push($tax_query,$type_args);
     }
 
-    if($type!=null || $category !=null)
+    if($availability!=null)
+    {
+        $availability_args = array(
+            "taxonomy" => "availability",
+            "field" => "slug",
+            "terms" => $availability,
+            'operator' => 'IN',
+        );
+        array_push($tax_query,$availability_args);
+    }
+
+    if($type!=null || $category !=null || $availability !=null)
     {
         $args = array(
             "post_type" => "event_listing",

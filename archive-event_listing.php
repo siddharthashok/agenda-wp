@@ -99,12 +99,23 @@ get_header();
 		<div class="filter-block">
 			<h4>Tillgänglighet</h4>
 			<ul class="menu vertical">
-				<li>
-					<a href="">Rullstolsanpassad</a>
-				</li>
-				<li>
+				<?php
+					$terms = get_terms('availability',array(
+						'hide_empty' => false,
+					));
+
+					foreach ($terms as $key => $value) {
+				?>
+					<li>
+						<a data-type="availability-type" data-slug="<?= $value->slug; ?>" href="#" v-on:click="filter"><?= $value->name; ?></a>
+					</li>		
+				<?php
+					}
+				?>
+				
+				<!-- <li>
 					<a href="">Hörapparat</a>
-				</li>
+				</li> -->
 			</ul>			
 		</div>
 	</div>
@@ -188,7 +199,7 @@ get_footer();
             this.filterEvents();
         },
         methods: {
-            filterEvents: function(category="",type="")
+            filterEvents: function(category="",type="",availability="")
             {
                 let self = this;
                 $.ajax({
@@ -197,6 +208,7 @@ get_footer();
                     data: {
                         "category" : category,
 						"type" : type,
+						"availability" : availability,
                         "action": "filter_events"
                     },
                 }).then(function (reply) {
@@ -217,8 +229,9 @@ get_footer();
 
 				category = $(".is-active[data-type='category']").data("slug");
 				eventType = $(".is-active[data-type='event-type']").data("slug");
+				availability = $(".is-active[data-type='availability-type']").data("slug");
 
-                this.filterEvents(category, eventType);
+                this.filterEvents(category, eventType, availability);
             }
         }
     });

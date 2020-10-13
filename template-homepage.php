@@ -7,7 +7,7 @@ get_header();
 ?>
 <section class="hero-section">
         <div class="grid-container">
-            <h1>Din eventkalender  för jämlikhet</h1>
+            <h1>Din eventkalender för jämlikhet</h1>
             <h5 class="hero-sub-title">Vi gör det enkelt för dig att gå från ord till handling</h5>
             <div class="topics-wrapper">
                 <div class="title-wrap">
@@ -116,7 +116,7 @@ get_header();
             <div class="title-wrap">
                 <div class="wrap">
                     <h2 class="title">Aktuella evenemang</h2>
-                    <p class="about">Här hittar du aktuella evenemang i vår eventkalender.  Hitta något som passar dig!</p>
+                    <p class="about">Här hittar du aktuella evenemang i vår eventkalender. Hitta något som passar dig!</p>
                 </div>
                 <a href="<?= get_site_url();?>/events" class="see-few-all">Se färre</a>
             </div>
@@ -139,7 +139,7 @@ get_header();
                             <div class="cell large-4">
                                 <a href="<?= get_the_permalink(); ?>" class="card-with-image">
                                     <div class="image-wrapper">
-                                        <img src="<?= get_event_banner() ? get_template_directory_uri().'/img/backup.jpg' : get_event_banner(); ?>" alt="">
+                                        <img src="<?= get_event_banner(); ?>" alt="">
                                         <?php
                                             
 											$date = strtotime(get_event_start_date());
@@ -188,7 +188,7 @@ get_header();
                 ?>
                     <a href="<?= get_the_permalink(); ?>" class="card-with-image">
                         <div class="image-wrapper">
-                            <img src="<?= get_event_banner() ? get_event_banner() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="">
+                            <img src="<?= get_event_banner(); ?>" alt="">
                             <?php
                                 
                                 $date = strtotime(get_event_start_date());
@@ -350,7 +350,7 @@ get_header();
                     <div class="connect-card blue">
                         <div class="content">
                             <h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
-                            <p class="connect-card-text">Vill du att din organisation ska synas på  Agenda: Jämlikhet eller publicera ditt event  i vår kalender?
+                            <p class="connect-card-text">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
                             </p>
                             <a href="<?= get_site_url()?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
                         </div>

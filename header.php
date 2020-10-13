@@ -50,7 +50,7 @@
                         <li><a href="<?= get_site_url(); ?>/organisations" class="nav-link">Organisationer</a></li>
                         <li><a href="<?= get_site_url(); ?>/publish-event-organisation" class="nav-link">Publicera </a></li>
                         <li><a href="#" class="nav-link">Om Agenda: Jämlikhet</a></li>
-                        <li><a href="<?= get_site_url(); ?>/contact" class="nav-link">Kontakta </a></li>
+                        <li><a href="<?= get_site_url(); ?>/about" class="nav-link">Kontakta </a></li>
                         <li class="search-item">
                             <div class="search-toggle">
                                 <a href="#" class="search nav-link" title="search button">SÖK</a>
@@ -66,7 +66,9 @@
                 <div class="search-container">
                     <form>
                         <input type="text" name="s" id="search-terms" placeholder="Ange ord som ska sökas." />
-                        <button type="submit" name="submit" value="Go" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
+                        <input type="hidden" name="post_type" value="event_listing">
+                        <input type="hidden" name="post_type" value="organisations">
+                        <button type="submit" name="submit" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
                         <a href="#" class="search-close"><img src="<?= get_template_directory_uri(); ?>/img/close-icon.svg" alt="close-button"></a>
                     </form>
                 </div>

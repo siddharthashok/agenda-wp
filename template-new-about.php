@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: About Page
+ * Template Name: New About Page
  * @package agenda
  */
 get_header();

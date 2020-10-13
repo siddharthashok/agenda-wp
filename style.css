@@ -210,6 +210,10 @@ a.active {
   text-transform: uppercase;
 }
 
+.search-section {
+  padding: 60px 0px;
+}
+
 .card-with-image {
   position: relative;
   /*margin-bottom:15px; margin: 0px 7px 14px 7px; */
@@ -719,7 +723,6 @@ a.active {
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 60px;
 }
 .equality-events .title-wrap .line {
   display: inline-block;
@@ -1375,6 +1378,9 @@ a.active {
   font-weight: 700;
   font-size: 22px;
   line-height: 28px;
+}
+.sidebar .menu a {
+  padding-left: 0px;
 }
 
 /* start of media queries- Small only */
