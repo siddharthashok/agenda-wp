@@ -24,56 +24,37 @@ while(have_posts())
         </nav>
         <div class="grid-x">
             <div class="cell large-12">
-                <div class="card-with-image">
+                <div class="card-with-image organisation-content">
                     <div class="image-wrapper">
-
                         <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of the organisation">
-                    </div>
-                    <div class="card-title-wrap">
-                        <span class="category">organisation</span>
                     </div> 
                     <div class="content">
-                        <h3><?= get_the_title(); ?></h3>
-                        <?php
-                            $contact_details = get_field("contact_details");
-
-                            if($contact_details["website"])
-                            {
-                        ?>
-                                <p class="social-links">Hemsida: <?= $contact_details["website"]; ?></p>  
-                        <?php        
-                            }
-
-                            if($contact_details["instagram"])
-                            {
-                        ?>
-                                <p class="social-links">Instagram: <?= $contact_details["instagram"]; ?></p>
-                        <?php
-                            }
-                            if($contact_details["facebook"])
-                            {
-                        ?>  
-                                <p class="social-links">Facebook: <?= $contact_details["facebook"]; ?></p> 
-                        <?php
-                            }
-                            if($contact_details["mail"])
-                            {
-                        ?>   
-                                <p class="social-links last">Mail: <?= $contact_details["mail"]; ?></p>                  
-                        <?php
-                            }
-                        ?>
+                        <div class="sidebar">
+                            <?php
+                                $contact_details = get_field("contact_details");
+                            ?>
+                            <div class="label-link">
+                                <h6>HEMSIDA</h6>
+                                <a href="<?= $contact_details["website"]; ?>"><?= $contact_details["website"]; ?></a>
+                            </div>
+                            <div class="label-link">
+                                <h6>Email</h6>
+                                <a href="mailto:<?= $contact_details["mail"]; ?>"><?= $contact_details["mail"]; ?></a>
+                            </div>
+                        </div>
+                        <div class="content-wrapper">
+                            <ul class="tags-wrapper">
+                                <li><a href="#">JÄMSTÄLLDHET <span class="plus-icon"></span></a></li>
+                                <li><a href="#">Sexualitet och könsidentitet  <span class="plus-icon"></span></a></li>
+                            </ul>
+                            <h3><?= get_the_title(); ?></h3>
                         
-                    
-                        <h6>Beskrivning av event</h6>
-                        <!-- <p>
-                            the content
-						</p> -->
-						<?= the_content();?>
-                        <a class="read-more-wrap"> <p class="read-more">LÄS MER</p></a>
-                    
-                        <h6>Tagger</h6>
-                        <p class="hashtags">#MÄNSKLIGA RÄTTIGHETER #GÖTEBORG</p>
+                            <?= the_content();?>
+
+                            <div class="link-wrapper text-right">
+                                <a href="#" class="link">TILL ORGANISATIONENS HEMSIDA</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +68,7 @@ while(have_posts())
 <!-- start of events cards -->
 <section class="events-from-organiser">
     <div class="grid-container">
-        <a href="#" class="active section-title">Evenemang från denna arrangör</a>
+        <h4>Evenemang från denna arrangör</h4>
         <div class="grid-x grid-margin-x grid-margin-y">
             <?php
                 $current_organiser_id = $post->ID;
@@ -108,21 +89,20 @@ while(have_posts())
                             <a href="<?= get_permalink(); ?>" class="card-with-image">
                                 <div class="image-wrapper">
                                     <img src="<?= get_event_banner(); ?>" alt="image of event">
-                                    <div class="date">
-                                        <?php
-                                            $date = strtotime(get_event_start_date());
-                                            $day = date("d",$date);
-                                            $month = date("F", $date);
-                                        ?>
-                                        <span class="day"><?= $day; ?></span>
-                                        <span class="month"><?= $month; ?></span>
-                                    </div>
                                 </div>
-                                
-                                <div class="card-title-wrap">
-                                        <span class="category">event </span>
-                                        <span class="entrace-info">Fritt inträde</span>
-                                </div> 
+                                <div class="date-wrapper">
+                                    <?php
+                                        $date = strtotime(get_event_start_date());
+                                        $day = date("d",$date);
+                                        $month = date("F", $date);
+                                    ?>
+                                    <span class="day"><?= $day; ?></span>
+                                    <span class="month"><?= $month; ?></span>
+                                </div>
+                                <ul class="event-tags">
+                                    <li class="pink">gratis</li>
+                                    <li>podcast</li>
+                                </ul>
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
                                     <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
@@ -152,7 +132,7 @@ while(have_posts())
 <!-- start of organisation cards -->
 <section class="other-organisation">
     <div class="grid-container">
-        <span href="#" class="active section-title">Se liknande organisationer</span>
+        <h4>Se liknande organisationer</h4>
         <div class="grid-x grid-margin-x grid-margin-y">
             <?php
                $all_organisations = new WP_Query(array(

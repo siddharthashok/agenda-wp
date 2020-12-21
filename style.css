@@ -2,7 +2,7 @@ h1 {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 700;
-  color: #000000;
+  color: #1f1f1f;
   font-size: 60px;
   line-height: 70px;
 }
@@ -17,6 +17,30 @@ h2 {
   margin-bottom: 20px;
 }
 
+h3 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
 h6 {
   font-family: "Overpass", sans-serif;
   font-style: normal;
@@ -25,6 +49,19 @@ h6 {
   line-height: 28px;
   color: #000000;
   margin-bottom: 15px;
+}
+
+a {
+  font-size: 14px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: underline;
 }
 
 .about {
@@ -43,14 +80,95 @@ h6 {
   margin-bottom: 50px;
 }
 
+.info-card {
+  padding: 32px 26px;
+  background-color: #E6D0F1;
+  box-shadow: 0px 2px 10px 4px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  position: relative;
+}
+.info-card.albescent-white {
+  background-color: #F6E3D0;
+}
+.info-card.hawkes-blue {
+  background-color: #DDEFFC;
+}
+.info-card.mint-tulip {
+  background-color: #CFF5F4;
+}
+.info-card .card-title {
+  font-size: 30px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  line-height: 37px;
+  color: #1f1f1f;
+}
+.info-card .card-description {
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  color: #1f1f1f;
+  margin-bottom: 33px;
+}
+.info-card .link {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  color: #1f1f1f;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 33px;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: 0px;
+  margin-bottom: 30px;
+}
+.tags-wrapper li {
+  margin-right: 15px;
+}
+.tags-wrapper a {
+  text-decoration: none;
+  padding: 18px 16px 15px 16px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+.tags-wrapper a .plus-icon {
+  background-image: url("img/plus.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-left: 15px;
+  top: -2px;
+  position: relative;
+}
+.tags-wrapper a:hover {
+  color: #ffffff;
+}
+
 body,
 p {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #000000;
+  font-size: 20px;
+  line-height: 32px;
+  color: #1f1f1f;
 }
 
 section {
@@ -221,6 +339,36 @@ a.active {
   box-shadow: 0px 8px 16px #e5e5e5;
   display: block;
   height: 100%;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-transform: none;
+}
+.card-with-image .event-tags {
+  list-style: none;
+  margin: 0px;
+  position: absolute;
+  right: 0px;
+  top: 45%;
+}
+.card-with-image .event-tags li {
+  padding: 10px 12px 10px 17px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px 0px 0px 5px;
+  background-color: #10cfc9;
+  color: #000000;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.card-with-image .event-tags li.pink {
+  background-color: #ff0066;
+}
+.card-with-image .event-tags li.green {
+  background-color: #10cfc9;
 }
 .card-with-image .card-title-wrap {
   background-color: #f1f1f1;
@@ -250,6 +398,12 @@ a.active {
 .card-with-image .content {
   padding: 15px;
 }
+.card-with-image .content h3 {
+  margin-bottom: 12px;
+}
+.card-with-image .content p {
+  text-decoration: none;
+}
 .card-with-image .content .organizer,
 .card-with-image .content .location,
 .card-with-image .content .date,
@@ -259,8 +413,8 @@ a.active {
   font-weight: 400;
   font-size: 12px;
   line-height: 19px;
-  color: #242424;
-  margin: 0px 0px 0px 18px;
+  color: #000000;
+  margin: 0px 0px 6px 18px;
   position: relative;
 }
 .card-with-image .content .organizer:after,
@@ -268,26 +422,31 @@ a.active {
 .card-with-image .content .date:after,
 .card-with-image .content .cause:after {
   content: "";
-  background-image: url("img/black-detail.svg");
-  width: 10px;
+  width: 15px;
   height: 15px;
   position: absolute;
   background-repeat: no-repeat;
   left: -18px;
   top: 2px;
+  background-size: 12px;
+}
+.card-with-image .content .organizer:after {
+  content: "";
+  background-image: url("img/organiser.svg");
 }
 .card-with-image .content .date:after {
   content: "";
-  background-image: url("img/date.svg");
+  background-image: url("img/time.svg");
+}
+.card-with-image .content .location:after {
+  content: "";
+  background-image: url("img/location.svg");
 }
 .card-with-image .content .cause {
   margin: 0px;
 }
 .card-with-image .content .cause:after {
   content: none;
-}
-.card-with-image .content .date {
-  color: #8012b7;
 }
 .card-with-image .event-date {
   display: inline-block;
@@ -301,13 +460,28 @@ a.active {
   height: 200px;
   width: 100%;
 }
-.card-with-image .image-wrapper .date {
-  position: absolute;
-  top: 0px;
-  right: 25px;
-  background-color: #ffffff;
-  padding: 15px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+.card-with-image .date-wrapper {
+  padding: 12px;
+  display: inline-block;
+  background-color: #000000;
+  box-shadow: 0px 2px 10px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  left: 15px;
+  margin-top: -42px;
+  min-width: 90px;
+  min-height: 77px;
+}
+.card-with-image .date-wrapper .day {
+  font-size: 53px;
+  line-height: 53px;
+  color: #ffffff;
+  text-align: center;
+}
+.card-with-image .date-wrapper .month {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
 }
 .card-with-image h3 {
   font-family: "Overpass", sans-serif;
@@ -391,14 +565,10 @@ a.active {
   padding-bottom: 80px;
   background-image: url("img/hero-back.svg");
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: 200px -100px;
 }
 .hero-section h1 {
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 .hero-section .hero-sub-title {
   font-size: 30px;
@@ -407,6 +577,35 @@ a.active {
   font-style: normal;
   font-weight: 300;
   margin-bottom: 80px;
+}
+.hero-section .categories-wrapper {
+  margin-bottom: 70px;
+}
+.hero-section .categories-wrapper .category-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero-section .categories-wrapper .category-list li {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.hero-section .categories-wrapper .category-list li a {
+  font-size: 14px;
+  line-height: 14px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  margin-right: 12px;
+  padding: 16px;
+  text-decoration: none;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .current-events {
@@ -425,6 +624,10 @@ a.active {
 }
 .current-events .about {
   max-width: 600px;
+}
+
+.link-wrapper {
+  padding-top: 30px;
 }
 
 .current-events .about,
@@ -642,16 +845,18 @@ a.active {
 }
 
 .breadcrumbs {
-  padding: 20px 0px 15px 0px;
+  padding: 30px 0px 30px 0px;
   margin-bottom: 0px;
 }
 .breadcrumbs a {
   color: #626262;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 19px;
+  text-decoration: none;
+  text-transform: none;
 }
 .breadcrumbs a.active {
-  color: #55186b;
+  color: #000000;
 }
 .breadcrumbs a:hover {
   text-decoration: none;
@@ -678,6 +883,12 @@ a.active {
 .organisation {
   display: flex;
   padding-bottom: 0px;
+}
+.organisation .about {
+  margin-bottom: 100px;
+}
+.organisation .connect-card-wrap {
+  padding: 100px 0px;
 }
 .organisation .sidebar-content {
   padding: 60px 0px 60px 40px;
@@ -709,6 +920,12 @@ a.active {
 .equality-events {
   display: flex;
   padding-bottom: 0px;
+}
+.equality-events .connect-card-wrap {
+  padding: 100px 0px;
+}
+.equality-events .about {
+  margin-bottom: 100px;
 }
 .equality-events .sidebar-content {
   padding: 60px 0px 60px 40px;
@@ -867,6 +1084,65 @@ a.active {
   margin: 12px 0px;
 }
 
+.event-details .card-with-image {
+  position: relative;
+}
+.event-details .card-with-image.event-content {
+  height: auto;
+}
+.event-details .card-with-image.event-content .date-wrapper {
+  position: absolute;
+  left: 33px;
+  top: 0px;
+}
+.event-details .card-with-image .image-wrapper {
+  height: 480px;
+}
+.event-details .card-with-image .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.event-details .card-with-image .content {
+  display: flex;
+  padding: 0px;
+}
+.event-details .card-with-image .content .content-wrapper {
+  padding: 30px 40px;
+  width: 60%;
+}
+.event-details .card-with-image .sidebar {
+  width: 40%;
+  padding: 48px 30px;
+  background-color: #f1f1f1;
+  height: auto;
+  min-height: initial;
+  position: relative;
+  padding-top: 60px;
+}
+.event-details .card-with-image .sidebar .label-link {
+  margin-bottom: 40px;
+}
+.event-details .card-with-image .sidebar .label-link a {
+  text-transform: lowercase;
+}
+.event-details .card-with-image .icon {
+  width: 15px;
+  height: 18px;
+  display: inline-block;
+  background-size: 13px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.event-details .card-with-image .icon.arrangor {
+  background-image: url("img/organiser.svg");
+}
+.event-details .card-with-image .icon.clock {
+  background-image: url("img/time.svg");
+}
+.event-details .card-with-image .icon.plats {
+  background-image: url("img/location.svg");
+}
 .event-details .card-with-image a {
   display: block;
 }
@@ -879,10 +1155,12 @@ a.active {
   padding-left: 20px;
   position: relative;
   margin-bottom: 0px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .event-details .card-with-image .availability:before {
   content: "";
-  background-image: url("img/tick-mark.svg");
+  background-image: url("img/checkbox-positive.svg");
   width: 15px;
   height: 20px;
   position: absolute;
@@ -911,8 +1189,34 @@ a.active {
 .organisation-details h3 {
   margin-bottom: 10px;
 }
+.organisation-details .card-with-image .image-wrapper {
+  height: 480px;
+}
+.organisation-details .card-with-image .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .organisation-details .card-with-image .content {
-  padding: 15px;
+  display: flex;
+  padding: 0px;
+}
+.organisation-details .card-with-image .content .content-wrapper {
+  padding: 30px 40px;
+  width: 100%;
+}
+.organisation-details .card-with-image .sidebar {
+  width: 336px;
+  padding: 48px 30px;
+  background-color: #f1f1f1;
+  height: auto;
+  min-height: initial;
+}
+.organisation-details .card-with-image .sidebar .label-link {
+  margin-bottom: 40px;
+}
+.organisation-details .card-with-image .sidebar .label-link a {
+  text-transform: lowercase;
 }
 .organisation-details .card-with-image .event-description {
   margin-bottom: 20px;
@@ -934,6 +1238,17 @@ a.active {
 .organisation-details .card-with-image .social-links.last {
   margin-bottom: 16px;
 }
+.organisation-details .card-with-image.organisation-content {
+  height: auto;
+}
+.organisation-details .card-with-image.organisation-content h3 {
+  font-size: 30px;
+  line-height: 36px;
+}
+.organisation-details .card-with-image.organisation-content p {
+  font-size: 20px;
+  line-height: 32px;
+}
 .organisation-details p {
   margin-bottom: 0px;
 }
@@ -945,7 +1260,7 @@ a.active {
   display: block;
 }
 
-.events-from-organiser .card-title-wrap .entrance-info {
+.events-from-organiser .card-with-image {
   margin-bottom: 0px;
 }
 

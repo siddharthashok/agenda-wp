@@ -27,12 +27,8 @@ get_header();
                     <div class="image-wrapper">
                         <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
                     </div>
-                    <div class="card-title-wrap">
-                        <span class="category">event </span>
-                        <span class="entrance-info">Fritt inträde</span>
-                    </div> 
                     <div class="content">
-						<?php
+                        <?php
 							$start_date = strtotime(get_field("start_date"));
 							$end_date = strtotime(get_field("end_date"));
 							$start_time = get_field("start_time");
@@ -40,52 +36,54 @@ get_header();
 
 							$format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
 						?>
-                        <div class="event-date">
-                            <span class="day"><?= date("d",$start_date);?>-</span>
-                            <span class="month"><?= date("F",$start_date);?></span>
+                        <div class="sidebar">
+                            <div class="event-date">
+                                <span class="day"><?= date("d",$start_date);?>-</span>
+                                <span class="month"><?= date("F",$start_date);?></span>
+                            </div>
+                            <div class="event-date">
+                                <span class="day"><?= date("d",$end_date);?></span>
+                                <span class="month"><?= date("F",$end_date);?></span>
+                            </div>
+
+                            <h6>Arrangör</h6>
+                            <p class="purple-text"><?= get_field("organizer");?></p>  
+
+                            <h6>Tid för event</h6>
+                            <p><?= $format_date; ?></p>
+
+                            <h6>Plats</h6>
+                            <p><?= get_field("place")["address"]; ?></p>
+                            
+                            <h6>Adress</h6>
+                            <p class="purple-text"><?= get_field("address");?></p>
+                            <?php
+                                if(have_rows("availability"))
+                                {
+                            ?>
+                            <h6>Tillgänglighet</h6>
+                                <ul class="availability-wrap">
+                                    <?php
+                                        
+                                        while(have_rows("availability"))
+                                        {
+                                            the_row();
+                                    ?>
+                                            <li class="availability"><?= get_sub_field("title"); ?></li>
+                                    <?php
+                                            }
+                                    ?>
+                                </ul>
+                            <?php 
+                                }
+                            ?>
                         </div>
-                        <div class="event-date">
-                            <span class="day"><?= date("d",$end_date);?></span>
-                            <span class="month"><?= date("F",$end_date);?></span>
+                        <div class="content-wrapper">
+                            <h3><?= get_the_title(); ?></h3>
+                            <p>
+							    <?= get_the_content(); ?>
+                            </p>
                         </div>
-                        <h3><?= get_the_title(); ?></h3>
-                        <h6>Arrangör</h6>
-                        <p class="purple-text"><?= get_field("organizer");?></p>  
-
-                        <h6>Tid för event</h6>
-                        <p><?= $format_date; ?></p>
-
-                        <h6>Plats</h6>
-                        <p><?= get_field("place")["address"]; ?></p>
-                        
-                        <h6>Adress</h6>
-                        <p class="purple-text"><?= get_field("address");?></p>
-                        <?php
-                            if(have_rows("availability"))
-                            {
-                        ?>
-                        <h6>Tillgänglighet</h6>
-                            <ul class="availability-wrap">
-                                <?php
-                                    
-                                    while(have_rows("availability"))
-                                    {
-                                        the_row();
-                                ?>
-                                        <li class="availability"><?= get_sub_field("title"); ?></li>
-                                <?php
-                                        }
-                                ?>
-                            </ul>
-                        <?php 
-                            }
-                        ?>
-                        <!-- <p class="availability last">Event är syntolkat</p> -->
-
-                        <h6>Beskrivning av event</h6>
-                        <p>
-							<?= get_the_content(); ?>
-                        </p>
 
                         <h6>Kontaktuppgifter till detta event:</h6>
 						<?php

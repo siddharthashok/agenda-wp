@@ -74,27 +74,29 @@ get_header();
                 </div> 
             </div> 
         </div>
-        <div class="connect-card-wrap connect-event-orgnisation">
-            <div class="grid-container">
-                <div class="title-wrap">
-                    <span class="line"></span>
-                    <a href="<?= get_site_url();?>/publish-event-organisation" class="see-few-all">se FLER ORGANISATIONER</a>
-                </div>
-                <div class="grid-x grid-margin-y grid-margin-x">
-                
-                    <div class="cell large-12">
-                        <div class="connect-card blue">
-                            <div class="content">
-                                <h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
-                                <p class="connect-card-text">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
-                                </p>
-                                <a href="<?= get_site_url();?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-            </div>    
-        </div>
+        <section class="connect-card-wrap">
+			<div class="grid-container">
+				<div class="grid-x grid-margin-y grid-margin-x">
+					<!-- <div class="cell large-12">
+						<div class="info-card">
+							<h3 class="card-title">Är du organisation eller arrangör av jämlikhetsevent?</h3>
+							<p class="card-description">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
+							</p>
+							<a href="<?= get_site_url()?>/publish-event-organisation" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+						</div>
+					</div> -->
+					<div class="cell large-12">
+						<div class="connect-card purple">
+							<div class="info-card albescent-white">
+								<h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
+								<p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. </p>
+								<a href="<?= get_site_url()?>/publish-event-organisation" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
+							</div>
+						</div>
+					</div>
+				</div>   
+			</div>    
+    	</section>
     </div>
 </section>
 <?php

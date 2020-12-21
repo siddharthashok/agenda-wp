@@ -131,8 +131,28 @@ get_header();
 			<p class="about">Agenda: Jämlikhet samlar evenemang som på olika sätt handlar om jämlikhetsfrågor. Evenemangen kommer från olika organisationer och arrangörer som alla är politiskt och religiöst obundna. Vare sig du deltagit i många evenemang eller vill gå på ditt första hittar du något som passar dig i vår eventkalender. Tillsammans gör vi skillnad.</p>
 			<!-- start of event cards -->
 			<div class="grid-x grid-margin-x grid-margin-y">
-				
 				<div class="cell large-6" v-for="event in events">
+					<a :href="event.permalink" class="card-with-image">
+						<div class="image-wrapper">
+							<img :src="event.featured_image" alt="image of event">
+						</div>
+						<div class="date-wrapper">
+							<span class="day">{{event.day}}</span>
+							<span class="month">{{event.month}}</span>
+						</div>
+						<ul class="event-tags">
+							<li class="pink">gratis</li>
+							<li>podcast</li>
+						</ul>
+						<div class="content">
+							<h3>{{event.title}}</h3>
+							<p class="organizer">Arrangör: {{event.organiser}}</p>
+							<p class="location">Plats: {{event.place}}</p>
+							<p class="date">Tid: {{event.dateTime}}</p>
+						</div>
+					</a> 
+				</div>
+				<!-- <div class="cell large-6" v-for="event in events">
 					<a :href="event.permalink" class="card-with-image">
 						<div class="image-wrapper">
 							<img :src="event.featured_image" alt="image of event">
@@ -153,36 +173,32 @@ get_header();
 							<p class="date">Tid: {{event.dateTime}}</p>
 						</div>
 					</a> 
-				</div>	
+				</div>	 -->
 			</div>
 		</div>
-		<div class="connect-card-wrap connect-event-orgnisation">
+		<section class="connect-card-wrap">
 			<div class="grid-container">
-				<div class="title-wrap"><a href="#" class="see-few-all">Se färre</a></div>
 				<div class="grid-x grid-margin-y grid-margin-x">
-					<div class="cell large-6">
-						<div class="connect-card blue">
-							<div class="content">
-								<h3>Är du organisation eller arrangör av jämlikhetsevent?</h3>
-								<p class="connect-card-text">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
-								</p>
-								<a href="<?= get_site_url()?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
-							</div>
+					<div class="cell large-12">
+						<div class="info-card">
+							<h3 class="card-title">Är du organisation eller arrangör av jämlikhetsevent?</h3>
+							<p class="card-description">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
+							</p>
+							<a href="<?= get_site_url()?>/publish-event-organisation" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
 						</div>
 					</div>
-					<div class="cell large-6">
+					<!-- <div class="cell large-6">
 						<div class="connect-card purple">
-							<div class="content">
-								<h3>Brinner du för jämlikhet och vill dra igång något nytt?</h3>
-								<p class="connect-card-text">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka.
-								</p>
-								<a href="<?= get_site_url()?>/publish-event-organisation" class="connect-link">ANSLUT DIN DIN ORGANISATION TILL AGENDA: JÄMLIKHET</a>
+							<div class="info-card albescent-white">
+								<h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
+								<p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. </p>
+								<a href="<?= get_site_url()?>/publish-event-organisation" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>   
 			</div>    
-		</div>
+    	</section>
 	</div>
 </section>
 <?php
