@@ -21,9 +21,7 @@ get_header();
                 </a>
             </li>
             <?php
-                $all_terms = get_terms(array(
-                    "taxonomy" => "organisation_category"
-                ));
+                $all_terms = get_categories();
                 // print_r($all_terms);
                 // die();
                 if(sizeof($all_terms)!=0)

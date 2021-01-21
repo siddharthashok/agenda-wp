@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/foundation.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
@@ -46,7 +46,7 @@
                             <span class="close-text">Stäng</span>
                             <a href="#" class="close-icon nav-link"></a>
                         </li>
-                        <li><a href="<?= get_site_url(); ?>/events" class="nav-link">Event kalender</a></li>
+                        <li><a href="<?= get_site_url(); ?>/event" class="nav-link">Event kalender</a></li>
                         <li><a href="<?= get_site_url(); ?>/organisations" class="nav-link">Organisationer</a></li>
                         <li><a href="<?= get_site_url(); ?>/publish-event-organisation" class="nav-link">Publicera </a></li>
                         <li><a href="#" class="nav-link">Om Agenda: Jämlikhet</a></li>
@@ -64,13 +64,14 @@
                     </div>
                 </div>
                 <div class="search-container">
-                    <form>
+                    <?= get_search_form(); ?>
+                    <!-- <form>
                         <input type="text" name="s" id="search-terms" placeholder="Ange ord som ska sökas." />
                         <input type="hidden" name="post_type" value="event_listing">
                         <input type="hidden" name="post_type" value="organisations">
                         <button type="submit" name="submit" class="search-icon"><i class="fa fa-fw fa-search"></i></button>
                         <a href="#" class="search-close"><img src="<?= get_template_directory_uri(); ?>/img/close-icon.svg" alt="close-button"></a>
-                    </form>
+                    </form> -->
                 </div>
                 <div class="clear"></div>
             </div>

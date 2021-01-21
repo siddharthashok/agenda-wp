@@ -138,22 +138,7 @@ get_header();
                                 }
                             ?>
                         </div>
-                        <div class="sponser-list">
-                            <h6 class="sub-title">Sponsorer </h6>
-                            <div class="grid-x grid-margin-x grid-margin-y">
-                                <?php
-                                    while(have_rows("sponsor_list"))
-                                    {
-                                        the_row();
-                                ?>
-                                        <div class="cell medium-12">
-                                            <img src="<?= get_sub_field("logo"); ?>" alt="kultur-ungdom">
-                                        </div>
-                                <?php
-                                    }
-                                ?>
-                            </div>
-                        </div>  
+                        
                     <!-- </div> -->
                 </div>
 

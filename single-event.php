@@ -25,16 +25,17 @@ get_header();
             <div class="cell large-12">
                 <div class="card-with-image event-content">
                     <div class="image-wrapper">
-                        <img src="<?= get_event_banner(); ?>" alt="image of event">
+                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
                     </div>
                     <div class="content">
 						<?php
-							$start_date = strtotime(get_event_start_date());
-							$end_date = strtotime(get_event_end_date());
-							$start_time = get_event_start_time();
-							$end_time = get_event_end_time();
+							$start_date = strtotime(get_field("start_date"));
+							$end_date = strtotime(get_field("end_date_time"));
+							$start_time = date("G.i",$start_date);
+							$end_time = date("G.i",$end_date);
 
-							$format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
+							$format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", kl ".$start_time. "-".$end_time;
+							
                         ?>
                         <div class="sidebar">
                             <div class="date-wrapper">
@@ -76,31 +77,27 @@ get_header();
                                     <span class="icon plats"></span>
                                     Plats
                                 </h6>
-                                <h4><?= get_field("place")["address"]; ?></h4>
+                                <h4><?= get_field("address"); ?></h4>
                             </div>
 
                             <div class="info-wrapper">
                                 <h6>Tillgänglighet</h6>
                                 <?php
-                                    if(have_rows("availability"))
-                                    {
+                                    $availibilities = get_the_terms(get_the_ID(), "availability");
+                                    
                                 ?>
-
-                                    <ul class="availability-wrap">
-                                        <?php
-                                            
-                                            while(have_rows("availability"))
-                                            {
-                                                the_row();
-                                        ?>
-                                                <li class="availability"><?= get_sub_field("title"); ?></li>
-                                        <?php
-                                                }
-                                        ?>
-                                    </ul>
-                                <?php 
-                                    }
-                                ?>
+                                <ul class="availability-wrap">
+                                    <?php
+                                        // print_r($availibilities);
+                                        foreach($availibilities as $key => $value)
+                                        {
+                                           
+                                    ?>
+                                            <li class="availability"><?= $value->name; ?></li>
+                                    <?php
+                                        }
+                                    ?>
+                                </ul>
                             </div>
                             
                         </div>

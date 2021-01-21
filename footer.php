@@ -15,37 +15,45 @@
 <footer class="site-footer">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
-            <div class="cell large-12">
-                <span class="logo" >
-                    <img src="<?= get_template_directory_uri(); ?>/img/white-logo.svg" alt="logo of agenda website">
-                </span>
-            </div>
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="#">Om Agenda Jämlikhet</a>
-                    <a href="#">Bli volontär</a>
-                    <div class="contact">
-                        <span>Kontakt:</span>
+                    <a href="#"><h6>Om Agenda Jämlikhet</h6></a>
+                    <div class="link-wrapper">
+                        <h6>Kontakt:</h6>
                         <a href="mailto:mail@agendajamlikhet.se">mail@agendajamlikhet.se</a>
+                    </div>
+                    <div class="link-wrapper">
+                        <h6>Har du tips?</h6>
+                        <a href="mailto:tips@gbg.agendajamlikhet.se">tips@gbg.agendajamlikhet.se</a>
                     </div>
                 </div>
             </div>
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="#">Eventkalendern</a>
-                    <a href="#">Publicera event</a>
+                    <a href="#"><h6>Eventkalendern</h6></a>
+                    <a href="#"><h6>Organisationer</h6></a>
+                    <a href="#"><h6>Publicera</h6></a>
+                    <a href="#"><h6>Om Agenda: Jämlikhet</h6></a>
                 </div>
             </div>
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="#">Alla organisationer</a>
-                    <a href="#">Visa din organisation här</a>
+                    <a href="#"><h6>Vår värdegrund</h6></a>
+                    <a href="#"><h6>Vår integritetspolicy och cookies</h6></a>
+                    <a href="#"><h6>Riktlinjer för organisationer</h6></a>
+                    <div class="social-wrapper">
+                        <h6>Följ oss på</h6>
+                        <a href="#" class="facebook"></a>
+                        <a href="#" class="instagram"></a>
+                    </div>
                 </div>
             </div>
             <div class="cell large-12">
-                <div class="social-wrapper">
-                    <a href="#" class="instagram"></a>
-                    <a href="#" class="facebook"></a>
+                <div class="logo-note">
+                    <div class="logo-wrapper">
+                        <img src="<?= get_template_directory_uri(); ?>/img/footer-logo.svg" alt="">
+                    </div>
+                    <p class="note">agendajamlikhet.se är designad av Agenda: Jämlikhet och utvecklad av Grandworks </p>
                 </div>
             </div>
         </div>

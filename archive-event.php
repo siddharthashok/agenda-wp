@@ -22,10 +22,7 @@ get_header();
 					</a>
 				</li>
 				<?php
-					$all_terms = get_terms(array(
-						"taxonomy" => "event_categories",
-						'hide_empty' => false
-					));
+					$all_terms = get_categories();
 					// print_r($all_terms);
 					// die();
 					if(sizeof($all_terms)!=0)
@@ -47,22 +44,22 @@ get_header();
 			<h4>Datum</h4>
 			<ul class="menu vertical">
 				<li>
-					<a href="#" data-slug="" v-on:click="filter">
+					<a href="#" data-type="date-filter" data-slug="all" v-on:click="filter">
 						Alla datum
 					</a>
 				</li>
 				<li>
-					<a href="#" data-slug="" v-on:click="filter">
+					<a href="#" data-type="date-filter" data-slug="between" v-on:click="filter">
 						Från ... Till
 					</a>
 				</li>
 				<li>
-					<a href="#" data-slug="" v-on:click="filter">
+					<a href="#" data-type="date-filter" data-slug="today" v-on:click="filter">
 						Idag
 					</a>
 				</li>
 				<li>
-					<a href="#" data-slug="" v-on:click="filter">
+					<a href="#" data-type="date-filter" data-slug="weekend" v-on:click="filter">
 						Den här helgen
 					</a>
 				</li> 
@@ -77,10 +74,7 @@ get_header();
 					</a>
 				</li>
 				<?php
-					$all_terms = get_terms(array(
-						"taxonomy" => "event_tags",
-						'hide_empty' => false
-					));
+					$all_terms = get_tags();
 					if(sizeof($all_terms)!=0)
 					{
 						foreach ($all_terms as $key => $value) {
@@ -205,6 +199,7 @@ get_header();
 get_footer();
 ?>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js" ></script>
 <script>
     let filterContainer = new Vue({
         el: "#flter-container",
@@ -215,7 +210,7 @@ get_footer();
             this.filterEvents();
         },
         methods: {
-            filterEvents: function(category="",type="",availability="")
+            filterEvents: function(category="",type="",availability="", date=[])
             {
                 let self = this;
                 $.ajax({
@@ -225,6 +220,7 @@ get_footer();
                         "category" : category,
 						"type" : type,
 						"availability" : availability,
+						"date": date,
                         "action": "filter_events"
                     },
                 }).then(function (reply) {
@@ -246,8 +242,28 @@ get_footer();
 				category = $(".is-active[data-type='category']").data("slug");
 				eventType = $(".is-active[data-type='event-type']").data("slug");
 				availability = $(".is-active[data-type='availability-type']").data("slug");
+				dateFilterType = $(".is-active[data-type='date-filter']").data("slug");
+				var date = [];
+				switch(dateFilterType)
+				{
+					case "all":
+					break;
 
-                this.filterEvents(category, eventType, availability);
+					case "between":
+					break;
+
+					case "today":
+						date.push(dateFns.format(new Date(),'YYYY-MM-DD'));
+						date.push(dateFns.format(new Date(),'YYYY-MM-DD'));
+					break;
+
+					case "weekend":
+						date.push(dateFns.format(dateFns.endOfWeek(new Date()),'YYYY-MM-DD'));
+						date.push(dateFns.format(dateFns.endOfWeek(new Date()),'YYYY-MM-DD'));
+					break;
+				}
+				console.log(date);
+                this.filterEvents(category, eventType, availability,date);
             }
         }
     });

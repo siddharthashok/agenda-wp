@@ -14,14 +14,13 @@ get_header();
         <div class="grid-container">
             <?php
                 $all_events = new WP_Query(array(
-                  'post_type' => 'event_listing',
-                  'posts_per_page' => -1, 
+                  'post_type' => 'event',
+                  'posts_per_page' => 6,
+                  'post_status' => 'publish'
                 ));
-                $all_events_categories = get_terms("event_categories",array(
-                    'hide_empty' => false
-                ));
+                $all_events_categories = get_categories();
             ?>
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x grid-padding-x grid-padding-y">
                     <div class="cell large-12">
                         <h3>Vad intresserar dig?</h3>
                         <div class="categories-wrapper">
@@ -29,7 +28,7 @@ get_header();
                                 <?php
                                    foreach ($all_events_categories as $key => $value) {
                                 ?>
-                                    <li><a href='<?= get_term_link($value, "event_categories")?>''><?= $value->name; ?></a></li>
+                                    <li><a href='<?= get_term_link($value, "event_categories")?>'><?= $value->name; ?></a></li>
                                 <?php
                                    }
                                 ?>
@@ -49,11 +48,11 @@ get_header();
                         <div class="cell large-4">
                             <a href="<?= get_permalink(); ?>" class="card-with-image">
                                 <div class="image-wrapper">
-                                    <img src="<?= get_event_banner(); ?>" alt="image of event">
+                                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
                                 </div>
                                 <div class="date-wrapper">
                                     <?php
-                                        $date = strtotime(get_event_start_date());
+                                        $date = strtotime(get_field("start_date"));
                                         $day = date("d",$date);
                                         $month = date("F", $date);
                                     ?>
@@ -67,14 +66,14 @@ get_header();
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
                                     <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
-                                    <p class="location">Plats: <?= get_field("place")["address"]; ?></p>
+                                    <p class="location">Plats: <?= get_field("address"); ?></p>
                                     <?php
-                                        $start_date = strtotime(get_event_start_date());
-										$end_date = strtotime(get_event_end_date());
-										$start_time = get_event_start_time();
-										$end_time = get_event_end_time();
-
-                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
+                                        $start_date = strtotime(get_field("start_date"));
+                                        $end_date = strtotime(get_field("end_date_time"));
+                                        $start_time = date("G.i",$start_date);
+                                        $end_time = date("G.i",$end_date);
+            
+                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", kl ".$start_time. "-".$end_time;
                                     ?>
                                     <p class="date">Tid: <?= $format_date; ?></p>
                                 </div>
@@ -87,7 +86,7 @@ get_header();
                 ?>
                     <div class="cell large-12">
                         <div class="link-wrapper text-right">
-                            <a href="#">Visa FLER</a>
+                            <a class="underline" href="<?= get_site_url()?>/events">Visa FLER</a>
                         </div>
                     </div>
                 </div>
@@ -100,38 +99,38 @@ get_header();
                         {
                             $all_events->the_post();
                 ?>
-                    <a href="<?= get_the_permalink(); ?>" class="card-with-image">
-                        <div class="image-wrapper">
-                            <img src="<?= get_event_banner(); ?>" alt="">
-                            <?php
-                                
-                                $date = strtotime(get_event_start_date());
-                                $day = date("d",$date);
-                                $month = date("F", $date);
-                            ?>
-                            <div class="date">
-                                <span class="day"><?= $day; ?></span>
-                                <span class="month"><?= $month; ?></span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <span class="category">event </span>
-                            <span class="entrance-info">Fritt inträde</span>
-                            <h3><?= get_the_title(); ?></h3>
-                            <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
-                            <p class="location">Plats: <?= get_field("place")["address"]; ?></p>
-                            <?php
-                            
-                                $start_date = strtotime(get_event_start_date());
-                                $end_date = strtotime(get_event_end_date());
-                                $start_time = get_event_start_time();
-                                $end_time = get_event_end_time();
+                            <a href="<?= get_permalink(); ?>" class="card-with-image">
+                                <div class="image-wrapper">
+                                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
+                                </div>
+                                <div class="date-wrapper">
+                                    <?php
+                                        $date = strtotime(get_field("start_date"));
+                                        $day = date("d",$date);
+                                        $month = date("F", $date);
+                                    ?>
+                                    <span class="day"><?= $day; ?></span>
+                                    <span class="month"><?= $month; ?></span>
+                                </div>
+                                <ul class="event-tags">
+                                    <li class="pink">gratis</li>
+                                    <li>podcast</li>
+                                </ul>
+                                <div class="content">
+                                    <h3><?= get_the_title(); ?></h3>
+                                    <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
+                                    <p class="location">Plats: <?= get_field("address"); ?></p>
+                                    <?php
+                                        $start_date = strtotime(get_field("start_date"));
+                                        $end_date = strtotime(get_field("end_date_time"));
+                                        $start_time = date("G.i",$start_date);
+                                        $end_time = date("G.i",$end_date);
 
-                                $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
-                            ?>
-                            <p class="date">Tid: <?= $format_date; ?></p>
-                        </div>
-                    </a>
+                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", kl ".$start_time. "-".$end_time;
+                                    ?>
+                                    <p class="date">Tid: <?= $format_date; ?></p>
+                                </div>
+                            </a> 
                 <?php
                         }
                     }
@@ -156,7 +155,7 @@ get_header();
                             "posts_per_page" => 3,
                             "orderby" => "rand",
                         ));
-
+                        
                         if($random_organisations->have_posts())
                         {
                             while($random_organisations->have_posts())
@@ -208,7 +207,7 @@ get_header();
             </div>
             <div class="cell large-12">
                 <div class="link-wrapper text-right">
-                    <a href="#">Visa FLER</a>
+                    <a class="underline" href="<?= get_site_url()?>/organisations">Visa FLER</a>
                 </div>
             </div>
         </div>   

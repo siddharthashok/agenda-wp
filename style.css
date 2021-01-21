@@ -61,6 +61,24 @@ a {
   font-style: normal;
   text-transform: uppercase;
   color: #000000;
+  text-decoration: none;
+}
+a.underline {
+  border-bottom: 2px solid #000000;
+}
+
+label {
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: #1f1f1f;
+}
+
+.field-wrap {
+  margin-bottom: 15px;
+}
+.field-wrap label a {
+  text-transform: none;
   text-decoration: underline;
 }
 
@@ -115,7 +133,7 @@ a {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   color: #1f1f1f;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 14px;
   line-height: 20px;
   font-family: "Overpass", sans-serif;
@@ -124,6 +142,7 @@ a {
   text-transform: uppercase;
   position: absolute;
   bottom: 33px;
+  border-bottom: 2px solid #000000;
 }
 
 .tags-wrapper {
@@ -191,9 +210,9 @@ a.active {
 }
 
 .button {
-  border-radius: 5px;
+  border-radius: 50px;
   box-sizing: border-box;
-  padding: 1.5em;
+  padding: 16px 45px;
   margin-top: 25px;
   transition: all 0.3s ease-in-out;
   font-weight: 600;
@@ -208,12 +227,16 @@ a.active {
   background-color: #ffffff;
 }
 .button.button-pink {
-  border: 1px solid #be2763;
+  border: 2px solid #be2763;
   color: #be2763;
 }
 .button.button-green {
-  border: 1px solid #288e8b;
+  border: 2px solid #288e8b;
   color: #288e8b;
+}
+.button.black {
+  border: 2px solid #000000;
+  color: #000000;
 }
 @media screen and (max-width: 39.99875em) {
   .button {
@@ -348,7 +371,7 @@ a.active {
   margin: 0px;
   position: absolute;
   right: 0px;
-  top: 45%;
+  top: 36%;
 }
 .card-with-image .event-tags li {
   padding: 10px 12px 10px 17px;
@@ -607,9 +630,17 @@ a.active {
   font-style: normal;
   font-weight: 400;
 }
+.hero-section .categories-wrapper .category-list li a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.single-category-section {
+  margin-bottom: 60px;
+}
 
 .current-events {
-  padding-bottom: 60px;
+  padding-bottom: 0px;
 }
 .current-events .title-wrap {
   display: flex;
@@ -673,25 +704,37 @@ a.active {
   width: 350px;
   margin-bottom: 60px;
 }
-.site-footer .links-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-.site-footer .links-wrapper span {
-  display: block;
+.site-footer h6 {
   color: #ffffff;
+  font-size: 18px;
+  line-height: 25px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
-.site-footer .links-wrapper .contact a {
+.site-footer .link-wrapper {
+  padding: 0px;
+  margin-bottom: 20px;
+}
+.site-footer .link-wrapper h6 {
+  margin-bottom: 0px;
+}
+.site-footer .link-wrapper a {
+  color: #ffffff;
   font-size: 12px;
   line-height: 18px;
-}
-.site-footer .links-wrapper a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-bottom: 40px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
 }
 .site-footer .social-wrapper {
-  padding-top: 40px;
+  display: flex;
+  align-items: center;
+}
+.site-footer .social-wrapper h6 {
+  margin-bottom: 0px;
+  margin-right: 15px;
 }
 .site-footer .instagram {
   background-image: url("img/insta.svg");
@@ -701,7 +744,6 @@ a.active {
   display: inline-block;
   width: 32px;
   height: 32px;
-  margin-right: 30px;
 }
 .site-footer .facebook {
   background-image: url("img/fb.svg");
@@ -711,6 +753,22 @@ a.active {
   display: inline-block;
   width: 32px;
   height: 32px;
+  margin-right: 10px;
+}
+.site-footer .logo-note {
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+}
+.site-footer .logo-note .logo-wrapper {
+  margin-right: 22px;
+  width: 260px;
+}
+.site-footer .logo-note .note {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #ffffff;
 }
 
 .hamburger {
@@ -1551,7 +1609,6 @@ a.active {
 }
 .forms .form-buttons .prevBtn::before {
   content: "";
-  transform: rotate(180deg);
   width: 34px;
   height: 19px;
   display: inline-block;
@@ -1559,8 +1616,15 @@ a.active {
   top: 5px;
   right: 5px;
 }
+.forms .form-buttons .prevBtn::before {
+  background-image: url("img/prev-black.svg");
+  transform: rotate(0deg);
+}
 .forms .form-buttons .nextBtn {
   float: right;
+}
+.forms .form-buttons .nextBtn::after {
+  background-image: url("img/next-black.svg");
 }
 .forms .form-buttons .nextBtn.form-publish::after {
   background-image: url("img/arrow-forward-dark.svg");
@@ -1650,6 +1714,12 @@ a.active {
   right: -50px;
   z-index: -1;
 }
+.about-page .info-card {
+  margin-bottom: 35px;
+}
+.about-page .text-block {
+  margin-bottom: 35px;
+}
 .about-page .title {
   margin: 0;
 }
@@ -1696,6 +1766,38 @@ a.active {
 }
 .sidebar .menu a {
   padding-left: 0px;
+}
+
+#volunteer-form .form-header {
+  background-color: #55186b;
+}
+#volunteer-form .form-header h4, #volunteer-form .form-header h3 {
+  color: #ffffff;
+}
+#volunteer-form .form-header h4 {
+  margin-bottom: 10px;
+}
+#volunteer-form .form-header h3 {
+  margin-bottom: 0px;
+}
+#volunteer-form .other-details {
+  padding: 60px 0px;
+}
+#volunteer-form .btns.form-org {
+  color: #1f1f1f;
+}
+
+#member-form .form-header {
+  background-color: #4C91BC;
+}
+#member-form .form-header h4, #member-form .form-header h3 {
+  color: #ffffff;
+}
+#member-form .form-header h4 {
+  margin-bottom: 10px;
+}
+#member-form .form-header h3 {
+  margin-bottom: 0px;
 }
 
 /* start of media queries- Small only */

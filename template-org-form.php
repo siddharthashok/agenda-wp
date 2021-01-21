@@ -28,7 +28,7 @@ get_header();
         </div>
         <div class="form-body">
             <div class="grid-container ">
-                <p>Att publicera evenemang på  Agenda: Jämlikhet är kostnadsfritt. </p>
+                <p>Att publicera evenemang på Agenda: Jämlikhet är kostnadsfritt. </p>
                 <p>[text här om vilka typer av event som passar sig att publicera på agenda]</p>
                 <p>Vår redaktion granskar allt innehåll och hör av sig till dig när det är publicerat.</p>
             </div>

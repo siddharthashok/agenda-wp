@@ -32,45 +32,26 @@ get_header();
 
 
                 <?= get_field("paragraph");?>
-                <div>
+                <div class="text-block">
                     <?php
                         $block_one = get_field("block_one");
                     ?>
                     <h3 class="sub-title green"><?= $block_one["title"];?></h3>
                     <?= $block_one["paragraph"];?>
                 </div>
-                <div>
-                    <?php
-                        $block_two = get_field("block_two");
-                    ?>
-                    <h3 class="sub-title"><?= $block_two["title"];?></h3>
-                    <a href="<?= $block_two["button"]["button_link"]; ?>" class="button hollow block"><?= $block_two["button"]["button_text"]; ?></a>
-                    <?= $block_two["paragraph"];?>
+                <div class="info-card hawkes-blue">
+                    <h3 class="card-title">Gillar du Agenda: Jämlikhet och vill stötta oss i vårt arbete? Bli medlem!</h3>
+                    <p class="card-description">Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet. 
+                    </p>
+                    <a href="#" class="link">BLI MEDLEM NU</a>
                 </div>
-                <div>
-                    <?php
-                        $block_three = get_field("block_three");
-                    ?>
-                    <h3 class="sub-title"><?= $block_three["title"];?></h3>
-                    <?= $block_three["paragraph"];?>
+                <div class="info-card albescent-white">
+                    <h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
+                    <p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. 
+                    </p>
+                    <a href="#" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
                 </div>
-                <!-- <div class="sponser-list">
-                    <h3 class="sub-title">Sponsorer </h3>
-                    <div class="grid-x grid-margin-x grid-margin-y">
-                        <?php
-                            while(have_rows("sponsor_list"))
-                            {
-                                the_row();
-                        ?>
-                                <div class="cell medium-3">
-                                    <img src="<?= get_sub_field("logo"); ?>" alt="kultur-ungdom">
-                                </div>
-                        <?php
-                            }
-                        ?>
-                    </div>
-                </div> -->
-            <!-- </div> -->
+                
             </section>
         </div>
         <div class="cell medium-4">
@@ -138,7 +119,7 @@ get_header();
                                 }
                             ?>
                         </div>
-                        <div class="sponser-list">
+                        <!-- <div class="sponser-list">
                             <h6 class="sub-title">Sponsorer </h6>
                             <div class="grid-x grid-margin-x grid-margin-y">
                                 <?php
@@ -153,7 +134,7 @@ get_header();
                                     }
                                 ?>
                             </div>
-                        </div>  
+                        </div>   -->
                     <!-- </div> -->
                 </div>
 

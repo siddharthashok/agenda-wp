@@ -233,12 +233,13 @@ add_action("wp_ajax_nopriv_filter_organisation", "filter_organisation");
 function filter_events()
 {
     $category = $_POST["category"];
-    $date_from = $_POST["date_from"];
-    $date_to = $_POST["date_to"];
+    // $date_from = $_POST["date_from"];
+    // $date_to = $_POST["date_to"];
+    $date = $_POST["date"];
     $type = $_POST["type"];
     $availability = $_POST["availability"];
 
-    $response = event_filter($category,array($date_to,$date_from),$type,$availability);
+    $response = event_filter($category,$date,$type,$availability);
     http_response_code(200);
     echo json_encode($response);
     die();
@@ -246,3 +247,92 @@ function filter_events()
 
 add_action("wp_ajax_filter_events", "filter_events");
 add_action("wp_ajax_nopriv_filter_events", "filter_events");
+
+function volunteer()
+{
+    $group= $_POST["group"];
+    $city=$_POST["city"];
+    $fullName=$_POST["fullName"];
+    $email=$_POST["email"];
+    $phone=$_POST["phone"];
+    $about=$_POST["about"];
+    $suggestion=$_POST["suggestion"];
+    $whichCity=$_POST["whichCity"];
+    $engageSuggestion=$_POST["engageSuggestion"];
+
+    $groupText = implode(", ", $group);
+    $message = "<div>
+    Jag är intresserad att bli volontär för en eller flera grupper av följande : $group 
+    </div>
+    <div>
+        Jag vill starta Agenda: Jämlikhet i min stad, ange stad: $city
+    </div>
+    <div>
+        Namn: $fullName
+    </div>
+    <div>
+        E-mail: $email 
+    </div>
+    <div>
+        Mobilnummer: $phone
+    </div>
+    <div>
+        Berätta om dig själv och varför du vill engagera dig i Agenda: Jämlikhet!: $about
+    </div>
+    <div>
+        Är det något speciellt som du är nyfiken på eller vill bidra med i den grupp som du är intresserad av?: $suggestion
+    </div>
+    <div>
+        I vilken stad befinner du dig?: $whichCity
+    </div>
+    <div>
+        Har du idéer om hur vi kan engagera fler för jämlikhet? Berätta gärna för oss här!: $engageSuggestion
+    </div>
+    ";
+    $to = "wazid@grandworks.co";
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $subject = "New Volunteer Application";
+    wp_mail( $to, $subject, $message, $headers );
+
+    http_response_code(200);
+    echo json_encode(array("message"=>"success"));
+    die();
+}
+add_action("wp_ajax_volunteer", "volunteer");
+add_action("wp_ajax_nopriv_volunteer", "volunteer");
+
+function member()
+{
+    
+    $fullName=$_POST["fullName"];
+    $email=$_POST["email"];
+    $phone=$_POST["phone"];
+    $residence=$_POST["residence"];
+    
+
+    $groupText = implode(", ", $group);
+    $message = "
+    <div>
+        Namn: $fullName
+    </div>
+    <div>
+        E-mail: $email 
+    </div>
+    <div>
+        Mobilnummer: $phone
+    </div>
+    <div>
+        Bostadsort: $residence
+    </div>
+    ";
+    $to = "wazid@grandworks.co";
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $subject = "New Member Application";
+    wp_mail( $to, $subject, $message, $headers );
+
+    http_response_code(200);
+    echo json_encode(array("message"=>"success"));
+    die();
+}
+add_action("wp_ajax_member", "member");
+add_action("wp_ajax_nopriv_member", "member");
