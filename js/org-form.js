@@ -41,14 +41,14 @@ if ($("#organisation-form")) {
 			// "webiste-url": "required",
 			// "email-address": "required",
 			// "social-link": "required",
-			city: "required",
+			// city: "required",
 		},
 		messages: {
 			"org-name": "Ange giltigt organisationsnamn",
 			// "webiste-url": "Ange giltig webbplats / url",
 			// "email-address": "Ange organisationens giltiga e-postadress",
 			// "social-link": "Ange en giltig länk till sociala medier",
-			city: "Ange giltigt Ort/kommun",
+			// city: "Ange giltigt Ort/kommun",
 		},
 	});
 
@@ -148,15 +148,22 @@ if ($("#organisation-form")) {
 		var city = $fomeOne.find("[name='city']").val();
 		var socialMedia = $fomeOne.find("[name='social-link']").val();
 
-		var description = $fomeTwo.find("[name='org-description']").val();
+		var whoAreYou = $fomeTwo.find("[name='who-are-you']").val();
+		var orgGoals = $fomeTwo.find("[name='org-goals']").val();
+		var orgBusiness = $fomeTwo.find("[name='org-business']").val();
+		var orgContribute = $fomeTwo.find("[name='org-contribute']").val();
 		// var eventConcerns = $fomeOne.find("[name='eventConcerns']");
 
 		var contactName = $fomeThree.find("[name='contact-name']").val();
 		var contactEmail = $fomeThree.find("[name='contact-email-address']").val();
 		var contactPhone = $fomeThree.find("[name='contact-phone-no']").val();
-		var corporate = $fomeThree.find("[name='number']").val();
+		// var corporate = $fomeThree.find("[name='number']").val();
 		var message = $fomeThree.find("[name='message']").val();
 
+		var issues = $("[name='issues[]']:checkbox:checked");
+            var issuesArray = [];
+            
+		
 		// var data = {
 		// 	organisationName: organisationName,
 		// 	websiteURL: websiteURL,
@@ -179,16 +186,23 @@ if ($("#organisation-form")) {
 		fd.append("emailAddress",emailAddress);
 		fd.append("socialMedia",socialMedia);
 		fd.append("city",city);
-		fd.append("socialMedia",socialMedia);
-		fd.append("description",description);
+		// fd.append("socialMedia",socialMedia);
+		fd.append("whoAreYou",whoAreYou);
+		fd.append("orgGoals",orgGoals);
+		fd.append("orgBusiness",orgBusiness);
+		fd.append("orgContribute",orgContribute);
 		fd.append("contactName",contactName);
 		fd.append("contactEmail",contactEmail);
 		fd.append("contactPhone",contactPhone);
-		fd.append("corporate",corporate);
+		// fd.append("corporate",corporate);
 		fd.append("message",message);
+		// fd.append("issues",JSON.stringify(issuesArray));
 		fd.append("action","createOrganisation");
-
-		debugger;
+		issues.each(function(index,element){
+			issuesArray.push(element.value);
+			fd.append("issues[]",element.value);
+		});
+		
 		if($("#logo").val() != "")
 		{
 			var file = $("#logo")[0];

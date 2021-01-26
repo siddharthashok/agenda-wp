@@ -41,9 +41,9 @@ if ($("#event-form-modal")) {
 			"event-title": "required",
 			organizer: "required",
 			"event-date": "required",
-			"event-time": "required",
-			"event-location": "required",
-			address: "required",
+			// "event-time": "required",
+			// "event-location": "required",
+			// address: "required",
 			"check1[]": {
 				require_from_group: [1, ".styled-checkbox"],
 			},
@@ -52,9 +52,9 @@ if ($("#event-form-modal")) {
 			"event-title": "Ange händelsens titel",
 			organizer: "Vänligen ange organisatören",
 			"event-date": "Ange händelsedatum",
-			"event-time": "Ange händelsetid",
-			"event-location": "Ange evenemangsplatsen",
-			address: "Ange adress",
+			// "event-time": "Ange händelsetid",
+			// "event-location": "Ange evenemangsplatsen",
+			// address: "Ange adress",
 			"check1[]": {
 				require_from_group: "Välj minst ett alternativ",
 			},
@@ -150,6 +150,7 @@ if ($("#event-form-modal")) {
 			return;
 		} else {
 			hideformtab(eventFormStep3);
+			var fd = new FormData();
 
 			let eventTitle = eventFormStep1.find("[name='event-title']").val();
 			let organizer = eventFormStep1.find("[name='organizer']").val();
@@ -164,8 +165,11 @@ if ($("#event-form-modal")) {
 			let availability = [];
 
 			eventFormStep1.find("[name='check1[]']:checked").each(function (index) {
-				availability.push($(this).val());
+				// availability.push($(this).val());
+				fd.append("availability[]", $(this).val());
 			});
+
+			let otherAvailibility = eventFormStep1.find("[name='other-availibility']").val();
 			
 			let eventDescription = eventFormStep2
 				.find("[name='event-description']")
@@ -176,9 +180,19 @@ if ($("#event-form-modal")) {
 			let linkOrganiserWebsite = eventFormStep2
 				.find("[name='link-organiser-website']")
 				.val();
+
+			let type = []
+			eventFormStep2.find("[name='type[]']:checked").each(function (index) {
+				// type.push($(this).val());
+				fd.append("type[]", $(this).val());
+			});
+
+			let otherType = eventFormStep1.find("[name='other-type']").val();
+
 			let concerns = [];
 			eventFormStep2.find("[name='check2[]']:checked").each(function (index) {
-				concerns.push($(this).val());
+				// concerns.push($(this).val());
+				fd.append("concerns[]", $(this).val());
 			});
 
 			let contactName = eventFormStep3.find("[name='contact-name']").val();
@@ -190,29 +204,29 @@ if ($("#event-form-modal")) {
 				.val();
 			let message = eventFormStep3.find("[name='message']").val();
 			// debugger;
-			const data = {
-				eventTitle: eventTitle,
-				organizer: organizer,
-				eventDatepicker: eventDatepicker,
-				eventTimepicker: eventTimepicker,
-				eventLocation: eventLocation,
-				address: address,
-				availability: availability,
-				eventDescription: eventDescription,
-				eventCost: eventCost,
-				websiteURL: websiteURL,
-				facebookLink: facebookLink,
-				linkOrganiserWebsite: linkOrganiserWebsite,
-				websiteURL: websiteURL,
-				concerns: concerns,
-				contactName: contactName,
-				contactEmailAddress: contactEmailAddress,
-				contactPhoneNo: contactPhoneNo,
-				message: message,
-				action: "createEvent",
-			};
+			// const data = {
+			// 	eventTitle: eventTitle,
+			// 	organizer: organizer,
+			// 	eventDatepicker: eventDatepicker,
+			// 	eventTimepicker: eventTimepicker,
+			// 	eventLocation: eventLocation,
+			// 	address: address,
+			// 	availability: availability,
+			// 	eventDescription: eventDescription,
+			// 	eventCost: eventCost,
+			// 	websiteURL: websiteURL,
+			// 	facebookLink: facebookLink,
+			// 	linkOrganiserWebsite: linkOrganiserWebsite,
+			// 	websiteURL: websiteURL,
+			// 	concerns: concerns,
+			// 	contactName: contactName,
+			// 	contactEmailAddress: contactEmailAddress,
+			// 	contactPhoneNo: contactPhoneNo,
+			// 	message: message,
+			// 	action: "createEvent",
+			// };
 
-			var fd = new FormData();
+			
 
 			fd.append("eventTitle", eventTitle);
 			fd.append("organizer", organizer);
@@ -220,18 +234,18 @@ if ($("#event-form-modal")) {
 			fd.append("eventTimepicker", eventTimepicker);
 			fd.append("eventLocation", eventLocation);
 			fd.append("address", address);
-			fd.append("availability", availability);
+			fd.append("otherAvailibility", otherAvailibility);
 			fd.append("eventDescription", eventDescription);
 			fd.append("eventCost", eventCost);
 			fd.append("websiteURL", websiteURL);
 			fd.append("facebookLink", facebookLink);
 			fd.append("linkOrganiserWebsite", linkOrganiserWebsite);
 			fd.append("websiteURL", websiteURL);
-			fd.append("concerns", concerns);
+			fd.append("otherType", otherType);
 			fd.append("contactName", contactName);
 			fd.append("contactEmailAddress", contactEmailAddress);
 			fd.append("contactPhoneNo", contactPhoneNo);
-			fd.append("message", contactEmailAddress);
+			fd.append("message", message);
 			fd.append("action", "createEvent");
 
 			if ($("#event-banner").val() != "") {

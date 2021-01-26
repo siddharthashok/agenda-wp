@@ -43,13 +43,13 @@ get_header();
                     <h3 class="card-title">Gillar du Agenda: Jämlikhet och vill stötta oss i vårt arbete? Bli medlem!</h3>
                     <p class="card-description">Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet. 
                     </p>
-                    <a href="#" class="link">BLI MEDLEM NU</a>
+                    <a href="<?= get_site_url();?>/member" class="link">BLI MEDLEM NU</a>
                 </div>
                 <div class="info-card albescent-white">
                     <h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
                     <p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. 
                     </p>
-                    <a href="#" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
+                    <a href="<?= get_site_url();?>/volunteer-form" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
                 </div>
                 
             </section>

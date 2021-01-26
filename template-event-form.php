@@ -27,7 +27,7 @@ get_header();
         <div class="form-body">
             <div class="grid-container ">
                 <p>Att publicera evenemang på Agenda: Jämlikhet är kostnadsfritt. </p>
-                <p>[text här om vilka typer av event som passar sig att publicera på agenda]</p>
+                
                 <p>Vår redaktion granskar allt innehåll och hör av sig till dig när det är publicerat.</p>
             </div>
         </div>
@@ -35,7 +35,7 @@ get_header();
             <div class="grid-container ">
                 <div class="form-buttons">
                     <button type="button" id="form1step1Prev" class="btns form-publish prevBtn">tillabaka</button>
-                    <button type="button" id="form1step1Next" class="btns form-publish nextBtn">nästa</button>
+                    <button type="button" id="form1step1Next" class="btns nextBtn">nästa</button>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ get_header();
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
                     <div class="form-spacing">
-                        <label class="full-width-label">Titel på event*</label>
+                        <label class="full-width-label">Titel på evenemang*</label>
                         <input name="event-title" class="full-width" placeholder="input">
                     </div>
                     <div class="form-spacing">
@@ -66,15 +66,15 @@ get_header();
                         <input id="event-datepicker" name="event-datepicker" class="full-width" placeholder="Datumformat">
                     </div>
                     <div class="form-spacing">
-                        <label class="full-width-label">Tidpunkt för event*</label>
+                        <label class="full-width-label">Tidpunkt för event</label>
                         <input id="event-timepicker" name="event-timepicker" class="full-width" placeholder="Ange start och sluttidpunkt">
                     </div>
                     <div class="form-spacing">
-                        <label class="full-width-label">Plats för event*</label>
+                        <label class="full-width-label">Plats för event (fysisk eller virtuell plats)</label>
                         <input name="event-location" class="full-width" placeholder="tex Annedalsseminariet, gbg Universitet ">
                     </div>
                     <div class="form-spacing">
-                        <label class="full-width-label">Adress*</label>
+                        <label class="full-width-label">Adress</label>
                         <input name="address" class="full-width" placeholder="tex Annedalsseminariet, gbg Universitet ">
                     </div>
                     <fieldset>
@@ -101,13 +101,17 @@ get_header();
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-7" name="check1[]" value="Teckenspråkstolkning"><label for="check1-7"> Teckenspråkstolkning</label> -->
                         <span id="checkbox1_error"></span>
                     </fieldset>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Annat:</label>
+                        <input name="other-availibility" class="full-width" placeholder="Ange andra specifikationer">
+                    </div>
                 </div>
             </div>
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" id="form1step2Prev" class="btns form-publish prevBtn">tillabaka</button>
-                        <button type="button" id="form1step2Next" class="btns form-publish nextBtn">nästa</button>
+                        <button type="button" id="form1step2Prev" class="btns prevBtn">tillabaka</button>
+                        <button type="button" id="form1step2Next" class="btns nextBtn">nästa</button>
                     </div>
                 </div>
             </div>
@@ -135,28 +139,44 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Hemsida för evenemang</label>
-                        <input class="full-width" name="website-url" placeholder="t.ex. 0kr">
+                        <input class="full-width" name="website-url" placeholder="t.ex. www.agendajamlikhet.se/event">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Länk till facebook-event</label>
-                        <input class="full-width" name="facebook-link" placeholder="t.ex. 0kr">
+                        <input class="full-width" name="facebook-link" placeholder="t.ex. www.facebook.com/events/1234">
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Länk till arrangörens hemsida</label>
-                        <input class="full-width" name="link-organiser-website" placeholder="t.ex. 0kr ">
+                        <input class="full-width" name="link-organiser-website" placeholder="t.ex. www.agendajamlikhet.se">
                     </div>
 
                     <fieldset>
+                        <p>Typ av event, markera de svarsalternativ som gäller</p>
+                        <?php
+                            $all_terms = get_tags();
+                            foreach ($all_terms as $key => $value) {
+                        ?>
+                            <input class="styled-checkbox form-publish" type="checkbox" id="type-<?= $key; ?>" name="type[]" value="<?= $value->slug; ?>">
+                            <label for="type-<?= $key; ?>"> <?= $value->name; ?></label>
+                        <?php
+                            }
+                        ?>
+                    </fieldset>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Annat:</label>
+                        <input name="other-type" class="full-width" placeholder="Ange andra specifikationer">
+                    </div>
+                    <fieldset>
                         <p>Markera de svarsalternativ som eventet berör*</p>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-1" name="check2[]" value="Jämställdhet"><label for="check2-1"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-2" name="check2[]" value="Jämställdhet"><label for="check2-2"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-3" name="check2[]" value="Jämställdhet"><label for="check2-3"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-4" name="check2[]" value="Jämställdhet"><label for="check2-4"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-5" name="check2[]" value="Jämställdhet"><label for="check2-5">Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-6" name="check2[]" value="Jämställdhet"><label for="check2-6"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-7" name="check2[]" value="Jämställdhet"><label for="check2-7"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-8" name="check2[]" value="Jämställdhet"><label for="check2-8"> Jämställdhet</label>
-                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-9" name="check2[]" value="Jämställdhet"><label for="check2-9"> Jämställdhet</label>
+                        <?php
+                            $all_category = get_categories();
+                            foreach ($all_category as $key => $value) {
+                        ?>
+                        <input class="styled-checkbox form-publish" type="checkbox" id="check2-<?= $key; ?>" name="check2[]" value="<?= $value->term_id; ?>">
+                        <label for="check2-<?= $key; ?>"> <?= $value->name; ?> </label>
+                        <?php
+                            }
+                        ?>
                         <span id="checkbox2_error"></span>
                     </fieldset>
                     <fieldset>
@@ -178,8 +198,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" id="form1step3Prev" class="btns form-publish prevBtn">tillabaka</button>
-                        <button type="button" id="form1step3Next" class="btns form-publish nextBtn">nästa</button>
+                        <button type="button" id="form1step3Prev" class="btns prevBtn">tillabaka</button>
+                        <button type="button" id="form1step3Next" class="btns nextBtn">nästa</button>
                     </div>
                 </div>
             </div>
@@ -211,14 +231,14 @@ get_header();
                     </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
-                        <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
+                        <textarea name="message" class="full-width" placeholder="Här kan du skriva meddelande till redaktionen..."></textarea>
                     </div>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
                         <input class="styled-radio form-publish" type="checkbox" id="check1-circle-1"> <label for="check1-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links">värderingar och riktlinjer</a> för anslutna organisationer. </label>
                         <input class="styled-radio form-publish" type="checkbox" id="check1-circle-2"> <label for="check1-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
                     </fieldset>
-                    <div class="form-submit">
+                    <div class="form-submit text-center">
                         <a class=" button button-pink hollow small small-only-expanded" id="form1step4Next" href="#">SKICKA FORMULÄR</a>
                     </div>
 
@@ -227,8 +247,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" id="form1step4Prev" class="btns form-publish prevBtn">tillabaka</button>
-                        <button type="button" class="btns form-publish nextBtn">nästa</button>
+                        <button type="button" id="form1step4Prev" class="btns prevBtn">tillabaka</button>
+                        <!-- <button type="button" class="btns nextBtn">nästa</button> -->
                     </div>
                 </div>
             </div>
@@ -239,9 +259,9 @@ get_header();
             <div class="grid-container ">
                 <h1 class="form-success-title form-publish">Tack! </h1>
                 <p>Agenda: Jämlikhets redaktion granskar innehållet innan det publiceras på hemsidan. Vi notifierar dig när innehållet är uppe via angivna kontaktuppgifter. </p>
-                <fieldset class="spacer">
+                <!-- <fieldset class="spacer">
                     <p class="form-links email-icon"><a>Maila mig en kopia</a></p>
-                </fieldset>
+                </fieldset> -->
             </div>
         </div>
     </div>

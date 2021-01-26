@@ -14,7 +14,7 @@ get_header();
 	<div class="sidebar">
 		<h2 class="title">Filter</h2>
 		<div class="filter-block">
-			<h4>Amnen</h4>
+			<h4>Ämnen</h4>
 			<ul class="menu vertical">
 				<li>
 					<a href="#" class="is-active" data-type="category" data-slug="" v-on:click="filter">

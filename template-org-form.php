@@ -37,7 +37,7 @@ get_header();
             <div class="grid-container ">
                 <div class="form-buttons">
                     <button type="button" id="step1Prev" class="btns form-org prevBtn">tillabaka</button>
-                    <button type="button" id="step1Next" class="btns form-org nextBtn">nästa</button>
+                    <button type="button" id="step1Next" class="btns nextBtn">nästa</button>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@ get_header();
                         <input name="social-link" class="full-width" placeholder="ex. instagram.se/agendajamliket/">
                     </div>
                     <div class="form-spacing">
-                        <label class="full-width-label">Ort/kommun*</label>
+                        <label class="full-width-label">Ort/kommun</label>
                         <input name="city" class="full-width" placeholder="ex. agendajamliket.se ">
                     </div>
                     <fieldset class="spacer">
@@ -90,8 +90,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" id="step2Prev" class="btns form-org prevBtn">tillabaka</button>
-                        <button type="button" id="step2Next" class="btns form-org nextBtn">nästa</button>
+                        <button type="button" id="step2Prev" class="btns prevBtn">tillabaka</button>
+                        <button type="button" id="step2Next" class="btns nextBtn">nästa</button>
                     </div>
                 </div>
             </div>
@@ -110,14 +110,34 @@ get_header();
                     <p>Följande information om din organisation kommer att synas på vår hemsida. </p>
                     <p>* Obligatorisk information</p>
                     <div class="form-spacing">
-                        <label class="full-width-label">Beskriv organisationens verksamhet (max 1250 tecken)*</label>
-                        <textarea name="org-description" class="full-width" placeholder="ex. Vårt syfte är att..."></textarea>
+                        <label class="full-width-label">Vilka är ni? (max 1250 tecken)</label>
+                        <textarea name="who-are-you" class="full-width" placeholder="En kort beskrivning om er grupp, kampanj eller organisation"></textarea>
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Vilka är era mål? (max 1250 tecken)</label>
+                        <textarea name="org-goals" class="full-width" placeholder="En mening om målen eller visionen med ert arbete"></textarea>
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Vad är er huvudsakliga verksamhet? (max 1250 tecken)</label>
+                        <textarea name="org-business" class="full-width" placeholder="Håller ni tex på med utbildning, lobbyarbete, kulturevenemang, kampanjer eller driver ni en blogg?"></textarea>
+                    </div>
+                    <div class="form-spacing">
+                        <label class="full-width-label">Hur kan en kan engagera sig i eller bidra till organisationen? (max 1250 tecken)</label>
+                        <textarea name="org-contribute" class="full-width" placeholder="Kan en tex bli medlem? Stödja arbetet på något vis? Gå utbildningar? Komma på arrangemang?"></textarea>
                     </div>
                     <fieldset>
                         <p>Markera de frågor som din organisation arbetar med*</p>
-                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-1" value="value1">
-                        <label for="check3-1"> Jämställdhet</label>
-                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-2">
+                        <?php
+                            $all_terms = get_categories();
+                            foreach ($all_terms as $key => $value) {
+                        ?>
+                        <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-<?= $key?>" value="<?= $value->term_id; ?>">
+                        <label for="check3-<?= $key?>"> <?= $value->name; ?></label>
+                        <?php
+                            }
+                        ?>
+                        
+                        <!-- <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-2">
                         <label for="check3-2"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-3">
                         <label for="check3-3"> Jämställdhet</label>
@@ -132,7 +152,7 @@ get_header();
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-8">
                         <label for="check3-8"> Jämställdhet</label>
                         <input class="styled-checkbox form-org" name="issues[]" type="checkbox" id="check3-9">
-                        <label for="check3-9"> Jämställdhet</label>
+                        <label for="check3-9"> Jämställdhet</label> -->
                         <span id="checkbox_error"></span>
                     </fieldset>
 
@@ -141,8 +161,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" id="step3Prev" class="btns form-org prevBtn">tillabaka</button>
-                        <button type="button" id="step3Next" class="btns form-org nextBtn">nästa</button>
+                        <button type="button" id="step3Prev" class="btns prevBtn">tillabaka</button>
+                        <button type="button" id="step3Next" class="btns nextBtn">nästa</button>
                     </div>
                 </div>
             </div>
@@ -172,10 +192,10 @@ get_header();
                         <label class="full-width-label">Telefonnummer till kontaktperson*</label>
                         <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
                     </div>
-                    <div class="form-spacing">
+                    <!-- <div class="form-spacing">
                         <label class="full-width-label">Organisationsnummer*</label>
                         <input type="number" name="number" class="full-width" placeholder="ex. 192301018890">
-                    </div>
+                    </div> -->
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
                         <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
@@ -193,8 +213,8 @@ get_header();
             <div style="overflow:auto;">
                 <div class="grid-container ">
                     <div class="form-buttons">
-                        <button type="button" id="step4Prev" class="btns form-org prevBtn">tillabaka</button>
-                        <button type="button" class="btns form-org nextBtn">nästa</button>
+                        <button type="button" id="step4Prev" class="btns prevBtn">tillabaka</button>
+                        <!-- <button type="button" class="btns nextBtn">nästa</button> -->
                     </div>
                 </div>
             </div>

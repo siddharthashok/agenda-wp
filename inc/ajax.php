@@ -7,23 +7,29 @@ function createOrganisation()
     $email_address = sanitize_text_field($_POST["emailAddress"]);
     $link_to_social_media = sanitize_text_field($_POST["socialMedia"]);
     $city = sanitize_text_field($_POST["city"]);
-    $description = sanitize_textarea_field($_POST["description"]);
+    $whoAreYou = sanitize_textarea_field($_POST["whoAreYou"]);
+    $orgGoals = sanitize_textarea_field($_POST["orgGoals"]);
+    $orgBusiness = sanitize_textarea_field($_POST["orgBusiness"]);
+    $orgContribute = sanitize_textarea_field($_POST["orgContribute"]);
     // $event_concerns = $_POST["eventConcerns"];
     $contact_name = sanitize_text_field($_POST["contactName"]);
     $contact_email_address = sanitize_text_field($_POST["contactEmail"]);
     $contact_phone = sanitize_text_field($_POST["contactPhone"]);
-    $corporate = sanitize_text_field($_POST["corporate"]);
+    // $corporate = sanitize_text_field($_POST["corporate"]);
     $message = sanitize_textarea_field($_POST["message"]);
+    $issues = $_POST["issues"];
 
     $post_id = wp_insert_post( 
         array(
             "post_title" => $name_organisation,
             "post_status" => "draft",
             "post_type" => "organisations",
-            "post_content" => $description,
+            "post_content" => $whoAreYou,
         )
     );
 
+    //Select category
+    wp_set_post_categories($post_id,$issues,false);
     // Update Post
     if(isset($_FILES["file"])){
         $file = $_FILES["file"];
@@ -50,18 +56,22 @@ function createOrganisation()
     // Update ACF
     $value = array(
         "website" => $website_url,
-        "instagram" => "",
+        "instagram" => $link_to_social_media,
         "facebook" => $link_to_social_media,
         "mail" => $email_address
     );
     update_field("contact_details",$value,$post_id);
     update_field("city",$city,$post_id);
 
+    update_field("who_are_you",$whoAreYou,$post_id);
+    update_field("org_goals",$orgGoals,$post_id);
+    update_field("org_business",$orgBusiness,$post_id);
+    update_field("org_contribute",$orgContribute,$post_id);
+
     $other_details = array(
         "contact_name" => $contact_name,
         "contact_email_address" => $contact_email_address,
         "contact_phone_number" => $contact_phone,
-        "number" => $corporate,
         "message" => $message
     );
     update_field("other_details",$other_details,$post_id);
@@ -69,7 +79,7 @@ function createOrganisation()
     // update_field("instag",$instagram,$post_id);
     // update_field("facebook",$link_to_social_media,$post_id);
     // update_field("mail",$email_address,$post_id);
-
+    
     echo json_encode(array("pageId" => $post_id));
     wp_die();
 }
@@ -86,6 +96,10 @@ function createEvent()
     $location = sanitize_text_field($_POST["eventLocation"]);
     $address = sanitize_text_field($_POST["address"]);
     $availability = $_POST["availability"];
+    $other_availibility = sanitize_text_field($_POST["otherAvailibility"]);
+    $type = $_POST["type"];
+    $concerns = $_POST["concerns"];
+    $other_type = sanitize_text_field($_POST["otherType"]);
     $event_cost = sanitize_text_field($_POST["eventCost"]);
     $website_url = sanitize_text_field($_POST["websiteURL"]);
     $facebook_link = sanitize_text_field($_POST["facebookLink"]);
@@ -101,7 +115,7 @@ function createEvent()
         array(
             "post_title" => $event_title,
             "post_status" => "draft",
-            "post_type" => "event_listing",
+            "post_type" => "event",
             "post_content" => $event_description,
         )
     );
@@ -124,8 +138,8 @@ function createEvent()
                 require_once(ABSPATH . "wp-admin" . '/includes/image.php');
                 $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
                 wp_update_attachment_metadata( $attachment_id,  $attachment_data );
-                // set_post_thumbnail( $post_id, $attachment_id );
-                update_post_meta($post_id, "_event_banner", wp_get_attachment_url( $attachment_id ));
+                set_post_thumbnail( $post_id, $attachment_id );
+                // update_post_meta($post_id, "_event_banner", wp_get_attachment_url( $attachment_id ));
             }
         }
     }
@@ -149,31 +163,29 @@ function createEvent()
                 $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
                 wp_update_attachment_metadata( $attachment_id,  $attachment_data );
                 // set_post_thumbnail( $post_id, $attachment_id );
-                update_post_meta($post_id, "_organizer_logo", wp_get_attachment_url( $attachment_id ));
+                update_field("logo", $attachment_id ,$post_id);
             }
         }
     }
 
-    update_post_meta($post_id, "_organizer_name", $organizer);
-    update_post_meta($post_id, "_event_venue_name", $location);
-    update_post_meta($post_id, "_event_start_date", $event_date);
-    update_post_meta($post_id, "_event_start_time", $event_time);
-    update_post_meta($post_id, "_evet_cost", $event_cost);
-    update_post_meta($post_id, "_organizer_website", $link_organiser_website);
     
-    // update_field("address",$address,$post_id);
+    update_field("organizer_name",$organizer,$post_id);
+    update_field("venue_for_event",$location,$post_id);
+    update_field("start_date",$event_date.' '.$event_time,$post_id);
+    update_field("cost_of_event",$event_cost,$post_id);
     update_field("address",$address,$post_id);
-    update_field("place",array("address"=>$location),$post_id);
-
-    $contact_details = array(
-        "name"=> $contact_name,
-        "email"=> $contact_email_address,
-        "phone"=> $contact_phone_no
-    );
-
+    update_field("other_availibility",$other_availibility,$post_id);
+    
+    update_field("website_for_event",$website_url,$post_id);
+    update_field("link_to_facebook_event",$facebook_link,$post_id);
+    update_field("link_to_organisers_website",$link_organiser_website,$post_id);
+    update_field("name_of_contact_person",$contact_name,$post_id);
+    update_field("email_address_of_contact_person",$contact_email_address,$post_id);
+    update_field("telephone_number_of_contact_person",$contact_phone_no,$post_id);
+    
     update_field("contact_details_for_event",$contact_details,$post_id);
     update_field("message",$message,$post_id);
-    update_field("rsvp_link",$website_url,$post_id);
+    
 
     // $availabilityList = array();
     // for($i=0; $i<sizeof($availability); $i++)
@@ -181,9 +193,11 @@ function createEvent()
     //     $temp = array("title" => $availability[$i]);
     //     array_push($availabilityList,$temp);
     // }
-    wp_set_post_terms($post_id, $availability,"availability");
+    wp_set_post_tags($post_id,$type,false);
     // update_field("availability", $availabilityList, $post_id);
+    wp_set_post_categories($post_id,$concerns,false);
 
+    wp_set_post_terms( $post_id, $availability, "availability", false );
 
     echo json_encode(array("pageId" => $post_id));
     wp_die();
@@ -262,7 +276,7 @@ function volunteer()
 
     $groupText = implode(", ", $group);
     $message = "<div>
-    Jag är intresserad att bli volontär för en eller flera grupper av följande : $group 
+    Jag är intresserad att bli volontär för en eller flera grupper av följande : $groupText 
     </div>
     <div>
         Jag vill starta Agenda: Jämlikhet i min stad, ange stad: $city
@@ -310,7 +324,6 @@ function member()
     $residence=$_POST["residence"];
     
 
-    $groupText = implode(", ", $group);
     $message = "
     <div>
         Namn: $fullName

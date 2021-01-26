@@ -30,10 +30,10 @@
             </div>
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="#"><h6>Eventkalendern</h6></a>
-                    <a href="#"><h6>Organisationer</h6></a>
-                    <a href="#"><h6>Publicera</h6></a>
-                    <a href="#"><h6>Om Agenda: Jämlikhet</h6></a>
+                    <a href="<?= get_site_url(); ?>/event"><h6>Eventkalendern</h6></a>
+                    <a href="<?= get_site_url(); ?>/organisations"><h6>Organisationer</h6></a>
+                    <a href="<?= get_site_url(); ?>/publish-event-organisation"><h6>Publicera</h6></a>
+                    <a href="<?= get_site_url(); ?>/about"><h6>Om Agenda: Jämlikhet</h6></a>
                 </div>
             </div>
             <div class="cell large-4">
@@ -43,8 +43,8 @@
                     <a href="#"><h6>Riktlinjer för organisationer</h6></a>
                     <div class="social-wrapper">
                         <h6>Följ oss på</h6>
-                        <a href="#" class="facebook"></a>
-                        <a href="#" class="instagram"></a>
+                        <a href="https://www.facebook.com/agendajamlikhet" class="facebook" target="_blank" ></a>
+                        <a href="https://instagram.com/agendajamlikhet" class="instagram" target="_blank" ></a>
                     </div>
                 </div>
             </div>
