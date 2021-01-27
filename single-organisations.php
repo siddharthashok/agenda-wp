@@ -44,15 +44,23 @@ while(have_posts())
                         </div>
                         <div class="content-wrapper">
                             <ul class="tags-wrapper">
-                                <li><a href="#">JÄMSTÄLLDHET <span class="plus-icon"></span></a></li>
-                                <li><a href="#">Sexualitet och könsidentitet  <span class="plus-icon"></span></a></li>
+                                <?php
+                                    $categories = get_the_category();
+
+                                    foreach($categories as $key => $value)
+                                    {
+                                ?>
+                                        <li><a href="#"><?= $value->name; ?> <span class="plus-icon"></span></a></li>
+                                <?php
+                                    }
+                                ?>
                             </ul>
                             <h3><?= get_the_title(); ?></h3>
-                        
-                            <?= the_content();?>
-
+                            <div class="paras">
+                                <?= get_the_content(); ?>
+                            </div>
                             <div class="link-wrapper text-right">
-                                <a href="#" class="link">TILL ORGANISATIONENS HEMSIDA</a>
+                                <a href="<?= $contact_details["website"]; ?>" class="link">TILL ORGANISATIONENS HEMSIDA</a>
                             </div>
                         </div>
                     </div>
@@ -73,7 +81,7 @@ while(have_posts())
             <?php
                 $current_organiser_id = $post->ID;
                 $all_events = new WP_Query(array(
-                    "post_type" => "event_listing",
+                    "post_type" => "event",
                     "posts_per_page" => -1,
                     "post_status" => "publish"
                 ));

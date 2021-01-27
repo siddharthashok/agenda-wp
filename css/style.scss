@@ -93,8 +93,8 @@ label{@include black(); color: $mine-shaft;}
 	.link{@include font(); color: $mine-shaft; text-decoration: none; font-size: 14px; line-height: 20px; @include semi-bold(); text-transform: uppercase; position: absolute; bottom: 33px; border-bottom: 2px solid $black;}
 }
 
-.tags-wrapper{display: flex; flex-wrap: wrap; list-style: none; margin-left: 0px; margin-bottom: 30px;
-	li{margin-right: 15px;}
+.tags-wrapper{display: flex; flex-wrap: wrap; list-style: none; margin-left: 0px; margin-bottom: 15px;
+	li{margin-right: 15px; margin-bottom: 15px;}
 	a{text-decoration: none; padding: 18px 16px 15px 16px; background-color: $black; color: $white; border-radius: 4px; display: flex; align-items: center;
 		.plus-icon{background-image: url("img/plus.svg"); background-repeat: no-repeat; background-size: 15px; background-position: center; display: inline-block; height: 15px; width: 15px; margin-left: 15px; top:-2px;position: relative;}
 
@@ -261,7 +261,7 @@ a {
 }
 // .hyphen{font-size: 60px;color:$purple;display: inline-block;}
 .search-section{padding:60px 0px;}
-.card-with-image {position: relative; /*margin-bottom:15px; margin: 0px 7px 14px 7px; */background-color: $white;box-shadow: 0px 8px 16px $off-white;display: block;height: 100%; margin-bottom: 30px; text-decoration: none; text-transform: none;
+.card-with-image {position: relative; /*margin-bottom:15px; margin: 0px 7px 14px 7px; */background-color: $white;box-shadow: 0px 8px 16px $off-white;display: block;height: 100%; text-decoration: none; text-transform: none;
 
 	.event-tags{list-style: none; margin: 0px; position: absolute; right: 0px; top: 36%;
 		li{padding: 10px 12px 10px 17px; box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25); border-radius: 5px 0px 0px 5px; background-color: #10cfc9; color: $black; @include semi-bold(); font-size: 14px; text-align: center; margin-bottom: 4px; text-transform: uppercase;
@@ -292,8 +292,8 @@ a {
 	.entrance-info {
 		text-transform: none;
 	}
-	.content {
-		h3{margin-bottom: 12px;}
+	.content {position: relative;
+		h3{margin-bottom: 2px;}
 		p{text-decoration: none;}
 		padding: 15px;
 		.organizer,
@@ -377,6 +377,12 @@ a {
 		content: "";
 		display: block;
 		clear: both;
+	}
+
+	.paras{margin-bottom: 40px;}
+	.link-wrapper{position: absolute; bottom: 30px; right: 30px; 
+		a{position: relative;}
+		a::after{content:""; width: 100%; height: 2px; position: absolute; left: 0px; bottom: -3px; background-color: $mine-shaft; display: inline-block;}
 	}
 }
 
@@ -514,6 +520,8 @@ a {
 		align-items: flex-end;
 		margin-bottom: 5px;
 	}
+
+	.card-with-image{margin-bottom: 0px;}
 }
 .current-organizers-wrap {
 	margin-bottom: 30px;
@@ -923,7 +931,7 @@ a {
 		}
 		.sidebar{width: 336px; padding: 48px 30px; background-color: #f1f1f1;height: auto; min-height: initial;
 			.label-link{margin-bottom: 40px;
-				a{text-transform: lowercase;}
+				a{text-transform: lowercase; font-size: 22px; line-height: 28px;}
 			}
 		}
 		.event-description {

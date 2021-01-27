@@ -16,7 +16,7 @@ get_header();
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url();?>" class="">Home</a></li>
-                <li><a href="<?= get_site_url(); ?>/events">Events</a></li>
+                <li><a href="<?= get_site_url(); ?>/event">Events</a></li>
                 <li><a href="#" class="active"><?= get_the_title(); ?></a></li>
             </ul>
         </nav>
@@ -103,15 +103,23 @@ get_header();
                         </div>
                         <div class="content-wrapper">
                             <ul class="tags-wrapper">
-                                <li><a href="#">JÄMSTÄLLDHET <span class="plus-icon"></span></a></li>
-                                <li><a href="#">Sexualitet och könsidentitet  <span class="plus-icon"></span></a></li>
+                                <?php
+                                    $categories = get_the_category();
+
+                                    foreach($categories as $key => $value)
+                                    {
+                                ?>
+                                        <li><a href="#"><?= $value->name; ?> <span class="plus-icon"></span></a></li>
+                                <?php
+                                    }
+                                ?>
                             </ul>
                             <h3><?= get_the_title(); ?></h3>
-                            <p>
+                            <div class="paras">
                                 <?= get_the_content(); ?>
-                            </p>
+                            </div>
                             <div class="link-wrapper text-right">
-                                <a href="#" class="link">TILL ARRANGÖRENS EVENTSIDA</a>
+                                <a href="<?= get_field("link_to_organisers_website");?>" class="link" target="_blank">TILL ARRANGÖRENS EVENTSIDA</a>
                             </div>
                         </div>
                         

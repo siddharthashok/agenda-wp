@@ -16,7 +16,15 @@ get_header();
                 $all_events = new WP_Query(array(
                   'post_type' => 'event',
                   'posts_per_page' => 6,
-                  'post_status' => 'publish'
+                  'post_status' => 'publish',
+                  'meta_query' => array(
+                        array(
+                            'key' => 'start_date',
+                            'value' => date("Y-m-d"),
+                            'compare' => '>=',
+                            'type' => 'DATE'
+                        )
+                    )
                 ));
                 $all_events_categories = get_categories();
             ?>
@@ -86,7 +94,7 @@ get_header();
                 ?>
                     <div class="cell large-12">
                         <div class="link-wrapper text-right">
-                            <a class="underline" href="<?= get_site_url()?>/events">Visa FLER</a>
+                            <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
                         </div>
                     </div>
                 </div>
@@ -167,10 +175,12 @@ get_header();
                                         <div class="image-wrapper">
                                             <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="">
                                         </div>
+                                        <div class="card-title-wrap">
+                                            <span class="category">organisation </span>
+                                        </div> 
                                         <div class="content">
-                                            <p class="category">organisation</p>
                                             <h3><?= get_the_title(); ?></h3>
-                                            <p class="cause">Mänskliga rättigheter</p>
+                                            <p class="cause"><?= get_the_category()[0]->name;?></p>
                                         </div>
                                     </a>
                                 </div>

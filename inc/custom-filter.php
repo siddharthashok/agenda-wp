@@ -17,6 +17,7 @@ function organisation_filter($category=null)
         $args = array(
             "post_type" => "organisations",
             "posts_per_page" => -1,
+            "post_status" => "publish"
         );
     }
 
@@ -33,7 +34,8 @@ function organisation_filter($category=null)
                 "id" => get_the_ID(),
                 "terms" => get_the_terms(get_the_ID(), "organisation_category"),
                 "featured_image" => get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg',
-                "permalink" => get_the_permalink()
+                "permalink" => get_the_permalink(),
+                "category" => get_the_category()[0]->name
             );
             array_push($response, $temp);
         }

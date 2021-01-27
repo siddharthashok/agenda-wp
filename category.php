@@ -108,10 +108,12 @@ $term = get_queried_object();
                             <div class="image-wrapper">
                                 <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="">
                             </div>
+                            <div class="card-title-wrap">
+                                <span class="category">organisation </span>
+                            </div>
                             <div class="content">
-                                <p class="category">organisation</p>
                                 <h3><?= get_the_title(); ?></h3>
-                                <p class="cause">Mänskliga rättigheter</p>
+                                <p class="cause"><?= get_the_category()[0]->name;?></p>
                             </div>
                         </a>
                     </div>

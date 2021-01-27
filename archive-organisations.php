@@ -66,7 +66,7 @@ get_header();
                         </div> 
                         <div class="content">
                             <h3>{{organisation.title}}</h3>
-                            <!-- <p class="cause">Mänskliga rättigheter</p> -->
+                            <p class="cause">{{organisation.category}}</p>
                         </div>
                     </a>
                 </div> 
