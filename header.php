@@ -31,7 +31,7 @@
 <body>
     <header class="site-header">
         <div class="grid-container">
-            <div class="cell large-12 p-relative">
+            <!-- <div class="cell large-12 p-relative"> -->
                 <div class="header-wrapper">
                     <div class="hamburger">
                         <span></span>
@@ -41,15 +41,40 @@
                     <a class="logo" href="<?= get_site_url(); ?>">
                         <img src="<?= get_template_directory_uri(); ?>/img/main-logo.svg" alt="logo of agenda website">
                     </a>
+                    <?php 
+                        $menu_items = wp_get_nav_menu_items("menu");
+                        // print_r($menu_items);
+                    ?>
                     <ul class="menu hidden">
                         <li class="close-wrap">
                             <span class="close-text">Stäng</span>
                             <a href="#" class="close-icon nav-link"></a>
                         </li>
-                        <li><a href="<?= get_site_url(); ?>/event" class="nav-link">Event kalender</a></li>
-                        <li><a href="<?= get_site_url(); ?>/organisations" class="nav-link">Organisationer</a></li>
+                        <?php
+                            // print_r(rtrim($_SERVER['REQUEST_URI'],"/"));
+                            foreach ($menu_items as $key => $value) {
+                                // $current = ( $_SERVER['REQUEST_URI'] == (parse_url( $value->url, PHP_URL_PATH )."/") ) ? 'active' : '';
+                                
+                                if(strcmp( rtrim($_SERVER['REQUEST_URI'],"/"),parse_url( $value->url, PHP_URL_PATH ))==0)
+                                {
+                                    $current = 'active';
+                                    
+                                }
+                                else
+                                {
+                                    $current = '';
+                                }
+                                // print_r(parse_url( $value->url, PHP_URL_PATH ));
+                                
+                        ?>
+                            <li><a href="<?= $value->url; ?>" class="nav-link <?= $current; ?>"><?= $value->title; ?></a></li>
+                        <?php
+                            }
+                        ?>
+                        
+                        <!-- <li><a href="<?= get_site_url(); ?>/organisations" class="nav-link">Organisationer</a></li>
                         <li><a href="<?= get_site_url(); ?>/publish-event-organisation" class="nav-link">Publicera </a></li>
-                        <li><a href="<?= get_site_url(); ?>/about" class="nav-link">Om Agenda: Jämlikhet</a></li>
+                        <li><a href="<?= get_site_url(); ?>/about" class="nav-link">Om Agenda: Jämlikhet</a></li> -->
                         <!-- <li><a href="" class="nav-link">Kontakta </a></li> -->
                         <li class="search-item">
                             <div class="search-toggle">
@@ -74,6 +99,6 @@
                     </form> -->
                 </div>
                 <div class="clear"></div>
-            </div>
+            <!-- </div> -->
         </div>
     </header>

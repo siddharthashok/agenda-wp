@@ -17,6 +17,8 @@ get_header();
                   'post_type' => 'event',
                   'posts_per_page' => 6,
                   'post_status' => 'publish',
+                  'meta_key' => 'start_date',
+                  'orderby' => array( 'meta_value' => 'ASC' ),
                   'meta_query' => array(
                         array(
                             'key' => 'start_date',

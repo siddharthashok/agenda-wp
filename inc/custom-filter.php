@@ -132,6 +132,8 @@ function event_filter($category=null, $date=null, $type=null, $availability=null
             "post_type" => "event",
             "post_status" => "publish",
             "posts_per_page" => -1,
+            'meta_key' => 'start_date',
+            'orderby' => array( 'meta_value' => 'ASC' ),
             "meta_query" => $date_args
         );
     }

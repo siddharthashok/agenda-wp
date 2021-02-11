@@ -13,7 +13,7 @@ get_header();
 <section class="organisation" id="flter-container">
     <div class="sidebar">
         <h2 class="title">Filter</h2>
-        <h4>Amnen</h4>
+        <h4>Ämnen</h4>
         <ul class="menu vertical">
             <li>
                 <a href="#" data-slug="" v-on:click="filter">
