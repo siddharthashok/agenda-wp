@@ -153,6 +153,14 @@ function event_filter($category=null, $date=null, $type=null, $availability=null
             $start_time = date("G.i",$start_date);
             $end_time = date("G.i",$end_date);
             $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", kl ".$start_time. "-".$end_time;
+            $tags= get_the_tags();
+
+            $cost_of_event = ture;
+
+            if(get_field("cost_of_event")>0)
+            {
+                $cost_of_event = false;
+            }
 
             $day = date("d",$start_date);
             $month = date("F", $start_date);
@@ -166,7 +174,9 @@ function event_filter($category=null, $date=null, $type=null, $availability=null
                 "place" => get_field("address"),
                 "dateTime" => $format_date,
                 "day" => $day,
-                "month" => $month
+                "month" => $month,
+                "tags" => $tags,
+                "cost_of_event"=>$cost_of_event
             );
             array_push($response, $temp);
         }

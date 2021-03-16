@@ -79,6 +79,10 @@ function createOrganisation()
     // update_field("instag",$instagram,$post_id);
     // update_field("facebook",$link_to_social_media,$post_id);
     // update_field("mail",$email_address,$post_id);
+    $to = "org@agendajamlikhet.se";
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $subject = "New Event Application";
+    wp_mail( $to, $subject, "New organisation has been registered", $headers );
     
     echo json_encode(array("pageId" => $post_id));
     wp_die();
@@ -199,6 +203,11 @@ function createEvent()
 
     wp_set_post_terms( $post_id, $availability, "availability", false );
 
+    $to = "events@agendajamlikhet.se";
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $subject = "New Event Application";
+    wp_mail( $to, $subject, "New event has been registered", $headers );
+
     echo json_encode(array("pageId" => $post_id));
     wp_die();
 }
@@ -303,7 +312,7 @@ function volunteer()
         Har du idéer om hur vi kan engagera fler för jämlikhet? Berätta gärna för oss här!: $engageSuggestion
     </div>
     ";
-    $to = "wazid@grandworks.co";
+    $to = "info@agendajamlikhet.se";
     $headers = array('Content-Type: text/html; charset=UTF-8');
     $subject = "New Volunteer Application";
     wp_mail( $to, $subject, $message, $headers );
@@ -338,7 +347,7 @@ function member()
         Bostadsort: $residence
     </div>
     ";
-    $to = "wazid@grandworks.co";
+    $to = "info@agendajamlikhet.se";
     $headers = array('Content-Type: text/html; charset=UTF-8');
     $subject = "New Member Application";
     wp_mail( $to, $subject, $message, $headers );

@@ -70,8 +70,26 @@ get_header();
                                     <span class="month"><?= $month; ?></span>
                                 </div>
                                 <ul class="event-tags">
-                                    <li class="pink">gratis</li>
-                                    <li>podcast</li>
+                                    <?php
+                                        $cost_of_event = get_field("cost_of_event");
+                                        $tags = get_the_tags();
+                                        if(empty($cost_of_event) || $cost_of_event == 0)
+                                        {
+                                    ?>
+                                            <li class="pink">gratis</li> 
+                                    <?php
+                                        }
+                                        if(sizeof($tags)!=0)
+                                        {
+                                            for($i=0; $i< sizeof($tags); $i++)
+                                            {
+                                                if($i==2){break;}
+                                    ?>
+                                                <li><?= $tags[$i]->name; ?></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </ul>
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
