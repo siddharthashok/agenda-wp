@@ -186,8 +186,8 @@ p {
   font-family: "Overpass", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 1.5;
   color: #1f1f1f;
 }
 
@@ -1693,6 +1693,18 @@ a.active {
   background-color: #FD7E00;
   padding: 20px 15px;
 }
+.contact-page h6 {
+  margin-bottom: 5px;
+}
+.contact-page a {
+  text-transform: none;
+  font-weight: normal;
+  position: relative;
+  font-size: 16px;
+}
+.contact-page .content a {
+  border-bottom: 2px solid #000000;
+}
 .contact-page .title {
   font-family: "Overpass", sans-serif;
   font-style: normal;
@@ -1728,25 +1740,38 @@ a.active {
   object-fit: cover;
 }
 .contact-page .contacts .contact-details p {
+  line-height: 1.2;
+}
+.contact-page .contacts .contact-details .full-name, .contact-page .contacts .contact-details a {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.contact-page .contacts .contact-details a {
+  display: block;
+  margin-bottom: 2px;
+}
+.contact-page .contacts .contact-details p {
   margin: 0;
 }
 
 .about-page {
   position: relative;
 }
-.about-page::before {
-  background-image: url("img/blue-blob.svg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 249px;
-  height: 216px;
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0px;
-  right: -50px;
-  z-index: -1;
+.about-page h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  color: #288e8b;
+  margin-top: 30px;
+  margin-bottom: 9px;
+}
+.about-page a {
+  text-transform: none;
+  text-decoration: underline;
+  font-weight: normal;
+}
+.about-page figure {
+  margin-bottom: 20px;
 }
 .about-page .info-card {
   margin-bottom: 35px;
@@ -1755,7 +1780,11 @@ a.active {
   margin-bottom: 35px;
 }
 .about-page .title {
+  font-size: 30px;
+  line-height: 1.2;
   margin: 0;
+  margin-bottom: 30px;
+  color: #000000;
 }
 .about-page .sub-title {
   font-family: "Overpass", sans-serif;

@@ -105,8 +105,8 @@ label{@include black(); color: $mine-shaft;}
 body,
 p {
 	@include regular();
-	font-size: 20px;
-	line-height: 32px;
+	font-size: 16px;
+	line-height: 1.5;
 	color: $mine-shaft;
 }
 
@@ -998,6 +998,7 @@ a {
 		width: 230px;
 		display: inline-block;
 		margin-left: 5px;
+		
 	}
 	.email-details-wrap {
 		margin-top: 20px;
@@ -1349,12 +1350,12 @@ a {
 
 //contact page
 .contact-page {background-color:$light-yellow;padding:20px 15px;
-	.title {
-		@include bold();
-		font-size: 22px;
-		line-height: 28px;
-		color: $purple;
+	h6{margin-bottom: 5px;}
+	a{text-transform: none; font-weight: normal; position: relative; font-size: 16px;}
+	.content{
+		a{border-bottom: 2px solid #000000;}
 	}
+	.title {@include bold();font-size: 22px;line-height: 28px;color: $purple;}
 	.subtitle {
 		@include bold();
 		font-size: 16px;
@@ -1376,6 +1377,11 @@ a {
 				object-fit: cover;
 			}
 		}
+		.contact-details{
+			p{line-height: 1.2;}
+			.full-name, a{font-size: 12px; line-height: 1.5; font-weight: 600;} 
+			a{display: block; margin-bottom: 2px;}
+		}
 		.contact-details p {
 			margin: 0;
 		}
@@ -1384,17 +1390,18 @@ a {
 
 //about page
 .about-page {position: relative;
-	&::before{background-image: url("img/blue-blob.svg"); background-repeat: no-repeat, no-repeat;
-		background-position: center; background-repeat: no-repeat; width: 249px; height: 216px; content: ""; display: inline-block;position: absolute; top:0px; right: -50px; z-index: -1;}
+	h3{font-size: 22px; line-height: 1.2; color: $green; margin-top: 30px; margin-bottom: 9px;}
+	a{text-transform: none; text-decoration: underline; font-weight: normal;}
+	figure{margin-bottom: 20px;}
+	// &::before{background-image: url("img/blue-blob.svg"); background-repeat: no-repeat, no-repeat;
+		// background-position: center; background-repeat: no-repeat; width: 249px; height: 216px; content: ""; display: inline-block;position: absolute; top:0px; right: -50px; z-index: -1;}
 		.info-card{margin-bottom: 35px;}
 		.text-block{margin-bottom: 35px;}
 	// background-image: url(img/purple-patch-about.svg),
 	// 	url(img/blue-patch-about.svg);
 	// background-repeat: no-repeat, no-repeat;
 	// background-position: 0% 20%, 100% 2%;
-	.title {
-		margin: 0;
-	}
+	.title {font-size: 30px; line-height: 1.2; margin: 0; margin-bottom: 30px; color: $black;}
 	.sub-title {
 		@include bold();
 		font-size: 22px;

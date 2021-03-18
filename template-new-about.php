@@ -22,36 +22,21 @@ get_header();
                 <h2 class="title">
                     <?= get_field("title");?>
                 </h2>
-                <div class="grid-x ">
-                    <div class="cell small-12">
-                        <div class="about-img">
-                            <img src="<?= get_field("banner_image") ? get_field("banner_image") : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="">
-                        </div>
-                    </div>
-                </div>
-
-
-                <?= get_field("paragraph");?>
-                <div class="text-block">
-                    <?php
-                        $block_one = get_field("block_one");
-                    ?>
-                    <h3 class="sub-title green"><?= $block_one["title"];?></h3>
-                    <?= $block_one["paragraph"];?>
-                </div>
-                <div class="info-card hawkes-blue">
-                    <h3 class="card-title">Gillar du Agenda: Jämlikhet och vill stötta oss i vårt arbete? Bli medlem!</h3>
-                    <p class="card-description">Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet. 
+                <div class="info-card">
+                    <h3 class="card-title">Nå ut till en större publik!</h3>
+                    <p class="card-description">Sprida ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.  
                     </p>
-                    <a href="<?= get_site_url();?>/member" class="link">BLI MEDLEM NU</a>
+                    <a href="<?= get_site_url();?>/member" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
                 </div>
-                <div class="info-card albescent-white">
-                    <h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
-                    <p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. 
+                <div class="info-card mint-tulip">
+                    <h3 class="card-title">Gå med i vårt nätverk av organisationer!</h3>
+                    <p class="card-description">Bli en del av ett nätverk med över 100 andra organisationer som arbetar med jämlikhetsfrågor. På så vis kan du komma i kontakt med andra organisationer, dela kunskaper eller starta samarbeten. 
                     </p>
-                    <a href="<?= get_site_url();?>/volunteer-form" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
+                    <a href="<?= get_site_url();?>/volunteer-form" class="link">PUBLICERA din profil här </a>
                 </div>
-                
+                <div class="content">
+                    <?= the_content(); ?>
+                </div>
             </section>
         </div>
         <div class="cell medium-4">
@@ -62,16 +47,20 @@ get_header();
                             $contact_us_text = get_field("contact_contact_us_text");
                         ?>
                         <h6><?= $contact_us_text["title"];?></h6>
-                        <?= $contact_us_text["paragraph"];?>
+                        <div class="content">
+                            <?= $contact_us_text["paragraph"];?>
+                        </div>
                     </div>
                     <div>
                         <?php
                             $tips_text = get_field("contact_tips_text");
                         ?>
                         <h6><?= $tips_text["title"];?></h6>
-                        <?= $tips_text["paragraph"];?>
+                        <div class="content">
+                            <?= $tips_text["paragraph"];?>
+                        </div>
                     </div>
-                    <span class="subtitle">Kontaktperso ner</span>
+                    <span class="subtitle">Kontaktpersoner</span>
                     <div class="grid-x">
                         <?php
                             if(have_rows("contact_contact_persons"))
@@ -86,11 +75,10 @@ get_header();
                                                 <img src="<?= get_sub_field("image");?>" alt="">
                                             </div>
                                             <div class="contact-details ">
-                                                <p><?= get_sub_field("title"); ?><br>
-                                                    <?= get_sub_field("full_name"); ?><br>
-                                                    <a href="mailto:<?= get_sub_field("email");?>"><?= get_sub_field("email");?></a><br>
-                                                    <a href="tel:<?= get_sub_field("contact_number");?>"><?= get_sub_field("contact_number");?></a>
-                                                </p>
+                                                <p class="contact-title"><?= get_sub_field("title"); ?></p>
+                                                <span class="full-name"><?= get_sub_field("full_name"); ?></span>
+                                                <a href="mailto:<?= get_sub_field("email");?>"><?= get_sub_field("email");?></a>
+                                                <a href="tel:<?= get_sub_field("contact_number");?>"><?= get_sub_field("contact_number");?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -119,23 +107,6 @@ get_header();
                                 }
                             ?>
                         </div>
-                        <!-- <div class="sponser-list">
-                            <h6 class="sub-title">Sponsorer </h6>
-                            <div class="grid-x grid-margin-x grid-margin-y">
-                                <?php
-                                    while(have_rows("sponsor_list"))
-                                    {
-                                        the_row();
-                                ?>
-                                        <div class="cell medium-12">
-                                            <img src="<?= get_sub_field("logo"); ?>" alt="kultur-ungdom">
-                                        </div>
-                                <?php
-                                    }
-                                ?>
-                            </div>
-                        </div>   -->
-                    <!-- </div> -->
                 </div>
 
             </section>
