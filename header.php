@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/slick.css" />
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/custom.css" />
     <title>Agenda</title>
 </head>
 
