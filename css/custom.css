@@ -1,3 +1,6 @@
 /* Farhan's CSS */
 
+
+/* CSS to fix height and whitespace for publicise page */
 section.page-forms {min-height: 600px;}
+.ui-corner-all {display: none;}
