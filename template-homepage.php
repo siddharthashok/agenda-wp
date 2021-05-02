@@ -79,7 +79,7 @@ get_header();
                                             <li class="pink">gratis</li> 
                                     <?php
                                         }
-                                        if(sizeof($tags)!=0)
+                                        if($tags!=false)
                                         {
                                             for($i=0; $i< sizeof($tags); $i++)
                                             {

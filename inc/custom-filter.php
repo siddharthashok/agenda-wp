@@ -30,12 +30,12 @@ function organisation_filter($category=null)
         {
             $query->the_post();
             $temp = array(
-                "title" => get_the_title(),
+                "title" => html_entity_decode(get_the_title()),
                 "id" => get_the_ID(),
-                "terms" => get_the_terms(get_the_ID(), "organisation_category"),
+                "terms" => html_entity_decode(get_the_terms(get_the_ID(), "organisation_category")),
                 "featured_image" => get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg',
                 "permalink" => get_the_permalink(),
-                "category" => get_the_category()[0]->name
+                "category" => html_entity_decode(get_the_category()[0]->name)
             );
             array_push($response, $temp);
         }
@@ -166,16 +166,16 @@ function event_filter($category=null, $date=null, $type=null, $availability=null
             $month = date("F", $start_date);
 
             $temp = array(
-                "title" => get_the_title(),
+                "title" => html_entity_decode(get_the_title()),
                 "id" => get_the_ID(),
                 "featured_image" => get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg',
                 "permalink" => get_the_permalink(),
-                "organiser" => get_field("organizer")->post_title,
-                "place" => get_field("address"),
+                "organiser" => html_entity_decode(get_field("organizer")->post_title),
+                "place" => html_entity_decode(get_field("address")),
                 "dateTime" => $format_date,
                 "day" => $day,
                 "month" => $month,
-                "tags" => $tags,
+                "tags" => $tags!=false ? $tags : array(),
                 "cost_of_event"=>$cost_of_event
             );
             array_push($response, $temp);
