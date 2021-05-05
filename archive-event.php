@@ -136,7 +136,7 @@ get_header();
 						</div>
 						<ul class="event-tags">
 							<li v-if="event.cost_of_event" class="pink">gratis</li>
-							<li v-for="tag in event.tags.slice(0,2)">{{tag.name}}</li>
+							<li v-for="tag in event.tags.slice(0,1)">{{tag.name}}</li>
 						</ul>
 						<div class="content">
 							<h3>{{event.title}}</h3>

@@ -83,7 +83,7 @@ get_header();
                                         {
                                             for($i=0; $i< sizeof($tags); $i++)
                                             {
-                                                if($i==2){break;}
+                                                if($i==1){break;}
                                     ?>
                                                 <li><?= $tags[$i]->name; ?></li>
                                     <?php

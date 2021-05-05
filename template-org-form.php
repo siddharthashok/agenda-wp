@@ -225,9 +225,9 @@ get_header();
             <div class="grid-container ">
                 <h1 class="form-success-title form-org">Tack! </h1>
                 <p>Agenda: Jämlikhets redaktion granskar innehållet innan det publiceras på hemsidan. Vi notifierar dig när innehållet är uppe via angivna kontaktuppgifter. </p>
-                <fieldset class="spacer">
+                <!-- <fieldset class="spacer">
                     <p class="form-links email-icon"><a>Maila mig en kopia</a></p>
-                </fieldset>
+                </fieldset> -->
             </div>
         </div>
     </div>

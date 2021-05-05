@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: New About Page
+ * Template Name: Publicera Page
  * @package agenda
  */
 get_header();
@@ -12,7 +12,7 @@ get_header();
             <nav>
                 <ul class="breadcrumbs">
                     <li><a href="<?= get_site_url(); ?>">Hem</a></li>
-                    <li><a href="#" class="active">Om Agenda: Jämlikhet</a></li>
+                    <li><span  class="active">Publicera på Agenda: Jämlikhet</span></li>
                 </ul>
             </nav>
         </div>

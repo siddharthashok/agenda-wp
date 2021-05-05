@@ -1394,6 +1394,7 @@ a {
 .about-page {position: relative;
 	h3{font-size: 22px; line-height: 1.2; color: $green; margin-top: 30px; margin-bottom: 9px;}
 	a{text-transform: none; text-decoration: underline; font-weight: normal;}
+	.feature-image-wrapper{margin-bottom: 20px;}
 	figure{margin-bottom: 20px;}
 	// &::before{background-image: url("img/blue-blob.svg"); background-repeat: no-repeat, no-repeat;
 		// background-position: center; background-repeat: no-repeat; width: 249px; height: 216px; content: ""; display: inline-block;position: absolute; top:0px; right: -50px; z-index: -1;}

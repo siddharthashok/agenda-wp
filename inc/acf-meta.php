@@ -782,7 +782,7 @@ if( function_exists('acf_add_local_field_group') ):
                 array(
                     'param' => 'page_template',
                     'operator' => '==',
-                    'value' => 'template-new-about.php',
+                    'value' => 'template-publicera.php',
                 ),
             ),
         ),
