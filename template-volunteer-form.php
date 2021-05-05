@@ -8,7 +8,7 @@
 <section class="page-forms forms" id="volunteer-form">
     <div class="grid-container">
         <div class="form-close">
-            <h4 id="form-close-title">Bli medlem</h4>
+            <h4 id="form-close-title">Bli voluntär</h4>
             <a href="<?= get_site_url(); ?>/publish-event-organisation" class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
@@ -49,7 +49,7 @@
                 <label for="">Jag är intresserad att bli volontär för en eller flera grupper av följande *</label>
                 <div class="field-wrap">
                     <input class="styled-checkbox form-publish" name="group[]" type="checkbox" id="checkbox-1" value="Redaktionen Göteborg">
-                    <label for="checkbox-1"> Redaktionen Göteborg</label> 
+                    <label for="checkbox-1"> Redaktionen Göteborg</label>
                 </div>
                 <div class="field-wrap">
                     <input class="styled-checkbox form-publish" name="group[]" type="checkbox" id="checkbox-2" value="Redaktionen Stockholm">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="field-wrap">
                    <input class="styled-checkbox form-publish" name="group[]" type="checkbox" id="checkbox-6" value="Jag vill starta Agenda: Jämlikhet i min stad">
-                    <label for="checkbox-6"> Jag vill starta Agenda: Jämlikhet i min stad</label> 
+                    <label for="checkbox-6"> Jag vill starta Agenda: Jämlikhet i min stad</label>
                 </div>
                 <div class="filed-wrap">
                     <label for="">Jag vill starta Agenda: Jämlikhet i min stad, ange stad:</label>
@@ -171,7 +171,7 @@ get_footer();
             e.preventDefault();
             var group = $("[name='group[]']:checkbox:checked");
             var groupArray = [];
-            
+
             group.each(function(index,element){
                 groupArray.push(element.value);
             });
