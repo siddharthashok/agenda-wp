@@ -22,11 +22,31 @@
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
+
+    <?php wp_head(); ?>
+
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/slick.css" />
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/custom.css" />
-    <title>Agenda</title>
+
+    <style media="screen">
+    html, body {
+      height: 100%;
+      }
+      body {
+      display: flex;
+      flex-direction: column;
+      }
+      .content-wrap {
+      flex: 1 0 auto;
+      }
+      .footer {
+      flex-shrink: 0;
+      }
+    </style>
+
+
+
 </head>
 
 <body>
@@ -42,7 +62,7 @@
                     <a class="logo" href="<?= get_site_url(); ?>">
                         <img src="<?= get_template_directory_uri(); ?>/img/main-logo.svg" alt="logo of agenda website">
                     </a>
-                    <?php 
+                    <?php
                         $menu_items = wp_get_nav_menu_items("menu");
                         // print_r($menu_items);
                     ?>
@@ -55,24 +75,24 @@
                             // print_r(rtrim($_SERVER['REQUEST_URI'],"/"));
                             foreach ($menu_items as $key => $value) {
                                 // $current = ( $_SERVER['REQUEST_URI'] == (parse_url( $value->url, PHP_URL_PATH )."/") ) ? 'active' : '';
-                                
+
                                 if(strcmp( rtrim($_SERVER['REQUEST_URI'],"/"),parse_url( $value->url, PHP_URL_PATH ))==0)
                                 {
                                     $current = 'active';
-                                    
+
                                 }
                                 else
                                 {
                                     $current = '';
                                 }
                                 // print_r(parse_url( $value->url, PHP_URL_PATH ));
-                                
+
                         ?>
                             <li><a href="<?= $value->url; ?>" class="nav-link <?= $current; ?>"><?= $value->title; ?></a></li>
                         <?php
                             }
                         ?>
-                        
+
                         <!-- <li><a href="<?= get_site_url(); ?>/organisations" class="nav-link">Organisationer</a></li>
                         <li><a href="<?= get_site_url(); ?>/publish-event-organisation" class="nav-link">Publicera </a></li>
                         <li><a href="<?= get_site_url(); ?>/about" class="nav-link">Om Agenda: Jämlikhet</a></li> -->
@@ -103,3 +123,5 @@
             <!-- </div> -->
         </div>
     </header>
+
+    <div class="content-wrap">
