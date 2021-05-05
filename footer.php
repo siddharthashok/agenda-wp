@@ -12,6 +12,8 @@
 
 ?>
 
+</div> <!-- closing content-wrap div -->
+
 <footer class="site-footer">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
@@ -30,17 +32,30 @@
             </div>
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="<?= get_site_url(); ?>/event"><h6>Eventkalendern</h6></a>
-                    <a href="<?= get_site_url(); ?>/organisations"><h6>Organisationer</h6></a>
-                    <a href="<?= get_site_url(); ?>/publish-event-organisation"><h6>Publicera</h6></a>
-                    <a href="<?= get_site_url(); ?>/about"><h6>Om Agenda: Jämlikhet</h6></a>
+                  <nav>
+                    <?php
+                    wp_nav_menu( array(
+                      'theme_location' => 'footer-menu-one',
+                      'menu_id'        => 'footer-menu-one',
+                      'menu_class'		=>	'footer-menu'
+                    ) );
+                    ?>
+
+                  </nav>
                 </div>
             </div>
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="#"><h6>Vår värdegrund</h6></a>
-                    <a href="#"><h6>Vår integritetspolicy och cookies</h6></a>
-                    <a href="#"><h6>Riktlinjer för organisationer</h6></a>
+                  <nav>
+                    <?php
+                    wp_nav_menu( array(
+                      'theme_location' => 'footer-menu-two',
+                      'menu_id'        => 'footer-menu-two',
+                      'menu_class'		=>	'footer-menu'
+                    ) );
+                    ?>
+
+                  </nav>
                     <div class="social-wrapper">
                         <h6>Följ oss på</h6>
                         <a href="https://www.facebook.com/agendajamlikhet" class="facebook" target="_blank" ></a>

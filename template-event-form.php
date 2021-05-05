@@ -16,7 +16,7 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
             </a>
         </div>
-    
+
     <div class="tab">
         <div class="form-header form-publish ">
             <div class="grid-container ">
@@ -27,7 +27,7 @@ get_header();
         <div class="form-body">
             <div class="grid-container ">
                 <p>Att publicera evenemang på Agenda: Jämlikhet är kostnadsfritt. </p>
-                
+
                 <p>Vår redaktion granskar allt innehåll och hör av sig till dig när det är publicerat.</p>
             </div>
         </div>
@@ -92,7 +92,7 @@ get_header();
                                 ++$count;
                             }
                         ?>
-                       
+
                         <!-- <input class="styled-checkbox form-publish" type="checkbox" id="check1-2" name="check1[]" value="Eventet är på bottenplan"><label for="check1-2"> Eventet är på bottenplan</label>
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-3" name="check1[]" value="Hiss finns"><label for="check1-3"> Hiss finns</label>
                         <input class="styled-checkbox form-publish" type="checkbox" id="check1-4" name="check1[]" value="Hörselslinga"><label for="check1-4"> Hörselslinga</label>
@@ -235,8 +235,8 @@ get_header();
                     </div>
                     <fieldset>
                         <p>Markera de svarsalternativ som stämmer med lokalen*</p>
-                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-1"> <label for="check1-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links">värderingar och riktlinjer</a> för anslutna organisationer. </label>
-                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-2"> <label for="check1-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
+                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-1"> <label for="check1-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links" href="#" target="_blank">värderingar och riktlinjer</a> för anslutna organisationer. </label>
+                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-2"> <label for="check1-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links" href="#" target="_blank">integritetspolicy</a></label>
                     </fieldset>
                     <div class="form-submit text-center">
                         <a class=" button button-pink hollow small small-only-expanded" id="form1step4Next" href="#">SKICKA FORMULÄR</a>

@@ -1,3 +1,12 @@
+/*!
+Theme Name: Agenda
+Theme URI: https://agendajamlikhet.se
+Author: GrandWorks
+Author URI: https://grandworks.co
+Description: Custom Theme for Agenda Jamlikhet
+Version: 4.0.0
+Text Domain: agenda
+*/
 h1 {
   font-family: "Overpass", sans-serif;
   font-style: normal;
@@ -806,6 +815,23 @@ a.active {
   color: #ffffff;
 }
 
+.footer-menu {
+  margin-left: 0px;
+}
+.footer-menu li {
+  list-style: none;
+}
+.footer-menu li a {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 25px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
 .hamburger {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -989,8 +1015,11 @@ a.active {
 .organisation .sidebar .menu {
   margin-bottom: 20px;
 }
+.organisation .sidebar .menu a {
+  padding-left: 10px;
+}
 .organisation .sidebar .is-active {
-  background-color: #F2F3F5;
+  background-color: #e4e4e4;
 }
 .organisation .title-wrap {
   position: relative;
@@ -1026,8 +1055,11 @@ a.active {
 .equality-events .sidebar .menu {
   margin-bottom: 20px;
 }
+.equality-events .sidebar .menu a {
+  line-height: 10px;
+}
 .equality-events .sidebar .is-active {
-  background-color: #F2F3F5;
+  background-color: #e4e4e4;
 }
 .equality-events .title-wrap {
   position: relative;
@@ -2138,5 +2170,3 @@ a.active {
     margin-bottom: 20px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -44,7 +44,9 @@ if ( ! function_exists( 'agenda_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'agenda' ),
+			'main-menu' => esc_html__( 'Top Main Menu', 'agenda' ),
+			'footer-menu-one' => esc_html__( 'Footer Menu One', 'agenda' ),
+			'footer-menu-two' => esc_html__( 'Footer Menu Two', 'agenda' ),
 		) );
 
 		/*
@@ -167,7 +169,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/custom-filter.php';
 
 /**
-* 
+*
 * AJAX
 */
 require get_template_directory() . '/inc/ajax.php';
