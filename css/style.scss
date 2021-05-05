@@ -563,7 +563,16 @@ a {
 		.logo-wrapper{margin-right: 22px; width: 260px;}
 		.note{font-size: 12px; font-weight: 600; margin-bottom: 0px; color: $white;}
 	}
+
 }
+
+.footer-menu {margin-left: 0px;
+	li {list-style: none;
+		a {color: #ffffff; font-size: 18px; line-height: 25px; font-family: "Overpass", sans-serif; font-style: normal; font-weight: 600; margin-bottom: 20px; display: inline-block;}
+	}
+}
+
+
 // start of mobile menu css for hamburger and close button
 .hamburger {
 	-webkit-transform: rotate(0deg);

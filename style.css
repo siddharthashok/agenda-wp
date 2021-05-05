@@ -815,6 +815,23 @@ a.active {
   color: #ffffff;
 }
 
+.footer-menu {
+  margin-left: 0px;
+}
+.footer-menu li {
+  list-style: none;
+}
+.footer-menu li a {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 25px;
+  font-family: "Overpass", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
 .hamburger {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
