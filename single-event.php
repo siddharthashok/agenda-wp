@@ -58,20 +58,48 @@ get_header();
                                 </h6>
                                 <h4><?= $format_date; ?></h4>
                             </div>
+                            <?php
+                                $event = get_the_terms(get_the_ID(), "post_tag");
+                                if($event)
+                                {
+                            ?>
                             <div class="info-wrapper">
                                 <h6 class="event">
                                     Event
                                 </h6>
-                                <h4>Manifestaion</h4>
+                                <?php
+                                    foreach($event as $key => $value)
+                                    {
+                                        if($key==0)
+                                        {
+                                ?>
+                                            <h4 class="event-type"><?= $value->name ; ?></h4>
+                                <?php
+                                        }
+                                        else
+                                        {
+                                ?>
+                                            <h4 class="event-type"><?= ", ". $value->name ; ?></h4>
+                                <?php
+                                        }
+                                    }
+                                ?>
                             </div>
+                            <?php
+                                }
+                            ?>
                             <div class="info-wrapper">
                                 <h6 class="arrangor">
                                     <span class="icon arrangor"></span>
                                     Arrangör
                                 </h6>
-                                <h4><?= get_field("organizer")->post_title;?></h4>
+                                <h4><?= get_field("organizer")->post_title;?><?= get_field("other_organizers")? ", ".get_field("other_organizers"): ""?></h4>
                             </div>
 
+                            <?php
+                                if(get_field("address"))
+                                {
+                            ?>
                             <div class="info-wrapper">
                                 <h6 class="plats">
                                     <span class="icon plats"></span>
@@ -79,9 +107,10 @@ get_header();
                                 </h6>
                                 <h4><?= get_field("address"); ?></h4>
                             </div>
-
+                            <?php
+                                }
+                            ?>        
                             <div class="info-wrapper">
-                                <h6>Tillgänglighet</h6>
                                 <?php
                                     $availibilities = get_the_terms(get_the_ID(), "availability");
                                     
@@ -89,12 +118,18 @@ get_header();
                                 <ul class="availability-wrap">
                                     <?php
                                         // print_r($availibilities);
-                                        foreach($availibilities as $key => $value)
+                                        if($availibilities)
                                         {
+                                    ?>
+                                            <h6>Tillgänglighet</h6>
+                                    <?php
+                                            foreach($availibilities as $key => $value)
+                                            {
                                            
                                     ?>
-                                            <li class="availability"><?= $value->name; ?></li>
+                                                <li class="availability"><?= $value->name; ?></li>
                                     <?php
+                                            }
                                         }
                                     ?>
                                 </ul>
@@ -186,19 +221,21 @@ get_header();
 </section>
 <section class="similar-events">
     <div class="grid-container">
-    <h4 href="#" >Liknande evenemang</h4>
+    <?php
+        $similar_events = new WP_Query(array(
+            "post_type" => "event",
+            "posts_per_page" => 3,
+            "post_status" => "publish",
+            "post__not_in" => array(get_the_ID())
+        ));
+        // print_r($similar_events);
+        if($similar_events->have_posts())
+        {
+            
+    ?>
+        <h4>Liknande evenemang</h4>
         <div class="grid-x grid-margin-x grid-margin-y"> 
             <?php
-                $similar_events = new WP_Query(array(
-                    "post_type" => "event_listing",
-                    "posts_per_page" => 3,
-                    "post_status" => "publish",
-                    "post__not_in" => array(get_the_ID())
-                ));
-                // print_r($similar_events->request);
-                // print_r($similar_events);
-                if($similar_events->have_posts())
-                {
                     while($similar_events->have_posts())
                     {
                         $similar_events->the_post();
@@ -207,11 +244,11 @@ get_header();
                         <div class="cell large-4">
                             <a href="<?= get_permalink(); ?>" class="card-with-image">
                                 <div class="image-wrapper">
-                                    <img src="<?= get_event_banner(); ?>" alt="image of event">
+                                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
                                 </div>
                                 <div class="date-wrapper">
                                     <?php
-                                        $date = strtotime(get_event_start_date());
+                                        $date = strtotime(get_field("start_date"));
                                         $day = date("d",$date);
                                         $month = date("F", $date);
                                     ?>
@@ -219,24 +256,42 @@ get_header();
                                     <span class="month"><?= $month; ?></span>
                                 </div>
                                 <ul class="event-tags">
-                                    <li class="pink">gratis</li>
-                                    <li>podcast</li>
+                                    <?php
+                                        $cost_of_event = get_field("cost_of_event");
+                                        $tags = get_the_tags();
+                                        if(empty($cost_of_event) || $cost_of_event == 0)
+                                        {
+                                    ?>
+                                            <li class="pink">gratis</li> 
+                                    <?php
+                                        }
+                                        if($tags!=false)
+                                        {
+                                            for($i=0; $i< sizeof($tags); $i++)
+                                            {
+                                                if($i==2){break;}
+                                    ?>
+                                                <li><?= $tags[$i]->name; ?></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </ul>
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
                                     <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
-                                    <p class="location">Plats: <?= get_field("place")["address"]; ?></p>
+                                    <p class="location">Plats: <?= get_field("address"); ?></p>
                                     <?php
-                                        $start_date = strtotime(get_event_start_date());
-										$end_date = strtotime(get_event_end_date());
-										$start_time = get_event_start_time();
-										$end_time = get_event_end_time();
-
-                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
+                                        $start_date = strtotime(get_field("start_date"));
+                                        $end_date = strtotime(get_field("end_date_time"));
+                                        $start_time = date("G.i",$start_date);
+                                        $end_time = date("G.i",$end_date);
+            
+                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", kl ".$start_time. "-".$end_time;
                                     ?>
                                     <p class="date">Tid: <?= $format_date; ?></p>
                                 </div>
-                            </a> 
+                            </a>  
                         </div>
             <?php
                     }
@@ -248,41 +303,15 @@ get_header();
                         </div>
             <?php
                 }
-                else
-                {
+                // else
+                // {
             ?>
-             <h3>No posts found</h3>
+             <!-- <h3>No posts found</h3> -->
             <?php       
-                }
+                // }
                 wp_reset_postdata();
             ?>
              
-            <!-- <div class="cell large-4">   
-                <a class="card-with-image"  href="#">
-                    <div class="card-title-wrap">
-                        <span class="category">EVENT </span>
-                    </div> 
-                    <div class="content">
-                        <h3>Mötesplats för alla barn ooch regnbågsfamiljer</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-            </div> -->
-            <!-- <div class="cell large-4">   
-                <a class="card-with-image"  href="#">
-                    <div class="card-title-wrap">
-                        <span class="category">EVENT </span>
-                    </div> 
-                    <div class="content">
-                        <h3>Mötesplats för alla barn ooch regnbågsfamiljer</h3>
-                        <p class="organizer">Arrangör: RFSL Göteborg</p>
-                        <p class="location">Plats: Högalidsgatan 40D, Göteborg</p>
-                        <p class="date">Tid: 25 sept - 26 sept, kl 17-18</p>
-                    </div>
-                </a>
-            </div>   -->
         </div>
     </div>   
 </section>
