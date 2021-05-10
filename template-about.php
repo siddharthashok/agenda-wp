@@ -10,6 +10,9 @@ $pages = get_pages(array(
     'meta_value' => 'template-publicera.php'
 ));
 
+while(have_posts())
+{
+    the_post();
 
 ?>
 <div class="grid-container">
@@ -125,5 +128,6 @@ $pages = get_pages(array(
 </div>
 
 <?php
+}
 get_footer();
 ?>
