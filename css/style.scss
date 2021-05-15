@@ -1071,10 +1071,10 @@ a {
 	}
 	.form-header {
 		&.form-publish {
-			background: $dark-pink;
+			background: $french-lilac;
 		}
 		&.form-org {
-			background: $green;
+			background: $mint-tulip;
 		}
 		padding: 18px 0;
 		color: $white;
@@ -1285,10 +1285,10 @@ a {
 		}
 		.form-success-title {
 			&.form-org {
-				color: $green;
+				color: $mine-shaft;
 			}
 			&.form-publish {
-				color: $dark-pink;
+				color: $mine-shaft;
 			}
 		}
 	}
@@ -1459,8 +1459,8 @@ a {
 }
 
 #volunteer-form{
-	.form-header{background-color: $purple;
-		h4, h3{color: $white;}
+	.form-header{background-color: $albescent-white;
+		h4, h3{color: $black;}
 		h4{margin-bottom: 10px;}
 		h3{margin-bottom: 0px;}
 	}

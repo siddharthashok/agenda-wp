@@ -247,19 +247,18 @@ get_header();
             <div class="grid-x grid-margin-y grid-margin-x">
                 <div class="cell large-6">
                     <div class="info-card">
-                        <h3 class="card-title">Är du organisation eller arrangör av jämlikhetsevent?</h3>
-                        <p class="card-description">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
-                        </p>
-                        <a href="<?= get_site_url()?>/publish-event-organisation" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+                        <h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
+                        <p class="card-description">Sprid ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.</p>
+                        <a href="<?= get_site_url()?>/publish-event-form" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
                     </div>
                     
                 </div>
                 <div class="cell large-6">
                     <div class="connect-card purple">
                         <div class="info-card albescent-white">
-                            <h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
-                            <p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. </p>
-                            <a href="<?= get_site_url()?>/publish-event-organisation" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
+                            <h3 class="card-title">Vill du bli volontär för Agenda: Jämlikhet?</h3>
+                            <p class="card-description">Vi söker alltid personer som vill engagera sig i vår organisation.</p>
+                            <a href="<?= get_site_url()?>/volunteer-form" class="link text-uppercase">Bli volontär för Agenda: Jämlikhet</a>
                         </div>
                     </div>
                 </div>
