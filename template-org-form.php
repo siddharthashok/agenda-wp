@@ -28,8 +28,16 @@ get_header();
         </div>
         <div class="form-body">
             <div class="grid-container ">
-                <p>Att publicera evenemang på Agenda: Jämlikhet är kostnadsfritt. </p>
-                <p>[text här om vilka typer av event som passar sig att publicera på agenda]</p>
+                <p>Att publicera din organisationsprofil på Agenda: Jämlikhets hemsida är kostnadsfritt.</p>
+                <p>Organisationer inom civilsamhället som uppfyller följande kriterier får publicera en profil på sidan:</p>
+                <ul>
+                    <li>Är religiöst och partipolitiskt obundna</li>
+                    <li>Jobbar med en eller flera olika jämlikhetsfrågor</li>
+                    <li>Har verksamhet som privatpersoner kan engagera sig i eller bidra till</li>
+                    <li>Står bakom Agenda: Jämlikhets värdegrund</li>
+                </ul>
+                <p>Med organisationer menar vi även organiseringsformer såsom kampanjer och initiativ, grupper, ideella föreningar och medlemsorganisationer.</p>
+                <p>För mer information, läs våra Riktlinjer för publicering av organisationsprofiler.</p>
                 <p>Vår redaktion granskar allt innehåll och hör av sig till dig när det är publicerat.</p>
             </div>
         </div>
@@ -189,8 +197,8 @@ get_header();
                         <input type="email" name="contact-email-address" class="full-width" placeholder="ex. fornamn@agendajamlikhet.se">
                     </div>
                     <div class="form-spacing">
-                        <label class="full-width-label">Telefonnummer till kontaktperson*</label>
-                        <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0046 708790464">
+                        <label class="full-width-label">Telefonnummer till kontaktperson (ange nummer utan specialtecken eller mellanrum)*</label>
+                        <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0708790464">
                     </div>
                     <!-- <div class="form-spacing">
                         <label class="full-width-label">Organisationsnummer*</label>
@@ -201,8 +209,8 @@ get_header();
                         <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
                     </div>
                     <fieldset>
-                        <input class="styled-radio form-org" type="checkbox" id="check-circle-1"> <label for="check-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets<a class="links">värderingar och riktlinjer</a>för anslutna organisationer.</label>
-                        <input class="styled-radio form-org" type="checkbox" id="check-circle-2"> <label for="check-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links">integritetspolicy</a></label>
+                        <input class="styled-radio form-org" type="checkbox" id="check-circle-1"> <label for="check-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links" href="#" target="_blank">Värdegrund</a> samt <a class="links" href="#" target="_blank">Riktlinjer</a> för publicering av evenemang.</label>
+                        <input class="styled-radio form-org" type="checkbox" id="check-circle-2"> <label for="check-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links" href="#" target="_blank">integritetspolicy</a>.</label>
                     </fieldset>
                     <div class="form-submit">
                         <a class=" button button-green hollow small small-only-expanded " id="step4Next" href="#">SKICKA FORMULÄR</a>

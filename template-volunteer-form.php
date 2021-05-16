@@ -8,7 +8,7 @@
 <section class="page-forms forms" id="volunteer-form">
     <div class="grid-container">
         <div class="form-close">
-            <h4 id="form-close-title">Bli voluntär</h4>
+            <h4 id="form-close-title">Bli volontär</h4>
             <a href="<?= get_site_url(); ?>/publish-event-organisation" class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
@@ -24,7 +24,7 @@
         </div>
         <div class="form-body">
             <div class="grid-container ">
-                <p>Vad kul att du är nyfiken på att engagera dig i Agenda: Jämlikhet! Fyll i intresseanmälan nedan så hör vi av oss till dig! </p>
+                <p>Vad kul att du är nyfiken på att engagera dig i Agenda: Jämlikhet! Fyll i intresseanmälan nedan så hör vi av oss till dig!</p>
             </div>
         </div>
         <div style="overflow:auto;">
@@ -85,7 +85,7 @@
                         <input type="text" name="email" id="email" placeholder="ex. sophia.andula@gmail.com">
                     </div>
                     <div class="field-wrap">
-                        <label for="">Mobilnummer*</label>
+                        <label for="">Mobilnummer</label>
                         <input type="text" name="phone" id="phone" placeholder="ex. 070-870 99 22">
                     </div>
                     <div class="field-wrap">
@@ -97,14 +97,14 @@
                         <textarea name="suggestion" id="suggestion" cols="30" rows="5" placeholder="Fritextsvar"></textarea>
                     </div>
                     <div class="field-wrap">
-                        <label for="">I vilken stad befinner du dig?*</label>
+                        <label for="">I vilken stad befinner du dig?</label>
                         <input type="text" name="which-city" id="which-city" placeholder="t.ex. Karlstad">
                     </div>
                     <div class="field-wrap">
                         <label for="">Har du idéer om hur vi kan engagera fler för jämlikhet? Berätta gärna för oss här!</label>
                         <textarea name="engage-suggestion" id="engage-suggestion" cols="30" rows="5" placeholder="Fritextsvar"></textarea>
                     </div>
-                    <div class="field-wrap">
+                    <!-- <div class="field-wrap">
                         <label for="">Vill du bli medlem i Agenda: Jämlikhet? Det kostar ingenting, men är ett enkelt sätt att stödja oss! *</label>
                     </div>
                     <div class="field-wrap">
@@ -117,7 +117,7 @@
                     </div>
                     <div class="field-wrap">
                         <label for="">För att hantera din intresseanmälan behöver vi spara dina personuppgifter. För att göra det behöver vi ditt godkännande!*</label>
-                    </div>
+                    </div> -->
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="radio" name="privacy-policy" id="privacy-agree" value="privacy-agree">
                         <label for="privacy-agree">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="#">integritetspolicy</a>. </label>

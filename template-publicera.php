@@ -23,16 +23,15 @@ get_header();
                     <?= get_field("title");?>
                 </h2>
                 <div class="info-card">
-                    <h3 class="card-title">Nå ut till en större publik!</h3>
-                    <p class="card-description">Sprida ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.  
-                    </p>
-                    <a href="<?= get_site_url();?>/member" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+                    <h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
+                    <p class="card-description">Sprid ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.</p>
+                    <a href="<?= get_site_url();?>/publish-event-form" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
                 </div>
                 <div class="info-card mint-tulip">
                     <h3 class="card-title">Gå med i vårt nätverk av organisationer!</h3>
                     <p class="card-description">Bli en del av ett nätverk med över 100 andra organisationer som arbetar med jämlikhetsfrågor. På så vis kan du komma i kontakt med andra organisationer, dela kunskaper eller starta samarbeten. 
                     </p>
-                    <a href="<?= get_site_url();?>/volunteer-form" class="link">PUBLICERA din profil här </a>
+                    <a href="<?= get_site_url();?>/publish-organisation-form" class="link">PUBLICERA din profil här </a>
                 </div>
                 <div class="content">
                     <?= the_content(); ?>

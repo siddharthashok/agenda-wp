@@ -36,15 +36,13 @@ $pages = get_pages(array(
                 </div>
                 <div class="info-card hawkes-blue">
                     <h2 class="card-title">Gillar du Agenda: Jämlikhet och vill stötta oss i vårt arbete? Bli medlem!</h2>
-                    <p class="card-description">Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet.   
-                    </p>
+                    <p class="card-description">Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet.</p>
                     <a href="<?= get_site_url();?>/member" class="link">BLI MEDLEM NU</a>
                 </div>
                 <div class="info-card albescent-white">
-                    <h2 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h2>
-                    <p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka.  
-                    </p>
-                    <a href="<?= get_site_url();?>/volunteer-form" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
+                    <h2 class="card-title">Vill du bli volontär för Agenda: Jämlikhet?</h2>
+                    <p class="card-description">Vi söker alltid personer som vill engagera sig i vår organisation.</p>
+                    <a href="<?= get_site_url();?>/volunteer-form" class="link text-uppercase">Bli volontär för Agenda: Jämlikhet</a>
                 </div>
                 
             </section>
