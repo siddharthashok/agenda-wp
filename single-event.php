@@ -164,61 +164,6 @@ get_header();
         </div>
     </div>
 </section>
-<section class="more-about-orgnaizer">
-    <div class="grid-container">        
-        <h4 href="#" >Liknande arrangörer</h4>
-        <div class="grid-x grid-margin-x grid-margin-y">
-            <?php
-                
-                $all_organisations = new WP_Query(array(
-                    "post_type" => "organisations",
-                    "post_status" => "publish",
-                    "number" => 3,
-                    "orderby" => "rand",
-                ));
-
-                // print_r($all_terms);
-
-                if($all_organisations->have_posts())
-                {
-                    while ($all_organisations->have_posts()) 
-                    {
-                        $all_organisations->the_post();
-                        // if($term->term_id != $value->term_id)
-                        // {
-            ?>
-                            <div class="cell large-4">
-                                <a class="card-with-image" href="<?= get_the_permalink(); ?>">
-                                    <div class="image-wrapper">
-                                        <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of the organisation">
-                                        <!-- <div class="date">
-                                            <span class="day">25</span>
-                                            <span class="month">December</span>
-                                        </div> -->
-                                    </div>
-                                    <div class="card-title-wrap">
-                                        <span class="category">organisation </span>
-                                    </div> 
-                                    <div class="content">
-                                        <h3><?= get_the_title(); ?></h3>
-                                        <p class="cause">Mänskliga rättigheter</p>
-                                    </div>
-                                </a>
-                            </div> 
-            <?php
-                        // }
-                    }
-                }
-                wp_reset_postdata();
-            ?>
-            <div class="cell large-12">
-                <div class="link-wrapper text-right">
-                    <a href="#">Visa FLER</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="similar-events">
     <div class="grid-container">
     <?php
@@ -298,7 +243,7 @@ get_header();
             ?>
                         <div class="cell large-12">
                             <div class="link-wrapper text-right">
-                                <a href="#">Visa FLER</a>
+                                <a href="<?= get_site_url(); ?>/event/">Visa FLER</a>
                             </div>
                         </div>
             <?php
@@ -314,6 +259,61 @@ get_header();
              
         </div>
     </div>   
+</section>
+<section class="more-about-orgnaizer">
+    <div class="grid-container">        
+        <h4>Liknande arrangörer</h4>
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <?php
+                
+                $all_organisations = new WP_Query(array(
+                    "post_type" => "organisations",
+                    "post_status" => "publish",
+                    "posts_per_page" => 3,
+                    "orderby" => "rand",
+                ));
+
+                // print_r($all_terms);
+
+                if($all_organisations->have_posts())
+                {
+                    while ($all_organisations->have_posts()) 
+                    {
+                        $all_organisations->the_post();
+                        // if($term->term_id != $value->term_id)
+                        // {
+            ?>
+                            <div class="cell large-4">
+                                <a class="card-with-image" href="<?= get_the_permalink(); ?>">
+                                    <div class="image-wrapper">
+                                        <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of the organisation">
+                                        <!-- <div class="date">
+                                            <span class="day">25</span>
+                                            <span class="month">December</span>
+                                        </div> -->
+                                    </div>
+                                    <div class="card-title-wrap">
+                                        <span class="category">organisation </span>
+                                    </div> 
+                                    <div class="content">
+                                        <h3><?= get_the_title(); ?></h3>
+                                        <p class="cause">Mänskliga rättigheter</p>
+                                    </div>
+                                </a>
+                            </div> 
+            <?php
+                        // }
+                    }
+                }
+                wp_reset_postdata();
+            ?>
+            <div class="cell large-12">
+                <div class="link-wrapper text-right">
+                    <a href="<?= get_site_url(); ?>/organisations/">Visa FLER</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <?php
 	}

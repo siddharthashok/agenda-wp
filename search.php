@@ -20,7 +20,7 @@ get_header();
 					if(get_post_type(get_the_ID()) == "event_listing")
 					{
 			?>
-					<div class="cell large-4">
+					<div class="cell large-4 card-margin">
 						<a href="<?= get_permalink(); ?>" class="card-with-image">
 							<div class="image-wrapper">
 								<img src="<?= get_event_banner(); ?>" alt="image of event">
@@ -37,7 +37,18 @@ get_header();
 							
 							<div class="card-title-wrap">
 									<span class="category">event </span>
-									<span class="entrace-info">Fritt inträde</span>
+									<span class="entrace-info">
+										<?php
+											$categories = get_the_category();
+
+											foreach($categories as $key => $value)
+											{
+										?>
+												<span><?= $value->name; ?> , </span>
+										<?php
+											}
+										?>
+									</span>
 							</div> 
 							<div class="content">
 								<h3><?= get_the_title(); ?></h3>
@@ -71,7 +82,7 @@ get_header();
 					if(get_post_type(get_the_ID()) == "organisations")
 					{
 			?>
-					<div class="cell large-4">
+					<div class="cell large-4 card-margin">
                         <a class="card-with-image" href="<?= get_the_permalink(); ?>">
                             <div class="image-wrapper">
                                 <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of the organisation">
@@ -85,7 +96,18 @@ get_header();
                             </div> 
                             <div class="content">
                                 <h3><?= get_the_title(); ?></h3>
-                                <p class="cause">Mänskliga rättigheter</p>
+								<p class="cause">
+									<?php
+										$categories = get_the_category();
+
+										foreach($categories as $key => $value)
+										{
+									?>
+											<span><?= $value->name; ?> , </span>
+									<?php
+										}
+									?>
+                                </p>
                             </div>
                         </a>
                     </div> 

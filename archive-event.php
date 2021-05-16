@@ -122,7 +122,7 @@ get_header();
 				</ul>
 			</nav>
 			<h2 class="title">Evenemang för jämlikhet</h2>
-			<p class="about">Agenda: Jämlikhet samlar evenemang som på olika sätt handlar om jämlikhetsfrågor. Evenemangen kommer från olika organisationer och arrangörer som alla är politiskt och religiöst obundna. Vare sig du deltagit i många evenemang eller vill gå på ditt första hittar du något som passar dig i vår eventkalender. Tillsammans gör vi skillnad.</p>
+			<p class="about">Agenda: Jämlikhet samlar evenemang som på olika sätt handlar om jämlikhet. Evenemangen arrangeras av olika organisationer, nätverk eller enskilda personer och är partipolitiskt- och religiöst obundna. Oavsett om du har varit engagerad i många år eller vill gå på ditt första evenemang hittar du något som passar dig i vår eventkalender. Tillsammans gör vi skillnad.</p>
 			<!-- start of event cards -->
 			<div class="grid-x grid-margin-x grid-margin-y">
 				<div class="cell large-6" v-for="event in events">
