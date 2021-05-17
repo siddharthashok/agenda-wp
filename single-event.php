@@ -54,7 +54,7 @@ get_header();
                             <div class="info-wrapper">
                                 <h6 class="kalender">
                                     <span class="icon clock"></span>
-                                    KALENDER
+                                    Tid
                                 </h6>
                                 <h4><?= $format_date; ?></h4>
                             </div>
@@ -65,7 +65,7 @@ get_header();
                             ?>
                             <div class="info-wrapper">
                                 <h6 class="event">
-                                    Event
+                                    Typ av Event
                                 </h6>
                                 <?php
                                     foreach($event as $key => $value)
@@ -148,7 +148,7 @@ get_header();
                                     foreach($categories as $key => $value)
                                     {
                                 ?>
-                                        <li><a href="#"><?= $value->name; ?> <span class="plus-icon"></span></a></li>
+                                        <li><a href="<?= get_category_link( $value->term_id ) ?>"><?= $value->name; ?> <span class="plus-icon"></span></a></li>
                                 <?php
                                     }
                                 ?>
@@ -170,7 +170,7 @@ get_header();
 </section>
 <section class="more-about-orgnaizer">
     <div class="grid-container">        
-        <h4 href="#" >Mer om denna och liknande arrangör</h4>
+        <h4 href="#" >Liknande arrangörer</h4>
         <div class="grid-x grid-margin-x grid-margin-y">
             <?php
                 

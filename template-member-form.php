@@ -25,8 +25,9 @@
         <div class="form-body">
             <div class="grid-container ">
                 <p>Vad kul att du är vill bli medlem i Agenda: Jämlikhet! Det är enkelt och helt kostnadsfritt. </p>
-                <p>Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet. Det gör oss också till en mer attraktiv samarbetspartner!  </p>
+                <p>Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet. Det gör oss också till en mer attraktiv samarbetspartner!</p>
                 <p>Som medlem kommer du ibland att få mail av oss med inbjudningar till tex årsmöte eller viktig information om vad som händer inom föreningen.  Men det allra bästa sättet att hålla koll på det senaste är att följa oss på facebook eller instagram!</p>
+                <p>För att bli medlem behöver du stå bakom <a class="links" href="<?= get_site_url();?>/var-vardegrund/" title="Agenda: Jämlikhets värdegrund" target="_blank">Agenda: Jämlikhets värdegrund</a>.</p>
             </div>
         </div>
         <div style="overflow:auto;">
@@ -59,21 +60,21 @@
                         <input type="text" name="email" id="email" placeholder="ex. sophia.andula@gmail.com">
                     </div>
                     <div class="field-wrap">
-                        <label for="">Mobilnummer*</label>
+                        <label for="">Mobilnummer</label>
                         <input type="text" name="phone" id="phone" placeholder="ex. 070-870 99 22">
                     </div>
                     <div class="field-wrap">
-                        <label for="">Bostadsort*</label>
+                        <label for="">Bostadsort</label>
                         <input type="text" name="residence" id="residence" placeholder="ex. Linköping">
                     </div>
                     
         
                     <div class="field-wrap">
-                        <label for="">För att hantera din intresseanmälan behöver vi spara dina personuppgifter. För att göra det behöver vi ditt godkännande!*</label>
+                        <!-- <label for="">För att hantera din intresseanmälan behöver vi spara dina personuppgifter. För att göra det behöver vi ditt godkännande!*</label> -->
                     </div>
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="radio" name="privacy-policy" id="privacy-agree" value="privacy-agree">
-                        <label for="privacy-agree">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="#">Värdegrund</a> samt <a href="#">Riktlinjer för publicering av organisationsprofil</a>.  </label>
+                        <label for="privacy-agree">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="#">Värdegrund</a>.</label>
                     </div>
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="radio" name="agenda-value" id="agenda-value" value="agenda-value">
