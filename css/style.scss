@@ -1741,4 +1741,21 @@ a {
 		.social-wrapper{padding-top: 20px;}
 		.contact{margin-bottom: 20px;}
 	}
+
+	.event-details .card-with-image .content{flex-wrap: wrap-reverse;}
+	.event-details .card-with-image .sidebar{width: 100%; padding: 30px 15px;}
+	.event-details .card-with-image.event-content .date-wrapper{left: 15px;}
+	.event-details .card-with-image .content .content-wrapper{width: 100%; padding: 30px 15px;
+		.tags-wrapper{padding-top: 40px;}
+		.link-wrapper{position: relative; display: block; left: 0px; bottom: 0px; right: 0px; padding-top: 0px;
+			a{display: inline-block;}
+		}
+	}
+	.event-details .card-with-image.event-content .sidebar .date-wrapper{display: none;}
+	.organisation-details .card-with-image .content{flex-wrap: wrap-reverse;}
+	.organisation-details .card-with-image .sidebar{width: 100%;padding: 30px 15px;}
+	.organisation-details .card-with-image .content .content-wrapper{width: 100%;padding: 30px 15px;
+		.link-wrapper{position: relative; left: 0px; bottom: 0px; right: 0px;}
+	}
+	.organisation-details .card-with-image .sidebar .label-link{margin-bottom: 20px;}
 }
