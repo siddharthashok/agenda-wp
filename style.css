@@ -367,6 +367,10 @@ a.active {
   text-transform: uppercase;
 }
 
+.organisation-search {
+  margin-top: 20px;
+}
+
 .search-section {
   padding: 60px 0px;
 }
@@ -1465,10 +1469,10 @@ a.active {
   margin-bottom: 15px;
 }
 .forms .form-header.form-publish {
-  background: #be2763;
+  background: #E6D0F1;
 }
 .forms .form-header.form-org {
-  background: #288e8b;
+  background: #CFF5F4;
 }
 .forms .form-header h3 {
   font-family: "Overpass", sans-serif;
@@ -1649,10 +1653,10 @@ a.active {
   margin-bottom: 1rem;
 }
 .forms .form-body .form-success-title.form-org {
-  color: #288e8b;
+  color: #1f1f1f;
 }
 .forms .form-body .form-success-title.form-publish {
-  color: #be2763;
+  color: #1f1f1f;
 }
 .forms .form-buttons {
   padding: 40px 0;
@@ -1876,10 +1880,10 @@ a.active {
 }
 
 #volunteer-form .form-header {
-  background-color: #55186b;
+  background-color: #F6E3D0;
 }
 #volunteer-form .form-header h4, #volunteer-form .form-header h3 {
-  color: #ffffff;
+  color: #000000;
 }
 #volunteer-form .form-header h4 {
   margin-bottom: 10px;

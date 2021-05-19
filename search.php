@@ -8,46 +8,60 @@
  */
 
 get_header();
+global $query_string;
+
+// query_posts(array("posts_per_page" => -1));
 ?>
 
 <section class="search-section">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x grid-padding-y">
+			
 			<?php
+				$at_least_one_event = false;
 				while(have_posts())
 				{
 					the_post();
-					if(get_post_type(get_the_ID()) == "event_listing")
+					if(get_post_type(get_the_ID()) == "event")
 					{
+						
+						if($at_least_one_event==false)
+						{
+							$at_least_one_event = true;
+			?>
+							<div class="cell large-12">
+								<h3>Events</h3>
+							</div>
+			<?php
+						}
 			?>
 					<div class="cell large-4">
 						<a href="<?= get_permalink(); ?>" class="card-with-image">
 							<div class="image-wrapper">
-								<img src="<?= get_event_banner(); ?>" alt="image of event">
-								<div class="date">
-									<?php
-										$date = strtotime(get_event_start_date());
-										$day = date("d",$date);
-										$month = date("F", $date);
-									?>
-									<span class="day"><?= $day; ?></span>
-									<span class="month"><?= $month; ?></span>
-								</div>
+								<img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of event">
 							</div>
-							
-							<div class="card-title-wrap">
-									<span class="category">event </span>
-									<span class="entrace-info">Fritt inträde</span>
-							</div> 
+							<div class="date-wrapper">
+								<?php
+									$date = strtotime(get_field("start_date"));
+									$day = date("d",$date);
+									$month = date("F", $date);
+								?>
+								<span class="day"><?= $day; ?></span>
+								<span class="month"><?= $month; ?></span>
+							</div>
+							<ul class="event-tags">
+								<li class="pink">gratis</li>
+								<li>podcast</li>
+							</ul>
 							<div class="content">
 								<h3><?= get_the_title(); ?></h3>
 								<p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
 								<p class="location">Plats: <?= get_field("place")["address"]; ?></p>
 								<?php
-									$start_date = strtotime(get_event_start_date());
-									$end_date = strtotime(get_event_end_date());
-									$start_time = get_event_start_time();
-									$end_time = get_event_end_time();
+									$start_date = strtotime(get_field("start_date"));
+									$end_date = strtotime(get_field("end_date_time"));
+									$start_time = date("G.i",$start_date);
+									$end_time = date("G.i",$end_date);
 
 									$format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
 								?>
@@ -59,17 +73,27 @@ get_header();
 					}
 				}
 				wp_reset_postdata();
+
 			?>
 		</div>
 
-		<div class="grid-x grid-padding-x">
-
+		<div class="grid-x grid-padding-x grid-padding-y organisation-search" >
 			<?php
+				$at_least_one_organisation = false;
 				while(have_posts())
 				{
 					the_post();
 					if(get_post_type(get_the_ID()) == "organisations")
 					{
+						if($at_least_one_organisation==false)
+						{
+							$at_least_one_organisation = true;
+			?>
+							<div class="cell large-12">
+								<h3>Organisations</h3>
+							</div>
+			<?php
+						}
 			?>
 					<div class="cell large-4">
                         <a class="card-with-image" href="<?= get_the_permalink(); ?>">
@@ -93,6 +117,7 @@ get_header();
 					}
 				}
 				wp_reset_postdata();
+				
 			?>
 		</div>
 	</div>

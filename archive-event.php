@@ -48,11 +48,11 @@ get_header();
 						Alla datum
 					</a>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="#" data-type="date-filter" data-slug="between" v-on:click="filter">
 						Från ... Till
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href="#" data-type="date-filter" data-slug="today" v-on:click="filter">
 						Idag
