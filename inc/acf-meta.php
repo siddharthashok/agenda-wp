@@ -429,8 +429,24 @@ if( function_exists('acf_add_local_field_group') ):
     
     acf_add_local_field_group(array(
         'key' => 'group_5f43509f5f537',
-        'title' => 'Contact content about page',
+        'title' => 'Contact Sidebar Content',
         'fields' => array(
+            array(
+                'key' => 'field_60a7a902737cb',
+                'label' => 'Contact Sidebar',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'left',
+                'endpoint' => 0,
+            ),
             array(
                 'key' => 'field_5f43509f6f21e',
                 'label' => 'Title',
@@ -780,9 +796,9 @@ if( function_exists('acf_add_local_field_group') ):
         'location' => array(
             array(
                 array(
-                    'param' => 'page_template',
+                    'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'template-publicera.php',
+                    'value' => 'global-settings',
                 ),
             ),
         ),

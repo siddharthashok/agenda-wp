@@ -20,7 +20,7 @@ get_header();
             <section class="about-page">
             <!-- <div class="grid-container "> -->
                 <h2 class="title">
-                    <?= get_field("title");?>
+                    <?= get_field("title","option");?>
                 </h2>
                 <div class="info-card">
                     <h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
@@ -43,7 +43,7 @@ get_header();
                 <div class="contact-wrapper">
                     <div>
                         <?php
-                            $contact_us_text = get_field("contact_contact_us_text");
+                            $contact_us_text = get_field("contact_contact_us_text","option");
                         ?>
                         <h6><?= $contact_us_text["title"];?></h6>
                         <div class="content">
@@ -52,7 +52,7 @@ get_header();
                     </div>
                     <div>
                         <?php
-                            $tips_text = get_field("contact_tips_text");
+                            $tips_text = get_field("contact_tips_text","option");
                         ?>
                         <h6><?= $tips_text["title"];?></h6>
                         <div class="content">
@@ -62,9 +62,9 @@ get_header();
                     <span class="subtitle">Kontaktpersoner</span>
                     <div class="grid-x">
                         <?php
-                            if(have_rows("contact_contact_persons"))
+                            if(have_rows("contact_contact_persons","option"))
                             {
-                                while(have_rows("contact_contact_persons"))
+                                while(have_rows("contact_contact_persons","option"))
                                 {
                                     the_row();
                         ?>
@@ -91,9 +91,9 @@ get_header();
                         <span class="subtitle">Styrelse för Agenda: Jämlikhet</span>
                         <div >
                             <?php
-                                if(have_rows("contact_board_of_agenda"))
+                                if(have_rows("contact_board_of_agenda","option"))
                                 {
-                                    while(have_rows("contact_board_of_agenda"))
+                                    while(have_rows("contact_board_of_agenda","option"))
                                     {
                                         the_row();
                             ?>

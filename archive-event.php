@@ -8,6 +8,7 @@
  */
 
 get_header();
+date_default_timezone_set( 'Europe/Stockholm' );
 ?>
 
 <section class="equality-events" id="flter-container">
