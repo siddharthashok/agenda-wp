@@ -93,7 +93,22 @@ get_header();
                                 </ul>
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
-                                    <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
+                                    <?php
+                                        $temp_organiser = "";
+                                        if(!empty(get_field("organizer")->post_title))
+                                        {
+                                    
+                                            $temp_organiser = get_field("organizer")->post_title;
+                                    
+                                        }
+                                        if(!empty(get_field("other_organizers")))
+                                        {
+                                    
+                                            $temp_organiser = !empty(get_field("organizer")->post_title)? $temp_organiser." ,".get_field("other_organizers"): get_field("other_organizers");
+                                    
+                                        }
+                                    ?>
+                                    <p class="organizer">Arrangör: <?= $temp_organiser; ?></p>
                                     <p class="location">Plats: <?= get_field("address"); ?></p>
                                     <?php
                                         $start_date = strtotime(get_field("start_date"));
@@ -164,10 +179,10 @@ get_header();
                     }
                     wp_reset_postdata();
                 ?>
-                <div class="cell large-12">
-                    <div class="link-wrapper text-right">
-                        <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
-                    </div>
+            </div>
+            <div class="cell large-12">
+                <div class="link-wrapper text-right">
+                    <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
                 </div>
             </div>
         </div>
@@ -195,7 +210,7 @@ get_header();
                             {
                                 $random_organisations->the_post();
                     ?>
-                                <div class="cell large-4">
+                                <div class="cell large-4 hide-for-small-only">
                                     <a href="<?= get_the_permalink(); ?>" class="card-with-image">    
                                         <div class="image-wrapper">
                                             <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="">

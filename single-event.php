@@ -93,7 +93,21 @@ get_header();
                                     <span class="icon arrangor"></span>
                                     Arrangör
                                 </h6>
-                                <h4><?= get_field("organizer")->post_title;?><?= get_field("other_organizers")? ", ".get_field("other_organizers"): ""?></h4>
+                                <?php
+                                    if(get_field("organizer")->post_title)
+                                    {
+                                ?>
+                                        <h4><?= get_field("organizer")->post_title;?><?= get_field("other_organizers")? ", ".get_field("other_organizers"): ""?></h4>
+                                <?php
+                                    }
+                                    else
+                                    {
+                                ?>
+                                        <h4><?= get_field("other_organizers")? get_field("other_organizers"): ""?></h4>
+                                <?php
+                                    }
+                                ?>
+                                
                             </div>
 
                             <?php
@@ -283,7 +297,22 @@ get_header();
                                 </ul>
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
-                                    <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
+                                    <?php
+                                        $temp_organiser = "";
+                                        if(!empty(get_field("organizer")->post_title))
+                                        {
+                                    
+                                            $temp_organiser = get_field("organizer")->post_title;
+                                    
+                                        }
+                                        if(!empty(get_field("other_organizers")))
+                                        {
+                                    
+                                            $temp_organiser = !empty(get_field("organizer")->post_title)? $temp_organiser." ,".get_field("other_organizers"): get_field("other_organizers");
+                                    
+                                        }
+                                    ?>
+                                    <p class="organizer">Arrangör: <?= $temp_organiser; ?></p>
                                     <p class="location">Plats: <?= get_field("address"); ?></p>
                                     <?php
                                         $start_date = strtotime(get_field("start_date"));

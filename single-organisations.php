@@ -94,9 +94,9 @@ while(have_posts())
                        {
             ?>
                         <div class="cell large-4">
-                            <a href="<?= get_permalink(); ?>" class="card-with-image">
+                        <a href="<?= get_permalink(); ?>" class="card-with-image">
                                 <div class="image-wrapper">
-                                    <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of event">
+                                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
                                 </div>
                                 <div class="date-wrapper">
                                     <?php
@@ -108,24 +108,57 @@ while(have_posts())
                                     <span class="month"><?= $month; ?></span>
                                 </div>
                                 <ul class="event-tags">
-                                    <li class="pink">gratis</li>
-                                    <li>podcast</li>
+                                    <?php
+                                        $cost_of_event = get_field("cost_of_event");
+                                        $tags = get_the_tags();
+                                        if(empty($cost_of_event) || $cost_of_event == 0)
+                                        {
+                                    ?>
+                                            <li class="pink">gratis</li> 
+                                    <?php
+                                        }
+                                        if($tags!=false)
+                                        {
+                                            for($i=0; $i< sizeof($tags); $i++)
+                                            {
+                                                if($i==1){break;}
+                                    ?>
+                                                <li><?= $tags[$i]->name; ?></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </ul>
                                 <div class="content">
                                     <h3><?= get_the_title(); ?></h3>
-                                    <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
-                                    <p class="location">Plats: <?= get_field("place")["address"]; ?></p>
+                                    <?php
+                                        $temp_organiser = "";
+                                        if(!empty(get_field("organizer")->post_title))
+                                        {
+                                    
+                                            $temp_organiser = get_field("organizer")->post_title;
+                                    
+                                        }
+                                        if(!empty(get_field("other_organizers")))
+                                        {
+                                    
+                                            $temp_organiser = !empty(get_field("organizer")->post_title)? $temp_organiser." ,".get_field("other_organizers"): get_field("other_organizers");
+                                    
+                                        }
+                                    ?>
+                                    <p class="organizer">Arrangör: <?= $temp_organiser; ?></p>
+                                    <p class="location">Plats: <?= get_field("address"); ?></p>
                                     <?php
                                         $start_date = strtotime(get_field("start_date"));
                                         $end_date = strtotime(get_field("end_date_time"));
                                         $start_time = date("G.i",$start_date);
                                         $end_time = date("G.i",$end_date);
-
-                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
+            
+                                        $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", kl ".$start_time. "-".$end_time;
                                     ?>
                                     <p class="date">Tid: <?= $format_date; ?></p>
                                 </div>
-                            </a> 
+                            </a>  
                         </div>
             <?php
                        }

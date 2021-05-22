@@ -20,7 +20,7 @@ get_header();
             <section class="about-page">
             <!-- <div class="grid-container "> -->
                 <h2 class="title">
-                    <?= get_field("title","option");?>
+                    <?= get_field("title");?>
                 </h2>
                 <div class="info-card">
                     <h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
