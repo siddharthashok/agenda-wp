@@ -1060,10 +1060,11 @@ a.active {
   margin-bottom: 20px;
 }
 .equality-events .sidebar .menu a {
-  line-height: 10px;
+  line-height: 1.5;
+  padding: 10px 10px 8px 10px;
 }
 .equality-events .sidebar .is-active {
-  background-color: #e4e4e4;
+  background-color: #C59FCE;
 }
 .equality-events .title-wrap {
   position: relative;
