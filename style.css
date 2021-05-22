@@ -259,14 +259,10 @@ a.active {
 }
 
 .site-header {
-  background-color: #FFF;
+  background-color: #fafafa;
   transition: all 0.3s ease;
   box-shadow: 0px 1px 3px #e6dad8;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
+  position: relative;
 }
 .site-header .logo {
   float: left;
@@ -503,7 +499,7 @@ a.active {
   position: relative;
 }
 .card-with-image .image-wrapper img {
-  object-fit: cover;
+  object-fit: contain;
   height: 200px;
   width: 100%;
 }
@@ -1064,10 +1060,11 @@ a.active {
   margin-bottom: 20px;
 }
 .equality-events .sidebar .menu a {
-  line-height: 10px;
+  line-height: 1.5;
+  padding: 10px 10px 8px 10px;
 }
 .equality-events .sidebar .is-active {
-  background-color: #e4e4e4;
+  background-color: #C59FCE;
 }
 .equality-events .title-wrap {
   position: relative;
@@ -1234,7 +1231,7 @@ a.active {
 .event-details .card-with-image .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .event-details .card-with-image .content {
   display: flex;
@@ -1328,7 +1325,7 @@ a.active {
 .organisation-details .card-with-image .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .organisation-details .card-with-image .content {
   display: flex;
@@ -2063,14 +2060,14 @@ a.active {
     height: 100%;
   }
   .hero-section .card-with-image .image-wrapper {
-    height: 50px;
+    height: 230px;
     margin-bottom: 0px;
   }
   .hero-section .card-with-image .image-wrapper img {
-    height: 50px;
+    height: 230px;
   }
   .hero-section .card-with-image .content {
-    padding: 5px 10px;
+    padding: 20px 10px;
   }
   .hero-section .card-with-image h3 {
     font-size: 13px;
@@ -2109,6 +2106,19 @@ a.active {
 .current-events .title-wrap .see-few-all {
     width: 95px;
     text-align: right;
+  }
+  .current-organizers .category-list,
+.current-events .category-list {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+  .current-organizers .categories-wrapper,
+.current-events .categories-wrapper {
+    margin-bottom: 20px;
+  }
+  .current-organizers .link-wrapper,
+.current-events .link-wrapper {
+    padding-top: 0px;
   }
 
   .event-mobile-wrap,
@@ -2241,6 +2251,14 @@ a.active {
 
   .organisation-details .card-with-image .sidebar .label-link {
     margin-bottom: 20px;
+  }
+
+  .connect-card-wrap {
+    padding-bottom: 0px;
+  }
+
+  .hero-section .categories-wrapper .category-list li a {
+    padding: 12px;
   }
 }
 
