@@ -31,3 +31,14 @@ $(".search-close").click(function (e) {
 		$(".search-toggle, .search-container").removeClass("opened");
 	}
 });
+
+$("#filter-height").click(function (e) {
+	console.log('this does not work');
+	if ($("#filter-height").hasClass("filter-height")) {
+		$("#filter-height").removeClass("filter-height");
+		$(".show-more-filters").html('Visa Färre');
+	} else {
+		$("#filter-height").addClass("filter-height");
+		$(".show-more-filters").html('Visa Fler');
+	}
+});

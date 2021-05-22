@@ -82,7 +82,7 @@ get_header();
 							</p>
 							<a href="<?= get_site_url()?>/publish-event-organisation" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
 						</div>
-					</div> -->
+					</div>
 					<div class="cell large-12">
 						<div class="connect-card purple">
 							<div class="info-card albescent-white">
@@ -91,7 +91,7 @@ get_header();
 								<a href="<?= get_site_url()?>/publish-event-organisation" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>   
 			</div>    
     	</section>

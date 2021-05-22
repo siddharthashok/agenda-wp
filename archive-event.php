@@ -68,28 +68,32 @@ date_default_timezone_set( 'Europe/Stockholm' );
 		</div>
 		<div class="filter-block">
 			<h4>Typ av event</h4>
-			<ul class="menu vertical">
+			<ul class="menu vertical filter-height" id="filter-height">
 				<li>
 					<a href="#" class="is-active" data-type="event-type" data-slug="" v-on:click="filter">
 						Alla format
 					</a>
 				</li>
 				<?php
-					$all_terms = get_tags();
+					$all_terms = get_tags(array('orderby' => 'count', 'order' => 'DESC'));
+					/*echo '<pre>';
+					print_r($all_terms);
+					echo '</pre>';*/
 					if(sizeof($all_terms)!=0)
 					{
 						foreach ($all_terms as $key => $value) {
 				?>
 						<li>
 							<a href="#" data-type="event-type" data-slug="<?= $value->slug; ?>" v-on:click="filter">
-								<?= $value->name; ?>
+								<?= $value->name; ?> (<?= $value->count; ?>)
 							</a>
 						</li>
 				<?php
 						}
 					}
 				?>
-			</ul>			
+			</ul>	
+			<span class="show-more-filters">Visa FLER</span>		
 		</div>
 		<div class="filter-block">
 			<h4>Tillgänglighet</h4>
@@ -176,10 +180,9 @@ date_default_timezone_set( 'Europe/Stockholm' );
 				<div class="grid-x grid-margin-y grid-margin-x">
 					<div class="cell large-12">
 						<div class="info-card">
-							<h3 class="card-title">Är du organisation eller arrangör av jämlikhetsevent?</h3>
-							<p class="card-description">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
-							</p>
-							<a href="<?= get_site_url()?>/publish-event-organisation" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+							<h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
+							<p class="card-description">Sprid ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.</p>
+							<a href="<?= get_site_url()?>/publish-event-form" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
 						</div>
 					</div>
 					<!-- <div class="cell large-6">
