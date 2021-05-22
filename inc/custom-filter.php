@@ -164,13 +164,28 @@ function event_filter($category=null, $date=null, $type=null, $availability=null
 
             $day = date("d",$start_date);
             $month = date("F", $start_date);
+            $temp_organiser = "";
 
+          
+            if(!empty(get_field("organizer")->post_title))
+            {
+        
+                $temp_organiser = get_field("organizer")->post_title;
+        
+            }
+            if(!empty(get_field("other_organizers")))
+            {
+        
+                $temp_organiser = !empty(get_field("organizer")->post_title)? $temp_organiser." ,".get_field("other_organizers"): get_field("other_organizers");
+        
+            }
+            
             $temp = array(
                 "title" => html_entity_decode(get_the_title()),
                 "id" => get_the_ID(),
                 "featured_image" => get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg',
                 "permalink" => get_the_permalink(),
-                "organiser" => html_entity_decode(get_field("organizer")->post_title),
+                "organiser" => $temp_organiser,
                 "place" => html_entity_decode(get_field("address")),
                 "dateTime" => $format_date,
                 "day" => $day,
