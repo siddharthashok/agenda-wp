@@ -10,3 +10,5 @@ section.page-forms {min-height: 600px;}
 .single-category-section .cell.large-4 {margin-bottom: 30px;}
 .filter-height {height: 195px; overflow: hidden;}
 .show-more-filters {font-size: 14px; font-family: "Overpass", sans-serif; font-style: normal; font-weight: 600; line-height: 20px; font-style: normal; text-transform: uppercase; color: #000000; text-decoration: none; margin-bottom: 30px; display: inline-block; text-decoration: underline; cursor: pointer;}
+.header-sub-tag {margin-top: 20px; font-weight: 400;}
+.m-t-75 {margin-top: 75px;}

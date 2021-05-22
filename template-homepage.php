@@ -8,7 +8,7 @@ get_header();
 <section class="hero-section">
     <div class="grid-container">
         <h1 class="text-center">Din eventkalender för jämlikhet</h1>
-        <h4 class="text-center">Vi gör det enkelt för dig att gå från ord till handling</h4>
+        <h3 class="text-center header-sub-tag">Vi gör det enkelt för dig att gå från ord till handling</h3>
     </div> 
     <section class="current-events">
         <div class="grid-container">
@@ -32,7 +32,7 @@ get_header();
             ?>
                 <div class="grid-x grid-padding-x grid-padding-y">
                     <div class="cell large-12">
-                        <h3>Vad intresserar dig?</h3>
+                        <h3 class="m-t-75">Vad intresserar dig?</h3>
                         <div class="categories-wrapper">
                             <ul class="category-list">
                                 <?php
