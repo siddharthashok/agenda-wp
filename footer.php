@@ -19,13 +19,13 @@
         <div class="grid-x grid-padding-x">
             <div class="cell large-4">
                 <div class="links-wrapper">
-                    <a href="#"><h6>Om Agenda Jämlikhet</h6></a>
+                    <h6>Om Agenda Jämlikhet</h6>
                     <div class="link-wrapper">
-                        <h6>Kontakt:</h6>
-                        <a href="mailto:mail@agendajamlikhet.se">mail@agendajamlikhet.se</a>
+                        <h6>KONTAKT:</h6>
+                        <a href="mailto:info@agendajamlikhet.se">info@agendajamlikhet.se</a>
                     </div>
                     <div class="link-wrapper">
-                        <h6>Har du tips?</h6>
+                        <h6>HAR DU TIPS?</h6>
                         <a href="mailto:tips@gbg.agendajamlikhet.se">tips@gbg.agendajamlikhet.se</a>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
 
                   </nav>
                     <div class="social-wrapper">
-                        <h6>Följ oss på</h6>
+                        <h6>FÖLJ OSS PÅ</h6>
                         <a href="https://www.facebook.com/agendajamlikhet" class="facebook" target="_blank" ></a>
                         <a href="https://instagram.com/agendajamlikhet" class="instagram" target="_blank" ></a>
                     </div>

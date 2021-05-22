@@ -29,7 +29,7 @@ while(have_posts())
             <section class="about-page">
             <!-- <div class="grid-container "> -->
                 <h2 class="title">
-                    Agenda: Jämlikhet är en ideell politiskt och religös obunden förening
+                    <?= get_the_title(); ?>
                 </h2>
                 <div class="feature-image-wrapper">
                     <img src="<?= get_the_post_thumbnail_url(null,"large"); ?>" alt="">

@@ -17,8 +17,8 @@ while(have_posts())
     <div class="grid-container">
         <nav>
             <ul class="breadcrumbs">
-                <li><a href="<?= get_site_url(); ?>">Home</a></li>
-                <li><a href="<?= get_site_url(); ?>/organisations">Organisations</a></li>
+                <li><a href="<?= get_site_url(); ?>">Hem</a></li>
+                <li><a href="<?= get_site_url(); ?>/organisations">Organisationer</a></li>
                 <li><a href="#" class="active"><?= get_the_title(); ?></a></li>
             </ul>
         </nav>
@@ -35,7 +35,8 @@ while(have_posts())
                             ?>
                             <div class="label-link">
                                 <h6>HEMSIDA</h6>
-                                <a href="<?= $contact_details["website"]; ?>"><?= $contact_details["website"]; ?></a>
+                                <!-- <a href="<?= $contact_details["website"]; ?>"><?= $contact_details["website"]; ?></a> -->
+                                <a href="<?= $contact_details["website"]; ?>" title="<?= get_the_title(); ?>" target="_blank"><?= get_the_title(); ?></a>
                             </div>
                             <div class="label-link">
                                 <h6>Email</h6>
@@ -50,7 +51,7 @@ while(have_posts())
                                     foreach($categories as $key => $value)
                                     {
                                 ?>
-                                        <li><a href="#"><?= $value->name; ?> <span class="plus-icon"></span></a></li>
+                                        <li><a href="<?= get_category_link( $value->term_id ) ?>"><?= $value->name; ?> <span class="plus-icon"></span></a></li>
                                 <?php
                                     }
                                 ?>
@@ -60,7 +61,7 @@ while(have_posts())
                                 <?= get_the_content(); ?>
                             </div>
                             <div class="link-wrapper text-right">
-                                <a href="<?= $contact_details["website"]; ?>" class="link">TILL ORGANISATIONENS HEMSIDA</a>
+                                <a href="<?= $contact_details["website"]; ?>" class="link" target="_blank">TILL ORGANISATIONENS HEMSIDA</a>
                             </div>
                         </div>
                     </div>
@@ -74,10 +75,10 @@ while(have_posts())
 }
 ?>
 <!-- start of events cards -->
-<section class="events-from-organiser">
+<section class="events-from-organiser d-none">
     <div class="grid-container">
         <h4>Evenemang från denna arrangör</h4>
-        <div class="grid-x grid-margin-x grid-margin-y">
+        <div class="grid-x grid-padding-x grid-padding-y">
             <?php
                 $current_organiser_id = $post->ID;
                 $all_events = new WP_Query(array(

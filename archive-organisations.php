@@ -52,8 +52,8 @@ get_header();
                     <li><a href="#" class="active">Organisations</a></li>
                 </ul>
             </nav> -->
-            <h2 class="title">Organisations</h2>
-            <p class="about">Agenda: Jämlikhet samarbetar med över 100 organisationer som engagerar sig i jämlikhetsfrågor på olika sätt. Här hittar du en organisation som behöver dig och ditt engagemang!</p>
+            <h2 class="title">Organisationer</h2>
+            <p class="about">Agenda: Jämlikhet samarbetar med över 250 organisationer som är partipolitiskt och religiöst obundna och på olika sätt arbetar för ett jämlikt samhälle. Här hittar du organisationer som behöver dig och ditt engagemang!</p>
         
             <div class="grid-x grid-margin-x grid-margin-y">
                 <div class="cell large-6" v-for="organisation in organisations">
