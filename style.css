@@ -259,10 +259,14 @@ a.active {
 }
 
 .site-header {
-  background-color: #fafafa;
+  background-color: #FFF;
   transition: all 0.3s ease;
   box-shadow: 0px 1px 3px #e6dad8;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 .site-header .logo {
   float: left;
