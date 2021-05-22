@@ -178,16 +178,16 @@ get_header();
                         }
                     }
                     ?>
-                    <div class="cell large-12">
+                    <!-- <div class="cell large-12">
                         <div class="link-wrapper text-right">
                             <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
                         </div>
-                    </div>
+                    </div> -->
                     <?php
                     wp_reset_postdata();
                 ?>
             </div>
-            <div class="cell large-12">
+            <div class="cell large-12 show-for-small-only">
                 <div class="link-wrapper text-right">
                     <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
                 </div>
