@@ -35,7 +35,7 @@ global $query_string;
 			<?php
 						}
 			?>
-					<div class="cell large-4">
+					<div class="cell large-4 card-margin">
 						<a href="<?= get_permalink(); ?>" class="card-with-image">
 							<div class="image-wrapper">
 								<img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of event">
@@ -49,10 +49,22 @@ global $query_string;
 								<span class="day"><?= $day; ?></span>
 								<span class="month"><?= $month; ?></span>
 							</div>
-							<ul class="event-tags">
-								<li class="pink">gratis</li>
-								<li>podcast</li>
-							</ul>
+							
+							<div class="card-title-wrap">
+									<span class="category">event </span>
+									<span class="entrace-info">
+										<?php
+											$categories = get_the_category();
+
+											foreach($categories as $key => $value)
+											{
+										?>
+												<span><?= $value->name; ?> , </span>
+										<?php
+											}
+										?>
+									</span>
+							</div> 
 							<div class="content">
 								<h3><?= get_the_title(); ?></h3>
 								<p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
@@ -95,7 +107,7 @@ global $query_string;
 			<?php
 						}
 			?>
-					<div class="cell large-4">
+					<div class="cell large-4 card-margin">
                         <a class="card-with-image" href="<?= get_the_permalink(); ?>">
                             <div class="image-wrapper">
                                 <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of the organisation">
@@ -109,7 +121,18 @@ global $query_string;
                             </div> 
                             <div class="content">
                                 <h3><?= get_the_title(); ?></h3>
-                                <p class="cause">Mänskliga rättigheter</p>
+								<p class="cause">
+									<?php
+										$categories = get_the_category();
+
+										foreach($categories as $key => $value)
+										{
+									?>
+											<span><?= $value->name; ?> , </span>
+									<?php
+										}
+									?>
+                                </p>
                             </div>
                         </a>
                     </div> 

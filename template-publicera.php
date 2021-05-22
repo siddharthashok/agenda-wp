@@ -29,8 +29,7 @@ get_header();
                 </div>
                 <div class="info-card mint-tulip">
                     <h3 class="card-title">Gå med i vårt nätverk av organisationer!</h3>
-                    <p class="card-description">Bli en del av ett nätverk med över 100 andra organisationer som arbetar med jämlikhetsfrågor. På så vis kan du komma i kontakt med andra organisationer, dela kunskaper eller starta samarbeten. 
-                    </p>
+                    <p class="card-description">Låt din organisation synas genom att publicera en organisationsprofil på agendajamlikhet.se. Bli samtidigt en del av över 250 organisationer som ingår i Agenda: Jämlikhets nätverk</p>
                     <a href="<?= get_site_url();?>/publish-organisation-form" class="link">PUBLICERA din profil här </a>
                 </div>
                 <div class="content">
