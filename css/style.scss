@@ -1627,14 +1627,14 @@ a {
 		.card-with-image {
 			height: 100%;
 			.image-wrapper {
-				height: 50px;
+				height: 230px;
 				margin-bottom: 0px;
 				img {
-					height: 50px;
+					height: 230px;
 				}
 			}
 			.content {
-				padding: 5px 10px;
+				padding: 20px 10px;
 			}
 			h3 {
 				font-size: 13px;
@@ -1670,6 +1670,9 @@ a {
 				text-align: right;
 			}
 		}
+		.category-list{margin-left: 0px; margin-bottom: 0px;}
+		.categories-wrapper{margin-bottom: 20px;}
+		.link-wrapper{padding-top: 0px;}
 	}
 	//common css for the sections with cards displayed in sliders
 	.event-mobile-wrap,
@@ -1759,4 +1762,6 @@ a {
 		.link-wrapper{position: relative; left: 0px; bottom: 0px; right: 0px;}
 	}
 	.organisation-details .card-with-image .sidebar .label-link{margin-bottom: 20px;}
+	.connect-card-wrap{ padding-bottom: 0px; }
+	.hero-section .categories-wrapper .category-list li a{padding: 12px;}
 }

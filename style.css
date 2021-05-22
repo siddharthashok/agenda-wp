@@ -2059,14 +2059,14 @@ a.active {
     height: 100%;
   }
   .hero-section .card-with-image .image-wrapper {
-    height: 50px;
+    height: 230px;
     margin-bottom: 0px;
   }
   .hero-section .card-with-image .image-wrapper img {
-    height: 50px;
+    height: 230px;
   }
   .hero-section .card-with-image .content {
-    padding: 5px 10px;
+    padding: 20px 10px;
   }
   .hero-section .card-with-image h3 {
     font-size: 13px;
@@ -2105,6 +2105,19 @@ a.active {
 .current-events .title-wrap .see-few-all {
     width: 95px;
     text-align: right;
+  }
+  .current-organizers .category-list,
+.current-events .category-list {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+  .current-organizers .categories-wrapper,
+.current-events .categories-wrapper {
+    margin-bottom: 20px;
+  }
+  .current-organizers .link-wrapper,
+.current-events .link-wrapper {
+    padding-top: 0px;
   }
 
   .event-mobile-wrap,
@@ -2237,6 +2250,14 @@ a.active {
 
   .organisation-details .card-with-image .sidebar .label-link {
     margin-bottom: 20px;
+  }
+
+  .connect-card-wrap {
+    padding-bottom: 0px;
+  }
+
+  .hero-section .categories-wrapper .category-list li a {
+    padding: 12px;
   }
 }
 
