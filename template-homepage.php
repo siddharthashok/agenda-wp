@@ -162,13 +162,15 @@ get_header();
                 <?php
                         }
                     }
+                    ?>
+                    <div class="cell large-12">
+                        <div class="link-wrapper text-right">
+                            <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
+                        </div>
+                    </div>
+                    <?php
                     wp_reset_postdata();
                 ?>
-                <div class="cell large-12">
-                    <div class="link-wrapper text-right">
-                        <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>       
