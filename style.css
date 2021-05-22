@@ -367,6 +367,10 @@ a.active {
   text-transform: uppercase;
 }
 
+.organisation-search {
+  margin-top: 20px;
+}
+
 .search-section {
   padding: 60px 0px;
 }
@@ -1465,10 +1469,10 @@ a.active {
   margin-bottom: 15px;
 }
 .forms .form-header.form-publish {
-  background: #be2763;
+  background: #E6D0F1;
 }
 .forms .form-header.form-org {
-  background: #288e8b;
+  background: #CFF5F4;
 }
 .forms .form-header h3 {
   font-family: "Overpass", sans-serif;
@@ -1649,10 +1653,10 @@ a.active {
   margin-bottom: 1rem;
 }
 .forms .form-body .form-success-title.form-org {
-  color: #288e8b;
+  color: #1f1f1f;
 }
 .forms .form-body .form-success-title.form-publish {
-  color: #be2763;
+  color: #1f1f1f;
 }
 .forms .form-buttons {
   padding: 40px 0;
@@ -1809,6 +1813,11 @@ a.active {
 .about-page .feature-image-wrapper {
   margin-bottom: 20px;
 }
+.about-page .feature-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .about-page figure {
   margin-bottom: 20px;
 }
@@ -1871,10 +1880,10 @@ a.active {
 }
 
 #volunteer-form .form-header {
-  background-color: #55186b;
+  background-color: #F6E3D0;
 }
 #volunteer-form .form-header h4, #volunteer-form .form-header h3 {
-  color: #ffffff;
+  color: #000000;
 }
 #volunteer-form .form-header h4 {
   margin-bottom: 10px;
@@ -2169,4 +2178,66 @@ a.active {
   .site-footer .contact {
     margin-bottom: 20px;
   }
+
+  .event-details .card-with-image .content {
+    flex-wrap: wrap-reverse;
+  }
+
+  .event-details .card-with-image .sidebar {
+    width: 100%;
+    padding: 30px 15px;
+  }
+
+  .event-details .card-with-image.event-content .date-wrapper {
+    left: 15px;
+  }
+
+  .event-details .card-with-image .content .content-wrapper {
+    width: 100%;
+    padding: 30px 15px;
+  }
+  .event-details .card-with-image .content .content-wrapper .tags-wrapper {
+    padding-top: 40px;
+  }
+  .event-details .card-with-image .content .content-wrapper .link-wrapper {
+    position: relative;
+    display: block;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding-top: 0px;
+  }
+  .event-details .card-with-image .content .content-wrapper .link-wrapper a {
+    display: inline-block;
+  }
+
+  .event-details .card-with-image.event-content .sidebar .date-wrapper {
+    display: none;
+  }
+
+  .organisation-details .card-with-image .content {
+    flex-wrap: wrap-reverse;
+  }
+
+  .organisation-details .card-with-image .sidebar {
+    width: 100%;
+    padding: 30px 15px;
+  }
+
+  .organisation-details .card-with-image .content .content-wrapper {
+    width: 100%;
+    padding: 30px 15px;
+  }
+  .organisation-details .card-with-image .content .content-wrapper .link-wrapper {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  .organisation-details .card-with-image .sidebar .label-link {
+    margin-bottom: 20px;
+  }
 }
+
+/*# sourceMappingURL=style.css.map */

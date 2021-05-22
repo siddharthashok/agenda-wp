@@ -63,8 +63,8 @@
                         <img src="<?= get_template_directory_uri(); ?>/img/main-logo.svg" alt="logo of agenda website">
                     </a>
                     <?php
-                        $menu_items = wp_get_nav_menu_items("main-menu");
-                        // print_r($menu_items);
+                        $locations = get_nav_menu_locations();
+                        $menu_items = wp_get_nav_menu_items($locations["main-menu"]);
                     ?>
                     <ul class="menu hidden">
                         <li class="close-wrap">

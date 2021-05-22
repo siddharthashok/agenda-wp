@@ -8,6 +8,7 @@
  */
 
 get_header();
+date_default_timezone_set( 'Europe/Stockholm' );
 ?>
 
 <section class="equality-events" id="flter-container">
@@ -48,11 +49,11 @@ get_header();
 						Alla datum
 					</a>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="#" data-type="date-filter" data-slug="between" v-on:click="filter">
 						Från ... Till
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href="#" data-type="date-filter" data-slug="today" v-on:click="filter">
 						Idag

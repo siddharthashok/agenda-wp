@@ -97,11 +97,11 @@ while(have_posts())
                         <div class="cell large-4">
                             <a href="<?= get_permalink(); ?>" class="card-with-image">
                                 <div class="image-wrapper">
-                                    <img src="<?= get_event_banner(); ?>" alt="image of event">
+                                    <img src="<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/img/backup.jpg'; ?>" alt="image of event">
                                 </div>
                                 <div class="date-wrapper">
                                     <?php
-                                        $date = strtotime(get_event_start_date());
+                                        $date = strtotime(get_field("start_date"));
                                         $day = date("d",$date);
                                         $month = date("F", $date);
                                     ?>
@@ -117,10 +117,10 @@ while(have_posts())
                                     <p class="organizer">Arrangör: <?= get_field("organizer")->post_title;?></p>
                                     <p class="location">Plats: <?= get_field("place")["address"]; ?></p>
                                     <?php
-                                        $start_date = strtotime(get_event_start_date());
-										$end_date = strtotime(get_event_end_date());
-										$start_time = get_event_start_time();
-										$end_time = get_event_end_time();
+                                        $start_date = strtotime(get_field("start_date"));
+                                        $end_date = strtotime(get_field("end_date_time"));
+                                        $start_time = date("G.i",$start_date);
+                                        $end_time = date("G.i",$end_date);
 
                                         $format_date = date("d M",$start_date) . " - " . date("d M",$end_date).", ".$start_time. "-".$end_time;
                                     ?>

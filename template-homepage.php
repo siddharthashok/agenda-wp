@@ -55,7 +55,7 @@ get_header();
                         {
                             $all_events->the_post();
                 ?>
-                        <div class="cell large-4">
+                        <div class="cell large-4 hide-for-small-only">
                             <a href="<?= get_permalink(); ?>" class="card-with-image">
                                 <div class="image-wrapper">
                                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="image of event">
@@ -112,7 +112,7 @@ get_header();
                     }
                     wp_reset_postdata();
                 ?>
-                    <div class="cell large-12">
+                    <div class="cell large-12 hide-for-small-only">
                         <div class="link-wrapper text-right">
                             <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
                         </div>
@@ -164,6 +164,11 @@ get_header();
                     }
                     wp_reset_postdata();
                 ?>
+                <div class="cell large-12">
+                    <div class="link-wrapper text-right">
+                        <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>       

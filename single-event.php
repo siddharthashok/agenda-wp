@@ -137,6 +137,10 @@ get_header();
                             
                         </div>
                         <div class="content-wrapper">
+                            <div class="date-wrapper show-for-small-only">
+                                <span class="day"><?= date("d",$start_date);?></span>
+                                <span class="month"><?= date("F",$start_date);?></span>
+                            </div>
                             <ul class="tags-wrapper">
                                 <?php
                                     $categories = get_the_category();

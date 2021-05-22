@@ -119,12 +119,12 @@
                         <label for="">För att hantera din intresseanmälan behöver vi spara dina personuppgifter. För att göra det behöver vi ditt godkännande!*</label>
                     </div> -->
                     <div class="field-wrap">
-                        <input class="styled-radio form-publish" type="radio" name="privacy-policy" id="privacy-agree" value="privacy-agree">
-                        <label for="privacy-agree">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="#">integritetspolicy</a>. </label>
+                        <input class="styled-radio form-publish" type="checkbox" name="privacy-policy" id="privacy-agree" value="privacy-agree">
+                        <label for="privacy-agree">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="#" target="_blank">integritetspolicy</a>. </label>
                     </div>
                     <div class="field-wrap">
-                        <input class="styled-radio form-publish" type="radio" name="agenda-value" id="agenda-value" value="agenda-value">
-                        <label for="agenda-value">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="#">Värdegrund</a> </label>
+                        <input class="styled-radio form-publish" type="checkbox" name="agenda-value" id="agenda-value" value="agenda-value">
+                        <label for="agenda-value">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="#" target="_blank">Värdegrund</a> </label>
                     </div>
                 </div>
                 <div class="button-wrapper text-center">

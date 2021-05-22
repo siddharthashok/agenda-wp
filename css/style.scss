@@ -272,6 +272,7 @@ a {
 	text-transform: uppercase;
 }
 // .hyphen{font-size: 60px;color:$purple;display: inline-block;}
+.organisation-search{margin-top: 20px;}
 .search-section{padding:60px 0px;}
 .card-with-image {position: relative; /*margin-bottom:15px; margin: 0px 7px 14px 7px; */background-color: $white;box-shadow: 0px 8px 16px $off-white;display: block;height: 100%; text-decoration: none; text-transform: none;
 
@@ -1417,7 +1418,9 @@ a {
 .about-page {position: relative;
 	h3{font-size: 22px; line-height: 1.2; color: $green; margin-top: 30px; margin-bottom: 9px;}
 	a{text-transform: none; text-decoration: underline; font-weight: normal;}
-	.feature-image-wrapper{margin-bottom: 20px;}
+	.feature-image-wrapper{margin-bottom: 20px; 
+		img{width: 100%; height: 100%; object-fit: cover;}
+	}
 	figure{margin-bottom: 20px;}
 	// &::before{background-image: url("img/blue-blob.svg"); background-repeat: no-repeat, no-repeat;
 		// background-position: center; background-repeat: no-repeat; width: 249px; height: 216px; content: ""; display: inline-block;position: absolute; top:0px; right: -50px; z-index: -1;}
@@ -1739,4 +1742,21 @@ a {
 		.social-wrapper{padding-top: 20px;}
 		.contact{margin-bottom: 20px;}
 	}
+
+	.event-details .card-with-image .content{flex-wrap: wrap-reverse;}
+	.event-details .card-with-image .sidebar{width: 100%; padding: 30px 15px;}
+	.event-details .card-with-image.event-content .date-wrapper{left: 15px;}
+	.event-details .card-with-image .content .content-wrapper{width: 100%; padding: 30px 15px;
+		.tags-wrapper{padding-top: 40px;}
+		.link-wrapper{position: relative; display: block; left: 0px; bottom: 0px; right: 0px; padding-top: 0px;
+			a{display: inline-block;}
+		}
+	}
+	.event-details .card-with-image.event-content .sidebar .date-wrapper{display: none;}
+	.organisation-details .card-with-image .content{flex-wrap: wrap-reverse;}
+	.organisation-details .card-with-image .sidebar{width: 100%;padding: 30px 15px;}
+	.organisation-details .card-with-image .content .content-wrapper{width: 100%;padding: 30px 15px;
+		.link-wrapper{position: relative; left: 0px; bottom: 0px; right: 0px;}
+	}
+	.organisation-details .card-with-image .sidebar .label-link{margin-bottom: 20px;}
 }

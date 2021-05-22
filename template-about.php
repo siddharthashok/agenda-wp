@@ -10,6 +10,9 @@ $pages = get_pages(array(
     'meta_value' => 'template-publicera.php'
 ));
 
+while(have_posts())
+{
+    the_post();
 
 ?>
 <div class="grid-container">
@@ -52,7 +55,7 @@ $pages = get_pages(array(
                 <div class="contact-wrapper">
                     <div>
                         <?php
-                            $contact_us_text = get_field("contact_contact_us_text",$pages[0]->ID);
+                            $contact_us_text = get_field("contact_contact_us_text","option");
                         ?>
                         <h6><?= $contact_us_text["title"];?></h6>
                         <div class="content">
@@ -61,7 +64,7 @@ $pages = get_pages(array(
                     </div>
                     <div>
                         <?php
-                            $tips_text = get_field("contact_tips_text",$pages[0]->ID);
+                            $tips_text = get_field("contact_tips_text","option");
                         ?>
                         <h6><?= $tips_text["title"];?></h6>
                         <div class="content">
@@ -71,9 +74,9 @@ $pages = get_pages(array(
                     <span class="subtitle">Kontaktpersoner</span>
                     <div class="grid-x">
                         <?php
-                            if(have_rows("contact_contact_persons",$pages[0]->ID))
+                            if(have_rows("contact_contact_persons","option"))
                             {
-                                while(have_rows("contact_contact_persons",$pages[0]->ID))
+                                while(have_rows("contact_contact_persons","option"))
                                 {
                                     the_row();
                         ?>
@@ -100,9 +103,9 @@ $pages = get_pages(array(
                         <span class="subtitle">Styrelse för Agenda: Jämlikhet</span>
                         <div >
                             <?php
-                                if(have_rows("contact_board_of_agenda",$pages[0]->ID))
+                                if(have_rows("contact_board_of_agenda","option"))
                                 {
-                                    while(have_rows("contact_board_of_agenda",$pages[0]->ID))
+                                    while(have_rows("contact_board_of_agenda","option"))
                                     {
                                         the_row();
                             ?>
@@ -123,5 +126,6 @@ $pages = get_pages(array(
 </div>
 
 <?php
+}
 get_footer();
 ?>
