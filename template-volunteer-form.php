@@ -9,7 +9,7 @@
     <div class="grid-container">
         <div class="form-close">
             <h4 id="form-close-title">Bli volontär</h4>
-            <a href="<?= get_site_url(); ?>/publish-event-organisation" class="form-close-button">
+            <a href="<?= get_site_url(); ?>/publish" class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
             </a>
@@ -120,11 +120,11 @@
                     </div> -->
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="checkbox" name="privacy-policy" id="privacy-agree" value="privacy-agree">
-                        <label for="privacy-agree">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="#" target="_blank">integritetspolicy</a>. </label>
+                        <label for="privacy-agree">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="<?= get_site_url(); ?>/policy/" target="_blank">integritetspolicy</a>. </label>
                     </div>
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="checkbox" name="agenda-value" id="agenda-value" value="agenda-value">
-                        <label for="agenda-value">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="#" target="_blank">Värdegrund</a> </label>
+                        <label for="agenda-value">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="<?= get_site_url(); ?>/our-values/" target="_blank">Värdegrund</a> </label>
                     </div>
                 </div>
                 <div class="button-wrapper text-center">

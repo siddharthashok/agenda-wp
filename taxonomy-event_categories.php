@@ -9,7 +9,7 @@ $term = get_term_by('slug',get_query_var( 'term' ),get_query_var('taxonomy'));
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url(); ?>">Home</a></li>
-                <li><a href="#" >Events</a></li>
+                <li><a href="<?= get_site_url()?>/event/" >Events</a></li>
                 <li><a href="#" class="active"><?= $term->name; ?></a></li>
             </ul>
         </nav>

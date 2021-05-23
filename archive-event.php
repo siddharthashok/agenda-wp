@@ -182,7 +182,7 @@ date_default_timezone_set( 'Europe/Stockholm' );
 						<div class="info-card">
 							<h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
 							<p class="card-description">Sprid ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.</p>
-							<a href="<?= get_site_url()?>/publish-event-form" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+							<a href="<?= get_site_url()?>/publish-event" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
 						</div>
 					</div>
 					<!-- <div class="cell large-6">

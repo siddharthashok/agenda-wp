@@ -17,11 +17,11 @@ get_header();
         <h3 class="title">
             Vill du publicera ditt evenemang i vår eventkalender eller att din organisation ska synas på Agenda: Jämlikhets hemsida?
         </h3>
-        <a class=" button button-pink hollow small small-only-expanded" href="<?= get_site_url();?>/publish-event-form">PUBLICERA EVENEMANG</a>
+        <a class=" button button-pink hollow small small-only-expanded" href="<?= get_site_url();?>/publish-event/">PUBLICERA EVENEMANG</a>
         <p>
             Sprida ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.
         </p>
-        <a class=" button button-green hollow small small-only-expanded" href="<?= get_site_url();?>/publish-organisation-form" >ANSLUT DIN ORGANISATION</a>
+        <a class=" button button-green hollow small small-only-expanded" href="<?= get_site_url();?>/publish-organisation/" >ANSLUT DIN ORGANISATION</a>
         <p>
             Du kan också gå med i vårt nätverk av organisationer och bli en del av ett nätverk med över 100 andra organisationer som arbetar med jämlikhetsfrågor. På så vis kan du komma i kontakt med andra organisationer, dela kunskaper eller starta samarbeten.
         </p>
@@ -31,7 +31,7 @@ get_header();
         <p>
             Alla föreningar, grupper, organisationer, nätverk, stiftelser och kampanjer som på olika sätt jobbar med jämlikhetsfrågor är välkomna. Vi publicerar inte företagsevenemang eller partipolitiska tillställningar.
         </p>
-        <p>Läs igenom vår <a class="links">riktlinjer</a> innan du registrerar dig.</p>
+        <p>Läs igenom vår <a href="<?= get_site_url()?>/our-values/" class="links" title="riktlinjer">riktlinjer</a> innan du registrerar dig.</p>
     </div>
 
 </section>

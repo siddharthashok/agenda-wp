@@ -11,7 +11,7 @@ get_header();
     <div class="grid-container">
         <div class="form-close">
             <h4 id="form-close-title">Publicera evenemang</h4>
-            <a href="<?= get_site_url(); ?>/publish-event-organisation" class="form-close-button">
+            <a href="<?= get_site_url(); ?>/publish/" class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
             </a>
@@ -28,11 +28,11 @@ get_header();
             <div class="grid-container ">
                 <p>Att publicera evenemang på Agenda: Jämlikhet är kostnadsfritt.</p>
 
-                <p>Publicering av evenemang är öppen för såväl organisationer inom civilsamhället, företag, offentliga organisationer och privatpersoner. Som evenemang räknas alla former av engagemang som privatpersoner kan delta i, och som främjar jämlikhet eller ökar kunskap om jämlikhet. Evenemang ska överensstämma med <a class="links" href="<?= get_site_url();?>/var-vardegrund/" title="Agenda: Jämlikhets värdegrund" target="_blank">Agenda: Jämlikhets värdegrund</a>.</p>
+                <p>Publicering av evenemang är öppen för såväl organisationer inom civilsamhället, företag, offentliga organisationer och privatpersoner. Som evenemang räknas alla former av engagemang som privatpersoner kan delta i, och som främjar jämlikhet eller ökar kunskap om jämlikhet. Evenemang ska överensstämma med <a class="links" href="<?= get_site_url();?>/our-values/" title="Agenda: Jämlikhets värdegrund" target="_blank">Agenda: Jämlikhets värdegrund</a>.</p>
 
                 <p>Vi publicerar inte evenemang som har som syfte att främja ett enskilt företags, partis eller trossamfunds egna verksamhet.</p>
 
-                <p>För mer information, läs våra <a class="links" href="#" title="Riktlinjer för publicering av organisationsprofiler" target="_blank">Riktlinjer för publicering av organisationsprofiler</a>.</p>
+                <p>För mer information, läs våra <a class="links" href="<?= get_site_url()?>/publication-guidelines" title="Riktlinjer för publicering av organisationsprofiler" target="_blank">Riktlinjer för publicering av organisationsprofiler</a>.</p>
                 
                 <p>Vår redaktion granskar allt innehåll och hör av sig till dig när det är publicerat.</p>
             </div>
@@ -192,11 +192,11 @@ get_header();
                                 <input id="event-banner" class="upload event-upload-1" type="file" />
                                 <label class=" upload-file-name event-upload-file-name-1"></label>
                             </p>
-                            <!-- <p class="form-links">
+                            <p class="form-links d-none">
                                 <a class="upload-link event-upload-link-2">Ladda upp logga</a>
                                 <input id="logo" class=" upload event-upload-2" type="file" />
                                 <label class="upload-file-name event-upload-file-name-2"></label>
-                            </p> -->
+                            </p>
                         </form>
                     </fieldset>
                 </div>
@@ -241,8 +241,8 @@ get_header();
                     </div>
                     <fieldset>
                         <!-- <p>Markera de svarsalternativ som stämmer med lokalen*</p> -->
-                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-1"> <label for="check1-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links" href="#" target="_blank">Värdegrund</a> samt <a class="links" href="#" target="_blank">Riktlinjer</a> för publicering av evenemang.</label>
-                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-2"> <label for="check1-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links" href="#" target="_blank">integritetspolicy</a>.</label>
+                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-1"> <label for="check1-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links" href="<?= get_site_url()?>/our-values/" target="_blank">Värdegrund</a> samt <a class="links" href="<?= get_site_url()?>/publication-guidelines/" target="_blank">Riktlinjer</a> för publicering av evenemang.</label>
+                        <input class="styled-radio form-publish" type="checkbox" id="check1-circle-2"> <label for="check1-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links" href="<?= get_site_url()?>/policy/" target="_blank">integritetspolicy</a>.</label>
                     </fieldset>
                     <div class="form-submit text-center">
                         <a class=" button button-pink hollow small small-only-expanded" id="form1step4Next" href="#">SKICKA FORMULÄR</a>

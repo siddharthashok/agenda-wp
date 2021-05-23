@@ -25,12 +25,12 @@ get_header();
                 <div class="info-card">
                     <h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
                     <p class="card-description">Sprid ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.</p>
-                    <a href="<?= get_site_url();?>/publish-event-form" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+                    <a href="<?= get_site_url();?>/publish-event/" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
                 </div>
                 <div class="info-card mint-tulip">
                     <h3 class="card-title">Gå med i vårt nätverk av organisationer!</h3>
                     <p class="card-description">Låt din organisation synas genom att publicera en organisationsprofil på agendajamlikhet.se. Bli samtidigt en del av över 250 organisationer som ingår i Agenda: Jämlikhets nätverk</p>
-                    <a href="<?= get_site_url();?>/publish-organisation-form" class="link">PUBLICERA din profil här </a>
+                    <a href="<?= get_site_url();?>/publish-organisation/" class="link">PUBLICERA din profil här </a>
                 </div>
                 <div class="content">
                     <?= the_content(); ?>

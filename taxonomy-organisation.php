@@ -8,7 +8,7 @@
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url(); ?>">Home</a></li>
-                <li><a href="<?= get_site_url(); ?>/organisations">Organisations</a></li>
+                <li><a href="<?= get_site_url(); ?>/organisations/">Organisations</a></li>
                 <li><a href="#" class="active"><?= $term->name; ?></a></li>
             </ul>
         </nav>
@@ -20,7 +20,7 @@
                         <img src="<?= get_field("featured_image",$term->taxonomy."_".$term->term_id); ?>" alt="image of the organisation">
                     </div>
                     <div class="card-title-wrap">
-                        <span class="category">organisation</span>
+                        <span class="category">Organisation</span>
                     </div> 
                     <div class="content">
                         <h3><?= $term->name; ?></h3>
@@ -152,7 +152,7 @@
                                 </div> -->
                             </div>
                             <div class="card-title-wrap">
-                                <span class="category">organisation </span>
+                                <span class="category">Organisation </span>
                             </div> 
                             <div class="content">
                                 <h3><?= $value->name; ?></h3>
