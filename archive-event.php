@@ -68,7 +68,8 @@ date_default_timezone_set( 'Europe/Stockholm' );
 		</div>
 		<div class="filter-block">
 			<h4>Typ av event</h4>
-			<ul class="menu vertical filter-height" id="filter-height">
+			<!-- <ul class="menu vertical filter-height" id="filter-height"> -->
+			<ul class="menu vertical">
 				<li>
 					<a href="#" class="is-active" data-type="event-type" data-slug="" v-on:click="filter">
 						Alla format
@@ -93,7 +94,7 @@ date_default_timezone_set( 'Europe/Stockholm' );
 					}
 				?>
 			</ul>	
-			<span class="show-more-filters">Visa FLER</span>		
+			<span class="show-more-filters d-none">Visa FLER</span>		
 		</div>
 		<div class="filter-block">
 			<h4>Tillgänglighet</h4>
