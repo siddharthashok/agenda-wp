@@ -2120,6 +2120,10 @@ a.active {
 .current-events .link-wrapper {
     padding-top: 0px;
   }
+  .current-organizers h4,
+.current-events h4 {
+    margin-bottom: 0px;
+  }
 
   .event-mobile-wrap,
 .organizers-mobile-wrap {
@@ -2140,11 +2144,18 @@ a.active {
     line-height: 28px;
   }
 
+  .organizers-mobile-wrap {
+    padding-top: 25px;
+  }
   .organizers-mobile-wrap .card-with-image .image-wrapper {
     height: 150px;
   }
   .organizers-mobile-wrap .card-with-image .image-wrapper img {
     height: 150px;
+  }
+
+  .connect-card-wrap {
+    padding-top: 20px;
   }
 
   .connect-card {

@@ -1673,10 +1673,12 @@ a {
 		.category-list{margin-left: 0px; margin-bottom: 0px;}
 		.categories-wrapper{margin-bottom: 20px;}
 		.link-wrapper{padding-top: 0px;}
+		h4{margin-bottom: 0px;}
 	}
 	//common css for the sections with cards displayed in sliders
 	.event-mobile-wrap,
 	.organizers-mobile-wrap {
+		
 		margin-left: -15px;
 		margin-right: -15px;
 		.card-with-image {
@@ -1694,6 +1696,7 @@ a {
 	}
 	//css to style card as rectangle under organization section in mobile slider
 	.organizers-mobile-wrap {
+		padding-top: 25px;
 		.card-with-image {
 			.image-wrapper {
 				height: 150px;
@@ -1704,6 +1707,7 @@ a {
 		}
 	}
 	//general css for connect cards on all pages
+	.connect-card-wrap{padding-top: 20px;}
 	.connect-card {
 		margin: 0px;
 		&.blue {
