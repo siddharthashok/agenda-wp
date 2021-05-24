@@ -11,6 +11,7 @@ if ($("#organisation-form")) {
 	//show the tab and the buttons
 	function showTab(n) {
 		// This function will display the specified tab of the form ...
+	let tabArray = $(".tab");
 		tabArray[n].style.display = "block";
 		// ... and fix the Previous/Next buttons:
 		if (n == 0) {
