@@ -9,7 +9,7 @@ $term = get_queried_object();
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url(); ?>">Home</a></li>
-                <li><a href="#" >Events</a></li>
+                <li><a href="<?= get_site_url()?>/event/" >Events</a></li>
                 <li><a href="#" class="active"><?= $term->name; ?></a></li>
             </ul>
         </nav>

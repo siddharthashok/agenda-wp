@@ -80,7 +80,7 @@ get_header();
 							<h3 class="card-title">Är du organisation eller arrangör av jämlikhetsevent?</h3>
 							<p class="card-description">Vill du att din organisation ska synas på Agenda: Jämlikhet eller publicera ditt event i vår kalender?
 							</p>
-							<a href="<?= get_site_url()?>/publish-event-organisation" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+							<a href="<?= get_site_url()?>/publish/" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
 						</div>
 					</div>
 					<div class="cell large-12">
@@ -88,7 +88,7 @@ get_header();
 							<div class="info-card albescent-white">
 								<h3 class="card-title">Brinner du för jämlikhet och vill dra igång något nytt?</h3>
 								<p class="card-description">Vi söker en eller flera som vill starta upp en lokal organisation för Agenda: Jämlikhet i Malmö och Stockholm. Tillsammans blir vi starka. </p>
-								<a href="<?= get_site_url()?>/publish-event-organisation" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
+								<a href="<?= get_site_url()?>/publish/" class="link">LÄS MER OCH LÅT DIG INSPIRERAS</a>
 							</div>
 						</div>
 					</div> -->

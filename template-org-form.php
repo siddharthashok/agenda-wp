@@ -12,7 +12,7 @@ get_header();
     <div class="grid-container">
         <div class="form-close">
             <h4 id="form-close-title">Anslut din organisation</h4>
-            <a href="<?= get_site_url(); ?>/publish-event-organisation" class="form-close-button">
+            <a href="<?= get_site_url(); ?>/publish/" class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
             </a>
@@ -200,17 +200,17 @@ get_header();
                         <label class="full-width-label">Telefonnummer till kontaktperson (ange nummer utan specialtecken eller mellanrum)*</label>
                         <input type="number" name="contact-phone-no" class="full-width" placeholder="ex. 0708790464">
                     </div>
-                    <!-- <div class="form-spacing">
+                    <div class="form-spacing d-none">
                         <label class="full-width-label">Organisationsnummer*</label>
                         <input type="number" name="number" class="full-width" placeholder="ex. 192301018890">
-                    </div> -->
+                    </div>
                     <div class="form-spacing">
                         <label class="full-width-label">Eventuellt meddelande till Agenda: Jämlikhet</label>
                         <textarea name="message" class="full-width" placeholder="Om du har frågor..."></textarea>
                     </div>
                     <fieldset>
-                        <input class="styled-radio form-org" type="checkbox" id="check-circle-1"> <label for="check-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links" href="#" target="_blank">Värdegrund</a> samt <a class="links" href="#" target="_blank">Riktlinjer</a> för publicering av evenemang.</label>
-                        <input class="styled-radio form-org" type="checkbox" id="check-circle-2"> <label for="check-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links" href="#" target="_blank">integritetspolicy</a>.</label>
+                        <input class="styled-radio form-org" type="checkbox" id="check-circle-1"> <label for="check-circle-1">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a class="links" href="<?= get_site_url(); ?>/our-values/" target="_blank">Värdegrund</a> samt <a class="links" href="<?= get_site_url(); ?>/publication-guidelines/" target="_blank">Riktlinjer</a> för publicering av evenemang.</label>
+                        <input class="styled-radio form-org" type="checkbox" id="check-circle-2"> <label for="check-circle-2">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a class="links" href="<?= get_site_url(); ?>/policy/" target="_blank">integritetspolicy</a>.</label>
                     </fieldset>
                     <div class="form-submit">
                         <a class=" button button-green hollow small small-only-expanded " id="step4Next" href="#">SKICKA FORMULÄR</a>

@@ -102,7 +102,7 @@ global $query_string;
 							$at_least_one_organisation = true;
 			?>
 							<div class="cell large-12">
-								<h3>Organisations</h3>
+								<h3>Organisationer</h3>
 							</div>
 			<?php
 						}

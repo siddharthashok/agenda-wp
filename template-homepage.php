@@ -8,7 +8,7 @@ get_header();
 <section class="hero-section">
     <div class="grid-container">
         <h1 class="text-center">Din eventkalender för jämlikhet</h1>
-        <h4 class="text-center">Vi gör det enkelt för dig att gå från ord till handling</h4>
+        <h3 class="text-center header-sub-tag">Vi gör det enkelt för dig att gå från ord till handling</h3>
     </div> 
     <section class="current-events">
         <div class="grid-container">
@@ -32,7 +32,7 @@ get_header();
             ?>
                 <div class="grid-x grid-padding-x grid-padding-y">
                     <div class="cell large-12">
-                        <h3>Vad intresserar dig?</h3>
+                        <h3 class="m-t-75">Vad intresserar dig?</h3>
                         <div class="categories-wrapper">
                             <ul class="category-list">
                                 <?php
@@ -129,7 +129,7 @@ get_header();
                 ?>
                     <div class="cell large-12 hide-for-small-only">
                         <div class="link-wrapper text-right">
-                            <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
+                            <a class="underline" href="<?= get_site_url()?>/event/">Visa FLER</a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@ get_header();
             </div>
             <div class="cell large-12 show-for-small-only">
                 <div class="link-wrapper text-right">
-                    <a class="underline" href="<?= get_site_url()?>/event">Visa FLER</a>
+                    <a class="underline" href="<?= get_site_url()?>/event/">Visa FLER</a>
                 </div>
             </div>
         </div>
@@ -264,7 +264,7 @@ get_header();
             </div>
             <div class="cell large-12">
                 <div class="link-wrapper text-right">
-                    <a class="underline" href="<?= get_site_url()?>/organisations">Visa FLER</a>
+                    <a class="underline" href="<?= get_site_url()?>/organisations/">Visa FLER</a>
                 </div>
             </div>
         </div>   
@@ -276,7 +276,7 @@ get_header();
                     <div class="info-card">
                         <h3 class="card-title">Är du arrangör av jämlikhetsevent?</h3>
                         <p class="card-description">Sprid ditt evenemang och nå ut till en större målgrupp genom att publicera det i vår eventkalender. Det är helt kostnadsfritt.</p>
-                        <a href="<?= get_site_url()?>/publish-event-form" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
+                        <a href="<?= get_site_url()?>/publish-event/" class="link">PUBLICERA I VÅR EVENTKALENDER</a>
                     </div>
                     
                 </div>
@@ -285,7 +285,7 @@ get_header();
                         <div class="info-card albescent-white">
                             <h3 class="card-title">Vill du bli volontär för Agenda: Jämlikhet?</h3>
                             <p class="card-description">Vi söker alltid personer som vill engagera sig i vår organisation.</p>
-                            <a href="<?= get_site_url()?>/volunteer-form" class="link text-uppercase">Bli volontär för Agenda: Jämlikhet</a>
+                            <a href="<?= get_site_url()?>/volunteer-form/" class="link text-uppercase">Bli volontär för Agenda: Jämlikhet</a>
                         </div>
                     </div>
                 </div>

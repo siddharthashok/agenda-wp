@@ -18,7 +18,7 @@ while(have_posts())
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url(); ?>">Hem</a></li>
-                <li><a href="<?= get_site_url(); ?>/organisations">Organisationer</a></li>
+                <li><a href="<?= get_site_url(); ?>/organisations/">Organisationer</a></li>
                 <li><a href="#" class="active"><?= get_the_title(); ?></a></li>
             </ul>
         </nav>

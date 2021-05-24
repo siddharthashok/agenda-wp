@@ -21,7 +21,7 @@ while(have_posts())
             <nav>
                 <ul class="breadcrumbs">
                     <li><a href="<?= get_site_url(); ?>">Hem</a></li>
-                    <li><span  class="active">Om Agenda: Jämlikhet</span></li>
+                    <li><span class="active">Om Agenda: Jämlikhet</span></li>
                 </ul>
             </nav>
         </div>
@@ -40,7 +40,7 @@ while(have_posts())
                 <div class="info-card hawkes-blue">
                     <h2 class="card-title">Gillar du Agenda: Jämlikhet och vill stötta oss i vårt arbete? Bli medlem!</h2>
                     <p class="card-description">Det kostar ingenting och är ett enkelt och snabbt sätt att bidra. Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet.</p>
-                    <a href="<?= get_site_url();?>/member" class="link">BLI MEDLEM NU</a>
+                    <a href="<?= get_site_url();?>/become-a-member" class="link">BLI MEDLEM NU</a>
                 </div>
                 <div class="info-card albescent-white">
                     <h2 class="card-title">Vill du bli volontär för Agenda: Jämlikhet?</h2>

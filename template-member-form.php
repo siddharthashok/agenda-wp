@@ -9,7 +9,7 @@
     <div class="grid-container">
         <div class="form-close">
             <h4 id="form-close-title">Bli medlem</h4>
-            <a href="<?= get_site_url(); ?>/publish-event-organisation" class="form-close-button">
+            <a href="<?= get_site_url(); ?>/publish/" class="form-close-button">
                 <h4>Stäng</h4>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/close-icon.svg" alt="">
             </a>
@@ -27,7 +27,7 @@
                 <p>Vad kul att du är vill bli medlem i Agenda: Jämlikhet! Det är enkelt och helt kostnadsfritt. </p>
                 <p>Ett stort medlemsstöd hjälper oss när vi behöver söka om projektstöd eller annat typ av finansiering för att utveckla vår verksamhet. Det gör oss också till en mer attraktiv samarbetspartner!</p>
                 <p>Som medlem kommer du ibland att få mail av oss med inbjudningar till tex årsmöte eller viktig information om vad som händer inom föreningen.  Men det allra bästa sättet att hålla koll på det senaste är att följa oss på facebook eller instagram!</p>
-                <p>För att bli medlem behöver du stå bakom <a class="links" href="<?= get_site_url();?>/var-vardegrund/" title="Agenda: Jämlikhets värdegrund" target="_blank">Agenda: Jämlikhets värdegrund</a>.</p>
+                <p>För att bli medlem behöver du stå bakom <a class="links" href="<?= get_site_url();?>/our-values/" title="Agenda: Jämlikhets värdegrund" target="_blank">Agenda: Jämlikhets värdegrund</a>.</p>
             </div>
         </div>
         <div style="overflow:auto;">
@@ -74,11 +74,11 @@
                     </div>
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="radio" name="privacy-policy" id="privacy-agree" value="privacy-agree">
-                        <label for="privacy-agree">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="#">Värdegrund</a>.</label>
+                        <label for="privacy-agree">Jag bekräftar att jag har läst och står bakom Agenda: Jämlikhets <a href="<?= get_site_url()?>/our-values/">Värdegrund</a>.</label>
                     </div>
                     <div class="field-wrap">
                         <input class="styled-radio form-publish" type="radio" name="agenda-value" id="agenda-value" value="agenda-value">
-                        <label for="agenda-value">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="#">integritetspolicy</a>.  </label>
+                        <label for="agenda-value">Jag godkänner att mina personuppgifter behandlas enligt Agenda: Jämlikhets <a href="<?= get_site_url()?>/policy/">integritetspolicy</a>.  </label>
                     </div>
                 </div>
                 <div class="button-wrapper text-center">

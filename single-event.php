@@ -16,7 +16,7 @@ get_header();
         <nav>
             <ul class="breadcrumbs">
                 <li><a href="<?= get_site_url();?>" class="">Home</a></li>
-                <li><a href="<?= get_site_url(); ?>/event">Events</a></li>
+                <li><a href="<?= get_site_url(); ?>/event/">Events</a></li>
                 <li><a href="#" class="active"><?= get_the_title(); ?></a></li>
             </ul>
         </nav>
