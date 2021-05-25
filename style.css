@@ -647,12 +647,13 @@ a.active {
   margin-bottom: 80px;
 }
 .hero-section .categories-wrapper {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 .hero-section .categories-wrapper .category-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 0;
 }
 .hero-section .categories-wrapper .category-list li {
   display: inline-block;

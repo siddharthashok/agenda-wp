@@ -1,13 +1,6 @@
 $(document).foundation();
 $(document).ready(function(){
-   
-
-    //js for masonry for event cards on desktop layout 
-    $('.event-desktop-wrap').masonry({
-        itemSelector: '.cell',
-        columnWidth:5
-    });
-   
+    
     //click handler for hamburger and close icon
     $('.hamburger,.close-icon').click(function() {
         //get the element with class hidden
