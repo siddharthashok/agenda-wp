@@ -7,7 +7,7 @@
       "uuidString" : "086CC25D-C69E-424F-8272-97189A33EE18"
     }
   ],
-  "creatorBuild" : "34016",
+  "creatorBuild" : "34127",
   "files" : {
     "\/_archive-events.php" : {
       "cB" : 0,
@@ -15,6 +15,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/_archive-events.php",
+      "oF" : 0
+    },
+    "\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.gitignore",
       "oF" : 0
     },
     "\/404.php" : {
@@ -119,7 +127,7 @@
       "oA" : 0,
       "oAP" : "\/style.css",
       "oF" : 0,
-      "oS" : 0,
+      "oS" : 2,
       "pg" : 0,
       "sct" : 0
     },
@@ -3203,14 +3211,6 @@
       "oAP" : "\/template-member-form.php",
       "oF" : 0
     },
-    "\/template-new-about.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-new-about.php",
-      "oF" : 0
-    },
     "\/template-org-form.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -3249,6 +3249,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-parts\/content.php",
+      "oF" : 0
+    },
+    "\/template-publicera.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/template-publicera.php",
       "oF" : 0
     },
     "\/template-taxonomy-archive.php" : {
@@ -5233,7 +5241,7 @@
       "cssoStyle" : 0,
       "decimalPrecision" : 10,
       "emitCharset" : 1,
-      "outputStyle" : 0,
+      "outputStyle" : 2,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 0,
       "shouldRunBless" : 0,
@@ -5311,27 +5319,30 @@
 
       ],
       "contentEntries" : [
-        "!(node_modules)\/**\/*.html",
-        "!(node_modules)\/**\/*.htm",
-        "!(node_modules)\/**\/*.shtml",
-        "!(node_modules)\/**\/*.xhtml",
-        "!(node_modules)\/**\/*.php",
-        "!(node_modules)\/**\/*.js",
-        "!(node_modules)\/**\/*.ts",
-        "!(node_modules)\/**\/*.coffee",
-        "!(node_modules)\/**\/*.erb",
-        "!(node_modules)\/**\/*.pug",
-        "!(node_modules)\/**\/*.jade",
-        "!(node_modules)\/**\/*.slim",
-        "!(node_modules)\/**\/*.haml",
-        "!(node_modules)\/**\/*.md",
-        "!(node_modules)\/**\/*.kit"
+        "**\/*.html",
+        "**\/*.htm",
+        "**\/*.shtml",
+        "**\/*.xhtml",
+        "**\/*.php",
+        "**\/*.js",
+        "**\/*.ts",
+        "**\/*.coffee",
+        "**\/*.erb",
+        "**\/*.pug",
+        "**\/*.jade",
+        "**\/*.slim",
+        "**\/*.haml",
+        "**\/*.md",
+        "**\/*.kit"
       ],
       "removeFontFace" : 0,
       "removeKeyframes" : 0,
       "removeVariables" : 0,
       "safelistEntries" : [
 
+      ],
+      "skippedEntries" : [
+        "node_modules\/**"
       ]
     },
     "rollupContext" : "",
@@ -5366,6 +5377,7 @@
     "tsNoImplicitThis" : 0,
     "tsNoImplicitUseStrict" : 0,
     "tsNoLib" : 0,
+    "tsNoPropertyAccessFromIndexSignature" : 0,
     "tsNoResolve" : 0,
     "tsNoStrictGenericChecks" : 0,
     "tsNoUncheckedIndexAccess" : 0,

@@ -3,7 +3,7 @@
 
 /* CSS to fix height and whitespace for publicise page */
 section.page-forms {min-height: 600px;}
-.ui-corner-all {display: none;}
+/* .ui-corner-all {display: none;} */
 .text-uppercase {text-transform: uppercase;}
 .card-margin {margin-bottom: 30px;}
 .d-none {display: none;}

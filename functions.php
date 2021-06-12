@@ -124,7 +124,7 @@ add_action( 'widgets_init', 'agenda_widgets_init' );
  * Enqueue scripts and styles.
  */
 function agenda_scripts() {
-	wp_enqueue_style( 'agenda-style', get_stylesheet_uri(), null, null, null );
+	wp_enqueue_style( 'agenda-style', get_stylesheet_uri(), null, '4', null );
 
 	wp_enqueue_script( 'agenda-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

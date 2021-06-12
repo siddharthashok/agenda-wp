@@ -68,7 +68,7 @@
                     <div class="logo-wrapper">
                         <img src="<?= get_template_directory_uri(); ?>/img/footer-logo.svg" alt="">
                     </div>
-                    <p class="note">agendajamlikhet.se är designad av Agenda: Jämlikhet och utvecklad av Grandworks </p>
+                    <p class="note">agendajamlikhet.se är designad av Agenda: Jämlikhet och utvecklad av <a href="https://grandworks.co/" class="grandworks_link" target="_blank">GrandWorks</a></p>
                 </div>
             </div>
         </div>

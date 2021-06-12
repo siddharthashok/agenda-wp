@@ -1,5 +1,8 @@
+$(function(){
+
 if ($("#event-form-modal")) {
-	let eventTabArray = $("#event-form-modal .tab");
+	
+	eventTabArray = $("#event-form-modal .tab");
 	// console.log(eventTabArray);
 
 	let eventCurrentTab = 0; // Current tab is set to be the first tab (0)
@@ -279,6 +282,7 @@ if ($("#event-form-modal")) {
 		$("#event-timepicker").timepicker();
 	});
 }
+});
 //upload buttons
 $(function () {
 	$(".event-upload-link-1").on("click", function (e) {
